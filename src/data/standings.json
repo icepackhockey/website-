@@ -1,0 +1,103 @@
+{
+  "conference": "SECHL (ACHA Division I)",
+  "season": "2026\u201327",
+  "last_updated": "November 8, 2026",
+  "national_ranking": {
+    "current_rank": 38,
+    "previous_rank": 40,
+    "movement": "+2",
+    "computer_average": "39.0",
+    "total_teams": 81,
+    "poll_date": "November 8, 2026",
+    "pdf_nov_8": "/polls/2627computer-average-2026-11-08.pdf",
+    "pdf_nov_1": "/polls/2627computer-average-2026-11-01.pdf"
+  },
+  "teams": [
+    {
+      "rank": 1,
+      "team": "Kentucky",
+      "gp": 15,
+      "record": "11\u20134\u20130\u20130",
+      "gf": 66,
+      "ga": 44,
+      "points": 22,
+      "is_home": false
+    },
+    {
+      "rank": 2,
+      "team": "Alabama",
+      "gp": 15,
+      "record": "10\u20135\u20130\u20130",
+      "gf": 78,
+      "ga": 66,
+      "points": 20,
+      "is_home": false
+    },
+    {
+      "rank": 3,
+      "team": "NC State",
+      "gp": 16,
+      "record": "8\u20136\u20132\u20130",
+      "gf": 74,
+      "ga": 70,
+      "points": 18,
+      "is_home": true
+    },
+    {
+      "rank": 4,
+      "team": "Louisville",
+      "gp": 20,
+      "record": "9\u201311\u20130\u20130",
+      "gf": 93,
+      "ga": 81,
+      "points": 18,
+      "is_home": false
+    },
+    {
+      "rank": 5,
+      "team": "UNC Chapel Hill",
+      "gp": 16,
+      "record": "7\u20138\u20130\u20131",
+      "gf": 68,
+      "ga": 77,
+      "points": 15,
+      "is_home": false
+    },
+    {
+      "rank": 6,
+      "team": "Cincinnati",
+      "gp": 14,
+      "record": "3\u201310\u20130\u20131",
+      "gf": 42,
+      "ga": 90,
+      "points": 7,
+      "is_home": false
+    }
+  ],
+  "ranked_games": [
+    {
+      "rank": "#7",
+      "opponent": "Liberty",
+      "dates": "Sep 25 home \u00b7 Sep 26 at Lynchburg",
+      "result": "L 1\u20135, L 4\u20138"
+    },
+    {
+      "rank": "#13",
+      "opponent": "Utah",
+      "dates": "Sep 17 \u00b7 Fall Faceoff, Lake Placid",
+      "result": "L 0\u20134"
+    },
+    {
+      "rank": "#21",
+      "opponent": "IUP",
+      "dates": "Sep 19 \u00b7 Fall Faceoff, Lake Placid",
+      "result": "L 6\u20137"
+    },
+    {
+      "rank": "#24",
+      "opponent": "Davenport",
+      "dates": "Sep 18 \u00b7 Fall Faceoff, Lake Placid",
+      "result": "OTL 3\u20134"
+    }
+  ]
+}

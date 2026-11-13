@@ -1,0 +1,48 @@
+[
+  {
+    "id": "spon-1",
+    "name": "Invisalign Arena",
+    "tier": "Founding Partner",
+    "tierCode": "founding",
+    "logo": "https://charterwm.com/wp-content/uploads/2026/08/invisalign-logo-placeholder.png",
+    "url": "https://invisalignarena.com",
+    "presentedSlots": [
+      "Next Home Game",
+      "Main Ice Arena"
+    ]
+  },
+  {
+    "id": "spon-2",
+    "name": "Charter Wealth Management",
+    "tier": "Season Partner",
+    "tierCode": "season",
+    "logo": "https://charterwm.com/wp-content/uploads/2026/08/cwm-logo-placeholder.png",
+    "url": "https://charterwm.com",
+    "presentedSlots": [
+      "Stars of the Week",
+      "Official Wealth & Fiduciary Advisor"
+    ]
+  },
+  {
+    "id": "spon-3",
+    "name": "Red & White Shop",
+    "tier": "Game Night Partner",
+    "tierCode": "gamenight",
+    "logo": "https://charterwm.com/wp-content/uploads/2026/08/red-white-shop-logo.png",
+    "url": "https://www.redandwhiteshop.com/search?q=icepack",
+    "presentedSlots": [
+      "Official Apparel Partner"
+    ]
+  },
+  {
+    "id": "spon-4",
+    "name": "Raleigh Sports Medicine",
+    "tier": "Community Partner",
+    "tierCode": "community",
+    "logo": "https://charterwm.com/wp-content/uploads/2026/08/raleigh-sports-med-logo.png",
+    "url": "https://raleighsportsmed.com",
+    "presentedSlots": [
+      "Official Athletic Training Partner"
+    ]
+  }
+]

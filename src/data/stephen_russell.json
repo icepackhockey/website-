@@ -1,0 +1,36 @@
+{
+  "title": "Stephen Russell Memorial Tournament",
+  "bio": {
+    "name": "Stephen Russell",
+    "years": "1987–2009",
+    "jerseyRetired": "November 2009",
+    "position": "Goaltender",
+    "hometown": "Newfoundland, Canada",
+    "teamYears": "2006–2009",
+    "major": "Political Science (Senior at NC State)",
+    "image": "/stephen-russell.png",
+    "videoUrl": "https://www.youtube.com/embed/k5sLfCfCX0o?si=jeU-ZO1QuRXf5lg3",
+    "videoLink": "https://youtu.be/En1WERVBKEs?si=TAdRgApTTCx02y_2"
+  },
+  "tournamentHistory": [
+    { "year": "2026", "winner": "Illinois State University", "mvp": null, "isNCState": false },
+    { "year": "2025", "winner": "NC State University", "mvp": null, "isNCState": true },
+    { "year": "2024", "winner": "University of New Hampshire", "mvp": null, "isNCState": false },
+    { "year": "2019", "winner": "NC State University", "mvp": "Riley Johnson", "isNCState": true },
+    { "year": "2018", "winner": "University of Virginia", "mvp": "David Voight", "isNCState": false },
+    { "year": "2017", "winner": "James Madison University", "mvp": "Ryan Scott", "isNCState": false },
+    { "year": "2016", "winner": "James Madison University", "mvp": "Keegan Kelly", "isNCState": false },
+    { "year": "2015", "winner": "NC State University", "mvp": "Joey Hall", "isNCState": true },
+    { "year": "2014", "winner": "University of North Carolina", "mvp": "John Jackson", "isNCState": false },
+    { "year": "2010", "winner": "East Carolina University", "mvp": null, "isNCState": false },
+    { "year": "2009", "winner": "University of Maryland Baltimore County", "mvp": null, "isNCState": false },
+    { "year": "2008", "winner": "Duke University", "mvp": null, "isNCState": false },
+    { "year": "2007", "winner": "Virginia Tech", "mvp": null, "isNCState": false },
+    { "year": "2006", "winner": "NC State University", "mvp": null, "isNCState": true },
+    { "year": "2005", "winner": "NC State University", "mvp": null, "isNCState": true },
+    { "year": "2004", "winner": "NC State University", "mvp": null, "isNCState": true },
+    { "year": "2003", "winner": "NC State University", "mvp": null, "isNCState": true },
+    { "year": "2002", "winner": "Duke University", "mvp": null, "isNCState": false },
+    { "year": "2001", "winner": "NC State University", "mvp": null, "isNCState": true }
+  ]
+}

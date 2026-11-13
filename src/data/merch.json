@@ -1,0 +1,128 @@
+{
+  "team_exclusive": [
+    {
+      "id": "50th-jersey",
+      "title": "50th Anniversary Commemorative Jersey",
+      "price": "$100.00 – $150.00",
+      "status": "Official Pre-Order",
+      "badge": "Team Exclusive",
+      "image": "/jersey.jpg",
+      "secondary_image": "/jersey-transparent.png",
+      "description": "Pre-order the official 50th anniversary commemorative jersey. Manufactured by Rebirth to the exact on-ice specifications worn by the IcePack, honoring the program's historic inaugural season.",
+      "features": [
+        "Authentic pro-weight fabric & reinforced pro stitching",
+        "Custom name & number customization available (Retired #20 Stephen Russell)",
+        "Adult Men's, Youth Sizes, and Goalie Cuts available",
+        "Domestic shipping included or gameday pick-up at Lane Arena"
+      ],
+      "url": "https://www.icepackhockey.com/store/p79/50th_Anniversary_Jersey.html",
+      "action_label": "Pre-Order Jersey →"
+    },
+    {
+      "id": "50th-tshirt",
+      "title": "Official 50th Season Gameday T-Shirt",
+      "price": "Coming Soon",
+      "status": "In Production",
+      "badge": "Coming Soon",
+      "image": "/solojersey.jpg",
+      "description": "The official 2026–27 50th season gameday t-shirt collection designed by the IcePack student creative staff. Launching soon ahead of upcoming home matchups at Lane Arena.",
+      "features": [
+        "100% premium ring-spun cotton for gameday comfort",
+        "Commemorative 50th Anniversary IcePack crest",
+        "Unisex athletic sizing (XS – 3XL)",
+        "Will be available online & on-site at Lane Arena gamedays"
+      ],
+      "url": "#",
+      "action_label": "Notify Me When Live"
+    }
+  ],
+  "retail_partner": {
+    "name": "The Red and White Shop",
+    "logo": "/red-and-white-shop.png",
+    "url": "https://www.redandwhiteshop.com/search?q=icepack",
+    "location": "3514 Hillsborough St, Raleigh, NC 27607",
+    "description": "The Red and White Shop is the official retail apparel partner of NC State IcePack Hockey. Located on Hillsborough Street across from campus, they carry exclusive authentic jerseys, hoodies, tees, Richardson hats, and scarves with nationwide shipping.",
+    "items": [
+      {
+        "id": "rw-1",
+        "title": "Icepack Red Raleigh Special Edition Jersey",
+        "price": "$119.99",
+        "category": "Jerseys",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/files/IMG_5397copy.png?v=1738259930",
+        "url": "https://www.redandwhiteshop.com/products/icepack-red-raleigh-special-edition-jersey"
+      },
+      {
+        "id": "rw-2",
+        "title": "Icepack Red Hockey Jersey",
+        "price": "$119.99",
+        "category": "Jerseys",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/products/icepack.jpg?v=1601326245",
+        "url": "https://www.redandwhiteshop.com/products/ice-pack-red-hockey-jersey"
+      },
+      {
+        "id": "rw-3",
+        "title": "Black Icepack Hooded Sweatshirt",
+        "price": "$39.99",
+        "category": "Hoodies & Fleece",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/products/black_icepack_hood_1_copy.png?v=1667487231",
+        "url": "https://www.redandwhiteshop.com/products/black-icepack-hooded-sweatshirt"
+      },
+      {
+        "id": "rw-4",
+        "title": "Red Icepack Hooded Sweatshirt",
+        "price": "$39.99",
+        "category": "Hoodies & Fleece",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/files/red_icepack_hoodcopy.png?v=1761682615",
+        "url": "https://www.redandwhiteshop.com/products/red-icepack-hooded-sweatshirt"
+      },
+      {
+        "id": "rw-5",
+        "title": "Black Icepack Short Sleeve T-Shirt",
+        "price": "$22.99",
+        "category": "T-Shirts",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/products/black_icepack_t-shirt_1_3_copy.png?v=1667333847",
+        "url": "https://www.redandwhiteshop.com/products/black-icepack-short-sleeve-t-shirt"
+      },
+      {
+        "id": "rw-6",
+        "title": "Black Icepack Richardson Mesh Adjustable Hat",
+        "price": "$31.99",
+        "category": "Hats",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/products/black_mesh_icepack_hat.png?v=1580936343",
+        "url": "https://www.redandwhiteshop.com/products/all-black-ice-pack-mesh-adjustable-hat"
+      },
+      {
+        "id": "rw-7",
+        "title": "Black Icepack Long Sleeve T-Shirt",
+        "price": "$24.99",
+        "category": "T-Shirts",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/products/black_icepack_t-shirtcopy.png?v=1667508175",
+        "url": "https://www.redandwhiteshop.com/products/black-icepack-long-sleeve-t-shirt"
+      },
+      {
+        "id": "rw-8",
+        "title": "Black & Grey Richardson Mesh Slouch Adjustable Hat",
+        "price": "$31.99",
+        "category": "Hats",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/products/adj.png?v=1580995086",
+        "url": "https://www.redandwhiteshop.com/products/black-and-grey-ice-pack-mesh-slouch-adjustable-hat"
+      },
+      {
+        "id": "rw-9",
+        "title": "Icepack Black Gameday Scarf",
+        "price": "$37.99",
+        "category": "Accessories",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/files/ICEPACKSB.png?v=1790877129",
+        "url": "https://www.redandwhiteshop.com/products/icepack-black-scarf"
+      },
+      {
+        "id": "rw-10",
+        "title": "Icepack Red Gameday Scarf",
+        "price": "$37.99",
+        "category": "Accessories",
+        "image": "https://cdn.shopify.com/s/files/1/0231/8833/files/ICEPACKSR_9cfd1a6a-4a45-4218-b363-5e03e8a03877.png?v=1790881425",
+        "url": "https://www.redandwhiteshop.com/products/icepack-red-scarf"
+      }
+    ]
+  }
+}

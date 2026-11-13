@@ -1,0 +1,1584 @@
+[
+  {
+    "season_title": "2025-2026 Schedule (Overall: 19-12-1)",
+    "games_count": 33,
+    "games": [
+      [
+        "Date",
+        "Time",
+        "Opponent",
+        "Location",
+        "Result/Record(Overall, ACHA 1, ACCHL)"
+      ],
+      [
+        "9/5",
+        "8:30 pm",
+        "University of Georgia",
+        "Home",
+        "Win 2-1, (1-0, 0-0, 0-0)"
+      ],
+      [
+        "9/12",
+        "8:30 pm",
+        "Liberty University",
+        "Home",
+        "Loss 4-2, (1-1, 1-1, 0-0)"
+      ],
+      [
+        "9/13",
+        "7:30 pm",
+        "at Liberty University",
+        "Away - Lynchburg, VA",
+        "OTL 1-0, (1-1-1, 1-1-1, 0-0)"
+      ],
+      [
+        "9/19",
+        "8:30 pm",
+        "Kentucky University",
+        "Home",
+        "Win 4-3, (2-1-1, 2-1-1, 1-0)"
+      ],
+      [
+        "9/20",
+        "10:45",
+        "Kentucky University",
+        "Home",
+        "Win 3-1, (3-1-1, 2-1-1, 2-0)"
+      ],
+      [
+        "9/26",
+        "8:30 pm",
+        "University of Maryland",
+        "Home",
+        "Win 4-1, (4-1-1, 2-1-1, 2-0)"
+      ],
+      [
+        "9/27",
+        "6:30pm",
+        "at Virginia Tech",
+        "Away - Vinton, VA",
+        "Win 5-1, (5-1-1, 2-1-1, 2-0)"
+      ],
+      [
+        "10/4",
+        "7:15 pm",
+        "at University of Delaware",
+        "Away - Newark, DE",
+        "Win 4-2, (6-1-1, 3-1-1, 2-0)"
+      ],
+      [
+        "10/5",
+        "2:30 pm",
+        "at University of Delaware",
+        "Away - Newark, DE",
+        "Loss 5-1, (6-2-1, 3-2-1, 2-0)"
+      ],
+      [
+        "10/17",
+        "6:30 pm",
+        "at West Virginia University",
+        "Away - Morgantown, WV",
+        "Win 4-3, (7-2-1, 4-2-1, 2-0)"
+      ],
+      [
+        "10/18",
+        "2:30 pm",
+        "at West Virginia University",
+        "Away - Morgantown, WV",
+        "Win 5-4,\u00a0 (8-2-1, 5-2-1, 2-0)"
+      ],
+      [
+        "10/24",
+        "8:00 pm",
+        "UNC Chapel Hill",
+        "Home",
+        "Win 4-1, (9-2-1, 6-2-1, 3-0)"
+      ],
+      [
+        "10/25",
+        "2:00",
+        "at UNC Chapel Hill",
+        "Away - Greensboro, NC",
+        "Loss 3-2, (9-3-1, 6-3-1, 3-1)"
+      ],
+      [
+        "11/6",
+        "7:00pm CDT",
+        "at University of Alabama",
+        "Away - Pelham, AL",
+        "Win 3-2, (10-3-1, 7-3-1, 3-1)"
+      ],
+      [
+        "11/7",
+        "3:00pm CDT",
+        "at University of Alabama",
+        "Away - Pelham, AL",
+        "Win 7-4, (11-3-1, 8-3-1, 4-1)"
+      ],
+      [
+        "11/14",
+        "8:30 pm",
+        "University of Alabama",
+        "Home",
+        "Win 4-3, (12-3-1, 9-3-1, 5-1)"
+      ],
+      [
+        "11/15",
+        "7:00 pm",
+        "University of Alabama",
+        "Home - Truist Field",
+        "Loss 4-2 (12-4-1, 9-4-1, 5-1)"
+      ],
+      [
+        "11/21",
+        "8:30 pm",
+        "George Mason University",
+        "Home",
+        "Loss 3-1 (12-5-1, 9-5-1, 5-1)"
+      ],
+      [
+        "11/23",
+        "5:00 pm",
+        "Governor's Cup",
+        "Lenovo Center, Raleigh, NC",
+        "Win 7-0 (13-5-1, 10-5-1, 5-1)"
+      ],
+      [
+        "1/3/26",
+        "7:00 pm CDT",
+        "at University of Mary",
+        "Away - Bismarck, ND",
+        "Loss 4-1"
+      ],
+      [
+        "1/4/26",
+        "2:00 pm CDT",
+        "at University of Mary",
+        "Away - Bismarck, ND",
+        "Loss 6-3"
+      ],
+      [
+        "1/5/26",
+        "3:00 pm CDT",
+        "at University of Jamestown",
+        "Away - Jamestown, ND",
+        "Loss 7-2 (13-8-1, 10-8-1, 5-1)"
+      ],
+      [
+        "1/9/26",
+        "8:30 pm",
+        "Temple University",
+        "Home",
+        "Win 3-1, (14-8-1, 11-8-1, 5-1)"
+      ],
+      [
+        "1/10/26",
+        "11:15 PM",
+        "West Chester University",
+        "Home",
+        "Loss 8-4 (14-9-1, 11-9-1, 5-1)"
+      ],
+      [
+        "1/16/26",
+        "8:30 pm",
+        "United States Naval Academy",
+        "Home",
+        "Win 5-0, (15-9-1, 12-9-1, 5-1)"
+      ],
+      [
+        "1/17/26",
+        "1:30 PM",
+        "United States Naval Academy",
+        "Home - Fort Bragg",
+        "Loss 6-2, (15-10-1, 12-10-1, 5-1)"
+      ],
+      [
+        "1/23/26",
+        "8:00 pm",
+        "University of Oregon",
+        "Home",
+        "Win 7-4, (16-10-1, 13-10-1, 5-1)"
+      ],
+      [
+        "1/24/26",
+        "3:30 pm",
+        "University of Oregon",
+        "Home",
+        "Win 4-2, (17-10-1, 14-10-1, 5-1"
+      ],
+      [
+        "2/13/26",
+        "8pm",
+        "at University of Louisville",
+        "Away - Louisville, KY",
+        "Loss 4-2,\u00a0\u00a0(17-11-1, 14-11-1, 5-2)"
+      ],
+      [
+        "2/14/26",
+        "9pm",
+        "at University of Louisville",
+        "Away - Louisville, KY",
+        "Win 8-1,\u00a0\u00a0(18-11-1, 15-11-1, 6-2)"
+      ],
+      [
+        "2/19/26",
+        "8:15pm",
+        "Senior Night vs UNC Chapel Hill(rescheduled from 1/30/26)",
+        "Home",
+        "Win 4-0, (19-11-1, 16-11-1, 6-2)"
+      ],
+      [
+        "2/27/26",
+        "11:00 am",
+        "vs. Delaware, ACCHL Playoffs",
+        "Wilmington, DE",
+        "Delaware Hockey Network"
+      ]
+    ]
+  },
+  {
+    "season_title": "2024-2025 SCHEDULE (Overall: 21-9-3)",
+    "games_count": 35,
+    "games": [
+      [
+        "Date",
+        "Time",
+        "Opponent",
+        "Location",
+        "Result/Record(Overall, ACHA D2, ACCHL)"
+      ],
+      [
+        "9/6",
+        "8:15pm",
+        "High Point University",
+        "Home",
+        "W 8-2 (1-0)"
+      ],
+      [
+        "9/13",
+        "7:30pm",
+        "at Virginia Tech University",
+        "Away - Vinton, VA",
+        "W 3-2 (2-0)"
+      ],
+      [
+        "9/20",
+        "7:30pm",
+        "at Rowan University",
+        "Away - Sewell, NJ",
+        "W 7-3 (3-0)"
+      ],
+      [
+        "9/21",
+        "8:00pm",
+        "at Rowan University",
+        "Away - Sewell, NJ",
+        "W 6-3 (4-0, 1-0)"
+      ],
+      [
+        "9/27",
+        "8:15pm",
+        "University of South Carolina",
+        "Home",
+        "W 4-3 (5-0, 1-0)"
+      ],
+      [
+        "10/4",
+        "8:15pm",
+        "Rider University",
+        "Home",
+        "W 5-3 (6-0, 1-0)"
+      ],
+      [
+        "10/5",
+        "9:00pm",
+        "University of Alabama M1",
+        "Home",
+        "W 5-2 (7-0, 6-0, 1-0)"
+      ],
+      [
+        "10/11",
+        "8:15pm",
+        "UNC Chapel Hill",
+        "Home",
+        "SOL 6-5 (7-1, 6-0-1, 1-0)"
+      ],
+      [
+        "10/18",
+        "8:15pm",
+        "University of New Hampshire",
+        "Home",
+        "L 4-3 (7-2,\u00a0 6-1-1, 1-0)"
+      ],
+      [
+        "10/19",
+        "9:30pm",
+        "Bowling Green State University",
+        "Home",
+        "W 7-0 (8-2, 7-1-1, 1-0)"
+      ],
+      [
+        "10/20",
+        "11:30am",
+        "University of Louisville",
+        "Home",
+        "OTL 5-4 (8-3, 7-2-1, 1-0)"
+      ],
+      [
+        "10/25",
+        "8:15pm",
+        "Penn State University",
+        "Home",
+        "OTW 4-3 (9-3, 8-2-1, 2-0)"
+      ],
+      [
+        "10/26",
+        "8:55pm",
+        "Penn State University",
+        "Home",
+        "L 4-1 (9-4, 8-3-1, 2-1)"
+      ],
+      [
+        "11/2",
+        "6:00pm",
+        "Rider University at ACCHL Showcase",
+        "The St. James, Springfield, VA",
+        "W 12-3 (10-4, 9-3-1, 3-1)"
+      ],
+      [
+        "11/3",
+        "5:00pm",
+        "University of Maryland at ACCHL Showcase",
+        "The St. James, Springfield, VA",
+        "W 3-2 (11-4, 10-3-1, 4-1)"
+      ],
+      [
+        "11/8",
+        "8:15pm",
+        "Michigan State University",
+        "Home",
+        "W 4-2 (12-4, 11-3-1, 3-1)"
+      ],
+      [
+        "11/15",
+        "8:40pm",
+        "at University of Maryland",
+        "Away",
+        "W 5-3 (13-4, 12-3-1, 4-1)"
+      ],
+      [
+        "11/16",
+        "8:10pm",
+        "at George Mason University M1",
+        "Away - Woodbridge, VA",
+        "L 7-4 (13-5, 12-3-1, 4-1)"
+      ],
+      [
+        "11/23",
+        "7:00pm",
+        "University of South Carolina",
+        "Truist Field, Charlotte, NC",
+        "L 6-2, 13-6, 12-4-1, 4-1)"
+      ],
+      [
+        "11/24",
+        "2:00pm",
+        "United States Military Academy",
+        "Fort Liberty, NC",
+        "OTW 6-5 (14-6, 13-4-1, 4-1)"
+      ],
+      [
+        "12/6",
+        "9:30pm",
+        "UNC Wilmington",
+        "Home",
+        "W 9-3 (15-6, 14-4-1, 5-1)"
+      ],
+      [
+        "12/7",
+        "10:00pm",
+        "at UNC Wilmington",
+        "Away - Wilmington, NC",
+        "W 5-1 (16-6, 15-4-1, 6-1)"
+      ],
+      [
+        "1/10",
+        "8:00pm",
+        "University of Delaware",
+        "Home",
+        "W 9-1 (17-6, 16-4-1, 7-1)"
+      ],
+      [
+        "1/11",
+        "11:10pm",
+        "University of Delaware",
+        "Home",
+        "W 3-1 (18-6, 17-4-1, 8-1)"
+      ],
+      [
+        "1/13",
+        "7:00pm",
+        "Carolina Hurricanes Alumni",
+        "Lenovo Center, Raleigh, NC",
+        "W 7-6"
+      ],
+      [
+        "1/16",
+        "9:30pm",
+        "at Liberty University",
+        "Away - Lynchburg, VA",
+        "SOL 3-2 (18-7, 17-4-2, 8-1)"
+      ],
+      [
+        "1/17",
+        "8:15pm",
+        "Liberty University",
+        "Home",
+        "OTL 5-4 (18-8, 17-5-2, 8-1)"
+      ],
+      [
+        "1/24",
+        "8:15pm",
+        "Virginia Tech University",
+        "Home",
+        "OTL 6-5 (18-9, 17-6-2, 8-2)"
+      ],
+      [
+        "1/25",
+        "TBD",
+        "at Virginia Tech University",
+        "Away - Vinton, VA",
+        "W 5-2 (19-9, 18-6-2, 9-2)"
+      ],
+      [
+        "1/31",
+        "8:15pm",
+        "UNC Chapel Hill",
+        "Home",
+        "OTL 3-2 (19-10, 18-7-2, 9-3)"
+      ],
+      [
+        "2/2",
+        "5:00pm",
+        "UNC Chapel Hill",
+        "Lenovo Center",
+        "W 4-1 (20-10, 19-7-2, 9-3)"
+      ],
+      [
+        "2/7",
+        "6:00pm",
+        "Rowan University - ACCHL Playoffs",
+        "Fairgrounds Annex, Winston-Salem, NC",
+        "W\u00a0 6-2 (21-10, 20-7-2, 9-3)"
+      ],
+      [
+        "2/8",
+        "6:00pm",
+        "Virginia Tech - ACCHL Semifinals",
+        "Fairgrounds Annex, Winston-Salem, NC",
+        "L 4-2 (21-11, 20-8-2, 9-3)"
+      ],
+      [
+        "2/22",
+        "7:45pm CST",
+        "University of Miami-Ohio\u200bACHA Regional Semi-final",
+        "Evansville, IN",
+        "OTL 6-5 (21-12, 20-9-3, 9-3)"
+      ]
+    ]
+  },
+  {
+    "season_title": "2023-2024 Schedule (Overall: 20-12-3)",
+    "games_count": 36,
+    "games": [
+      [
+        "Date",
+        "Time",
+        "Opponent",
+        "Location",
+        "Result/Record(Overall, ACHA D2, ACCHL)"
+      ],
+      [
+        "9/8/23",
+        "8pm",
+        "East Carolina University",
+        "Home",
+        "W 17-3(1-0-0, 1-0-0, 0-0-0)"
+      ],
+      [
+        "9/15/23",
+        "7pm",
+        "Liberty University M1",
+        "Away",
+        "L 7-2(1-1-0, 1-0-0, 0-0-0)"
+      ],
+      [
+        "9/22/23",
+        "8pm",
+        "University of Kentucky",
+        "Home",
+        "L 5-2\u200b(1-2-0, 1-1-0, 0-1-0)"
+      ],
+      [
+        "9/29/23",
+        "9:30pm",
+        "Penn State",
+        "Away",
+        "W 3-1\u200b(2-2-0, 2-1-0, 0-0-0)"
+      ],
+      [
+        "9/30/23",
+        "6:30pm",
+        "Penn State",
+        "Away",
+        "L 4-2(2-3-0, 2-2-0, 0-0-0)"
+      ],
+      [
+        "10/5/23",
+        "9pm",
+        "Liberty University",
+        "Home",
+        "W 5-3\u200b(3-3-0, 3-2-0, 0-0-0)"
+      ],
+      [
+        "10/6/23",
+        "10:15pm",
+        "Liberty University",
+        "Away",
+        "L 2-1\u200b(3-4-0, 3-3-0, 0-0-0)"
+      ],
+      [
+        "10/12/23",
+        "9pm",
+        "UNC Wilmington",
+        "Home",
+        "W 8-2(4-4-0, 4-3-0, 1-0-0)"
+      ],
+      [
+        "10/20/23",
+        "7pm",
+        "University of Louisville",
+        "Away\u200bLouisville, KY",
+        "W\u200b(5-4-0, 5-3-0, 1-0-0)"
+      ],
+      [
+        "10/21/23",
+        "5pm",
+        "University of Kentucky",
+        "AwayLouisville, KY",
+        "L 8-3(5-5-0, 5-4-0, 1-0-0)"
+      ],
+      [
+        "10/22/23",
+        "10am",
+        "Indiana University",
+        "AwayLouisville, KY",
+        "L 3-1\u200b(5-6-0, 5-5-0, 1-0-0)"
+      ],
+      [
+        "10/27/23",
+        "8pm",
+        "UNC Chapel Hill",
+        "Home",
+        "OTW 5-4\u200b(6-6-0, 6-5-0, 1-0-0)"
+      ],
+      [
+        "11/3/23",
+        "7:30pm",
+        "Penn State",
+        "Away - St. JamesSpringfield, VA",
+        "L 3-2\u200b(6-7-0, 6-6-0, 2-1-0)"
+      ],
+      [
+        "11/4/23",
+        "7pm",
+        "University of Maryland",
+        "Away - St. JamesSpringfield, VA",
+        "L 3-2\u200b(6-8-0, 6-7-0, 2-2-0)"
+      ],
+      [
+        "11/5/23",
+        "2:30pm",
+        "Rowan University",
+        "Away - St. JamesSpringfield, VA",
+        "L 2-1(6-9-0, 6-8-0, 2-3-0)"
+      ],
+      [
+        "11/10/23",
+        "8pm",
+        "Texas A&M University",
+        "Home",
+        "W 5-2(7-9-0, 7-8-0, 2-3-0)"
+      ],
+      [
+        "11/11/23",
+        "7:45pm",
+        "Texas A&M University",
+        "Home",
+        "W 8-2(8-9-0, 8-8-0, 2-3-0)"
+      ],
+      [
+        "11/17/23",
+        "8pm",
+        "University of Maryland",
+        "Home",
+        "W 6-4\u200b(9-9-0, 9-8-0, 2-3-0)"
+      ],
+      [
+        "11/20/23",
+        "7pm",
+        "Governor's Cup vs UNC Chapel Hill",
+        "PNC Arena",
+        "L 5-3(9-10-0, 9-9-0, 2-3-0)"
+      ],
+      [
+        "1/5/24",
+        "8pm",
+        "Rowan University",
+        "Home",
+        "W 4-0(10-10-0, 10-9-0, 2-3-0)"
+      ],
+      [
+        "1/6/24",
+        "7:45pm",
+        "Rowan University",
+        "Home",
+        "L 1-0(10-11-0, 10-10-0, 2-3-0)"
+      ],
+      [
+        "1/12/24",
+        "8:30pm",
+        "University of Delaware",
+        "AwayNewark, DE",
+        "W 5-4(11-11-0, 11-10-0, 2-3-0)"
+      ],
+      [
+        "1/13/24",
+        "3:45pm",
+        "University of Delaware",
+        "Away\u200bNewark, DE",
+        "W 8-0(12-11-0, 12-10-0, 3-3-0)"
+      ],
+      [
+        "1/19/24",
+        "8pm",
+        "Wake Forest University",
+        "Home",
+        "W 7-2(13-11-0, 13-10-0, 3-3-0)"
+      ],
+      [
+        "1/20/24",
+        "12:30pm",
+        "Wake Forest University",
+        "Away\u200bWinston-Salem, NC",
+        "W 7-4(14-11-0, 14-10-0, 3-3-0)"
+      ],
+      [
+        "1/26/24",
+        "8pm",
+        "Virginia Tech",
+        "Home",
+        "W 3-2\u200b(15-11-0, 15-10-0, 4-3-0)"
+      ],
+      [
+        "1/27/24",
+        "6:30pm",
+        "Virginia Tech",
+        "AwayVinton, VA",
+        "OTL 3-2(15-12-0, 15-11, 4-3-1)"
+      ],
+      [
+        "1/30/24",
+        "8:15pm",
+        "UNC Wilmington",
+        "Away\u200bWilmington, NC",
+        "OTW 4-3(16-12-0, 16-11-0, 5-3-1)"
+      ],
+      [
+        "2/2/24",
+        "8:50pm",
+        "UNC Chapel Hill",
+        "Home",
+        "OTL 3-2\u200b(16-13-0, 16-12-0, 5-3-2)"
+      ],
+      [
+        "2/5/24",
+        "7pm",
+        "Carolina Classic vs UNC Chapel Hill",
+        "PNC Arena",
+        "W 6-2\u200b(17-13-0, 17-12-0, 6-3-2)"
+      ],
+      [
+        "2/9/24",
+        "10:15pm",
+        "Virginia Tech\u200bACCHL Quarterfinals",
+        "Away\u200bWinston-Salem, NC",
+        "W 4-2(18-13-0, 18-12-0, 7-3-2)"
+      ],
+      [
+        "2/10/24",
+        "6pm",
+        "Rowan University\u200bACCHL Semifinals",
+        "Away\u200bWinston-Salem, NC",
+        "OTL 3-2(18-14-0, 18-13-0, 7-3-3)"
+      ],
+      [
+        "2/23/24",
+        "2:45pm",
+        "Rowan UniversityACHA Southeast Regional, Rd1",
+        "Athens, OH",
+        "W 3-1(19-14-0, 19-13-0)"
+      ],
+      [
+        "2/24/24",
+        "8:45pm",
+        "Ohio UniversityACHA Southeast Regional, Rd2",
+        "Athens, OH",
+        "W 4-2\u200b(20-14-0, 20-13-0)"
+      ],
+      [
+        "2/25/24",
+        "4pm",
+        "Indiana UniversityACHA Southeast Regional, Final Rd",
+        "Athens, OH",
+        "L 5-2\u200b(20-15, 20-14)"
+      ]
+    ]
+  },
+  {
+    "season_title": "2022-2023 Schedule (Overall: 17-13-3)",
+    "games_count": 34,
+    "games": [
+      [
+        "Date",
+        "Time",
+        "Opponent",
+        "Location",
+        "Result/Record(Overall, ACHA D2, ACCHL)"
+      ],
+      [
+        "9/16/22",
+        "7pm",
+        "Liberty University D1",
+        "AwayLynchburg, VA",
+        "L 9-3(0-1-0)"
+      ],
+      [
+        "9/23/22",
+        "8:15pm",
+        "Drexel University",
+        "Home",
+        "W 7-1(1-1-0, 1-0-0)"
+      ],
+      [
+        "9/30/22",
+        "8:15pm",
+        "UNC Chapel Hill",
+        "Home",
+        "L 5-3\u200b(1-2-0, 1-1-0, 0-1-0)"
+      ],
+      [
+        "10/7/22",
+        "12am",
+        "University of Kentucky",
+        "Away",
+        "Tie 2-2\u200b(1-2-1, 1-1-1, 0-1-0)"
+      ],
+      [
+        "10/8/22",
+        "",
+        "University of Louisville",
+        "Away",
+        "W 4-3(2-2-1, 2-1-1, 0-1-0)"
+      ],
+      [
+        "10/13/22",
+        "9pm",
+        "University of Mary",
+        "Home",
+        "L 4-0\u200b(2-3-1, 2-2-1, 0-1-0)"
+      ],
+      [
+        "10/14/22",
+        "8:15pm",
+        "UNC Wilmington",
+        "Home",
+        "W 4-1\u200b(3-3-1, 3-2-1, 1-1-0)"
+      ],
+      [
+        "10/21/22",
+        "9pm",
+        "Indiana University",
+        "AwayVinton, VA",
+        "L 6-5\u200b(3-4-1, 3-3-1, 1-1-0)"
+      ],
+      [
+        "10/22/22",
+        "4:30pm",
+        "University of Louisville",
+        "Away\u200bVinton, VA",
+        "W 4-2(4-4-1, 4-3-1, 1-1-0)"
+      ],
+      [
+        "10/23/22",
+        "2:30pm",
+        "Ohio State University",
+        "AwayVinton, VA",
+        "L 1-0\u200b(4-5-1, 4-4-1, 1-1-0)"
+      ],
+      [
+        "11/4/22",
+        "7pm",
+        "Penn State University(Fall ACC Tournament)",
+        "Away - St. JamesSpringfield, VA",
+        "W 4-1(5-5-1, 5-4-1, 2-1-0)"
+      ],
+      [
+        "11/5/22",
+        "7pm",
+        "University of Maryland\u200b(Fall ACC Tournament)",
+        "Away - St. James\u200bSpringfield, VA",
+        "OTL 4-3(5-5-2, 5-4-2, 2-1-0)"
+      ],
+      [
+        "11/6/22",
+        "2:30pm",
+        "Rowan University\u200b(Fall ACC Tournament)",
+        "Away - St. JamesSpringfield, VA",
+        "L 5-0(5-6-2, 5-5-2, 2-2-0)"
+      ],
+      [
+        "11/11/22",
+        "2:30pm",
+        "Liberty University(Wagon Wheel Trophy Series)",
+        "Away",
+        "L 5-4\u200b(5-7-2, 5-6-2, 2-2-0)"
+      ],
+      [
+        "11/12/22",
+        "8:35pm",
+        "Liberty University\u200b(Wagon Wheel Trophy Series)",
+        "Home",
+        "OTL 2-1(5-7-3, 5-7-2, 2-2-0)"
+      ],
+      [
+        "11/18/22",
+        "8:15pm",
+        "University of Cincinnati",
+        "Home",
+        "L 6-3(5-8-3, 5-8-2, 2-2-0)"
+      ],
+      [
+        "11/19/22",
+        "8:35pm",
+        "University of Cincinnati",
+        "Home",
+        "W(6-8-3, 6-8-2, 2-2-0)"
+      ],
+      [
+        "11/21/22",
+        "7pm",
+        "Governor's Cup vs UNC Chapel Hill",
+        "PNC Arena",
+        "L 4-2(6-9-3, 6-9-2, 2-2-0)"
+      ],
+      [
+        "1/5/23",
+        "7:40pm",
+        "Lindenwood University",
+        "AwaySt. Louis, MO",
+        "L 7-1(6-10-3, 6-10-2, 2-2-0)"
+      ],
+      [
+        "1/6/23",
+        "8:20pm",
+        "Davenport University",
+        "Away\u200bSt. Louis, MO",
+        "W 5-2\u200b(7-10-3, 7-10-2, 2-2-0)"
+      ],
+      [
+        "1/7/23",
+        "12:40pm",
+        "Trine University",
+        "AwaySt. Louis, MO",
+        "OTW 3-2\u200b(8-10-3, 8-10-2, 2-2-0)"
+      ],
+      [
+        "1/13/23",
+        "8:15pm",
+        "University of Delaware",
+        "Home",
+        "W 7-3(9-10-3, 9-10-2, 2-2-0)"
+      ],
+      [
+        "1/14/23",
+        "8pm",
+        "University of Delaware",
+        "Home",
+        "W 3-2(10-10-3, 10-10-2, 2-2-0)"
+      ],
+      [
+        "1/20/23",
+        "6:15pm",
+        "Wake Forest University",
+        "Away - Winston-Salem, NC",
+        "W 13-4\u200b(11-10-3, 11-10-2, 2-2-0)"
+      ],
+      [
+        "1/27/23",
+        "8:15pm",
+        "Virginia Tech",
+        "Home",
+        "W 6-4(12-10-3, 12-10-2, 3-2-0)"
+      ],
+      [
+        "1/28/23",
+        "7:45pm",
+        "Virginia Tech",
+        "Away\u200bLynchburg, VA",
+        "W 5-4(13-10-3, 13-10-2, 4-2-0)"
+      ],
+      [
+        "2/1/23",
+        "8pm",
+        "UNC Wilmington",
+        "Away\u200bWilmington, NC",
+        "W 3-2(14-10-3, 14-10-2, 5-2-0)"
+      ],
+      [
+        "2/3/23",
+        "8:15pm",
+        "UNC Chapel Hill",
+        "Home",
+        "L 3-1\u200b(14-11-3, 14-11-2, 5-2-0)"
+      ],
+      [
+        "2/4/23",
+        "3:45pm",
+        "UNC Chapel Hill",
+        "Away - OCSCHillsborough, NC",
+        "W 5-3(15-11-3, 15-11-2, 5-2-0)"
+      ],
+      [
+        "2/10/23",
+        "3pm",
+        "Virginia Tech\u200bACCHL Premier Playofs",
+        "Winston-Salem, NC",
+        "W 9-1(16-11-3, 16-11-2, 6-2-0)"
+      ],
+      [
+        "2/11/23",
+        "3pm",
+        "Penn State\u200bACCHL Premier Semifinal",
+        "Winston-Salem, NC",
+        "L 1-0\u200b(16-12-3, 16-12-2, 6-2-0)"
+      ],
+      [
+        "2/20/23",
+        "7pm",
+        "Frozen Finley vs UNC Chapel Hill",
+        "Carter-Finley Stadium",
+        "W 7-3\u200b(17-12-3, 17-12-2, 6-2)"
+      ],
+      [
+        "2/24/23",
+        "10pm",
+        "UNC Chapel HillACHA Southeast Regional",
+        "Springfield, VA",
+        "L 6-3(17-13-3, 17-13-2, 6-2)"
+      ]
+    ]
+  },
+  {
+    "season_title": "2021-2022 Schedule (Overall: 25-4-1)",
+    "games_count": 31,
+    "games": [
+      [
+        "Date",
+        "Time",
+        "Opponent",
+        "Location",
+        "Result/Record(Overall, ACHA D2, ACCHL)"
+      ],
+      [
+        "9/17/21",
+        "7:45pm",
+        "UNC Chapel Hill",
+        "Home",
+        "W 10-3(1-0-0, 1-0-0)"
+      ],
+      [
+        "9/18/21",
+        "10pm",
+        "Liberty University D1",
+        "AwayLynchburg, VA",
+        "L 8-4\u200b(1-1-0, 1-0-0)"
+      ],
+      [
+        "10/1/21",
+        "7:45pm",
+        "Stevenson University",
+        "Home",
+        "W 12-0(2-1-0, 2-0-0)"
+      ],
+      [
+        "10/8/21",
+        "6:15pm",
+        "University of Delaware",
+        "Away",
+        "W 6-4(3-1-0, 3-0-0)"
+      ],
+      [
+        "10/9/21",
+        "5:30pm",
+        "University of Delaware",
+        "Away",
+        "W 7-1\u200b(4-1-0, 4-0-0)"
+      ],
+      [
+        "10/22/21",
+        "7:45pm",
+        "University of Kentucky",
+        "Home",
+        "W 6-2\u200b(5-1-0, 5-0-0)"
+      ],
+      [
+        "10/23/21",
+        "8:05pm",
+        "University of Kentucky",
+        "Home",
+        "W 8-5\u200b(6-1-0, 6-0-0)"
+      ],
+      [
+        "10/29/21",
+        "7:45pm",
+        "Penn State University",
+        "Home",
+        "W 3-2(7-1-0, 7-0-0)"
+      ],
+      [
+        "11/5/21",
+        "7:45pm",
+        "UNC Chapel Hill",
+        "Home",
+        "W 5-2(8-1-0, 8-0-0, 1-0-0)"
+      ],
+      [
+        "11/7/21",
+        "",
+        "UNC Wilmington",
+        "Away\u200bFayetteville, NC",
+        "W 7-1(9-1-0, 9-0-0, 1-0-0)"
+      ],
+      [
+        "11/12/21",
+        "9:50am",
+        "St. Joseph's University(Fall ACC Tournament)",
+        "Away - St. JamesSpringfield, VA",
+        "W 7-2\u200b(10-1-0, 10-0-0, 2-0-0)"
+      ],
+      [
+        "11/13/21",
+        "5:40pm",
+        "George Washington University\u200b(Fall ACC Tournament)",
+        "Away - St. James\u200bSpringfield, VA",
+        "W 9-2\u200b(11-1-0, 11-0-0, 3-0-0)"
+      ],
+      [
+        "11/14/21",
+        "10:40am",
+        "University of Virginia\u200b(Fall ACC Tournament)",
+        "Away - St. JamesSpringfield, VA",
+        "W 5-2(12-1-0, 12-0-0, 4-0-0)"
+      ],
+      [
+        "11/19/21",
+        "8pm",
+        "University of Cincinnati",
+        "Away",
+        "W 7-1\u200b(13-1-0, 13-0-0, 4-0-0)"
+      ],
+      [
+        "11/20/21",
+        "4:45pm",
+        "University of Cincinnati",
+        "Away",
+        "W 8-3(14-1-0, 14-0-0, 4-0-0)"
+      ],
+      [
+        "11/29/21",
+        "7pm",
+        "Governor's Cup vs UNC Chapel Hill",
+        "PNC Arena",
+        "W 8-4\u200b(15-1-0, 15-0-0, 5-0-0)"
+      ],
+      [
+        "1/7/22",
+        "7:45pm",
+        "Liberty University(Wagon Wheel Trophy Series)",
+        "Home",
+        "L 4-3(15-2-0, 15-1-0, 5-0-0)"
+      ],
+      [
+        "1/8/22",
+        "7:30pm",
+        "Liberty University\u200b(Wagon Wheel Trophy\u00a0 Series)",
+        "Away\u200bLynchburg, VA",
+        "W 5-2(16-2-0, 16-1-0, 5-0-0)"
+      ],
+      [
+        "1/14/22",
+        "7:45pm",
+        "University of Louisville",
+        "Home",
+        "W 5-1\u200b(17-2-0, 17-1-0, 5-0-0)"
+      ],
+      [
+        "1/15/22",
+        "7:15pm",
+        "University of Louisville",
+        "Home",
+        "W 9-0\u200b(18-2-0, 18-1-0, 5-0-0)"
+      ],
+      [
+        "1/21/22",
+        "7:45pm",
+        "Virginia Tech",
+        "Home",
+        "SOW 4-3\u200b(19-2-0, 19-1-0, 6-0-0)"
+      ],
+      [
+        "1/28/22",
+        "7:45pm",
+        "UNC Wilmington",
+        "Home",
+        "W 8-2\u200b(20-2-0, 20-1-0, 7-0-0)"
+      ],
+      [
+        "2/4/22",
+        "7:45pm",
+        "East Carolina University",
+        "Home",
+        "W 8-0(21-2-0, 20-1-0, 8-0-0)"
+      ],
+      [
+        "2/5/22",
+        "1pm",
+        "Wake Forest University",
+        "Away - Winston-Salem, NC",
+        "L 4-3\u200b(21-3-0, 20-2-0, 8-1-0)"
+      ],
+      [
+        "2/9/22",
+        "7:15pm",
+        "UNC Wilmington(Rescheduled from 1/27/22)",
+        "Away",
+        "SOL 3-2\u200b(21-3-1, 20-2-1, 8-1-1)"
+      ],
+      [
+        "2/11/22",
+        "7:45pm",
+        "West Virginia University",
+        "Home",
+        "W 6-0(22-3-1, 21-2-1, 8-1-1)"
+      ],
+      [
+        "2/18/22",
+        "6pm",
+        "UNC WilmingtonACCHL Quarterfinals",
+        "Winston-Salem Fairgrounds, NC",
+        "W 4-1(23-3-1, 22-2-1, 8-1-1)"
+      ],
+      [
+        "2/19/22",
+        "8pm",
+        "Wake Forest UniversityACCHL Semifinals",
+        "Winston-Salem Fairgrounds, NC",
+        "OTW 4-3\u200b(24-3-1, 23-2-1, 8-1-1)"
+      ],
+      [
+        "2/20/22",
+        "1:30pm",
+        "UNC Chapel HillACCHL Championship",
+        "Winston-Salem Fairgrounds, NC",
+        "W 3-0(25-3-1, 24-2-1, 8-1-1)"
+      ],
+      [
+        "2/26/22",
+        "10:30am",
+        "UPennACHA Regionals",
+        "Columbus, OH",
+        "L 4-3(25-4-1, 24-3-1, 8-1-1)"
+      ]
+    ]
+  },
+  {
+    "season_title": "2020-2021 Schedule (ACHA D2: 12-7-1)",
+    "games_count": 21,
+    "games": [
+      [
+        "Date",
+        "Time",
+        "Opponent",
+        "Location",
+        "Result/Record"
+      ],
+      [
+        "10/23/20",
+        "7pm",
+        "Liberty University D1",
+        "Away\u200bLynchburg, VA",
+        "L 7-2\u200b(0-1-0)"
+      ],
+      [
+        "11/6/20",
+        "6:30pm",
+        "Liberty University",
+        "Away\u200bLynchburg, VA",
+        "L 6-2(0-2-0)"
+      ],
+      [
+        "11/7/20",
+        "6:30pm",
+        "Liberty University",
+        "Away\u200bLynchburg, VA",
+        "L 5-1\u200b(0-3-0)"
+      ],
+      [
+        "11/8/20",
+        "1:30pm",
+        "Coastal Hockey Club",
+        "AwayLynchburg, VA",
+        "W 13-1\u200b(1-3-0)"
+      ],
+      [
+        "1/21/21",
+        "7pm",
+        "Dallas Baptist University",
+        "Home -WCC",
+        "W 12-2(2-3-0)"
+      ],
+      [
+        "1/22/21",
+        "7pm",
+        "Dallas Baptist University",
+        "Home -WCC",
+        "W 7-3\u200b(3-3-0)"
+      ],
+      [
+        "1/23/21",
+        "7pm",
+        "Dallas Baptist University",
+        "Home -WCC",
+        "W 7-2\u200b(4-3-0)"
+      ],
+      [
+        "1/29/21",
+        "7pm",
+        "#3 Liberty University",
+        "Home -WCC",
+        "W 5-3\u200b(5-3-0)"
+      ],
+      [
+        "1/30/21",
+        "7pm",
+        "#3 Liberty University",
+        "Away\u200bLynchburg, VA",
+        "Tie 1-1, SOL\u200b(5-3-1)"
+      ],
+      [
+        "2/5/21",
+        "7pm",
+        "#8 East Texas Baptist University",
+        "Home -WCC",
+        "W 12-1\u200b(6-3-1)"
+      ],
+      [
+        "2/12/21",
+        "8:30pm",
+        "#7 Florida Gulf Coast Unviersity",
+        "Away\u200bGermain Arena",
+        "L 5-1\u200b(6-4-1)"
+      ],
+      [
+        "2/13/21",
+        "8:30pm",
+        "#7 Florida Gulf Coast University",
+        "Away\u200bGermain Arena",
+        "W 2-1\u200b(7-4-1)"
+      ],
+      [
+        "2/26/21",
+        "7pm",
+        "Coastal Hockey Club",
+        "Home - WCC",
+        "W 14-0\u200b(8-4-1)"
+      ],
+      [
+        "2/27/21",
+        "4:30pm",
+        "Coastal Hockey Club",
+        "Away - OCSC\u200bHillsborough, NC",
+        "W 11-1\u200b(9-4-1)"
+      ],
+      [
+        "3/5/21",
+        "7pm",
+        "Florida Gulf Coast University",
+        "Home - WCC",
+        "L 3-1\u200b(9-5-1)"
+      ],
+      [
+        "3/6/21",
+        "7pm",
+        "Florida Gulf Coast University",
+        "Home -WCC",
+        "L 6-2(9-6-1)"
+      ],
+      [
+        "3/21/21",
+        "3:30pm",
+        "Virginia Tech - ACCHL Championships",
+        "Winston-Salem Fairgrounds, NC",
+        "W 8-3\u200b(10-6-1)"
+      ],
+      [
+        "4/15/21",
+        "1pm CST",
+        "#9 University of Providence, Pool AACHA D2 National Championships",
+        "Away Bismarck, ND",
+        "W 6-4\u200b(11-6-1)"
+      ],
+      [
+        "4/16/21",
+        "1pm CST",
+        "#16 Davenport University, Pool A\u200bACHA D2 National Championships",
+        "AwayBismarck, ND",
+        "W 5-3\u200b(12-6-1)"
+      ],
+      [
+        "4/17/21",
+        "7pm CST",
+        "#1 University of Mary, Pool A\u200bACHA D2 National Championships",
+        "Away\u200bBismarck, ND",
+        "L 5-1\u200b(12-7-1)"
+      ]
+    ]
+  },
+  {
+    "season_title": "2019-2020 Schedule (ACHA D2: 25-4-0)",
+    "games_count": 30,
+    "games": [
+      [
+        "Date",
+        "Time",
+        "Opponent",
+        "Location",
+        "Result/Record"
+      ],
+      [
+        "9/21/19",
+        "3:45pm",
+        "Duke",
+        "Away",
+        "W 14-1\u200b(1-0-0)"
+      ],
+      [
+        "9/27/19",
+        "9:30pm",
+        "East Carolina",
+        "Home - Iceplex",
+        "W 10-2(2-0-0)"
+      ],
+      [
+        "10/4/19",
+        "9:30pm",
+        "Richmond",
+        "Home - Iceplex",
+        "W 16-0\u200b(3-0-0)"
+      ],
+      [
+        "10/11/19",
+        "9:30pm",
+        "MSU - Denver",
+        "Away - Liberty\u200b(Lynchburg, VA)",
+        "L 2-3(3-1-0)"
+      ],
+      [
+        "10/12/19",
+        "4:30pm",
+        "UMass - Lowell",
+        "Away - Liberty\u200b(Lynchburg, VA)",
+        "W 6-2(4-1-0)"
+      ],
+      [
+        "10/13/19",
+        "2:30pm",
+        "Liberty University",
+        "Away - Liberty(Lynchburg, VA)",
+        "W 5-3\u200b(5-1-0)"
+      ],
+      [
+        "10/18/19",
+        "7pm",
+        "Stevenson",
+        "Away",
+        "L 5-2(5-2-0)"
+      ],
+      [
+        "10/19/19",
+        "5:15pm",
+        "St. Joseph's",
+        "Away",
+        "L 2-1(5-3-0)"
+      ],
+      [
+        "10/25/19",
+        "9:30pm",
+        "Elon",
+        "Home - Iceplex",
+        "W 6-1(6-3-0)"
+      ],
+      [
+        "11/1/19",
+        "3:30pm",
+        "UNC Charlotte",
+        "Home - Iceplex",
+        "W 12-5(7-3-0)"
+      ],
+      [
+        "11/2/19",
+        "4:30pm",
+        "UNC Wilmington",
+        "Away",
+        "W 10-2\u200b(8-3-0)"
+      ],
+      [
+        "11/8/19",
+        "6:30pm",
+        "Virginia(Stephen Russell Tournament)",
+        "Away - Charlotte",
+        "W 7-5\u200b(9-3-0)"
+      ],
+      [
+        "11/9/19",
+        "3:30pm",
+        "Georgetown\u200b(Stephen Russell Tournament)",
+        "Away - Charlotte",
+        "W 11-2\u200b(10-3-0)"
+      ],
+      [
+        "11/10/19",
+        "9:30pm",
+        "Virginia Tech\u200b(Stephen Russell Tournament)",
+        "Away - Charlotte",
+        "W 6-4(11-3-0)"
+      ],
+      [
+        "11/15/19",
+        "9:30pm",
+        "Wake Forest",
+        "Home - Iceplex",
+        "W 5-1(12-3-0)"
+      ],
+      [
+        "11/22/19",
+        "7pm",
+        "Wake Forest",
+        "Away - Winston-Salem, NC",
+        "W 4-3\u200b(14-3-0)"
+      ],
+      [
+        "11/25/19",
+        "7pm",
+        "Governor's Cup vs UNC Chapel Hill",
+        "Home - PNC Arena",
+        "W 8-6\u200b(14-3-0)"
+      ],
+      [
+        "1/11/20",
+        "3:45pm",
+        "Elon",
+        "Away",
+        "W 10-0\u200b(15-3-0)"
+      ],
+      [
+        "1/17/20",
+        "9:30pm",
+        "Delaware",
+        "Home - Iceplex",
+        "W 3-1(16-3-0)"
+      ],
+      [
+        "1/18/20",
+        "5:30pm",
+        "Delaware",
+        "Home - Raleigh Center Ice",
+        "W 11-4(17-3-0)"
+      ],
+      [
+        "1/20/20",
+        "7pm",
+        "Backyard Brawl vs UNC Chapel Hill",
+        "Home - PNC Arena",
+        "W 9-3\u200b(18-3-0)"
+      ],
+      [
+        "1/24/20",
+        "7pm",
+        "Virginia",
+        "Away",
+        "W 9-2\u200b(19-3-0)"
+      ],
+      [
+        "1/25/20",
+        "7:10pm",
+        "Richmond",
+        "Away",
+        "W 7-0\u200b(20-3-0)"
+      ],
+      [
+        "2/7/20",
+        "9:30pm",
+        "UNC Wilmington",
+        "Home -Iceplex",
+        "W 7-1\u200b(21-3-0)"
+      ],
+      [
+        "2/8/20",
+        "10pm",
+        "UNC Charlotte",
+        "Away",
+        "W 2-0\u200b(22-3-0)"
+      ],
+      [
+        "2/14/20",
+        "3pm",
+        "UNC Charlotte - ACCHL QF",
+        "Winston-Salem Fairgrounds, NC",
+        "W 16-0\u200b(23-3-0)"
+      ],
+      [
+        "2/15/20",
+        "7:30pm",
+        "Georgetown - ACCHL SF",
+        "Winston-Salem Fairgrounds, NC",
+        "W 5-2\u200b(24-3-0)"
+      ],
+      [
+        "2/16/20",
+        "1pm",
+        "Wake Forest - ACCHL Final",
+        "Winston-Salem Fairgrounds, NC",
+        "W 5-4(25-3-0)"
+      ],
+      [
+        "2/29/20",
+        "2pm",
+        "Wake Forest - Regionals",
+        "Lawrenceville School, Lawrenceville, NJ",
+        "L 2-3(25-4-0)"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "coaches": [
+    {
+      "name": "Nagib Ward",
+      "role": "Head Coach",
+      "image": "a5d8b1fb1a6dfbcb30106051150cbaf6.jpg",
+      "bio": "Took over as head coach ahead of the 2026\u201327 season. Originally from \u00c9vian-les-Bains, France, he grew up playing in France and Switzerland and came up through the Gen\u00e8ve-Servette program. Played professionally for the Flammes Bleues de Reims, Br\u00fbleurs de Loups of Grenoble, and Pingouins de Morzine-Avoriaz. Holds an MSc in Biochemistry from Northern Michigan and an MBA from Marquette."
+    },
+    {
+      "name": "Eric Mura",
+      "role": "Assistant Coach \u00b7 Defense",
+      "image": "d1d227a5a33348fb8eb482f9ac7808b6.jpg",
+      "bio": "Assistant and defensive coach since 2020. Played defense for the IcePack from 2017 to 2019 and was named 2019 ACCHL Tournament MVP. Master of Architecture from NC State."
+    },
+    {
+      "name": "Dwight Collinson",
+      "role": "Assistant Coach",
+      "image": "8ecb61f4eb69dbf7a5474f59fd3898ac.jpg",
+      "bio": "USA Hockey certified Level 5 coach. Coached with Raleigh Youth Hockey Association and Jr. Hurricanes since 2008. Experienced CFO with an MSc in Accounting from Walsh University."
+    },
+    {
+      "name": "Wade Tulk",
+      "role": "Assistant Coach",
+      "image": "",
+      "bio": "NCAA DII national champion at Alabama-Huntsville (24-0-3 record). Former pro player for the Nashville Nighthawks and Huntsville Channel Cats."
+    },
+    {
+      "name": "Alex Rossetto",
+      "role": "Goaltending Coach",
+      "image": "1d38f30e1193258f97a2143d18b14c9c.jpg",
+      "bio": "Goaltending coach since 2016. Directs the 919 Goaltending program developing collegiate and junior netminders."
+    },
+    {
+      "name": "Jess Tart",
+      "role": "Head Equipment Manager",
+      "image": "e7a7eb898dd90358190db08f55a61244.jpg",
+      "bio": "Head equipment manager since 2020. Former IcePack goalie (2016-2020) with NHL visiting-locker-room experience at Lenovo Center."
+    }
+  ],
+  "board": [
+    {
+      "role": "General Manager",
+      "name": "Rick Daniel",
+      "bio": "Took over as General Manager ahead of the 2026\u201327 season, bringing years of business leadership from CAHA and NC State Poole College of Management."
+    },
+    {
+      "role": "Business Development & Alumni Relations",
+      "name": "Brent Plunkett",
+      "bio": "Played for the Icepack from 1998 to 2001. CEO of Charter Wealth Management, longtime donor, and member of the Advisory Board."
+    }
+  ],
+  "media_staff": [
+    {
+      "name": "Kaydee Gawlik",
+      "role": "Director of Creative and Marketing",
+      "image": "00f174fd7e94ac880e4644e32485ad7d.jpg",
+      "bio": "Director of Creative and Marketing since 2025. BA from NC State."
+    },
+    {
+      "name": "Sarah Manasier",
+      "role": "Director of Social Media",
+      "image": "9e8cee13fbfe2f623e5c8d9a005b7f21.jpg"
+    },
+    {
+      "name": "Kaitlyn Alumbaugh",
+      "role": "Director of Social Media Content",
+      "image": "ade6ef544f99c607d9b2230ab05c60cc.jpg"
+    },
+    {
+      "name": "Lily McCabe",
+      "role": "Director of Photography",
+      "image": "749bb3f181e569f8c28a654c5d9e17a8.jpg"
+    },
+    {
+      "name": "Isabelle Nash",
+      "role": "Senior Gameday Coordinator",
+      "image": "fbe4de9cbb26cc7215e8ddcc72dc2601.jpg"
+    },
+    {
+      "name": "Ryan Gibson",
+      "role": "Senior Video Producer",
+      "image": "7216b40deca2c93bf3cd4b9cfaeefc36.jpg"
+    },
+    {
+      "name": "Sage Kimbro",
+      "role": "Beat Writer",
+      "image": "2259388b3dca5f39de16a078e8325a1e.jpg"
+    },
+    {
+      "name": "Alice Walter",
+      "role": "Gameday Coordinator",
+      "image": ""
+    },
+    {
+      "name": "Sam Sanz",
+      "role": "Graphic Designer",
+      "image": "3535918f85315da77e5c8b3fb1254c21.jpg"
+    },
+    {
+      "name": "Jordan Toler",
+      "role": "Marketing Coordinator",
+      "image": "79513e8315bbfd3a8061fe9cd4dcde04.jpg"
+    },
+    {
+      "name": "Madeleine Warren",
+      "role": "Marketing Coordinator",
+      "image": "5a145d54b3af878f4e4298c30292433f.jpg"
+    },
+    {
+      "name": "Alexa Tretola",
+      "role": "Multimedia Content Producer",
+      "image": "50f0e1d3f1b317868add2ab5720b5174.jpg"
+    },
+    {
+      "name": "Alex Manuel",
+      "role": "Photographer",
+      "image": "b27118b6564ee0a643a98bcfd097dd01.jpg"
+    },
+    {
+      "name": "Julia Ortiz",
+      "role": "Photographer",
+      "image": "0fbe829b43c1d91b6acff31803472688.jpg"
+    },
+    {
+      "name": "Holden Kayhko",
+      "role": "Video Producer",
+      "image": "70447335037370a1110c8e0e48639335.jpg"
+    }
+  ],
+  "hockey_ops": [
+    {
+      "name": "Bond Barone",
+      "role": "Assistant Equipment Manager",
+      "image": "b4305679e59f49a2591881a9d18933e5.jpg"
+    },
+    {
+      "name": "Christian Motamen",
+      "role": "Assistant Equipment Manager",
+      "image": "9ca71fad838cb879ccfb4b57f110752c.jpg"
+    },
+    {
+      "name": "Sander Goldshteyn",
+      "role": "Director of Scouting",
+      "image": "8a263306277dc5f9d9a02037a395d361.jpg"
+    },
+    {
+      "name": "Daniel Foley",
+      "role": "EBUG (Emergency Backup Goalie)",
+      "image": "e0c6fa7e067613fba6b4e5f13a2cbf27.jpg"
+    },
+    {
+      "name": "Nate Garofalo",
+      "role": "Video Coordinator & Analyst",
+      "image": "2f4e954e6f38bdacf5267666d0c1ee30.jpg"
+    }
+  ]
+}

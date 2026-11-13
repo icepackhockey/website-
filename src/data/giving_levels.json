@@ -1,0 +1,103 @@
+[
+  {
+    "id": "light-the-lamp",
+    "name": "Light the Lamp",
+    "amount": 25,
+    "amount_display": "$25",
+    "badge": "Fan & Student Entry",
+    "highlight": false,
+    "total_value": "$45 Value",
+    "tagline": "Kick off your support with gameday admission and official Pack gear.",
+    "perks": [
+      { "item": "2 Louisville Game Tickets (Feb 19 or 20, 2027)", "val": "$30" },
+      { "item": "1 Official IcePack T-Shirt", "val": "$15" }
+    ],
+    "donate_url": "https://givebutter.com/"
+  },
+  {
+    "id": "blue-liner",
+    "name": "Blue Liner",
+    "amount": 60,
+    "amount_display": "$60",
+    "badge": "Defenders Circle",
+    "highlight": false,
+    "total_value": "$75 Value",
+    "tagline": "Anchor the blue line with tickets to our biggest rivalry showcases.",
+    "perks": [
+      { "item": "2 Louisville Game Tickets (Feb 19 or 20, 2027)", "val": "$30" },
+      { "item": "1 Official IcePack T-Shirt", "val": "$15" },
+      { "item": "1 Governors Cup Rivalry Ticket", "val": "$30" }
+    ],
+    "donate_url": "https://givebutter.com/"
+  },
+  {
+    "id": "power-player",
+    "name": "Power Player",
+    "amount": 150,
+    "amount_display": "$150",
+    "badge": "Most Popular",
+    "highlight": true,
+    "total_value": "$170 Value",
+    "tagline": "Our premier fan tier: pairs of shirts, spring passes, and rivalry tickets.",
+    "perks": [
+      { "item": "2 Official IcePack T-Shirts", "val": "$30" },
+      { "item": "2 Governors Cup Rivalry Tickets", "val": "$60" },
+      { "item": "2 Spring Game Passes", "val": "$80" }
+    ],
+    "donate_url": "https://givebutter.com/"
+  },
+  {
+    "id": "first-line",
+    "name": "First Line",
+    "amount": 500,
+    "amount_display": "$500",
+    "badge": "Major Booster",
+    "highlight": false,
+    "total_value": "$470 Value",
+    "tagline": "Lock in future hockey with 2 full Season Tickets for the 2027–2028 campaign.",
+    "perks": [
+      { "item": "2 Official IcePack T-Shirts", "val": "$30" },
+      { "item": "2 Governors Cup Rivalry Tickets", "val": "$60" },
+      { "item": "2 Spring Game Passes", "val": "$80" },
+      { "item": "2 Season Tickets for 2027–2028 Season", "val": "$300" }
+    ],
+    "donate_url": "https://givebutter.com/"
+  },
+  {
+    "id": "captain",
+    "name": "Captain",
+    "amount": 1200,
+    "amount_display": "$1,200",
+    "badge": "Leadership Circle",
+    "highlight": false,
+    "total_value": "$1,190 Value",
+    "tagline": "Leadership-level impact: 4 season tickets plus in-arena credits at all 10 home games.",
+    "perks": [
+      { "item": "4 Official IcePack T-Shirts", "val": "$60" },
+      { "item": "4 Governors Cup Rivalry Tickets", "val": "$120" },
+      { "item": "4 Spring Game Passes", "val": "$160" },
+      { "item": "4 Season Tickets for 2027–2028 Season", "val": "$600" },
+      { "item": "$250 In-Arena Credit ($25 per game at all 10 Lane Arena home games; usable at Red & White Shop or Cafe by Tribeca Tavern)", "val": "$250" }
+    ],
+    "donate_url": "https://givebutter.com/"
+  },
+  {
+    "id": "1976-club",
+    "name": "1976 Club",
+    "amount": 1976,
+    "amount_display": "$1,976",
+    "badge": "Founding Circle · 50th Season",
+    "highlight": true,
+    "total_value": "$1,890 Value",
+    "tagline": "Our highest distinction honoring the 1976 inaugural season. Includes 4 authentic team jerseys and VIP in-game credits.",
+    "perks": [
+      { "item": "4 Official Authentic Team Jerseys", "val": "$700" },
+      { "item": "4 Official IcePack T-Shirts", "val": "$60" },
+      { "item": "4 Governors Cup Rivalry Tickets", "val": "$120" },
+      { "item": "4 Spring Game Passes", "val": "$160" },
+      { "item": "4 Season Tickets for 2027–2028 Season", "val": "$600" },
+      { "item": "$250 In-Arena Credit ($25 per game at all 10 Lane Arena home games; usable at Red & White Shop or Cafe by Tribeca Tavern)", "val": "$250" }
+    ],
+    "donate_url": "https://givebutter.com/"
+  }
+]

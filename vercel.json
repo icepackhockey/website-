@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/api/acha-live/:path*",
+      "destination": "https://lscluster.hockeytech.com/feed/index.php?:path*"
+    }
+  ]
+}
