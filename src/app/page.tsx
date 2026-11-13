@@ -1647,25 +1647,37 @@ export default function IcePackApp() {
                                       {game.result}
                                     </span>
                                   </div>
-                                  <button
-                                    onClick={() => {
-                                      if ((game as any).recap_article_id) {
-                                        const article = newsData.find(
-                                          (a) => a.id === (game as any).recap_article_id
-                                        );
-                                        if (article) {
-                                          setSelectedArticle(article);
-                                        }
-                                      } else {
-                                        setSelectedArticle(null);
-                                      }
-                                      setActiveTab("news");
-                                      window.scrollTo({ top: 0, behavior: "smooth" });
-                                    }}
-                                    className="px-3 py-1.5 bg-gray-100 hover:bg-[#e10600] hover:text-white rounded text-xs font-bold uppercase tracking-wider text-[#222222] transition border border-gray-200"
-                                  >
-                                    Read Recap →
-                                  </button>
+                                  <div className="flex items-center gap-2">
+                                    {(game as any).boxscore_url && (
+                                      <a
+                                        href={(game as any).boxscore_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-2.5 py-1 bg-stone-100 hover:bg-[#e10600] hover:text-white rounded text-xs font-bold text-stone-700 transition border border-stone-200"
+                                      >
+                                        Box Score ↗
+                                      </a>
+                                    )}
+                                    {(game as any).recap_article_id && (
+                                      <button
+                                        onClick={() => {
+                                          const article = newsData.find(
+                                            (a) => a.id === (game as any).recap_article_id
+                                          );
+                                          if (article) {
+                                            setSelectedArticle(article);
+                                          } else {
+                                            setSelectedArticle(null);
+                                          }
+                                          setActiveTab("news");
+                                          window.scrollTo({ top: 0, behavior: "smooth" });
+                                        }}
+                                        className="px-2.5 py-1 bg-gray-100 hover:bg-[#e10600] hover:text-white rounded text-xs font-bold uppercase tracking-wider text-[#222222] transition border border-gray-200"
+                                      >
+                                        Recap →
+                                      </button>
+                                    )}
+                                  </div>
                                 </div>
                               ) : isHome ? (
                                 <div className="flex items-center justify-between w-full">
@@ -1707,7 +1719,7 @@ export default function IcePackApp() {
                           </thead>
                           <tbody className="divide-y divide-[#e5e5e5] font-questrial">
                             {filteredGames.map((game) => {
-                              const isNextGame = game.id === 17; // Thu Nov 12 vs Cincinnati
+                              const isNextGame = game.id === 18; // Fri Nov 13 vs Cincinnati
                               return (
                                 <tr
                                   key={game.id}
@@ -1779,18 +1791,17 @@ export default function IcePackApp() {
                                     </div>
                                   </td>
 
-                                  {/* Location with Clickable Map Link */}
-                                  <td className="py-3.5 px-4 text-xs hidden md:table-cell">
+                                  {/* Location (Compact & Clean) */}
+                                  <td className="py-3.5 px-3 text-xs hidden md:table-cell max-w-[210px] truncate">
                                     <a
                                       href={game.map_url}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="text-[#444444] hover:text-[#e10600] flex items-center gap-1 group transition"
+                                      className="text-[#444444] hover:text-[#e10600] inline-flex items-center gap-1 group transition truncate"
                                       title="Get Directions in Google / Apple Maps"
                                     >
-                                      <span className="text-[#e10600] text-sm">📍</span>
-                                      <span className="group-hover:underline">{game.location}</span>
-                                      <span className="text-[10px] text-gray-400 group-hover:text-[#e10600]">↗</span>
+                                      <span className="text-[#e10600] text-sm shrink-0">📍</span>
+                                      <span className="group-hover:underline truncate">{game.location}</span>
                                     </a>
                                   </td>
 
@@ -1813,9 +1824,42 @@ export default function IcePackApp() {
                                     )}
                                   </td>
 
-                                  {/* Action */}
+                                  {/* Action: Box Score & Tickets / Recap */}
                                   <td className="py-3.5 px-4 text-right whitespace-nowrap">
-                                    {game.ha === "H" && !game.result ? (
+                                    {game.result ? (
+                                      <div className="flex items-center justify-end gap-2">
+                                        {(game as any).boxscore_url && (
+                                          <a
+                                            href={(game as any).boxscore_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-2.5 py-1 bg-stone-100 hover:bg-[#e10600] hover:text-white rounded text-xs font-bold text-stone-700 transition border border-stone-200 inline-block shadow-xs"
+                                            title="View Official ACHA Game Box Score"
+                                          >
+                                            Box Score ↗
+                                          </a>
+                                        )}
+                                        {(game as any).recap_article_id && (
+                                          <button
+                                            onClick={() => {
+                                              const article = newsData.find(
+                                                (a) => a.id === (game as any).recap_article_id
+                                              );
+                                              if (article) {
+                                                setSelectedArticle(article);
+                                              } else {
+                                                setSelectedArticle(null);
+                                              }
+                                              setActiveTab("news");
+                                              window.scrollTo({ top: 0, behavior: "smooth" });
+                                            }}
+                                            className="text-xs font-bold text-[#e10600] hover:underline"
+                                          >
+                                            Recap →
+                                          </button>
+                                        )}
+                                      </div>
+                                    ) : game.ha === "H" ? (
                                       <a
                                         href={game.ticket_url || "https://icepackhockey.ticketsauce.com/"}
                                         target="_blank"
@@ -1824,28 +1868,8 @@ export default function IcePackApp() {
                                       >
                                         TICKETS
                                       </a>
-                                    ) : game.result ? (
-                                      <button
-                                        onClick={() => {
-                                          if ((game as any).recap_article_id) {
-                                            const article = newsData.find(
-                                              (a) => a.id === (game as any).recap_article_id
-                                            );
-                                            if (article) {
-                                              setSelectedArticle(article);
-                                            }
-                                          } else {
-                                            setSelectedArticle(null);
-                                          }
-                                          setActiveTab("news");
-                                          window.scrollTo({ top: 0, behavior: "smooth" });
-                                        }}
-                                        className="text-xs font-bold text-[#e10600] hover:underline"
-                                      >
-                                        Recap →
-                                      </button>
                                     ) : (
-                                      <span className="text-xs text-gray-400">—</span>
+                                      <span className="text-xs text-gray-400 font-mono">Away</span>
                                     )}
                                   </td>
                                 </tr>
