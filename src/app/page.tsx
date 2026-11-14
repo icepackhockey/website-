@@ -621,7 +621,7 @@ export default function IcePackApp() {
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#444444] py-3 text-sm">
           {/* Last Result */}
           <div className="py-2 md:py-0 md:pr-4 flex flex-col justify-center">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-[#e10600]">
+            <span className="text-[10px] font-bold tracking-widest uppercase text-white/70">
               LAST RESULT · THU NOV 12
             </span>
             <div className="flex items-center justify-between mt-1 gap-2">
@@ -645,25 +645,24 @@ export default function IcePackApp() {
                 </span>
                 <span className="font-bold text-base text-emerald-400 font-mono ml-1">W 6–4</span>
               </div>
-              <button
-                onClick={() => setGameCenterOpen(!gameCenterOpen)}
-                className={`text-xs px-2.5 py-1 rounded font-bold uppercase transition flex items-center gap-1 cursor-pointer ${
-                  gameCenterOpen
-                    ? "bg-[#e10600] text-white shadow"
-                    : "bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600]"
-                }`}
-                title="View Full Live GameCenter Box Score"
+              <a
+                href="https://www.achahockey.org/stats/game-center/33024"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs px-2.5 py-1 rounded font-bold uppercase transition bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600]"
+                title="View Thursday ACHA Box Score"
               >
-                <span>{gameCenterOpen ? "Box Score ▲" : "Box Score ▾"}</span>
-              </button>
+                Box Score ↗
+              </a>
             </div>
             <span className="text-xs text-white/60">SECHL Home Victory</span>
           </div>
 
-          {/* Next Game */}
+          {/* Tonight Live Game */}
           <div className="py-2 md:py-0 md:px-4 flex flex-col justify-center">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-400">
-              NEXT GAME · TONIGHT (FRI NOV 13) · 9:00 PM
+            <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-400 flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block"></span>
+              🔴 LIVE NOW · TONIGHT (FRI NOV 13)
             </span>
             <div className="flex items-center justify-between mt-1 gap-2">
               <div className="flex items-center gap-2">
@@ -673,28 +672,27 @@ export default function IcePackApp() {
                   className="w-5 h-5 object-contain bg-white rounded-full p-0.5"
                 />
                 <span className="font-heading text-xl text-white">
-                  VS{" "}
-                  <a
-                    href="https://www.cincinnatihockey.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[#e10600] transition underline underline-offset-2 decoration-white/40 hover:decoration-[#e10600]"
-                    title="Visit Cincinnati Bearcats Hockey Club Website"
-                  >
-                    CINCINNATI
-                  </a>
+                  VS CINCINNATI
+                </span>
+                <span className="font-bold text-base text-amber-400 font-mono ml-1">
+                  {liveGameLatest.home.score}–{liveGameLatest.visitor.score}
                 </span>
               </div>
-              <a
-                href="https://icepackhockey.ticketsauce.com/e/1113-uc-at-ihc-2/tickets"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs bg-[#e10600] hover:bg-[#c40500] text-white px-2 py-0.5 rounded font-bold uppercase transition"
+              <button
+                onClick={() => setGameCenterOpen(!gameCenterOpen)}
+                className={`text-xs px-2.5 py-1 rounded font-bold uppercase transition flex items-center gap-1 cursor-pointer shadow ${
+                  gameCenterOpen
+                    ? "bg-[#e10600] text-white"
+                    : "bg-[#e10600] hover:bg-[#c40500] text-white animate-pulse"
+                }`}
+                title="View Full Live GameCenter Box Score"
               >
-                Tickets
-              </a>
+                <span>{gameCenterOpen ? "Box Score ▲" : "Live Box Score ▾"}</span>
+              </button>
             </div>
-            <span className="text-xs text-white/60 truncate">Lane Arena @ WCC, Morrisville</span>
+            <span className="text-xs text-white/60 truncate">
+              {liveGameLatest.status || "In Progress · 1st Period"} · Lane Arena
+            </span>
           </div>
 
           {/* Overall Record */}
@@ -744,9 +742,9 @@ export default function IcePackApp() {
                     <div className="flex items-center gap-2 mt-1 text-xs text-stone-600 font-mono">
                       <span>Shots: {liveGameLatest.visitor.shots}</span>
                       <span>·</span>
-                      <span>P1: {liveGameLatest.visitor.period_goals["1"]}</span>
-                      <span>P2: {liveGameLatest.visitor.period_goals["2"]}</span>
-                      <span>P3: {liveGameLatest.visitor.period_goals["3"]}</span>
+                      <span>P1: {(liveGameLatest.visitor.period_goals as any)?.["1"] ?? 0}</span>
+                      <span>P2: {(liveGameLatest.visitor.period_goals as any)?.["2"] ?? 0}</span>
+                      <span>P3: {(liveGameLatest.visitor.period_goals as any)?.["3"] ?? 0}</span>
                     </div>
                   </div>
                 </div>
@@ -763,7 +761,7 @@ export default function IcePackApp() {
                     </span>
                   </div>
                   <div className="flex items-center justify-center gap-2 mt-1">
-                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-600"></span>
+                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
                     <span className="font-heading text-xs tracking-widest text-emerald-700 uppercase font-bold">
                       {liveGameLatest.status}
                     </span>
@@ -786,9 +784,9 @@ export default function IcePackApp() {
                       {liveGameLatest.home.name}
                     </h3>
                     <div className="flex items-center justify-end gap-2 mt-1 text-xs text-stone-600 font-mono">
-                      <span>P1: {liveGameLatest.home.period_goals["1"]}</span>
-                      <span>P2: {liveGameLatest.home.period_goals["2"]}</span>
-                      <span>P3: {liveGameLatest.home.period_goals["3"]}</span>
+                      <span>P1: {(liveGameLatest.home.period_goals as any)?.["1"] ?? 0}</span>
+                      <span>P2: {(liveGameLatest.home.period_goals as any)?.["2"] ?? 0}</span>
+                      <span>P3: {(liveGameLatest.home.period_goals as any)?.["3"] ?? 0}</span>
                       <span>·</span>
                       <span>Shots: {liveGameLatest.home.shots}</span>
                     </div>
@@ -1078,12 +1076,13 @@ export default function IcePackApp() {
             {/* COMPACT NEXT GAME & STAY CONNECTED (SIDE-BY-SIDE HALF PAGE) */}
             <section className="px-4 sm:px-8 py-8 max-w-[1280px] mx-auto w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-                {/* 1. Next Home Game (Half Page) */}
+                {/* 1. Live Gameday Card (Half Page) */}
                 <div className="bg-[#e10600] text-white rounded-xl p-6 sm:p-7 shadow-md flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between gap-2 border-b border-white/20 pb-2 mb-4">
-                      <span className="text-[11px] font-bold tracking-widest uppercase text-white/90">
-                        NEXT HOME GAME · PRESENTED BY CHARTER WM
+                      <span className="text-[11px] font-bold tracking-widest uppercase text-white/90 flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-white animate-ping inline-block"></span>
+                        🔴 LIVE GAME IN PROGRESS · PRESENTED BY CHARTER WM
                       </span>
                       <span className="text-[10px] font-bold uppercase bg-white/20 px-2 py-0.5 rounded">
                         ACHA D1
@@ -1091,11 +1090,15 @@ export default function IcePackApp() {
                     </div>
 
                     <div className="flex items-center gap-4 sm:gap-6 mb-4">
-                      {/* Compact Date Badge */}
-                      <div className="bg-white text-[#e10600] rounded-lg p-3 w-20 h-20 flex flex-col items-center justify-center text-center shadow flex-shrink-0">
-                        <span className="font-heading text-base tracking-wider leading-none">NOV</span>
-                        <span className="font-heading text-4xl leading-none font-bold my-0.5">13</span>
-                        <span className="text-[9px] font-bold text-[#222222] tracking-wider uppercase leading-none">TONIGHT · 9 PM</span>
+                      {/* Compact Score / Live Badge */}
+                      <div className="bg-white text-[#e10600] rounded-lg p-3 w-24 h-24 flex flex-col items-center justify-center text-center shadow flex-shrink-0">
+                        <span className="font-heading text-xs tracking-wider leading-none text-red-600 font-bold uppercase">LIVE</span>
+                        <div className="font-heading text-3xl font-mono leading-none font-bold my-1 text-[#222222]">
+                          {liveGameLatest.home.score}–{liveGameLatest.visitor.score}
+                        </div>
+                        <span className="text-[9px] font-bold text-neutral-600 tracking-wider uppercase leading-none">
+                          1ST PERIOD
+                        </span>
                       </div>
 
                       {/* Opponent Logo & Matchup Details */}
@@ -1121,8 +1124,8 @@ export default function IcePackApp() {
                           <p className="font-questrial text-xs text-white/90 mt-1">
                             Lane Arena @ Wake Competition Center · Morrisville, NC
                           </p>
-                          <span className="text-[11px] text-white/80 font-questrial block mt-0.5">
-                            Streamed live on ESPN+ · $15 Adult / $6 Student
+                          <span className="text-[11px] text-white/90 font-mono block mt-0.5 font-bold">
+                            Status: {liveGameLatest.status || "Game In Progress"}
                           </span>
                         </div>
                       </div>
@@ -1130,25 +1133,26 @@ export default function IcePackApp() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-white/20">
+                    <button
+                      onClick={() => {
+                        setGameCenterOpen(true);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className="py-2.5 px-4 bg-white text-[#e10600] hover:bg-[#222222] hover:text-white font-heading text-base tracking-wider uppercase text-center rounded shadow transition cursor-pointer flex items-center justify-center gap-2"
+                    >
+                      <span>LIVE BOX SCORE ▾</span>
+                    </button>
                     <a
-                      href="https://icepackhockey.ticketsauce.com/e/1113-uc-at-ihc-2/tickets"
+                      href="https://www.achahockey.org/stats/game-center/33025"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-2.5 px-4 bg-white text-[#e10600] hover:bg-[#222222] hover:text-white font-heading text-base tracking-wider uppercase text-center rounded shadow transition"
+                      className="py-2.5 px-4 border border-white text-white hover:bg-white/10 font-heading text-base tracking-wider uppercase text-center rounded transition flex items-center justify-center gap-2"
                     >
-                      BUY TICKETS NOW →
-                    </a>
-                    <a
-                      href="https://icepackhockey.ticketsauce.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="py-2.5 px-4 border border-white text-white hover:bg-white/10 font-heading text-base tracking-wider uppercase text-center rounded transition"
-                    >
-                      SPRING PASS · $40 (STUDENT $20)
+                      <span>ACHA GAMECENTER ↗</span>
                     </a>
                   </div>
                   <p className="text-[10px] text-white/75 font-questrial italic text-center mt-2">
-                    * Note: Governor&apos;s Cup ticket is not included with Spring Passes.
+                    Live updates flow from the off-ice scorekeeper in Lane Arena.
                   </p>
                 </div>
 
@@ -1629,7 +1633,37 @@ export default function IcePackApp() {
 
                             {/* Action Row / Game Result */}
                             <div className="pt-2.5 border-t border-gray-100 flex items-center justify-between gap-3">
-                              {game.result ? (
+                              {(game as any).is_live || (game.result && game.result.toLowerCase().includes("live")) ? (
+                                <div className="flex items-center justify-between w-full">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="w-2 h-2 rounded-full bg-red-600 animate-ping inline-block"></span>
+                                    <span className="px-2.5 py-1 rounded text-xs font-bold tracking-wide bg-red-600 text-white animate-pulse">
+                                      🔴 {game.result || "LIVE 0–1"}
+                                    </span>
+                                  </div>
+                                  <div className="flex items-center gap-2">
+                                    <button
+                                      onClick={() => {
+                                        setGameCenterOpen(true);
+                                        window.scrollTo({ top: 0, behavior: "smooth" });
+                                      }}
+                                      className="px-2.5 py-1 bg-[#e10600] text-white hover:bg-[#b00400] rounded text-xs font-bold transition shadow-xs cursor-pointer"
+                                    >
+                                      Live Box Score ▾
+                                    </button>
+                                    {(game as any).boxscore_url && (
+                                      <a
+                                        href={(game as any).boxscore_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-2 py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded text-xs font-bold transition border border-stone-200"
+                                      >
+                                        ACHA ↗
+                                      </a>
+                                    )}
+                                  </div>
+                                </div>
+                              ) : game.result ? (
                                 <div className="flex items-center justify-between w-full">
                                   <div className="flex items-center gap-2">
                                     <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400">
@@ -1807,7 +1841,12 @@ export default function IcePackApp() {
 
                                   {/* Result or Status */}
                                   <td className="py-3.5 px-4 whitespace-nowrap">
-                                    {game.result ? (
+                                    {(game as any).is_live || (game.result && game.result.toLowerCase().includes("live")) ? (
+                                      <span className="px-2.5 py-1 rounded text-xs font-bold bg-red-600 text-white animate-pulse flex items-center gap-1.5 w-fit">
+                                        <span className="w-2 h-2 rounded-full bg-white animate-ping inline-block"></span>
+                                        <span>🔴 {game.result || "LIVE 0–1"}</span>
+                                      </span>
+                                    ) : game.result ? (
                                       <span
                                         className={`px-2.5 py-1 rounded text-xs font-bold ${
                                           game.result.startsWith("W")
@@ -1826,7 +1865,30 @@ export default function IcePackApp() {
 
                                   {/* Action: Box Score & Tickets / Recap */}
                                   <td className="py-3.5 px-4 text-right whitespace-nowrap">
-                                    {game.result ? (
+                                    {(game as any).is_live || (game.result && game.result.toLowerCase().includes("live")) ? (
+                                      <div className="flex items-center justify-end gap-2">
+                                        <button
+                                          onClick={() => {
+                                            setGameCenterOpen(true);
+                                            window.scrollTo({ top: 0, behavior: "smooth" });
+                                          }}
+                                          className="px-2.5 py-1 bg-[#e10600] hover:bg-[#b00400] text-white rounded text-xs font-bold transition shadow-xs cursor-pointer animate-pulse"
+                                        >
+                                          Live Box Score ▾
+                                        </button>
+                                        {(game as any).boxscore_url && (
+                                          <a
+                                            href={(game as any).boxscore_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded text-xs font-bold transition border border-stone-200 inline-block shadow-xs"
+                                            title="View Official ACHA Game Box Score"
+                                          >
+                                            ACHA Feed ↗
+                                          </a>
+                                        )}
+                                      </div>
+                                    ) : game.result ? (
                                       <div className="flex items-center justify-end gap-2">
                                         {(game as any).boxscore_url && (
                                           <a
