@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import scheduleData from "../data/schedule.json";
 import rosterData from "../data/roster.json";
 import staffData from "../data/staff.json";
@@ -42,6 +42,35 @@ export default function IcePackApp() {
   const [contactName, setContactName] = useState<string>("");
   const [contactEmail, setContactEmail] = useState<string>("");
   const [contactMsg, setContactMsg] = useState<string>("");
+
+  // In-browser real-time live gameday state
+  const [liveGame, setLiveGame] = useState<any>(liveGameLatest);
+
+  // Auto-refresh live data silently in background every 15s without full page reload
+  useEffect(() => {
+    let isMounted = true;
+    const fetchLive = async () => {
+      try {
+        const res = await fetch(`/live.json?t=${Date.now()}`, { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (isMounted && data && data.game_id) {
+            setLiveGame(data);
+          }
+        }
+      } catch (err) {
+        // Fallback silently if offline
+      }
+    };
+
+    // Initial check & interval
+    fetchLive();
+    const timer = setInterval(fetchLive, 15000);
+    return () => {
+      isMounted = false;
+      clearInterval(timer);
+    };
+  }, []);
 
   const seasonMonths = [
     { label: "September 2026", year: 2026, month: 8 },
@@ -675,7 +704,7 @@ export default function IcePackApp() {
                   VS CINCINNATI
                 </span>
                 <span className="font-bold text-base text-amber-400 font-mono ml-1">
-                  {liveGameLatest.home.score}–{liveGameLatest.visitor.score}
+                  {liveGame.home.score}–{liveGame.visitor.score}
                 </span>
               </div>
               <button
@@ -691,7 +720,7 @@ export default function IcePackApp() {
               </button>
             </div>
             <span className="text-xs text-white/60 truncate">
-              {liveGameLatest.status || "In Progress · 1st Period"} · Lane Arena
+              {liveGame.status || "In Progress · 1st Period"} · Lane Arena
             </span>
           </div>
 
@@ -730,21 +759,21 @@ export default function IcePackApp() {
                 {/* Away Team */}
                 <div className="flex items-center gap-4 text-center md:text-left">
                   <img
-                    src={liveGameLatest.visitor.logo}
-                    alt={liveGameLatest.visitor.name}
+                    src={liveGame.visitor.logo}
+                    alt={liveGame.visitor.name}
                     className="w-14 h-14 object-contain bg-stone-50 rounded-full p-1 border border-stone-200 shadow-sm shrink-0"
                   />
                   <div>
                     <span className="text-xs uppercase tracking-wider text-stone-500 font-heading block">VISITOR</span>
                     <h3 className="font-heading text-2xl sm:text-3xl text-[#222222] leading-none">
-                      {liveGameLatest.visitor.name}
+                      {liveGame.visitor.name}
                     </h3>
                     <div className="flex items-center gap-2 mt-1 text-xs text-stone-600 font-mono">
-                      <span>Shots: {liveGameLatest.visitor.shots}</span>
+                      <span>Shots: {liveGame.visitor.shots}</span>
                       <span>·</span>
-                      <span>P1: {(liveGameLatest.visitor.period_goals as any)?.["1"] ?? 0}</span>
-                      <span>P2: {(liveGameLatest.visitor.period_goals as any)?.["2"] ?? 0}</span>
-                      <span>P3: {(liveGameLatest.visitor.period_goals as any)?.["3"] ?? 0}</span>
+                      <span>P1: {(liveGame.visitor.period_goals as any)?.["1"] ?? 0}</span>
+                      <span>P2: {(liveGame.visitor.period_goals as any)?.["2"] ?? 0}</span>
+                      <span>P3: {(liveGame.visitor.period_goals as any)?.["3"] ?? 0}</span>
                     </div>
                   </div>
                 </div>
@@ -753,42 +782,42 @@ export default function IcePackApp() {
                 <div className="text-center px-8 py-3 bg-stone-50 border border-stone-200 rounded-2xl shadow-sm">
                   <div className="flex items-center justify-center gap-4">
                     <span className="font-heading text-5xl sm:text-6xl text-stone-800">
-                      {liveGameLatest.visitor.score}
+                      {liveGame.visitor.score}
                     </span>
                     <span className="font-heading text-3xl text-stone-300">–</span>
                     <span className="font-heading text-5xl sm:text-6xl text-[#e10600]">
-                      {liveGameLatest.home.score}
+                      {liveGame.home.score}
                     </span>
                   </div>
                   <div className="flex items-center justify-center gap-2 mt-1">
                     <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
                     <span className="font-heading text-xs tracking-widest text-emerald-700 uppercase font-bold">
-                      {liveGameLatest.status}
+                      {liveGame.status}
                     </span>
                   </div>
                   <span className="text-[11px] text-stone-500 block font-questrial mt-0.5">
-                    {liveGameLatest.venue}
+                    {liveGame.venue}
                   </span>
                 </div>
 
                 {/* Home Team */}
                 <div className="flex items-center gap-4 text-center md:text-right flex-row-reverse">
                   <img
-                    src={liveGameLatest.home.logo}
-                    alt={liveGameLatest.home.name}
+                    src={liveGame.home.logo}
+                    alt={liveGame.home.name}
                     className="w-14 h-14 object-contain bg-stone-50 rounded-full p-1 border border-stone-200 shadow-sm shrink-0"
                   />
                   <div>
                     <span className="text-xs uppercase tracking-wider text-[#e10600] font-heading block">HOME</span>
                     <h3 className="font-heading text-2xl sm:text-3xl text-[#222222] leading-none">
-                      {liveGameLatest.home.name}
+                      {liveGame.home.name}
                     </h3>
                     <div className="flex items-center justify-end gap-2 mt-1 text-xs text-stone-600 font-mono">
-                      <span>P1: {(liveGameLatest.home.period_goals as any)?.["1"] ?? 0}</span>
-                      <span>P2: {(liveGameLatest.home.period_goals as any)?.["2"] ?? 0}</span>
-                      <span>P3: {(liveGameLatest.home.period_goals as any)?.["3"] ?? 0}</span>
+                      <span>P1: {(liveGame.home.period_goals as any)?.["1"] ?? 0}</span>
+                      <span>P2: {(liveGame.home.period_goals as any)?.["2"] ?? 0}</span>
+                      <span>P3: {(liveGame.home.period_goals as any)?.["3"] ?? 0}</span>
                       <span>·</span>
-                      <span>Shots: {liveGameLatest.home.shots}</span>
+                      <span>Shots: {liveGame.home.shots}</span>
                     </div>
                   </div>
                 </div>
@@ -805,7 +834,7 @@ export default function IcePackApp() {
                         : "bg-stone-100 text-stone-700 hover:bg-stone-200"
                     }`}
                   >
-                    🚨 Scoring Summary ({liveGameLatest.goals.length})
+                    🚨 Scoring Summary ({liveGame.goals.length})
                   </button>
                   <button
                     onClick={() => setGameCenterTab("penalties")}
@@ -815,7 +844,7 @@ export default function IcePackApp() {
                         : "bg-stone-100 text-stone-700 hover:bg-stone-200"
                     }`}
                   >
-                    ⏱️ Penalties ({liveGameLatest.penalties.length})
+                    ⏱️ Penalties ({liveGame.penalties.length})
                   </button>
                   <button
                     onClick={() => setGameCenterTab("alerts")}
@@ -830,8 +859,9 @@ export default function IcePackApp() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="text-[11px] text-stone-500 font-mono">
-                    Live Engine: ACHA LeagueStat Box Score
+                  <span className="text-[11px] text-emerald-700 font-bold uppercase tracking-wider flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping inline-block"></span>
+                    <span>Live Auto-Sync (15s)</span>
                   </span>
                   <button
                     onClick={() => setGameCenterOpen(false)}
@@ -846,7 +876,7 @@ export default function IcePackApp() {
               {gameCenterTab === "scoring" && (
                 <div className="space-y-3">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {liveGameLatest.goals.map((goal: any, idx: number) => (
+                    {liveGame.goals.map((goal: any, idx: number) => (
                       <div
                         key={idx}
                         className={`p-3.5 rounded-xl border flex items-center justify-between gap-3 shadow-sm ${
@@ -891,7 +921,7 @@ export default function IcePackApp() {
               {gameCenterTab === "penalties" && (
                 <div className="space-y-3">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {liveGameLatest.penalties.map((pen: any, idx: number) => {
+                    {liveGame.penalties.map((pen: any, idx: number) => {
                       const isHome = pen.team_is_home ?? (pen.team_name?.toLowerCase().includes("state") || pen.team_name?.toLowerCase().includes("icepack"));
                       const teamLogo = isHome ? "/07cdeb598c1716ddf52f5438f9484da2.png" : "/teams/cincinnati.png";
                       const teamLabel = isHome ? "NC State" : (pen.team_name || "Cincinnati");
@@ -1116,7 +1146,7 @@ export default function IcePackApp() {
                       <div className="bg-white text-[#e10600] rounded-lg p-3 w-24 h-24 flex flex-col items-center justify-center text-center shadow flex-shrink-0">
                         <span className="font-heading text-xs tracking-wider leading-none text-red-600 font-bold uppercase">LIVE</span>
                         <div className="font-heading text-3xl font-mono leading-none font-bold my-1 text-[#222222]">
-                          {liveGameLatest.home.score}–{liveGameLatest.visitor.score}
+                          {liveGame.home.score}–{liveGame.visitor.score}
                         </div>
                         <span className="text-[9px] font-bold text-neutral-600 tracking-wider uppercase leading-none">
                           1ST PERIOD
@@ -1147,7 +1177,7 @@ export default function IcePackApp() {
                             Lane Arena @ Wake Competition Center · Morrisville, NC
                           </p>
                           <span className="text-[11px] text-white/90 font-mono block mt-0.5 font-bold">
-                            Status: {liveGameLatest.status || "Game In Progress"}
+                            Status: {liveGame.status || "Game In Progress"}
                           </span>
                         </div>
                       </div>
