@@ -890,28 +890,50 @@ export default function IcePackApp() {
               {/* Tab 2: Penalties Log */}
               {gameCenterTab === "penalties" && (
                 <div className="space-y-3">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-                    {liveGameLatest.penalties.map((pen: any, idx: number) => (
-                      <div
-                        key={idx}
-                        className="p-3 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-between text-xs shadow-xs"
-                      >
-                        <div className="flex items-center gap-2 min-w-0">
-                          <span className="font-mono text-stone-500 font-bold shrink-0">
-                            P{pen.period} · {pen.time}
-                          </span>
-                          <span className="font-bold text-[#222222] truncate">
-                            {pen.player}
-                          </span>
-                          <span className="text-stone-500 truncate">
-                            ({pen.infraction})
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {liveGameLatest.penalties.map((pen: any, idx: number) => {
+                      const isHome = pen.team_is_home ?? (pen.team_name?.toLowerCase().includes("state") || pen.team_name?.toLowerCase().includes("icepack"));
+                      const teamLogo = isHome ? "/07cdeb598c1716ddf52f5438f9484da2.png" : "/teams/cincinnati.png";
+                      const teamLabel = isHome ? "NC State" : (pen.team_name || "Cincinnati");
+
+                      return (
+                        <div
+                          key={idx}
+                          className={`p-3.5 rounded-xl border flex items-center justify-between gap-3 shadow-sm ${
+                            isHome
+                              ? "bg-red-50/60 border-red-200"
+                              : "bg-stone-50 border-stone-200"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3 min-w-0">
+                            <span className="text-xs font-mono font-bold px-2 py-1 rounded bg-white text-stone-800 border border-stone-200 shadow-xs shrink-0">
+                              P{pen.period} · {pen.time}
+                            </span>
+                            <img
+                              src={teamLogo}
+                              alt={teamLabel}
+                              className="w-6 h-6 object-contain bg-white rounded-full p-0.5 border border-stone-200 shrink-0"
+                            />
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-1.5">
+                                <span className={`font-bold text-xs uppercase tracking-wide ${isHome ? "text-[#e10600]" : "text-stone-800"}`}>
+                                  {teamLabel}
+                                </span>
+                                <span className="text-[11px] text-stone-500 font-questrial">
+                                  · {pen.infraction}
+                                </span>
+                              </div>
+                              <span className="font-heading text-base text-[#222222] block truncate">
+                                {pen.player}
+                              </span>
+                            </div>
+                          </div>
+                          <span className="font-mono font-bold text-amber-900 bg-amber-100 border border-amber-300 px-2 py-1 rounded text-xs shrink-0">
+                            {pen.minutes} Min
                           </span>
                         </div>
-                        <span className="font-mono font-bold text-amber-900 bg-amber-100 border border-amber-200 px-2 py-0.5 rounded shrink-0">
-                          {pen.minutes} Min
-                        </span>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}
