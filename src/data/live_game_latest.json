@@ -1,7 +1,9 @@
 {
   "game_id": 33025,
   "date": "Friday, November 13, 2026",
-  "status": "2nd Period \u00b7 In Progress",
+  "status": "2nd Period \u00b7 2:10",
+  "clock": "2:10",
+  "period": "2nd",
   "venue": "Wake Competition Center (NC)",
   "home": {
     "name": "NC State Icepack",
@@ -22,15 +24,15 @@
     "name": "Cincinnati Bearcats",
     "short_name": "Cincinnati",
     "logo": "/teams/cincinnati.png",
-    "score": 2,
-    "shots": 8,
+    "score": 3,
+    "shots": 9,
     "period_goals": {
       "1": 1,
-      "2": 1
+      "2": 2
     },
     "period_shots": {
       "1": 7,
-      "2": 1
+      "2": 2
     }
   },
   "goals": [
@@ -72,7 +74,7 @@
       "scorer": "#23 Christian Butler",
       "assist1": null,
       "assist2": null,
-      "special": "GWG"
+      "special": ""
     },
     {
       "period": "2",
@@ -80,6 +82,16 @@
       "team_name": "Cincinnati",
       "team_is_home": false,
       "scorer": "#19 Nolan Ignacio",
+      "assist1": "#15 Davidson",
+      "assist2": "#21 Lemmerbrock",
+      "special": "PPG"
+    },
+    {
+      "period": "2",
+      "time": "15:48",
+      "team_name": "Cincinnati",
+      "team_is_home": false,
+      "scorer": "#9 Matthew Bauman",
       "assist1": "#15 Davidson",
       "assist2": "#21 Lemmerbrock",
       "special": "PPG"
@@ -164,6 +176,26 @@
       "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
       "player": "#21 Ethan Walters",
       "infraction": "Interference",
+      "minutes": 2
+    },
+    {
+      "period": "2",
+      "time": "13:49",
+      "team_name": "NC State",
+      "team_is_home": true,
+      "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
+      "player": "#4 Jack Napieralski",
+      "infraction": "Slashing",
+      "minutes": 2
+    },
+    {
+      "period": "2",
+      "time": "14:44",
+      "team_name": "NC State",
+      "team_is_home": true,
+      "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
+      "player": "#24 Jake Lipani",
+      "infraction": "Cross Checking",
       "minutes": 2
     }
   ]
