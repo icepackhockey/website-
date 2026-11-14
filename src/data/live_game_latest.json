@@ -20,15 +20,26 @@
     "name": "Cincinnati Bearcats",
     "short_name": "Cincinnati",
     "logo": "/teams/cincinnati.png",
-    "score": 0,
-    "shots": 0,
+    "score": 1,
+    "shots": 1,
     "period_goals": {
-      "1": 0
+      "1": 1
     },
     "period_shots": {
-      "1": 0
+      "1": 1
     }
   },
-  "goals": [],
+  "goals": [
+    {
+      "period": "1",
+      "time": "1:43",
+      "team_name": "Cincinnati",
+      "team_is_home": false,
+      "scorer": "#77 Adam Straka",
+      "assist1": "#18 Bepko",
+      "assist2": "#16 Mestrandrea",
+      "special": "GWG"
+    }
+  ],
   "penalties": []
 }
