@@ -2342,115 +2342,134 @@ export default function IcePackApp() {
                 </p>
               </div>
               <span className="text-xs text-[#777777] font-semibold bg-gray-100 px-3 py-1.5 rounded">
-                Last updated Nov 8, 2026 · Refreshed weekly
+                Official ACHA certified · Refreshed regularly
               </span>
             </div>
 
             {/* ABOVE-THE-FOLD: THE ROAD TO NATIONALS & TOP 24 PURSUIT */}
-            <section className="bg-[#222222] text-white rounded-lg p-6 sm:p-8 shadow-md mb-10">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                {/* Left: Pursuit Context & Cutoff Rules */}
-                <div className="lg:col-span-7 flex flex-col gap-3">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="bg-[#e10600] text-white text-[11px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
-                      THE GOAL EVERY SEASON
-                    </span>
-                    <span className="text-xs text-white/70 font-semibold uppercase tracking-wider">
-                      100% COMPUTER RANKING QUALIFICATION · NO AUTO-BIDS
-                    </span>
-                  </div>
-                  <h2 className="font-heading text-4xl sm:text-5xl text-white leading-tight">
-                    ROAD TO NATIONALS: TOP 24 PURSUIT
-                  </h2>
-                  <p className="font-questrial text-sm text-white/85 leading-relaxed">
-                    There are <strong>no automatic bids</strong> for NC State or any team in the SECHL this season.
-                    To earn an invitation to the ACHA Men's Division I National Tournament in St. Louis, MO, the
-                    Pack must finish ranked in the <strong>Top 24</strong> of the final ACHA National Computer Ranking Poll.
-                  </p>
+            {(() => {
+              const ncStateStandings = standingsData.teams.find((t) => t.team === "NC State" || t.is_home) || {
+                rank: 2,
+                points: 21,
+                record: "9–6–3–0",
+                gp: 18,
+              };
+              const currentNatRank = standingsData.national_ranking.current_rank;
+              const spotsToGo = Math.max(0, currentNatRank - 24);
 
-                  {/* Stat Highlights Bar */}
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                    <div className="bg-[#1a1a1a] border border-[#3a3a3a] p-3 rounded text-center">
-                      <span className="text-[10px] font-bold text-[#e10600] uppercase block">CURRENT RANK</span>
-                      <span className="font-heading text-3xl text-white">#38</span>
-                      <span className="text-[10px] text-emerald-400 font-bold block">▲ +2 Spots</span>
-                    </div>
-                    <div className="bg-[#1a1a1a] border border-[#3a3a3a] p-3 rounded text-center">
-                      <span className="text-[10px] font-bold text-white/60 uppercase block">TARGET CUTOFF</span>
-                      <span className="font-heading text-3xl text-white">TOP 24</span>
-                      <span className="text-[10px] text-white/50 block">14 Spots to Go</span>
-                    </div>
-                    <div className="bg-[#1a1a1a] border border-[#3a3a3a] p-3 rounded text-center">
-                      <span className="text-[10px] font-bold text-white/60 uppercase block">OVERALL</span>
-                      <span className="font-heading text-3xl text-white">8–6–2</span>
-                      <span className="text-[10px] text-white/50 block">6–6–2 vs D1</span>
-                    </div>
-                    <div className="bg-[#1a1a1a] border border-[#3a3a3a] p-3 rounded text-center">
-                      <span className="text-[10px] font-bold text-white/60 uppercase block">SECHL MARK</span>
-                      <span className="font-heading text-3xl text-white">#3</span>
-                      <span className="text-[10px] text-white/50 block">18 Points</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2.5 pt-1 text-xs text-white/60 font-questrial">
-                    <span className="font-bold text-white/80">HERITAGE:</span>
-                    <span>2019 D2 Nationals Qualified</span>
-                    <span>·</span>
-                    <span>2021 D2 National Quarterfinalist</span>
-                  </div>
-                </div>
-
-                {/* Right: National Poll Movement & Direct PDF Links */}
-                <div className="lg:col-span-5 bg-[#1a1a1a] border border-[#444444] rounded-lg p-6 flex flex-col justify-between">
-                  <div>
-                    <div className="flex justify-between items-center border-b border-[#333333] pb-2">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#e10600]">
-                        ACHA COMPUTER RANKING POLL
-                      </span>
-                      <span className="text-[11px] text-white/60">Updated Nov 8, 2026</span>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4 my-4">
-                      <div className="border-r border-[#333333] pr-2">
-                        <span className="text-[11px] text-white/60 uppercase block">WEEK OF NOV 8</span>
-                        <div className="flex items-baseline gap-2">
-                          <span className="font-heading text-5xl text-white">#38</span>
-                          <span className="text-xs text-emerald-400 font-bold">▲ Up 2</span>
-                        </div>
-                        <span className="text-[11px] text-white/50 block">39.0 Computer Avg</span>
+              return (
+                <section className="bg-[#222222] text-white rounded-lg p-6 sm:p-8 shadow-md mb-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    {/* Left: Pursuit Context & Cutoff Rules */}
+                    <div className="lg:col-span-7 flex flex-col gap-3">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="bg-[#e10600] text-white text-[11px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
+                          THE GOAL EVERY SEASON
+                        </span>
+                        <span className="text-xs text-white/70 font-semibold uppercase tracking-wider">
+                          100% COMPUTER RANKING QUALIFICATION · NO AUTO-BIDS
+                        </span>
                       </div>
-                      <div className="pl-2">
-                        <span className="text-[11px] text-white/60 uppercase block">WEEK OF NOV 1</span>
-                        <div className="flex items-baseline gap-2">
-                          <span className="font-heading text-5xl text-white/60">#40</span>
+                      <h2 className="font-heading text-4xl sm:text-5xl text-white leading-tight">
+                        ROAD TO NATIONALS: TOP 24 PURSUIT
+                      </h2>
+                      <p className="font-questrial text-sm text-white/85 leading-relaxed">
+                        There are <strong>no automatic bids</strong> for NC State or any team in the SECHL this season.
+                        To earn an invitation to the ACHA Men's Division I National Tournament in St. Louis, MO, the
+                        Pack must finish ranked in the <strong>Top 24</strong> of the final ACHA National Computer Ranking Poll.
+                      </p>
+
+                      {/* Stat Highlights Bar (Dynamically Bound to Standings) */}
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                        <div className="bg-[#1a1a1a] border border-[#3a3a3a] p-3 rounded text-center">
+                          <span className="text-[10px] font-bold text-[#e10600] uppercase block">CURRENT RANK</span>
+                          <span className="font-heading text-3xl text-white">#{currentNatRank}</span>
+                          <span className="text-[10px] text-emerald-400 font-bold block">
+                            {standingsData.national_ranking.movement}
+                          </span>
                         </div>
-                        <span className="text-[11px] text-white/50 block">39.5 Computer Avg</span>
+                        <div className="bg-[#1a1a1a] border border-[#3a3a3a] p-3 rounded text-center">
+                          <span className="text-[10px] font-bold text-white/60 uppercase block">TARGET CUTOFF</span>
+                          <span className="font-heading text-3xl text-white">TOP 24</span>
+                          <span className="text-[10px] text-white/50 block">{spotsToGo} Spots to Go</span>
+                        </div>
+                        <div className="bg-[#1a1a1a] border border-[#3a3a3a] p-3 rounded text-center">
+                          <span className="text-[10px] font-bold text-white/60 uppercase block">OVERALL</span>
+                          <span className="font-heading text-3xl text-white">
+                            {ncStateStandings.record.split("–").slice(0, 3).join("–")}
+                          </span>
+                          <span className="text-[10px] text-white/50 block">{ncStateStandings.gp} Games Played</span>
+                        </div>
+                        <div className="bg-[#1a1a1a] border border-[#3a3a3a] p-3 rounded text-center">
+                          <span className="text-[10px] font-bold text-white/60 uppercase block">SECHL MARK</span>
+                          <span className="font-heading text-3xl text-white">#{ncStateStandings.rank}</span>
+                          <span className="text-[10px] text-[#e10600] font-bold block">{ncStateStandings.points} Points</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2.5 pt-1 text-xs text-white/60 font-questrial">
+                        <span className="font-bold text-white/80">HERITAGE:</span>
+                        <span>2019 D2 Nationals Qualified</span>
+                        <span>·</span>
+                        <span>2021 D2 National Quarterfinalist</span>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Official PDF Download Links */}
-                  <div className="flex flex-col gap-2 pt-2">
-                    <a
-                      href={standingsData.national_ranking.pdf_nov_8}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-2.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-sm text-center rounded transition shadow flex items-center justify-center gap-2"
-                    >
-                      📄 VIEW NOV 8 NATIONAL POLL (PDF) ↗
-                    </a>
-                    <a
-                      href={standingsData.national_ranking.pdf_nov_1}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-2 bg-[#2a2a2a] hover:bg-[#333333] text-white font-heading text-xs text-center rounded transition border border-[#555555] flex items-center justify-center gap-2"
-                    >
-                      📄 VIEW NOV 1 NATIONAL POLL (PDF) ↗
-                    </a>
+                    {/* Right: National Poll Movement & Direct PDF Links */}
+                    <div className="lg:col-span-5 bg-[#1a1a1a] border border-[#444444] rounded-lg p-6 flex flex-col justify-between">
+                      <div>
+                        <div className="flex justify-between items-center border-b border-[#333333] pb-2">
+                          <span className="text-xs font-bold uppercase tracking-wider text-[#e10600]">
+                            ACHA COMPUTER RANKING POLL
+                          </span>
+                          <span className="text-[11px] text-white/60">Updated {standingsData.national_ranking.poll_date}</span>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4 my-4">
+                          <div className="border-r border-[#333333] pr-2">
+                            <span className="text-[11px] text-white/60 uppercase block">LATEST POLL</span>
+                            <div className="flex items-baseline gap-2">
+                              <span className="font-heading text-5xl text-white">#{currentNatRank}</span>
+                              <span className="text-xs text-emerald-400 font-bold">{standingsData.national_ranking.movement}</span>
+                            </div>
+                            <span className="text-[11px] text-white/50 block">{standingsData.national_ranking.computer_average} Computer Avg</span>
+                          </div>
+                          <div className="pl-2">
+                            <span className="text-[11px] text-white/60 uppercase block">PREVIOUS RANK</span>
+                            <div className="flex items-baseline gap-2">
+                              <span className="font-heading text-5xl text-white/60">#{standingsData.national_ranking.previous_rank}</span>
+                            </div>
+                            <span className="text-[11px] text-white/50 block">Target: Top 24 Cutoff</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Official PDF Download Links */}
+                      <div className="flex flex-col gap-2 pt-2">
+                        <a
+                          href={standingsData.national_ranking.pdf_nov_8}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-2.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-sm text-center rounded transition shadow flex items-center justify-center gap-2"
+                        >
+                          📄 VIEW OFFICIAL ACHA POLL (PDF) ↗
+                        </a>
+                        {standingsData.national_ranking.pdf_nov_1 && (
+                          <a
+                            href={standingsData.national_ranking.pdf_nov_1}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full py-2 bg-[#2a2a2a] hover:bg-[#333333] text-white font-heading text-xs text-center rounded transition border border-[#555555] flex items-center justify-center gap-2"
+                          >
+                            📄 ARCHIVED PRIOR POLL (PDF) ↗
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </section>
+                </section>
+              );
+            })()}
 
             {/* Main Standings Table + Ranked Teams Sidebar */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
