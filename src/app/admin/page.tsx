@@ -43,13 +43,85 @@ export default function AdminDashboard() {
     image_url: "",
   });
 
-  // Check session storage on mount
+  // Roster Management State
+  const [editingPlayerIndex, setEditingPlayerIndex] = useState<number | null>(null);
+  const [playerForm, setPlayerForm] = useState({
+    number: "",
+    name: "",
+    captain: "",
+    position: "F",
+    class: "FR",
+    hometown: "",
+    major: "",
+    image: "",
+    acha_url: "",
+  });
+  const [rosterSearch, setRosterSearch] = useState<string>("");
+  const [rosterPosFilter, setRosterPosFilter] = useState<string>("all");
+
+  // Merchandise Management State
+  const [merchSubTab, setMerchSubTab] = useState<"exclusive" | "retail">("exclusive");
+  const [editingExclusiveId, setEditingExclusiveId] = useState<string | null>(null);
+  const [exclusiveForm, setExclusiveForm] = useState({
+    id: "",
+    title: "",
+    price: "",
+    status: "Official Pre-Order",
+    badge: "Team Exclusive",
+    image: "",
+    secondary_image: "",
+    description: "",
+    featuresText: "",
+    url: "",
+    action_label: "Pre-Order Jersey →",
+  });
+
+  const [editingRetailId, setEditingRetailId] = useState<string | null>(null);
+  const [retailForm, setRetailForm] = useState({
+    id: "",
+    title: "",
+    price: "",
+    category: "Jerseys",
+    image: "",
+    url: "",
+  });
+  const [retailCategoryFilter, setRetailCategoryFilter] = useState<string>("all");
+
+  // Check storage on mount
   useEffect(() => {
-    const savedAuth = sessionStorage.getItem("icepack_admin_auth");
-    if (savedAuth === "true") {
-      setIsAuthenticated(true);
+    try {
+      const savedAuth = sessionStorage.getItem("icepack_admin_auth");
+      if (savedAuth === "true") {
+        setIsAuthenticated(true);
+      }
+
+      const savedRoster = localStorage.getItem("icepack_desk_roster");
+      if (savedRoster) {
+        setRoster(JSON.parse(savedRoster));
+      }
+
+      const savedMerch = localStorage.getItem("icepack_desk_merch");
+      if (savedMerch) {
+        setMerch(JSON.parse(savedMerch));
+      }
+    } catch (err) {
+      console.error("Storage load error:", err);
     }
   }, []);
+
+  const updateRosterState = (newRoster: any) => {
+    setRoster(newRoster);
+    try {
+      localStorage.setItem("icepack_desk_roster", JSON.stringify(newRoster));
+    } catch (e) {}
+  };
+
+  const updateMerchState = (newMerch: any) => {
+    setMerch(newMerch);
+    try {
+      localStorage.setItem("icepack_desk_merch", JSON.stringify(newMerch));
+    } catch (e) {}
+  };
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -1136,7 +1208,7 @@ export default function AdminDashboard() {
               <div>
                 <h2 className="font-heading text-2xl text-neutral-900 tracking-wider">MERCHANDISE & STORE DESK</h2>
                 <p className="text-xs text-neutral-500">
-                  Update apparel, pre-orders, and Red & White Shop direct links.
+                  Add and update apparel drops, pre-orders, and Red & White Shop retail merchandise.
                 </p>
               </div>
               <button
@@ -1147,31 +1219,792 @@ export default function AdminDashboard() {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {merch.team_exclusive?.map((item: any, idx: number) => (
-                <div key={item.id || idx} className="bg-white rounded-xl border border-neutral-200 shadow-sm p-4 flex flex-col justify-between">
-                  <div>
-                    <img src={item.image} alt={item.title} className="w-full h-44 object-contain bg-neutral-50 rounded-lg mb-3" />
-                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-red-100 text-[#e10600]">
-                      {item.badge}
-                    </span>
-                    <h3 className="font-heading text-lg text-neutral-900 mt-1">{item.title}</h3>
-                    <p className="font-mono font-bold text-sm text-neutral-700">{item.price}</p>
-                    <p className="text-xs text-neutral-500 mt-2 line-clamp-2">{item.description}</p>
+            {/* Sub-Tab Switcher */}
+            <div className="flex border-b border-neutral-200 gap-2">
+              <button
+                onClick={() => setMerchSubTab("exclusive")}
+                className={`px-4 py-2 text-xs font-heading uppercase tracking-wider border-b-2 transition ${
+                  merchSubTab === "exclusive"
+                    ? "border-[#e10600] text-[#e10600] font-bold"
+                    : "border-transparent text-neutral-500 hover:text-neutral-800"
+                }`}
+              >
+                ⭐ Team Exclusives & Custom Drops ({merch.team_exclusive?.length || 0})
+              </button>
+              <button
+                onClick={() => setMerchSubTab("retail")}
+                className={`px-4 py-2 text-xs font-heading uppercase tracking-wider border-b-2 transition ${
+                  merchSubTab === "retail"
+                    ? "border-[#e10600] text-[#e10600] font-bold"
+                    : "border-transparent text-neutral-500 hover:text-neutral-800"
+                }`}
+              >
+                🛍️ Red & White Shop Retail Partner ({merch.retail_partner?.items?.length || 0})
+              </button>
+            </div>
+
+            {/* SECTION 4A: TEAM EXCLUSIVES */}
+            {merchSubTab === "exclusive" && (
+              <div className="space-y-6">
+                {/* Form Card: Add or Edit Team Exclusive Item */}
+                <div className="bg-white rounded-xl border border-neutral-200 shadow-sm p-6 space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-neutral-100 pb-3">
+                    <div>
+                      <h3 className="font-heading text-lg text-neutral-900 uppercase tracking-wider">
+                        {editingExclusiveId ? "Edit Team Exclusive Drop" : "Add New Team Exclusive / Commemorative Drop"}
+                      </h3>
+                      <p className="text-xs text-neutral-500">
+                        {editingExclusiveId
+                          ? `Adjust the details for "${exclusiveForm.title}" below and click Save.`
+                          : "Create a new commemorative jersey, gameday t-shirt, or team-exclusive drop."}
+                      </p>
+                    </div>
+
+                    {editingExclusiveId && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setEditingExclusiveId(null);
+                          setExclusiveForm({
+                            id: "",
+                            title: "",
+                            price: "",
+                            status: "Official Pre-Order",
+                            badge: "Team Exclusive",
+                            image: "",
+                            secondary_image: "",
+                            description: "",
+                            featuresText: "",
+                            url: "",
+                            action_label: "Pre-Order Jersey →",
+                          });
+                          showToast("Cancelled edit mode.");
+                        }}
+                        className="text-xs font-bold text-neutral-600 hover:text-neutral-900 bg-neutral-100 px-3 py-1.5 rounded"
+                      >
+                        ✕ Cancel Edit & Clear Form
+                      </button>
+                    )}
                   </div>
-                  <div className="mt-4 pt-3 border-t border-neutral-100">
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-xs font-bold text-[#e10600] hover:underline block truncate"
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="sm:col-span-2">
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Product Title * (e.g. "Frozen Finley Commemorative Jersey" or "50th Season Gameday T-Shirt")
+                      </label>
+                      <input
+                        type="text"
+                        value={exclusiveForm.title}
+                        onChange={(e) => setExclusiveForm({ ...exclusiveForm, title: e.target.value })}
+                        placeholder="e.g. 50th Season Commemorative Jersey"
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-semibold"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Price or Price Range * (e.g. "$100.00 – $150.00", "$45.00", "Coming Soon")
+                      </label>
+                      <input
+                        type="text"
+                        value={exclusiveForm.price}
+                        onChange={(e) => setExclusiveForm({ ...exclusiveForm, price: e.target.value })}
+                        placeholder="e.g. $100.00 – $150.00"
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-mono"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Status Tag (Top Left Corner Badge)
+                      </label>
+                      <select
+                        value={exclusiveForm.status}
+                        onChange={(e) => setExclusiveForm({ ...exclusiveForm, status: e.target.value })}
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none"
+                      >
+                        <option value="Official Pre-Order">Official Pre-Order</option>
+                        <option value="In Production">In Production / Coming Soon</option>
+                        <option value="In Stock">In Stock / Available Now</option>
+                        <option value="Limited Edition">Limited Edition</option>
+                        <option value="Sold Out">Sold Out</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Category Sub-Badge (e.g. "Team Exclusive", "Student Creative Drop")
+                      </label>
+                      <input
+                        type="text"
+                        value={exclusiveForm.badge}
+                        onChange={(e) => setExclusiveForm({ ...exclusiveForm, badge: e.target.value })}
+                        placeholder="e.g. Team Exclusive"
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Action Button Label (e.g. "Pre-Order Jersey →", "Buy Now ↗", "Notify Me at Gameday")
+                      </label>
+                      <input
+                        type="text"
+                        value={exclusiveForm.action_label}
+                        onChange={(e) => setExclusiveForm({ ...exclusiveForm, action_label: e.target.value })}
+                        placeholder="e.g. Pre-Order Jersey →"
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-semibold"
+                      />
+                    </div>
+
+                    <div className="sm:col-span-2">
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Store / Purchase URL (e.g. Square, Stripe, Ticketsauce, or "#" for In Production)
+                      </label>
+                      <input
+                        type="text"
+                        value={exclusiveForm.url}
+                        onChange={(e) => setExclusiveForm({ ...exclusiveForm, url: e.target.value })}
+                        placeholder="https://www.icepackhockey.com/store/... or #"
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-mono"
+                      />
+                    </div>
+
+                    {/* Product Photo Upload */}
+                    <div className="sm:col-span-2">
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Product Photo (Upload from Laptop or Enter URL/Filename)
+                      </label>
+                      <div className="space-y-3">
+                        <div className="border-2 border-dashed border-neutral-300 hover:border-[#e10600] rounded-xl p-3 bg-neutral-50 text-center transition cursor-pointer relative group">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => {
+                              const file = e.target.files?.[0];
+                              if (file) {
+                                if (file.size > 5 * 1024 * 1024) {
+                                  alert("Photo is larger than 5MB. Please choose an image under 5MB.");
+                                  return;
+                                }
+                                const reader = new FileReader();
+                                reader.onload = (event) => {
+                                  const result = event.target?.result as string;
+                                  setExclusiveForm({ ...exclusiveForm, image: result });
+                                  showToast(`Uploaded ${file.name} from computer!`);
+                                };
+                                reader.readAsDataURL(file);
+                              }
+                            }}
+                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                          />
+                          <p className="text-xs font-bold text-neutral-700">
+                            Click to Browse Product Photo from Computer or Drag & Drop Here
+                          </p>
+                          <p className="text-[11px] text-neutral-400">Supports JPG, PNG, WEBP (under 5MB)</p>
+                        </div>
+
+                        {exclusiveForm.image ? (
+                          <div className="flex items-center gap-4 p-3 bg-neutral-100 rounded-lg border border-neutral-200">
+                            <img
+                              src={exclusiveForm.image}
+                              alt="Product Preview"
+                              className="w-16 h-16 object-contain bg-white rounded border border-neutral-300 shrink-0"
+                            />
+                            <div className="flex-1 min-w-0">
+                              <span className="text-[10px] font-bold text-green-700 uppercase bg-green-100 px-2 py-0.5 rounded">
+                                ✓ Photo Loaded
+                              </span>
+                              <p className="text-xs text-neutral-500 truncate mt-1 font-mono">
+                                {exclusiveForm.image.startsWith("data:") ? "Local file loaded" : exclusiveForm.image}
+                              </p>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => setExclusiveForm({ ...exclusiveForm, image: "" })}
+                              className="text-xs text-red-600 hover:text-red-800 font-bold px-2 py-1"
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-2">
+                            <span className="text-[11px] text-neutral-400 font-semibold uppercase">Or Image Path / URL:</span>
+                            <input
+                              type="text"
+                              value={exclusiveForm.image}
+                              onChange={(e) => setExclusiveForm({ ...exclusiveForm, image: e.target.value })}
+                              placeholder="/jersey.jpg or https://..."
+                              className="flex-1 px-3 py-1.5 border border-neutral-300 rounded text-xs focus:border-[#e10600] focus:outline-none"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="sm:col-span-2">
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Product Description
+                      </label>
+                      <textarea
+                        rows={2}
+                        value={exclusiveForm.description}
+                        onChange={(e) => setExclusiveForm({ ...exclusiveForm, description: e.target.value })}
+                        placeholder="Official description of the item, manufacturer details, on-ice specifications..."
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none"
+                      />
+                    </div>
+
+                    <div className="sm:col-span-2">
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Key Features / Bullet Points (Enter 1 bullet per line)
+                      </label>
+                      <textarea
+                        rows={3}
+                        value={exclusiveForm.featuresText}
+                        onChange={(e) => setExclusiveForm({ ...exclusiveForm, featuresText: e.target.value })}
+                        placeholder={"Authentic pro-weight fabric & reinforced pro stitching\nCustom name & number customization available\nAdult Men's, Youth Sizes, and Goalie Cuts available\nDomestic shipping included or gameday pick-up at Lane Arena"}
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-mono text-xs"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end pt-3">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (!exclusiveForm.title.trim()) {
+                          alert("Please enter a product title.");
+                          return;
+                        }
+                        if (!exclusiveForm.price.trim()) {
+                          alert("Please enter a price or price display.");
+                          return;
+                        }
+
+                        const features = exclusiveForm.featuresText
+                          .split("\n")
+                          .map((f) => f.trim())
+                          .filter((f) => f.length > 0);
+
+                        const currentExclusives = merch.team_exclusive || [];
+
+                        if (editingExclusiveId) {
+                          const updated = currentExclusives.map((item: any) =>
+                            item.id === editingExclusiveId
+                              ? {
+                                  ...item,
+                                  title: exclusiveForm.title,
+                                  price: exclusiveForm.price,
+                                  status: exclusiveForm.status,
+                                  badge: exclusiveForm.badge,
+                                  image: exclusiveForm.image || item.image,
+                                  secondary_image: exclusiveForm.secondary_image || item.secondary_image,
+                                  description: exclusiveForm.description,
+                                  features: features.length > 0 ? features : item.features,
+                                  url: exclusiveForm.url || "#",
+                                  action_label: exclusiveForm.action_label,
+                                }
+                              : item
+                          );
+                          const newMerchData = { ...merch, team_exclusive: updated };
+                          updateMerchState(newMerchData);
+                          setEditingExclusiveId(null);
+                          showToast(`✓ Updated "${exclusiveForm.title}"!`);
+                        } else {
+                          const newItem = {
+                            id: "drop-" + Date.now(),
+                            title: exclusiveForm.title,
+                            price: exclusiveForm.price,
+                            status: exclusiveForm.status,
+                            badge: exclusiveForm.badge,
+                            image: exclusiveForm.image || "/solojersey.jpg",
+                            secondary_image: exclusiveForm.secondary_image || exclusiveForm.image,
+                            description: exclusiveForm.description,
+                            features: features,
+                            url: exclusiveForm.url || "#",
+                            action_label: exclusiveForm.action_label,
+                          };
+                          const newMerchData = { ...merch, team_exclusive: [...currentExclusives, newItem] };
+                          updateMerchState(newMerchData);
+                          showToast(`✓ Added "${exclusiveForm.title}" to Team Exclusives!`);
+                        }
+
+                        setExclusiveForm({
+                          id: "",
+                          title: "",
+                          price: "",
+                          status: "Official Pre-Order",
+                          badge: "Team Exclusive",
+                          image: "",
+                          secondary_image: "",
+                          description: "",
+                          featuresText: "",
+                          url: "",
+                          action_label: "Pre-Order Jersey →",
+                        });
+                      }}
+                      className="bg-[#e10600] hover:bg-[#b00400] text-white font-heading text-sm px-6 py-2.5 rounded uppercase tracking-wider shadow transition"
                     >
-                      Store Link: {item.url}
-                    </a>
+                      {editingExclusiveId ? "Save Changes to Item" : "Add Item to Team Exclusives"}
+                    </button>
                   </div>
                 </div>
-              ))}
-            </div>
+
+                {/* Exclusives Display Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {merch.team_exclusive?.map((item: any) => (
+                    <div
+                      key={item.id}
+                      className="bg-white rounded-xl border border-neutral-200 shadow-sm p-4 flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="relative mb-3 bg-neutral-50 rounded-lg p-2 flex items-center justify-center h-44 overflow-hidden border border-neutral-100">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="max-h-full max-w-full object-contain"
+                            onError={(e: any) => {
+                              e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
+                            }}
+                          />
+                          <span className="absolute top-2 left-2 text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-red-100 text-[#e10600] shadow-sm">
+                            {item.status || item.badge}
+                          </span>
+                        </div>
+                        <span className="text-[10px] font-bold uppercase text-neutral-400 block">{item.badge}</span>
+                        <h3 className="font-heading text-lg text-neutral-900 mt-0.5 leading-tight">{item.title}</h3>
+                        <p className="font-mono font-bold text-sm text-[#e10600] mt-1">{item.price}</p>
+                        <p className="text-xs text-neutral-500 mt-2 line-clamp-2">{item.description}</p>
+
+                        {Array.isArray(item.features) && item.features.length > 0 && (
+                          <div className="mt-2.5 pt-2 border-t border-neutral-100 text-[11px] text-neutral-600 space-y-1">
+                            {item.features.slice(0, 2).map((f: string, fIdx: number) => (
+                              <div key={fIdx} className="truncate">✓ {f}</div>
+                            ))}
+                            {item.features.length > 2 && (
+                              <span className="text-neutral-400 text-[10px] italic">+{item.features.length - 2} more features</span>
+                            )}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between">
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-xs font-bold text-[#e10600] hover:underline truncate max-w-[140px]"
+                        >
+                          {item.action_label || "Store Link"}
+                        </a>
+                        <div className="flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setEditingExclusiveId(item.id);
+                              setExclusiveForm({
+                                id: item.id,
+                                title: item.title,
+                                price: item.price,
+                                status: item.status || "Official Pre-Order",
+                                badge: item.badge || "Team Exclusive",
+                                image: item.image || "",
+                                secondary_image: item.secondary_image || "",
+                                description: item.description || "",
+                                featuresText: Array.isArray(item.features) ? item.features.join("\n") : "",
+                                url: item.url || "",
+                                action_label: item.action_label || "Pre-Order Jersey →",
+                              });
+                              window.scrollTo({ top: 300, behavior: "smooth" });
+                              showToast(`Editing "${item.title}"`);
+                            }}
+                            className="text-xs text-blue-600 hover:text-blue-800 font-bold"
+                          >
+                            Edit
+                          </button>
+                          <span className="text-neutral-300">|</span>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              if (confirm(`Delete merchandise drop: "${item.title}"?`)) {
+                                const updated = (merch.team_exclusive || []).filter((ex: any) => ex.id !== item.id);
+                                updateMerchState({ ...merch, team_exclusive: updated });
+                                showToast(`Deleted "${item.title}".`);
+                              }
+                            }}
+                            className="text-xs text-red-600 hover:text-red-800 font-bold"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* SECTION 4B: RETAIL PARTNER (RED & WHITE SHOP) */}
+            {merchSubTab === "retail" && (
+              <div className="space-y-6">
+                {/* Form Card: Add or Edit Retail Item */}
+                <div className="bg-white rounded-xl border border-neutral-200 shadow-sm p-6 space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-neutral-100 pb-3">
+                    <div>
+                      <h3 className="font-heading text-lg text-neutral-900 uppercase tracking-wider">
+                        {editingRetailId ? "Edit Retail Product" : "Add Retail Partner Product (The Red and White Shop)"}
+                      </h3>
+                      <p className="text-xs text-neutral-500">
+                        {editingRetailId
+                          ? `Adjusting product "${retailForm.title}". Click Save Changes when done.`
+                          : "Add an authentic jersey, hoodie, tee, Richardson hat, or scarf from redandwhiteshop.com."}
+                      </p>
+                    </div>
+
+                    {editingRetailId && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setEditingRetailId(null);
+                          setRetailForm({
+                            id: "",
+                            title: "",
+                            price: "",
+                            category: "Jerseys",
+                            image: "",
+                            url: "",
+                          });
+                          showToast("Cancelled edit mode.");
+                        }}
+                        className="text-xs font-bold text-neutral-600 hover:text-neutral-900 bg-neutral-100 px-3 py-1.5 rounded"
+                      >
+                        ✕ Cancel Edit & Clear Form
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="sm:col-span-2">
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Product Title * (e.g. "Icepack Red Hockey Jersey" or "Black Icepack Hooded Sweatshirt")
+                      </label>
+                      <input
+                        type="text"
+                        value={retailForm.title}
+                        onChange={(e) => setRetailForm({ ...retailForm, title: e.target.value })}
+                        placeholder="e.g. Red Icepack Hooded Sweatshirt"
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-semibold"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Price * (e.g. "$119.99", "$39.99")
+                      </label>
+                      <input
+                        type="text"
+                        value={retailForm.price}
+                        onChange={(e) => setRetailForm({ ...retailForm, price: e.target.value })}
+                        placeholder="e.g. $39.99"
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-mono"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Category Dropdown
+                      </label>
+                      <select
+                        value={retailForm.category}
+                        onChange={(e) => setRetailForm({ ...retailForm, category: e.target.value })}
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none"
+                      >
+                        <option value="Jerseys">Jerseys</option>
+                        <option value="Hoodies & Fleece">Hoodies & Fleece</option>
+                        <option value="T-Shirts">T-Shirts</option>
+                        <option value="Hats">Hats</option>
+                        <option value="Accessories">Accessories</option>
+                      </select>
+                    </div>
+
+                    <div className="sm:col-span-2">
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Store Link * (Direct URL on redandwhiteshop.com)
+                      </label>
+                      <input
+                        type="text"
+                        value={retailForm.url}
+                        onChange={(e) => setRetailForm({ ...retailForm, url: e.target.value })}
+                        placeholder="https://www.redandwhiteshop.com/products/..."
+                        className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-mono"
+                      />
+                    </div>
+
+                    <div className="sm:col-span-2">
+                      <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                        Product Photo (Upload from Laptop or Enter Shopify Image URL)
+                      </label>
+                      <div className="space-y-3">
+                        <div className="border-2 border-dashed border-neutral-300 hover:border-[#e10600] rounded-xl p-3 bg-neutral-50 text-center transition cursor-pointer relative group">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => {
+                              const file = e.target.files?.[0];
+                              if (file) {
+                                if (file.size > 5 * 1024 * 1024) {
+                                  alert("Photo is larger than 5MB. Please choose an image under 5MB.");
+                                  return;
+                                }
+                                const reader = new FileReader();
+                                reader.onload = (event) => {
+                                  const result = event.target?.result as string;
+                                  setRetailForm({ ...retailForm, image: result });
+                                  showToast(`Uploaded ${file.name} from computer!`);
+                                };
+                                reader.readAsDataURL(file);
+                              }
+                            }}
+                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                          />
+                          <p className="text-xs font-bold text-neutral-700">
+                            Click to Browse Photo from Computer or Drag & Drop
+                          </p>
+                          <p className="text-[11px] text-neutral-400">Supports JPG, PNG, WEBP</p>
+                        </div>
+
+                        {retailForm.image ? (
+                          <div className="flex items-center gap-4 p-3 bg-neutral-100 rounded-lg border border-neutral-200">
+                            <img
+                              src={retailForm.image}
+                              alt="Retail Preview"
+                              className="w-14 h-14 object-contain bg-white rounded border border-neutral-300 shrink-0"
+                            />
+                            <div className="flex-1 min-w-0">
+                              <span className="text-[10px] font-bold text-green-700 uppercase bg-green-100 px-2 py-0.5 rounded">
+                                ✓ Photo Loaded
+                              </span>
+                              <p className="text-xs text-neutral-500 truncate mt-1 font-mono">
+                                {retailForm.image.startsWith("data:") ? "Local file loaded" : retailForm.image}
+                              </p>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => setRetailForm({ ...retailForm, image: "" })}
+                              className="text-xs text-red-600 hover:text-red-800 font-bold px-2 py-1"
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-2">
+                            <span className="text-[11px] text-neutral-400 font-semibold uppercase">Or Image URL:</span>
+                            <input
+                              type="text"
+                              value={retailForm.image}
+                              onChange={(e) => setRetailForm({ ...retailForm, image: e.target.value })}
+                              placeholder="https://cdn.shopify.com/... or /product.png"
+                              className="flex-1 px-3 py-1.5 border border-neutral-300 rounded text-xs focus:border-[#e10600] focus:outline-none"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end pt-3">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (!retailForm.title.trim()) {
+                          alert("Please enter a product title.");
+                          return;
+                        }
+                        if (!retailForm.price.trim()) {
+                          alert("Please enter a price.");
+                          return;
+                        }
+
+                        const currentItems = merch.retail_partner?.items || [];
+
+                        if (editingRetailId) {
+                          const updated = currentItems.map((item: any) =>
+                            item.id === editingRetailId
+                              ? {
+                                  ...item,
+                                  title: retailForm.title,
+                                  price: retailForm.price,
+                                  category: retailForm.category,
+                                  image: retailForm.image || item.image,
+                                  url: retailForm.url || item.url,
+                                }
+                              : item
+                          );
+                          const newMerchData = {
+                            ...merch,
+                            retail_partner: {
+                              ...merch.retail_partner,
+                              items: updated,
+                            },
+                          };
+                          updateMerchState(newMerchData);
+                          setEditingRetailId(null);
+                          showToast(`✓ Updated "${retailForm.title}"!`);
+                        } else {
+                          const newItem = {
+                            id: "rw-" + Date.now(),
+                            title: retailForm.title,
+                            price: retailForm.price,
+                            category: retailForm.category,
+                            image: retailForm.image || "/solojersey.jpg",
+                            url: retailForm.url || "https://www.redandwhiteshop.com/search?q=icepack",
+                          };
+                          const newMerchData = {
+                            ...merch,
+                            retail_partner: {
+                              ...merch.retail_partner,
+                              items: [...currentItems, newItem],
+                            },
+                          };
+                          updateMerchState(newMerchData);
+                          showToast(`✓ Added "${retailForm.title}" to Retail items!`);
+                        }
+
+                        setRetailForm({
+                          id: "",
+                          title: "",
+                          price: "",
+                          category: "Jerseys",
+                          image: "",
+                          url: "",
+                        });
+                      }}
+                      className="bg-[#e10600] hover:bg-[#b00400] text-white font-heading text-sm px-6 py-2.5 rounded uppercase tracking-wider shadow transition"
+                    >
+                      {editingRetailId ? "Save Changes to Product" : "Add Product to Store Feed"}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Retail Category Filter Bar */}
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs font-bold uppercase text-neutral-500 mr-2">Filter Category:</span>
+                  {[
+                    { id: "all", label: `All (${merch.retail_partner?.items?.length || 0})` },
+                    { id: "jerseys", label: "Jerseys" },
+                    { id: "hoodies", label: "Hoodies" },
+                    { id: "t-shirts", label: "T-Shirts" },
+                    { id: "hats", label: "Hats" },
+                    { id: "accessories", label: "Accessories" },
+                  ].map((f) => (
+                    <button
+                      key={f.id}
+                      onClick={() => setRetailCategoryFilter(f.id)}
+                      className={`px-3 py-1 rounded text-xs font-heading uppercase tracking-wider transition ${
+                        retailCategoryFilter === f.id
+                          ? "bg-[#e10600] text-white shadow-sm"
+                          : "bg-white text-neutral-700 hover:bg-neutral-100 border border-neutral-200"
+                      }`}
+                    >
+                      {f.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Retail Products Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {merch.retail_partner?.items
+                    ?.filter((item: any) => {
+                      if (retailCategoryFilter === "all") return true;
+                      if (retailCategoryFilter === "jerseys") return item.category?.toLowerCase().includes("jersey");
+                      if (retailCategoryFilter === "hoodies") return item.category?.toLowerCase().includes("hoodie");
+                      if (retailCategoryFilter === "t-shirts") return item.category?.toLowerCase().includes("shirt");
+                      if (retailCategoryFilter === "hats") return item.category?.toLowerCase().includes("hat");
+                      if (retailCategoryFilter === "accessories") return item.category?.toLowerCase().includes("accessories");
+                      return true;
+                    })
+                    .map((item: any) => (
+                      <div
+                        key={item.id}
+                        className="bg-white rounded-xl border border-neutral-200 shadow-sm p-4 flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="h-44 bg-neutral-50 rounded-lg p-3 flex items-center justify-center overflow-hidden mb-3 border border-neutral-100">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="max-h-full max-w-full object-contain"
+                              onError={(e: any) => {
+                                e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
+                              }}
+                            />
+                          </div>
+                          <span className="text-[10px] font-bold text-[#e10600] uppercase tracking-wider block">
+                            {item.category}
+                          </span>
+                          <h4 className="font-heading text-base text-neutral-900 leading-tight mt-1 line-clamp-2">
+                            {item.title}
+                          </h4>
+                          <span className="font-mono font-bold text-sm text-neutral-900 block mt-1.5">{item.price}</span>
+                        </div>
+
+                        <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between">
+                          <a
+                            href={item.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-[11px] font-bold text-blue-600 hover:underline truncate max-w-[120px]"
+                          >
+                            Red & White Shop ↗
+                          </a>
+                          <div className="flex items-center gap-2">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setEditingRetailId(item.id);
+                                setRetailForm({
+                                  id: item.id,
+                                  title: item.title,
+                                  price: item.price,
+                                  category: item.category || "Jerseys",
+                                  image: item.image || "",
+                                  url: item.url || "",
+                                });
+                                window.scrollTo({ top: 300, behavior: "smooth" });
+                                showToast(`Editing "${item.title}"`);
+                              }}
+                              className="text-xs text-blue-600 hover:text-blue-800 font-bold"
+                            >
+                              Edit
+                            </button>
+                            <span className="text-neutral-300">|</span>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                if (confirm(`Delete retail product: "${item.title}"?`)) {
+                                  const updated = (merch.retail_partner?.items || []).filter((i: any) => i.id !== item.id);
+                                  updateMerchState({
+                                    ...merch,
+                                    retail_partner: {
+                                      ...merch.retail_partner,
+                                      items: updated,
+                                    },
+                                  });
+                                  showToast(`Deleted "${item.title}".`);
+                                }
+                              }}
+                              className="text-xs text-red-600 hover:text-red-800 font-bold"
+                            >
+                              Delete
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -1180,9 +2013,9 @@ export default function AdminDashboard() {
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 rounded-xl border border-neutral-200 shadow-sm">
               <div>
-                <h2 className="font-heading text-2xl text-neutral-900 tracking-wider">ROSTER & PLAYER DESK</h2>
+                <h2 className="font-heading text-2xl text-neutral-900 tracking-wider">ROSTER & PLAYER BIOS DESK</h2>
                 <p className="text-xs text-neutral-500">
-                  Manage jersey numbers, positions, hometowns, and player headshots.
+                  Add new players, edit jersey numbers, positions, hometowns, majors, and ACHA bio links.
                 </p>
               </div>
               <button
@@ -1193,30 +2026,463 @@ export default function AdminDashboard() {
               </button>
             </div>
 
+            {/* Form Card: Add or Edit Player */}
+            <div className="bg-white rounded-xl border border-neutral-200 shadow-sm p-6 space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-neutral-100 pb-3">
+                <div>
+                  <h3 className="font-heading text-lg text-neutral-900 uppercase tracking-wider">
+                    {editingPlayerIndex !== null
+                      ? `Editing Player: #${playerForm.number} ${playerForm.name}`
+                      : "Add New Player to Roster"}
+                  </h3>
+                  <p className="text-xs text-neutral-500">
+                    {editingPlayerIndex !== null
+                      ? "Make your adjustments below and click 'Save Changes to Player'."
+                      : "Enter the player's info, jersey number, and upload headshot photo."}
+                  </p>
+                </div>
+
+                {editingPlayerIndex !== null && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEditingPlayerIndex(null);
+                      setPlayerForm({
+                        number: "",
+                        name: "",
+                        captain: "",
+                        position: "F",
+                        class: "FR",
+                        hometown: "",
+                        major: "",
+                        image: "",
+                        acha_url: "",
+                      });
+                      showToast("Cancelled player edit.");
+                    }}
+                    className="text-xs font-bold text-neutral-600 hover:text-neutral-900 bg-neutral-100 px-3 py-1.5 rounded"
+                  >
+                    ✕ Cancel Edit & Clear Form
+                  </button>
+                )}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div>
+                  <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                    Jersey # * (e.g. 24)
+                  </label>
+                  <input
+                    type="number"
+                    value={playerForm.number}
+                    onChange={(e) => setPlayerForm({ ...playerForm, number: e.target.value })}
+                    placeholder="e.g. 24"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-mono font-bold"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                    Player Name * (e.g. Daniel Prazma)
+                  </label>
+                  <input
+                    type="text"
+                    value={playerForm.name}
+                    onChange={(e) => setPlayerForm({ ...playerForm, name: e.target.value })}
+                    placeholder="e.g. Daniel Prazma"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-semibold"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                    Captain Status
+                  </label>
+                  <select
+                    value={playerForm.captain}
+                    onChange={(e) => setPlayerForm({ ...playerForm, captain: e.target.value })}
+                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none"
+                  >
+                    <option value="">None (Regular Player)</option>
+                    <option value="C">Captain (C)</option>
+                    <option value="A">Alternate Captain (A)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                    Position
+                  </label>
+                  <select
+                    value={playerForm.position}
+                    onChange={(e) => setPlayerForm({ ...playerForm, position: e.target.value })}
+                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-bold"
+                  >
+                    <option value="F">Forward (F)</option>
+                    <option value="D">Defense (D)</option>
+                    <option value="G">Goalie (G)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                    Class / Year
+                  </label>
+                  <select
+                    value={playerForm.class}
+                    onChange={(e) => setPlayerForm({ ...playerForm, class: e.target.value })}
+                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none"
+                  >
+                    <option value="FR">Freshman (FR)</option>
+                    <option value="SO">Sophomore (SO)</option>
+                    <option value="JR">Junior (JR)</option>
+                    <option value="SR">Senior (SR)</option>
+                    <option value="GR">Graduate (GR)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                    Hometown (e.g. Raleigh, NC)
+                  </label>
+                  <input
+                    type="text"
+                    value={playerForm.hometown}
+                    onChange={(e) => setPlayerForm({ ...playerForm, hometown: e.target.value })}
+                    placeholder="e.g. Raleigh, NC"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                    Academic Major
+                  </label>
+                  <input
+                    type="text"
+                    value={playerForm.major}
+                    onChange={(e) => setPlayerForm({ ...playerForm, major: e.target.value })}
+                    placeholder="e.g. Business Administration"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                    ACHA Profile URL
+                  </label>
+                  <input
+                    type="text"
+                    value={playerForm.acha_url}
+                    onChange={(e) => setPlayerForm({ ...playerForm, acha_url: e.target.value })}
+                    placeholder="https://www.achahockey.org/stats/player/..."
+                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:border-[#e10600] focus:outline-none font-mono text-xs"
+                  />
+                </div>
+
+                {/* Headshot Upload */}
+                <div className="md:col-span-2">
+                  <label className="block text-xs font-bold uppercase text-neutral-600 mb-1">
+                    Headshot Photo (Upload from Laptop or Enter Filename/URL)
+                  </label>
+                  <div className="space-y-3">
+                    <div className="border-2 border-dashed border-neutral-300 hover:border-[#e10600] rounded-xl p-3 bg-neutral-50 text-center transition cursor-pointer relative group">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0];
+                          if (file) {
+                            if (file.size > 5 * 1024 * 1024) {
+                              alert("Photo is larger than 5MB. Please choose an image under 5MB.");
+                              return;
+                            }
+                            const reader = new FileReader();
+                            reader.onload = (event) => {
+                              const result = event.target?.result as string;
+                              setPlayerForm({ ...playerForm, image: result });
+                              showToast(`Uploaded ${file.name} from computer!`);
+                            };
+                            reader.readAsDataURL(file);
+                          }
+                        }}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                      />
+                      <p className="text-xs font-bold text-neutral-700">
+                        Click to Browse Player Photo from Computer or Drag & Drop Here
+                      </p>
+                      <p className="text-[11px] text-neutral-400">Supports JPG, PNG, WEBP (under 5MB)</p>
+                    </div>
+
+                    {playerForm.image ? (
+                      <div className="flex items-center gap-4 p-3 bg-neutral-100 rounded-lg border border-neutral-200">
+                        <img
+                          src={playerForm.image.startsWith("data:") ? playerForm.image : `/${playerForm.image}`}
+                          alt="Player preview"
+                          className="w-14 h-14 object-cover rounded-full border-2 border-neutral-300 shrink-0 shadow-sm"
+                          onError={(e: any) => {
+                            e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
+                          }}
+                        />
+                        <div className="flex-1 min-w-0">
+                          <span className="text-[10px] font-bold text-green-700 uppercase bg-green-100 px-2 py-0.5 rounded">
+                            ✓ Headshot Loaded
+                          </span>
+                          <p className="text-xs text-neutral-500 truncate mt-1 font-mono">
+                            {playerForm.image.startsWith("data:") ? "Local file loaded" : playerForm.image}
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => setPlayerForm({ ...playerForm, image: "" })}
+                          className="text-xs text-red-600 hover:text-red-800 font-bold px-2 py-1"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] text-neutral-400 font-semibold uppercase">Or Image Filename / URL:</span>
+                        <input
+                          type="text"
+                          value={playerForm.image}
+                          onChange={(e) => setPlayerForm({ ...playerForm, image: e.target.value })}
+                          placeholder="e.g. c3619eca00613061a0e316c539a51f2b.jpg or https://..."
+                          className="flex-1 px-3 py-1.5 border border-neutral-300 rounded text-xs focus:border-[#e10600] focus:outline-none font-mono"
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-end pt-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (!playerForm.number) {
+                      alert("Please enter a jersey number.");
+                      return;
+                    }
+                    if (!playerForm.name.trim()) {
+                      alert("Please enter the player's name.");
+                      return;
+                    }
+
+                    const num = parseInt(playerForm.number as string) || 0;
+
+                    if (editingPlayerIndex !== null) {
+                      const updated = [...roster];
+                      updated[editingPlayerIndex] = {
+                        number: num,
+                        name: playerForm.name,
+                        captain: playerForm.captain,
+                        class: playerForm.class,
+                        major: playerForm.major,
+                        hometown: playerForm.hometown,
+                        image: playerForm.image || updated[editingPlayerIndex].image,
+                        position: playerForm.position,
+                        acha_url: playerForm.acha_url || `https://www.achahockey.org/stats/player/`,
+                      };
+                      updateRosterState(updated);
+                      setEditingPlayerIndex(null);
+                      showToast(`✓ Updated #${num} ${playerForm.name}!`);
+                    } else {
+                      const newPlayer = {
+                        number: num,
+                        name: playerForm.name,
+                        captain: playerForm.captain,
+                        class: playerForm.class,
+                        major: playerForm.major,
+                        hometown: playerForm.hometown,
+                        image: playerForm.image || "07cdeb598c1716ddf52f5438f9484da2.png",
+                        position: playerForm.position,
+                        acha_url: playerForm.acha_url || `https://www.achahockey.org/stats/player/`,
+                      };
+                      // Insert and sort by number
+                      const updated = [...roster, newPlayer].sort((a, b) => a.number - b.number);
+                      updateRosterState(updated);
+                      showToast(`✓ Added #${num} ${playerForm.name} to roster!`);
+                    }
+
+                    setPlayerForm({
+                      number: "",
+                      name: "",
+                      captain: "",
+                      position: "F",
+                      class: "FR",
+                      hometown: "",
+                      major: "",
+                      image: "",
+                      acha_url: "",
+                    });
+                  }}
+                  className="bg-[#e10600] hover:bg-[#b00400] text-white font-heading text-sm px-6 py-2.5 rounded uppercase tracking-wider shadow transition"
+                >
+                  {editingPlayerIndex !== null ? "Save Changes to Player" : "Add Player to Roster"}
+                </button>
+              </div>
+            </div>
+
+            {/* Existing Roster Table & Search/Filter */}
             <div className="bg-white rounded-xl border border-neutral-200 shadow-sm overflow-hidden">
+              <div className="p-4 bg-neutral-100 border-b border-neutral-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <span className="font-heading text-sm uppercase tracking-wider text-neutral-800 font-bold">
+                    Active Roster ({roster.length} Players)
+                  </span>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  {/* Position filter buttons */}
+                  {[
+                    { id: "all", label: `All (${roster.length})` },
+                    { id: "F", label: `F (${roster.filter((p: any) => p.position === "F").length})` },
+                    { id: "D", label: `D (${roster.filter((p: any) => p.position === "D").length})` },
+                    { id: "G", label: `G (${roster.filter((p: any) => p.position === "G").length})` },
+                  ].map((filter) => (
+                    <button
+                      key={filter.id}
+                      onClick={() => setRosterPosFilter(filter.id)}
+                      className={`px-2.5 py-1 rounded text-xs font-heading uppercase tracking-wider transition ${
+                        rosterPosFilter === filter.id
+                          ? "bg-[#e10600] text-white font-bold"
+                          : "bg-white text-neutral-700 hover:bg-neutral-200 border border-neutral-200"
+                      }`}
+                    >
+                      {filter.label}
+                    </button>
+                  ))}
+
+                  {/* Search input */}
+                  <input
+                    type="text"
+                    value={rosterSearch}
+                    onChange={(e) => setRosterSearch(e.target.value)}
+                    placeholder="Search player, #, hometown..."
+                    className="px-3 py-1 bg-white border border-neutral-300 rounded text-xs focus:border-[#e10600] focus:outline-none w-48"
+                  />
+                </div>
+              </div>
+
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-neutral-100 text-neutral-600 font-bold uppercase tracking-wider border-b border-neutral-200">
+                  <thead className="bg-neutral-50 text-neutral-600 font-bold uppercase tracking-wider border-b border-neutral-200">
                     <tr>
                       <th className="p-3">#</th>
+                      <th className="p-3">Headshot</th>
                       <th className="p-3">Player Name</th>
                       <th className="p-3">Pos</th>
-                      <th className="p-3">Year</th>
+                      <th className="p-3">Class</th>
                       <th className="p-3">Hometown</th>
                       <th className="p-3">Major</th>
+                      <th className="p-3">ACHA Bio</th>
+                      <th className="p-3 text-right">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-neutral-100">
-                    {roster.map((p: any) => (
-                      <tr key={p.number + p.name} className="hover:bg-neutral-50">
-                        <td className="p-3 font-mono font-bold text-neutral-900">#{p.number}</td>
-                        <td className="p-3 font-semibold text-neutral-900">{p.name} {p.captain && `(${p.captain})`}</td>
-                        <td className="p-3 font-bold text-neutral-600">{p.position}</td>
-                        <td className="p-3 text-neutral-500">{p.class}</td>
-                        <td className="p-3 text-neutral-600">{p.hometown}</td>
-                        <td className="p-3 text-neutral-500">{p.major || "—"}</td>
-                      </tr>
-                    ))}
+                    {roster
+                      .filter((p: any) => {
+                        if (rosterPosFilter !== "all" && p.position !== rosterPosFilter) return false;
+                        if (rosterSearch.trim()) {
+                          const query = rosterSearch.toLowerCase();
+                          const matchName = p.name?.toLowerCase().includes(query);
+                          const matchNum = String(p.number).includes(query);
+                          const matchTown = p.hometown?.toLowerCase().includes(query);
+                          const matchMajor = p.major?.toLowerCase().includes(query);
+                          return matchName || matchNum || matchTown || matchMajor;
+                        }
+                        return true;
+                      })
+                      .map((p: any, idx: number) => {
+                        const originalIndex = roster.findIndex((orig: any) => orig.number === p.number && orig.name === p.name);
+                        return (
+                          <tr key={p.number + "-" + p.name} className="hover:bg-neutral-50">
+                            <td className="p-3 font-mono font-bold text-neutral-900">
+                              <span className="w-7 h-7 rounded-full bg-neutral-100 flex items-center justify-center font-bold text-neutral-800">
+                                #{p.number}
+                              </span>
+                            </td>
+                            <td className="p-3">
+                              <img
+                                src={p.image?.startsWith("data:") ? p.image : `/${p.image}`}
+                                alt={p.name}
+                                className="w-9 h-9 rounded-full object-cover border border-neutral-300"
+                                onError={(e: any) => {
+                                  e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
+                                }}
+                              />
+                            </td>
+                            <td className="p-3 font-semibold text-neutral-900 whitespace-nowrap">
+                              <div className="flex items-center gap-1.5">
+                                <span>{p.name}</span>
+                                {p.captain && (
+                                  <span className="text-[10px] bg-neutral-900 text-white px-1.5 py-0.2 rounded font-mono font-bold">
+                                    {p.captain}
+                                  </span>
+                                )}
+                              </div>
+                            </td>
+                            <td className="p-3 font-bold text-neutral-700">{p.position}</td>
+                            <td className="p-3 text-neutral-500">{p.class}</td>
+                            <td className="p-3 text-neutral-600 whitespace-nowrap">{p.hometown}</td>
+                            <td className="p-3 text-neutral-500 max-w-xs truncate">{p.major || "—"}</td>
+                            <td className="p-3">
+                              {p.acha_url ? (
+                                <a
+                                  href={p.acha_url}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="text-[11px] font-bold text-[#e10600] hover:underline"
+                                >
+                                  Stats ↗
+                                </a>
+                              ) : (
+                                "—"
+                              )}
+                            </td>
+                            <td className="p-3 text-right whitespace-nowrap space-x-2">
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setEditingPlayerIndex(originalIndex !== -1 ? originalIndex : idx);
+                                  setPlayerForm({
+                                    number: String(p.number),
+                                    name: p.name,
+                                    captain: p.captain || "",
+                                    position: p.position || "F",
+                                    class: p.class || "FR",
+                                    hometown: p.hometown || "",
+                                    major: p.major || "",
+                                    image: p.image || "",
+                                    acha_url: p.acha_url || "",
+                                  });
+                                  window.scrollTo({ top: 300, behavior: "smooth" });
+                                  showToast(`Editing #${p.number} ${p.name}`);
+                                }}
+                                className="text-xs text-blue-600 hover:text-blue-800 font-bold"
+                              >
+                                Edit
+                              </button>
+                              <span className="text-neutral-300">|</span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  if (confirm(`Remove #${p.number} ${p.name} from the roster?`)) {
+                                    const targetIdx = originalIndex !== -1 ? originalIndex : idx;
+                                    const updated = roster.filter((_: any, i: number) => i !== targetIdx);
+                                    updateRosterState(updated);
+                                    showToast(`Removed #${p.number} ${p.name}.`);
+                                  }
+                                }}
+                                className="text-xs text-red-600 hover:text-red-800 font-bold"
+                              >
+                                Delete
+                              </button>
+                            </td>
+                          </tr>
+                        );
+                      })}
                   </tbody>
                 </table>
               </div>

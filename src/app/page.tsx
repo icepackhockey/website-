@@ -3768,123 +3768,93 @@ export default function IcePackApp() {
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* 50th Anniversary Jersey Card */}
-                <div className="bg-white border-2 border-[#e10600]/30 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                  <div>
-                    <div className="relative bg-gradient-to-b from-gray-50 to-gray-100 p-6 flex items-center justify-center h-80 overflow-hidden border-b border-[#e5e5e5]">
-                      <span className="absolute top-4 left-4 bg-[#e10600] text-white text-[11px] font-bold px-3 py-1 rounded uppercase tracking-wider shadow">
-                        OFFICIAL PRE-ORDER
-                      </span>
-                      <span className="absolute top-4 right-4 bg-[#222222] text-white text-[11px] font-bold px-3 py-1 rounded tracking-wider">
-                        $100.00 – $150.00
-                      </span>
-                      <img
-                        src="/jersey-transparent.png"
-                        alt="50th Anniversary Commemorative Jersey"
-                        className="h-full object-contain hover:scale-105 transition duration-500 drop-shadow-lg"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <span className="text-[11px] font-bold text-[#e10600] uppercase tracking-wider">
-                        AUTHENTIC ON-ICE COMMEMORATIVE
-                      </span>
-                      <h3 className="font-heading text-3xl text-[#222222] leading-tight mt-1">
-                        50TH ANNIVERSARY COMMEMORATIVE JERSEY
-                      </h3>
-                      <p className="font-questrial text-xs text-[#555555] leading-relaxed mt-2">
-                        Pre-order the official 50th anniversary jersey. Produced by Rebirth to the exact specifications worn by the IcePack, mimicking the program&apos;s inaugural 1976 design.
-                      </p>
+                {merchData.team_exclusive?.map((item: any) => (
+                  <div
+                    key={item.id}
+                    className="bg-white border-2 border-[#e10600]/30 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="relative bg-gradient-to-b from-gray-50 to-gray-100 p-6 flex items-center justify-center h-80 overflow-hidden border-b border-[#e5e5e5]">
+                        {item.status && (
+                          <span
+                            className={`absolute top-4 left-4 text-white text-[11px] font-bold px-3 py-1 rounded uppercase tracking-wider shadow ${
+                              item.status.toLowerCase().includes("pre-order")
+                                ? "bg-[#e10600]"
+                                : item.status.toLowerCase().includes("production")
+                                ? "bg-amber-600"
+                                : "bg-neutral-800"
+                            }`}
+                          >
+                            {item.status}
+                          </span>
+                        )}
+                        {item.price && (
+                          <span className="absolute top-4 right-4 bg-[#222222] text-white text-[11px] font-bold px-3 py-1 rounded tracking-wider">
+                            {item.price}
+                          </span>
+                        )}
+                        <img
+                          src={item.secondary_image || item.image}
+                          alt={item.title}
+                          className="h-full object-contain hover:scale-105 transition duration-500 drop-shadow-lg"
+                          onError={(e: any) => {
+                            e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
+                          }}
+                        />
+                      </div>
+                      <div className="p-6">
+                        {item.badge && (
+                          <span className="text-[11px] font-bold text-[#e10600] uppercase tracking-wider">
+                            {item.badge}
+                          </span>
+                        )}
+                        <h3 className="font-heading text-3xl text-[#222222] leading-tight mt-1 uppercase">
+                          {item.title}
+                        </h3>
+                        {item.description && (
+                          <p className="font-questrial text-xs text-[#555555] leading-relaxed mt-2">
+                            {item.description}
+                          </p>
+                        )}
 
-                      <div className="mt-4 pt-4 border-t border-[#e5e5e5] space-y-2 text-xs font-questrial text-[#444444]">
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#e10600] font-bold">✓</span>
-                          <span><strong>Pro Authentic Materials:</strong> Heavyweight pro-knit fabric identical to on-ice jerseys</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#e10600] font-bold">✓</span>
-                          <span><strong>Customization:</strong> Custom name and number available (Stephen Russell #20 retired)</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#e10600] font-bold">✓</span>
-                          <span><strong>Sizes:</strong> Adult Men&apos;s, Youth (sublimated lighter weight), and Goalie Cuts</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#e10600] font-bold">✓</span>
-                          <span><strong>Fulfillment:</strong> Domestic shipping included, or on-site pickup at Lane Arena</span>
-                        </div>
+                        {Array.isArray(item.features) && item.features.length > 0 && (
+                          <div className="mt-4 pt-4 border-t border-[#e5e5e5] space-y-2 text-xs font-questrial text-[#444444]">
+                            {item.features.map((feat: string, idx: number) => (
+                              <div key={idx} className="flex items-start gap-2">
+                                <span className="text-[#e10600] font-bold">✓</span>
+                                <span>{feat}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
-                  </div>
 
-                  <div className="p-6 pt-0">
-                    <a
-                      href="https://www.icepackhockey.com/store/p79/50th_Anniversary_Jersey.html"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-3 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-lg text-center rounded transition shadow flex items-center justify-center gap-2"
-                    >
-                      PRE-ORDER 50TH JERSEY ON LIVE STORE ↗
-                    </a>
-                  </div>
-                </div>
-
-                {/* Soon-to-be T-Shirts Card */}
-                <div className="bg-white border border-[#e5e5e5] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                  <div>
-                    <div className="relative bg-gradient-to-b from-gray-50 to-gray-100 p-6 flex items-center justify-center h-80 overflow-hidden border-b border-[#e5e5e5]">
-                      <span className="absolute top-4 left-4 bg-amber-600 text-white text-[11px] font-bold px-3 py-1 rounded uppercase tracking-wider shadow">
-                        COMING SOON · IN PRODUCTION
-                      </span>
-                      <span className="absolute top-4 right-4 bg-gray-200 text-[#444444] text-[11px] font-bold px-3 py-1 rounded tracking-wider">
-                        FALL 2026
-                      </span>
-                      <img
-                        src="/solojersey.jpg"
-                        alt="Official 50th Season Gameday T-Shirt"
-                        className="h-full object-contain hover:scale-105 transition duration-500 opacity-90"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <span className="text-[11px] font-bold text-amber-600 uppercase tracking-wider">
-                        STUDENT CREATIVE TEAM EXCLUSIVE
-                      </span>
-                      <h3 className="font-heading text-3xl text-[#222222] leading-tight mt-1">
-                        OFFICIAL 50TH SEASON GAMEDAY T-SHIRTS
-                      </h3>
-                      <p className="font-questrial text-xs text-[#555555] leading-relaxed mt-2">
-                        The new 2026–27 50th anniversary gameday graphic t-shirt line is currently in production. Designed by the student creative and marketing staff, these will launch ahead of upcoming home games at Lane Arena.
-                      </p>
-
-                      <div className="mt-4 pt-4 border-t border-[#e5e5e5] space-y-2 text-xs font-questrial text-[#444444]">
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#e10600] font-bold">✓</span>
-                          <span><strong>100% Ring-Spun Cotton:</strong> Ultra-comfortable gameday streetwear</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#e10600] font-bold">✓</span>
-                          <span><strong>Exclusive Graphics:</strong> Commemorating 50 seasons of IcePack hockey</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#e10600] font-bold">✓</span>
-                          <span><strong>Unisex Sizing:</strong> Standard athletic fit (XS through 3XL)</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#e10600] font-bold">✓</span>
-                          <span><strong>Where to Buy:</strong> Releasing online and at the merchandise table at Lane Arena</span>
-                        </div>
-                      </div>
+                    <div className="p-6 pt-0">
+                      {item.url && item.url !== "#" ? (
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-3 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-lg text-center rounded transition shadow flex items-center justify-center gap-2 uppercase tracking-wider"
+                        >
+                          {item.action_label || "View Store Item ↗"}
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() =>
+                            alert(
+                              `${item.title} is currently in production by our student creative staff! Check back soon or visit the merchandise table at our next home game at Lane Arena.`
+                            )
+                          }
+                          className="w-full py-3 bg-gray-100 hover:bg-gray-200 text-[#444444] font-heading text-lg text-center rounded transition border border-gray-300 flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
+                        >
+                          {item.action_label || "Coming Soon · Check At Gameday"}
+                        </button>
+                      )}
                     </div>
                   </div>
-
-                  <div className="p-6 pt-0">
-                    <button
-                      onClick={() => alert("T-Shirts are currently in production by our student creative staff! Check back soon or visit the merchandise table at our next home game at Lane Arena.")}
-                      className="w-full py-3 bg-gray-100 hover:bg-gray-200 text-[#444444] font-heading text-lg text-center rounded transition border border-gray-300 flex items-center justify-center gap-2 cursor-pointer"
-                    >
-                      COMING SOON · NOTIFY ME AT GAMEDAY
-                    </button>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
