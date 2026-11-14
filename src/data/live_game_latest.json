@@ -1,23 +1,25 @@
 {
   "game_id": 33025,
   "date": "Friday, November 13, 2026",
-  "status": "2nd Period \u00b7 2:10",
-  "clock": "2:10",
-  "period": "2nd",
+  "status": "3rd Period \u00b7 14:23",
+  "clock": "14:23",
+  "period": "3rd",
   "venue": "Wake Competition Center (NC)",
   "home": {
     "name": "NC State Icepack",
     "short_name": "NC State",
     "logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
-    "score": 3,
-    "shots": 12,
+    "score": 4,
+    "shots": 13,
     "period_goals": {
       "1": 3,
-      "2": 0
+      "2": 0,
+      "3": 1
     },
     "period_shots": {
       "1": 12,
-      "2": 0
+      "2": 0,
+      "3": 1
     }
   },
   "visitor": {
@@ -28,11 +30,13 @@
     "shots": 9,
     "period_goals": {
       "1": 1,
-      "2": 2
+      "2": 2,
+      "3": 0
     },
     "period_shots": {
       "1": 7,
-      "2": 2
+      "2": 2,
+      "3": 0
     }
   },
   "goals": [
@@ -95,6 +99,16 @@
       "assist1": "#15 Davidson",
       "assist2": "#21 Lemmerbrock",
       "special": "PPG"
+    },
+    {
+      "period": "3",
+      "time": "5:30",
+      "team_name": "NC State",
+      "team_is_home": true,
+      "scorer": "#6 Lucas Collins",
+      "assist1": "#16 Fitzsimons",
+      "assist2": "#29 Koufman",
+      "special": "GWG"
     }
   ],
   "penalties": [
@@ -195,6 +209,16 @@
       "team_is_home": true,
       "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
       "player": "#24 Jake Lipani",
+      "infraction": "Cross Checking",
+      "minutes": 2
+    },
+    {
+      "period": "3",
+      "time": "0:57",
+      "team_name": "NC State",
+      "team_is_home": true,
+      "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
+      "player": "#7 Anthony Scarafoni",
       "infraction": "Cross Checking",
       "minutes": 2
     }
