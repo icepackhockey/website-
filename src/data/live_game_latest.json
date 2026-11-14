@@ -7,13 +7,13 @@
     "name": "NC State Icepack",
     "short_name": "NC State",
     "logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
-    "score": 1,
-    "shots": 1,
+    "score": 2,
+    "shots": 2,
     "period_goals": {
-      "1": 1
+      "1": 2
     },
     "period_shots": {
-      "1": 1
+      "1": 2
     }
   },
   "visitor": {
@@ -49,6 +49,16 @@
       "assist1": null,
       "assist2": null,
       "special": ""
+    },
+    {
+      "period": "1",
+      "time": "15:24",
+      "team_name": "NC State",
+      "team_is_home": true,
+      "scorer": "#4 Jack Napieralski",
+      "assist1": "#37 Prazma",
+      "assist2": null,
+      "special": "PPG"
     }
   ],
   "penalties": [
@@ -56,6 +66,8 @@
       "period": "1",
       "time": "2:54",
       "team_name": "Cincinnati",
+      "team_is_home": false,
+      "team_logo": "/teams/cincinnati.png",
       "player": "#74 Ian Duffy",
       "infraction": "Hooking",
       "minutes": 2
@@ -64,8 +76,20 @@
       "period": "1",
       "time": "6:54",
       "team_name": "NC State",
+      "team_is_home": true,
+      "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
       "player": "#6 Lucas Collins",
       "infraction": "Holding",
+      "minutes": 2
+    },
+    {
+      "period": "1",
+      "time": "13:37",
+      "team_name": "Cincinnati",
+      "team_is_home": false,
+      "team_logo": "/teams/cincinnati.png",
+      "player": "#24 Keegan Lozier",
+      "infraction": "Bench Minor-Too Many Men",
       "minutes": 2
     }
   ]
