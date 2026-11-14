@@ -7,13 +7,13 @@
     "name": "NC State Icepack",
     "short_name": "NC State",
     "logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
-    "score": 0,
-    "shots": 0,
+    "score": 1,
+    "shots": 1,
     "period_goals": {
-      "1": 0
+      "1": 1
     },
     "period_shots": {
-      "1": 0
+      "1": 1
     }
   },
   "visitor": {
@@ -38,8 +38,35 @@
       "scorer": "#77 Adam Straka",
       "assist1": "#18 Bepko",
       "assist2": "#16 Mestrandrea",
-      "special": "GWG"
+      "special": ""
+    },
+    {
+      "period": "1",
+      "time": "6:35",
+      "team_name": "NC State",
+      "team_is_home": true,
+      "scorer": "#37 Daniel Prazma",
+      "assist1": null,
+      "assist2": null,
+      "special": ""
     }
   ],
-  "penalties": []
+  "penalties": [
+    {
+      "period": "1",
+      "time": "2:54",
+      "team_name": "Cincinnati",
+      "player": "#74 Ian Duffy",
+      "infraction": "Hooking",
+      "minutes": 2
+    },
+    {
+      "period": "1",
+      "time": "6:54",
+      "team_name": "NC State",
+      "player": "#6 Lucas Collins",
+      "infraction": "Holding",
+      "minutes": 2
+    }
+  ]
 }
