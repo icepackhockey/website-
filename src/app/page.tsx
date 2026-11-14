@@ -850,10 +850,10 @@ export default function IcePackApp() {
                       {liveGame.visitor.name}
                     </h3>
                     <div className="flex items-center gap-2 mt-1 text-xs text-stone-600 font-mono">
-                      <span>Shots: {liveGame.visitor.shots}</span>
-                      <span>·</span>
                       <span>P1: {(liveGame.visitor.period_goals as any)?.["1"] ?? 0}</span>
+                      <span>·</span>
                       <span>P2: {(liveGame.visitor.period_goals as any)?.["2"] ?? 0}</span>
+                      <span>·</span>
                       <span>P3: {(liveGame.visitor.period_goals as any)?.["3"] ?? 0}</span>
                     </div>
                   </div>
@@ -895,10 +895,10 @@ export default function IcePackApp() {
                     </h3>
                     <div className="flex items-center justify-end gap-2 mt-1 text-xs text-stone-600 font-mono">
                       <span>P1: {(liveGame.home.period_goals as any)?.["1"] ?? 0}</span>
-                      <span>P2: {(liveGame.home.period_goals as any)?.["2"] ?? 0}</span>
-                      <span>P3: {(liveGame.home.period_goals as any)?.["3"] ?? 0}</span>
                       <span>·</span>
-                      <span>Shots: {liveGame.home.shots}</span>
+                      <span>P2: {(liveGame.home.period_goals as any)?.["2"] ?? 0}</span>
+                      <span>·</span>
+                      <span>P3: {(liveGame.home.period_goals as any)?.["3"] ?? 0}</span>
                     </div>
                   </div>
                 </div>

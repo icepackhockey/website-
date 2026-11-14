@@ -1,8 +1,8 @@
 {
   "game_id": 33025,
   "date": "Friday, November 13, 2026",
-  "status": "3rd Period \u00b7 14:23",
-  "clock": "14:23",
+  "status": "3rd Period \u00b7 13:40",
+  "clock": "13:40",
   "period": "3rd",
   "venue": "Wake Competition Center (NC)",
   "home": {
@@ -220,6 +220,26 @@
       "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
       "player": "#7 Anthony Scarafoni",
       "infraction": "Cross Checking",
+      "minutes": 2
+    },
+    {
+      "period": "3",
+      "time": "6:07",
+      "team_name": "Cincinnati",
+      "team_is_home": false,
+      "team_logo": "/teams/cincinnati.png",
+      "player": "#74 Ian Duffy",
+      "infraction": "Slashing",
+      "minutes": 2
+    },
+    {
+      "period": "3",
+      "time": "6:07",
+      "team_name": "NC State",
+      "team_is_home": true,
+      "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
+      "player": "#24 Jake Lipani",
+      "infraction": "Diving/Embellishment",
       "minutes": 2
     }
   ]
