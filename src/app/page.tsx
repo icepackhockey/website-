@@ -46,29 +46,110 @@ export default function IcePackApp() {
   // In-browser real-time live gameday state
   const [liveGame, setLiveGame] = useState<any>(liveGameLatest);
 
-  // Auto-refresh live data silently in background every 15s without full page reload
+  // Real-time direct ACHA Clock & Live Box Score Hook
   useEffect(() => {
     let isMounted = true;
-    const fetchLive = async () => {
+
+    // 1. Fetch detailed boxscore (goals/penalties) from local live.json
+    const fetchDetailedBoxScore = async () => {
       try {
         const res = await fetch(`/live.json?t=${Date.now()}`, { cache: "no-store" });
         if (res.ok) {
           const data = await res.json();
           if (isMounted && data && data.game_id) {
-            setLiveGame(data);
+            setLiveGame((prev: any) => ({
+              ...prev,
+              ...data,
+              // keep any newer live clock if already set
+              clock: prev?.clock || data.clock,
+              status: prev?.status && prev.status.includes("·") ? prev.status : data.status,
+            }));
           }
         }
-      } catch (err) {
-        // Fallback silently if offline
-      }
+      } catch (err) {}
     };
 
-    // Initial check & interval
-    fetchLive();
-    const timer = setInterval(fetchLive, 15000);
+    // 2. Direct JSONP connection straight to live ACHA LeagueStat scoreboard clock (0 latency)
+    const pollDirectAchaClock = () => {
+      try {
+        const cbName = "acha_clock_" + Date.now();
+        const script = document.createElement("script");
+        script.src = `https://lscluster.hockeytech.com/feed/index.php?feed=gc&key=e6867b36742a0c9d&client_code=acha&game_id=33025&lang=en&tab=clock&callback=${cbName}`;
+
+        (window as any)[cbName] = (data: any) => {
+          try {
+            if (!isMounted) return;
+            const clock = data?.GC?.Clock;
+            if (clock) {
+              const rawClock = clock.game_clock || "";
+              let cleanClock = "";
+              if (rawClock) {
+                const parts = rawClock.split(":");
+                if (parts.length === 3) cleanClock = `${parseInt(parts[1])}:${parts[2]}`;
+                else if (parts.length === 2) cleanClock = `${parseInt(parts[0])}:${parts[1]}`;
+              }
+
+              const pName = clock.period_name || "1st";
+              const isFinal = String(clock.final) === "1";
+              let statusLabel = "";
+
+              if (isFinal) {
+                statusLabel = "Final";
+              } else if (rawClock === "00:00:00" || cleanClock === "0:00") {
+                statusLabel = `${pName} Intermission`;
+              } else if (cleanClock) {
+                statusLabel = `${pName} Period · ${cleanClock}`;
+              } else {
+                statusLabel = `${pName} Period · In Progress`;
+              }
+
+              const homeScore = parseInt(clock.home_goal_count) || 0;
+              const visitorScore = parseInt(clock.visiting_goal_count) || 0;
+
+              setLiveGame((prev: any) => ({
+                ...prev,
+                status: statusLabel,
+                clock: cleanClock,
+                period: pName,
+                home: {
+                  ...prev.home,
+                  score: homeScore,
+                },
+                visitor: {
+                  ...prev.visitor,
+                  score: visitorScore,
+                },
+              }));
+            }
+          } catch (e) {
+            console.error("ACHA clock direct parse error:", e);
+          } finally {
+            delete (window as any)[cbName];
+            if (script.parentNode) script.parentNode.removeChild(script);
+          }
+        };
+
+        script.onerror = () => {
+          delete (window as any)[cbName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+        };
+
+        document.body.appendChild(script);
+      } catch (err) {}
+    };
+
+    // Initial run
+    fetchDetailedBoxScore();
+    pollDirectAchaClock();
+
+    // Boxscore polls every 20s; Direct ACHA Scoreboard clock polls every 10s!
+    const clockTimer = setInterval(pollDirectAchaClock, 10000);
+    const boxscoreTimer = setInterval(fetchDetailedBoxScore, 20000);
+
     return () => {
       isMounted = false;
-      clearInterval(timer);
+      clearInterval(clockTimer);
+      clearInterval(boxscoreTimer);
     };
   }, []);
 
