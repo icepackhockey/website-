@@ -744,7 +744,7 @@ export default function IcePackApp() {
                 <span className="font-heading text-xl text-white">
                   VS{" "}
                   <a
-                    href="https://www.cincinnatihockey.com/"
+                    href="https://www.bearcathockey.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#e10600] transition underline underline-offset-2 decoration-white/40 hover:decoration-[#e10600]"

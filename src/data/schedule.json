@@ -268,7 +268,7 @@
     "map_url": "https://www.google.com/maps/search/?api=1&query=Lane%20Arena%20%20Wake%20Competition%20Center%2C%20Morrisville%2C%20NC",
     "recap_article_id": 4,
     "opponent_logo": "/teams/unc-chapel-hill.png",
-    "opponent_url": "https://carolinahockey.org/",
+    "opponent_url": "https://unchockey.com/",
     "game_id": 33023,
     "boxscore_url": "https://www.achahockey.org/stats/game-center/33023"
   },
@@ -289,7 +289,7 @@
     "map_url": "https://www.google.com/maps/search/?api=1&query=Orange%20County%20SportsPlex%2C%20Hillsborough%2C%20NC",
     "recap_article_id": 4,
     "opponent_logo": "/teams/unc-chapel-hill.png",
-    "opponent_url": "https://carolinahockey.org/",
+    "opponent_url": "https://unchockey.com/",
     "game_id": 32211,
     "boxscore_url": "https://www.achahockey.org/stats/game-center/32211"
   },
@@ -351,7 +351,7 @@
     "broadcast": "ESPN+",
     "map_url": "https://www.google.com/maps/search/?api=1&query=Lane%20Arena%20%20Wake%20Competition%20Center%2C%20Morrisville%2C%20NC",
     "opponent_logo": "/teams/cincinnati.png",
-    "opponent_url": "https://www.cincinnatihockey.com/",
+    "opponent_url": "https://www.bearcathockey.com/",
     "game_id": 33024,
     "boxscore_url": "https://www.achahockey.org/stats/game-center/33024",
     "recap_article_id": 56
@@ -373,7 +373,7 @@
     "broadcast": "ESPN+",
     "map_url": "https://www.google.com/maps/search/?api=1&query=Lane%20Arena%20%20Wake%20Competition%20Center%2C%20Morrisville%2C%20NC",
     "opponent_logo": "/teams/cincinnati.png",
-    "opponent_url": "https://www.cincinnatihockey.com/",
+    "opponent_url": "https://www.bearcathockey.com/",
     "game_id": 33025,
     "boxscore_url": "https://www.achahockey.org/stats/game-center/33025",
     "recap_article_id": 56
