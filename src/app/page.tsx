@@ -483,6 +483,26 @@ export default function IcePackApp() {
             >
               Support
             </button>
+
+            {/* Football Raffle Button (Temporary Event) */}
+            <button
+              onClick={() => {
+                setActiveTab("raffle");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className={`px-3 py-1.5 rounded-full font-bold uppercase text-xs transition font-opensans flex items-center gap-1.5 shadow-sm shrink-0 ${
+                activeTab === "raffle"
+                  ? "bg-[#222222] text-white ring-2 ring-white"
+                  : "bg-amber-400 hover:bg-amber-300 text-stone-900 font-extrabold"
+              }`}
+              title="UNC vs. NC State Football Ticket Raffle"
+            >
+              <span>🏈</span>
+              <span>Football Raffle</span>
+              <span className="text-[9px] bg-red-600 text-white font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-tighter">
+                ~10 Days
+              </span>
+            </button>
           </nav>
         </div>
 
@@ -721,6 +741,28 @@ export default function IcePackApp() {
             >
               <span>Support the Icepack</span>
               <span className="text-xs text-white/50">›</span>
+            </button>
+
+            {/* Football Raffle (Mobile) */}
+            <button
+              onClick={() => {
+                setActiveTab("raffle");
+                setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className={`w-full text-left px-3.5 py-2.5 rounded font-bold uppercase tracking-wider text-xs transition flex items-center justify-between shadow-sm mt-1.5 ${
+                activeTab === "raffle"
+                  ? "bg-[#222222] text-white ring-2 ring-amber-400"
+                  : "bg-amber-400 hover:bg-amber-300 text-stone-900 font-extrabold"
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                <span>🏈</span>
+                <span>UNC / NCSU Football Raffle</span>
+              </span>
+              <span className="text-[10px] bg-red-600 text-white font-extrabold px-2 py-0.5 rounded-full uppercase tracking-tight">
+                ~10 Days Left
+              </span>
             </button>
           </div>
         )}
@@ -1125,6 +1167,52 @@ export default function IcePackApp() {
         {/* ===================== HOME VIEW ===================== */}
         {activeTab === "home" && (
           <div className="flex flex-col">
+            {/* Special Event: UNC/NCSU Football Ticket Raffle Banner */}
+            <section className="px-4 sm:px-8 pt-8 max-w-[1280px] mx-auto w-full">
+              <div className="bg-gradient-to-r from-stone-900 via-[#1c1917] to-stone-900 border-2 border-amber-400 rounded-2xl p-5 sm:p-6 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+                <div className="flex items-center gap-4 sm:gap-6 z-10">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-amber-400 text-stone-900 rounded-2xl flex flex-col items-center justify-center font-heading shrink-0 shadow-md">
+                    <span className="text-2xl sm:text-3xl leading-none">🏈</span>
+                    <span className="text-[10px] font-extrabold uppercase tracking-tight mt-0.5">RAFFLE</span>
+                  </div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                      <span className="bg-red-600 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse">
+                        ⏳ Limited Time · Ends in ~10 Days
+                      </span>
+                      <span className="text-amber-400 text-xs font-bold font-mono">Drawing Nov 27 @ 8 PM</span>
+                    </div>
+                    <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
+                      WIN 2 TICKETS: NC STATE VS. UNC FOOTBALL + PARKING PASS
+                    </h3>
+                    <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 max-w-xl">
+                      Section 315 Bowl seats at Kenan Stadium on Saturday, Nov 28 plus Rams Head Deck parking. Entries start at just $8. All proceeds support the Icepack!
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 shrink-0 w-full md:w-auto z-10">
+                  <button
+                    onClick={() => {
+                      setActiveTab("raffle");
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="flex-1 md:flex-initial px-6 py-3 bg-amber-400 hover:bg-amber-300 text-stone-900 font-heading text-base tracking-wider uppercase rounded-xl transition font-bold shadow-lg text-center cursor-pointer"
+                  >
+                    ENTER RAFFLE NOW →
+                  </button>
+                  <a
+                    href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 bg-white/10 hover:bg-white/20 text-white font-heading text-base tracking-wider uppercase rounded-xl transition border border-white/20 text-center shrink-0"
+                    title="Direct Checkout on Weebly"
+                  >
+                    Direct Checkout ↗
+                  </a>
+                </div>
+              </div>
+            </section>
             {/* Featured Story Hero */}
             <section className="px-4 sm:px-8 py-10 max-w-[1280px] mx-auto w-full">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#f8f9fa] border border-[#e5e5e5] rounded-lg overflow-hidden shadow-sm">
@@ -4211,6 +4299,204 @@ export default function IcePackApp() {
           </div>
         )}
 
+        {/* ===================== FOOTBALL TICKET RAFFLE VIEW ===================== */}
+        {activeTab === "raffle" && (
+          <div className="px-4 sm:px-8 py-10 max-w-[1280px] mx-auto w-full space-y-10 animate-fadeIn">
+            {/* Header / Countdown Banner */}
+            <div className="border-b-4 border-[#e10600] pb-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div>
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="text-xs font-bold tracking-widest uppercase bg-amber-400 text-stone-900 px-3 py-1 rounded-full shadow-xs">
+                    🏈 Rivalry Ticket Raffle
+                  </span>
+                  <span className="text-xs font-bold tracking-wider uppercase bg-red-600 text-white px-3 py-1 rounded-full animate-pulse shadow-xs">
+                    ⏳ Limited Time · Ends in ~10 Days
+                  </span>
+                  <span className="text-xs text-stone-500 font-mono">
+                    Drawing: Fri Nov 27 @ 8:00 PM
+                  </span>
+                </div>
+                <h1 className="font-heading text-4xl sm:text-6xl text-[#222222] leading-none mt-1">
+                  UNC / NCSU FOOTBALL TICKET RAFFLE
+                </h1>
+                <p className="font-questrial text-sm sm:text-base text-[#444444] mt-2 max-w-3xl leading-relaxed">
+                  Enter for your chance to win <strong>Two (2) Lower Bowl Tickets</strong> to the NC State Wolfpack vs. UNC Chapel Hill football rivalry game at Kenan Memorial Stadium on <strong>Saturday, November 28, 2026</strong>, plus an official <strong>Rams Head Deck parking pass</strong>!
+                </p>
+              </div>
+
+              <div className="shrink-0 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-xl rounded-xl shadow-lg transition inline-flex items-center justify-center gap-2 uppercase tracking-wider"
+                >
+                  <span>Buy Raffle Tickets</span>
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Main Showcase Grid: Left Poster Image, Right Details & Tiers */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: Official Poster Graphic */}
+              <div className="lg:col-span-5 bg-stone-100 rounded-2xl overflow-hidden border border-stone-200 shadow-md">
+                <img
+                  src="/raffle/unc-ncsu-football-raffle.webp"
+                  alt="UNC vs NCSU Football Ticket Raffle Official Poster"
+                  className="w-full h-auto object-cover hover:scale-[1.01] transition duration-300"
+                  onError={(e: any) => {
+                    e.target.src = "/raffle/unc-ncsu-football-raffle.jpg";
+                  }}
+                />
+                <div className="p-4 bg-stone-900 text-white text-center">
+                  <span className="text-xs text-stone-300 block font-questrial">
+                    Official promotional flyer for the 2026 NCSU vs. UNC Football Ticket Raffle.
+                  </span>
+                </div>
+              </div>
+
+              {/* Right Column: Prize Highlights, Tiers, Video Instructions & Rules */}
+              <div className="lg:col-span-7 space-y-6">
+                {/* Prize Breakdown Card */}
+                <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 sm:p-7 shadow-sm space-y-4">
+                  <h3 className="font-heading text-2xl sm:text-3xl text-[#222222] border-b border-stone-200 pb-2">
+                    🏆 THE GRAND PRIZE PACKAGE
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
+                      <span className="text-2xl block mb-1">🎟️</span>
+                      <span className="font-heading text-xl text-[#222222] block">2 GAME TICKETS</span>
+                      <span className="text-xs text-stone-600 block mt-0.5">Section 315 Bowl Seats</span>
+                    </div>
+                    <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
+                      <span className="text-2xl block mb-1">🅿️</span>
+                      <span className="font-heading text-xl text-[#222222] block">PARKING PASS</span>
+                      <span className="text-xs text-stone-600 block mt-0.5">Rams Head Parking Deck</span>
+                    </div>
+                    <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
+                      <span className="text-2xl block mb-1">📍</span>
+                      <span className="font-heading text-xl text-[#222222] block">KENAN STADIUM</span>
+                      <span className="text-xs text-stone-600 block mt-0.5">Saturday, Nov 28 · Chapel Hill</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-stone-500 font-questrial leading-relaxed">
+                    *Kickoff time TBD. All raffle proceeds directly benefit the Icepack Hockey Club at NC State, an independent student-run 501(c)(3) nonprofit program.
+                  </p>
+                </div>
+
+                {/* Entry Tiers Selection */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-heading text-2xl text-[#222222]">
+                      🎟️ SELECT RAFFLE ENTRY TIER
+                    </h3>
+                    <span className="text-xs text-stone-500 font-mono">Multiple entries allowed</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    {[
+                      { tier: "1 Raffle Ticket", price: "$8.00", perTicket: "$8.00 / ticket", badge: "Single Entry" },
+                      { tier: "5 Raffle Tickets", price: "$30.00", perTicket: "$6.00 / ticket", badge: "Popular" },
+                      { tier: "10 Raffle Tickets", price: "$40.00", perTicket: "$4.00 / ticket", badge: "Great Odds" },
+                      { tier: "25 Raffle Tickets", price: "$50.00", perTicket: "$2.00 / ticket", badge: "BEST VALUE · 75% OFF" },
+                    ].map((t, idx) => (
+                      <div
+                        key={idx}
+                        className={`p-4 rounded-xl border transition shadow-sm flex flex-col justify-between ${
+                          idx === 3
+                            ? "bg-amber-50/70 border-amber-300 ring-2 ring-amber-400/40"
+                            : "bg-white border-stone-200 hover:border-[#e10600]"
+                        }`}
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <div>
+                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-stone-100 text-stone-700">
+                              {t.badge}
+                            </span>
+                            <h4 className="font-heading text-xl text-[#222222] mt-1.5">{t.tier}</h4>
+                            <span className="text-xs text-stone-500 font-questrial">{t.perTicket}</span>
+                          </div>
+                          <span className="font-heading text-3xl text-[#e10600]">{t.price}</span>
+                        </div>
+
+                        <a
+                          href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`mt-4 py-2 px-3 rounded-lg text-xs font-heading uppercase tracking-wider text-center transition font-bold block ${
+                            idx === 3
+                              ? "bg-amber-400 hover:bg-amber-300 text-stone-900 shadow"
+                              : "bg-[#e10600] hover:bg-[#c40500] text-white shadow-xs"
+                          }`}
+                        >
+                          Select & Checkout ↗
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Important Instructions & Video Help */}
+                <div className="bg-red-50/60 border border-red-200 rounded-2xl p-5 sm:p-6 space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">⚠️</span>
+                    <h4 className="font-heading text-lg text-[#222222] tracking-wide">
+                      IMPORTANT PURCHASE INSTRUCTIONS
+                    </h4>
+                  </div>
+                  <p className="text-xs text-stone-700 font-questrial leading-relaxed">
+                    You must make a selection for the raffle ticket tier you want and cost during checkout.
+                  </p>
+                  <div className="flex flex-wrap items-center gap-3 pt-1">
+                    <a
+                      href="https://vimeo.com/1184147681/41160384ea"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider rounded-lg transition shadow-xs"
+                    >
+                      <span>▶ Watch Video Instructions</span>
+                      <span className="text-[10px] text-stone-400">(Vimeo ↗)</span>
+                    </a>
+                    <a
+                      href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-stone-100 text-[#e10600] border border-[#e10600] text-xs font-bold uppercase tracking-wider rounded-lg transition"
+                    >
+                      <span>Open Checkout Portal ↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Drawing & Claim Rules */}
+                <div className="bg-stone-50 border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-3">
+                  <h4 className="font-heading text-lg text-[#222222] tracking-wide">
+                    📜 DRAWING TIMELINE & CLAIM RULES
+                  </h4>
+                  <ul className="text-xs text-stone-600 font-questrial space-y-2 list-disc list-inside leading-relaxed">
+                    <li>
+                      <strong>Drawing Time:</strong> The winner will be drawn after <strong>8:00 PM on Friday, November 27, 2026</strong> (the night before kickoff).
+                    </li>
+                    <li>
+                      <strong>Notification:</strong> The lucky winner will be notified by <strong>10:00 PM</strong> on drawing night via email/phone provided at checkout.
+                    </li>
+                    <li>
+                      <strong>Claim Window:</strong> The winner will have until <strong>9:00 AM the next morning (Saturday, Nov 28)</strong> to claim the tickets.
+                    </li>
+                    <li>
+                      <strong>Redraw Policy:</strong> If the tickets are not claimed by 9:00 AM, a new winner will be drawn immediately until claimed.
+                    </li>
+                    <li>
+                      <strong>Tax Exemption:</strong> All ticket contributions support the Ice Hockey Club at NC State, an exempt 501(c)(3) nonprofit (EIN: 46-4129861).
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* ===================== SUPPORT / ANNUAL FUND VIEW ===================== */}
         {activeTab === "support" && (
           <div className="px-4 sm:px-8 py-10 max-w-[1280px] mx-auto w-full space-y-12">
@@ -5299,6 +5585,16 @@ export default function IcePackApp() {
             </button>
             <button onClick={() => setActiveTab("support")} className="text-left text-white/80 hover:text-[#e10600] transition">
               Support the Icepack
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab("raffle");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="text-left text-amber-400 font-bold hover:text-amber-300 transition flex items-center justify-between"
+            >
+              <span>🏈 Football Ticket Raffle</span>
+              <span className="text-[9px] bg-red-600 text-white px-1.5 py-0.5 rounded font-mono">~10 Days</span>
             </button>
             <a
               href="https://ncstatewhockey.org/"
