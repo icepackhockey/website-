@@ -481,7 +481,7 @@ export default function IcePackApp() {
                   : "text-white hover:bg-white/15"
               }`}
             >
-              Support
+              Annual Fund
             </button>
 
             {/* Football Raffle Button (Temporary Event) */}
@@ -726,7 +726,7 @@ export default function IcePackApp() {
               </div>
             </div>
 
-            {/* Support */}
+            {/* Annual Fund (formerly Support) */}
             <button
               onClick={() => {
                 setActiveTab("support");
@@ -739,7 +739,7 @@ export default function IcePackApp() {
                   : "text-white hover:bg-white/15"
               }`}
             >
-              <span>Support the Icepack</span>
+              <span>Annual Fund</span>
               <span className="text-xs text-white/50">›</span>
             </button>
 
@@ -5666,7 +5666,7 @@ export default function IcePackApp() {
               History & Governance
             </button>
             <button onClick={() => setActiveTab("support")} className="text-left text-white/80 hover:text-[#e10600] transition">
-              Support the Icepack
+              Annual Fund
             </button>
             <button
               onClick={() => {
