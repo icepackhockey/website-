@@ -1167,49 +1167,131 @@ export default function IcePackApp() {
         {/* ===================== HOME VIEW ===================== */}
         {activeTab === "home" && (
           <div className="flex flex-col">
-            {/* Special Event: UNC/NCSU Football Ticket Raffle Banner */}
+            {/* High-Impact Dual Showcase: Two Ways to Support the Icepack */}
             <section className="px-4 sm:px-8 pt-8 max-w-[1280px] mx-auto w-full">
-              <div className="bg-gradient-to-r from-stone-900 via-[#1c1917] to-stone-900 border-2 border-amber-400 rounded-2xl p-5 sm:p-6 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-                <div className="flex items-center gap-4 sm:gap-6 z-10">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-amber-400 text-stone-900 rounded-2xl flex flex-col items-center justify-center font-heading shrink-0 shadow-md">
-                    <span className="text-2xl sm:text-3xl leading-none">🏈</span>
-                    <span className="text-[10px] font-extrabold uppercase tracking-tight mt-0.5">RAFFLE</span>
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2 mb-1">
+              {/* Header Label */}
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-4">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#e10600]">
+                    SUPPORT THE PACK · 501(c)(3) NONPROFIT · EIN 46-4129861
+                  </span>
+                  <h2 className="font-heading text-3xl sm:text-4xl text-[#222222] leading-none mt-1">
+                    TWO WAYS TO SUPPORT THE ICEPACK
+                  </h2>
+                </div>
+                <span className="text-xs text-stone-500 font-questrial">
+                  Self funded from day one · 100% community-driven
+                </span>
+              </div>
+
+              {/* 2-Card Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
+                {/* Card 1: Football Ticket Raffle (Gold/Amber Accent) */}
+                <div className="bg-gradient-to-br from-stone-900 via-[#1c1917] to-stone-900 border-2 border-amber-400 rounded-2xl p-6 text-white shadow-xl flex flex-col justify-between relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+
+                  <div className="z-10">
+                    <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-3 mb-4">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">🏈</span>
+                        <span className="text-[11px] font-bold tracking-widest uppercase text-amber-400">
+                          LIMITED-TIME RAFFLE
+                        </span>
+                      </div>
                       <span className="bg-red-600 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse">
-                        ⏳ Limited Time · Ends in ~10 Days
+                        ⏳ Ends in ~10 Days
                       </span>
-                      <span className="text-amber-400 text-xs font-bold font-mono">Drawing Nov 27 @ 8 PM</span>
                     </div>
-                    <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
-                      WIN 2 TICKETS: NC STATE VS. UNC FOOTBALL + PARKING PASS
-                    </h3>
-                    <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 max-w-xl">
-                      Section 315 Bowl seats at Kenan Stadium on Saturday, Nov 28 plus Rams Head Deck parking. Entries start at just $8. All proceeds support the Icepack!
-                    </p>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber-400 text-stone-900 rounded-xl flex flex-col items-center justify-center font-heading shrink-0 shadow-md">
+                        <span className="text-2xl leading-none">🎟️</span>
+                        <span className="text-[9px] font-extrabold uppercase mt-0.5">$8–$50</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
+                          WIN 2 TICKETS: NC STATE VS. UNC FOOTBALL
+                        </h3>
+                        <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
+                          Enter to win <strong>2 Lower Bowl seats (Sec 315)</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>Rams Head Deck parking pass</strong>. Drawing Fri Nov 27 @ 8 PM.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-5 mt-4 border-t border-white/10 flex flex-wrap items-center gap-3 z-10">
+                    <button
+                      onClick={() => {
+                        setActiveTab("raffle");
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className="flex-1 sm:flex-initial px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-stone-900 font-heading text-sm tracking-wider uppercase rounded-xl transition font-bold shadow text-center cursor-pointer"
+                    >
+                      ENTER RAFFLE NOW →
+                    </button>
+                    <a
+                      href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white font-heading text-sm tracking-wider uppercase rounded-xl transition border border-white/20 text-center"
+                    >
+                      Checkout ($8) ↗
+                    </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 shrink-0 w-full md:w-auto z-10">
-                  <button
-                    onClick={() => {
-                      setActiveTab("raffle");
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                    className="flex-1 md:flex-initial px-6 py-3 bg-amber-400 hover:bg-amber-300 text-stone-900 font-heading text-base tracking-wider uppercase rounded-xl transition font-bold shadow-lg text-center cursor-pointer"
-                  >
-                    ENTER RAFFLE NOW →
-                  </button>
-                  <a
-                    href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-3 bg-white/10 hover:bg-white/20 text-white font-heading text-base tracking-wider uppercase rounded-xl transition border border-white/20 text-center shrink-0"
-                    title="Direct Checkout on Weebly"
-                  >
-                    Direct Checkout ↗
-                  </a>
+
+                {/* Card 2: 50th Year Anniversary Annual Fund (Red/Wolfpack Accent) */}
+                <div className="bg-gradient-to-br from-[#1a1a1a] via-[#221010] to-[#1a1a1a] border-2 border-[#e10600] rounded-2xl p-6 text-white shadow-xl flex flex-col justify-between relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#e10600]/15 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+
+                  <div className="z-10">
+                    <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-3 mb-4">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">🐺</span>
+                        <span className="text-[11px] font-bold tracking-widest uppercase text-red-400">
+                          ANNUAL FUND & ENDOWMENT
+                        </span>
+                      </div>
+                      <span className="bg-white/15 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                        501(c)(3) Tax-Deductible
+                      </span>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#e10600] text-white rounded-xl flex flex-col items-center justify-center font-heading shrink-0 shadow-md">
+                        <span className="text-2xl leading-none">🏒</span>
+                        <span className="text-[9px] font-extrabold uppercase mt-0.5">EST. 1976</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
+                          50TH ANNIVERSARY ANNUAL FUND
+                        </h3>
+                        <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
+                          <strong>Self funded from day one.</strong> Direct tax-deductible gifts fuel player travel, ice time, and equipment. Giving tiers from <strong>$25 to $1,976</strong> include in-arena ticket credits!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-5 mt-4 border-t border-white/10 flex flex-wrap items-center gap-3 z-10">
+                    <button
+                      onClick={() => {
+                        setActiveTab("support");
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className="flex-1 sm:flex-initial px-5 py-2.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-sm tracking-wider uppercase rounded-xl transition font-bold shadow text-center cursor-pointer"
+                    >
+                      SUPPORT THE ANNUAL FUND →
+                    </button>
+                    <a
+                      href="https://givebutter.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white font-heading text-sm tracking-wider uppercase rounded-xl transition border border-white/20 text-center"
+                    >
+                      Donate Online ↗
+                    </a>
+                  </div>
                 </div>
               </div>
             </section>
