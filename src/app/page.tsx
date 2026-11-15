@@ -755,17 +755,31 @@ export default function IcePackApp() {
                 </span>
                 <span className="font-bold text-base text-red-400 font-mono ml-1">L 4–5 (OT)</span>
               </div>
-              <button
-                onClick={() => setGameCenterOpen(!gameCenterOpen)}
-                className={`text-xs px-2.5 py-1 rounded font-bold uppercase transition flex items-center gap-1 cursor-pointer ${
-                  gameCenterOpen
-                    ? "bg-[#e10600] text-white shadow"
-                    : "bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600]"
-                }`}
-                title="View Friday GameCenter Box Score"
-              >
-                <span>{gameCenterOpen ? "Box Score ▲" : "Box Score ▾"}</span>
-              </button>
+              <div className="flex items-center gap-1.5 shrink-0">
+                <button
+                  onClick={() => {
+                    const article = newsData.find((a) => a.id === 56);
+                    if (article) setSelectedArticle(article);
+                    setActiveTab("news");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="text-xs px-2.5 py-1 rounded font-bold uppercase transition bg-[#e10600] hover:bg-[#c40500] text-white shadow cursor-pointer flex items-center gap-1"
+                  title="Read Cincinnati Series Recap"
+                >
+                  <span>Recap →</span>
+                </button>
+                <button
+                  onClick={() => setGameCenterOpen(!gameCenterOpen)}
+                  className={`text-xs px-2 py-1 rounded font-bold uppercase transition flex items-center gap-1 cursor-pointer ${
+                    gameCenterOpen
+                      ? "bg-[#e10600] text-white shadow"
+                      : "bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600]"
+                  }`}
+                  title="View Friday GameCenter Box Score"
+                >
+                  <span>{gameCenterOpen ? "Box Score ▲" : "Box Score ▾"}</span>
+                </button>
+              </div>
             </div>
             <span className="text-xs text-white/60">SECHL Matchup · Overtime (1 Pt Earned)</span>
           </div>
@@ -934,6 +948,18 @@ export default function IcePackApp() {
                 </div>
 
                 <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => {
+                      const article = newsData.find((a) => a.id === 56);
+                      if (article) setSelectedArticle(article);
+                      setActiveTab("news");
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="text-xs bg-[#e10600] hover:bg-[#c40500] text-white font-bold uppercase transition px-3 py-1.5 rounded shadow-sm cursor-pointer flex items-center gap-1"
+                    title="Read Full Series Recap Article"
+                  >
+                    <span>Read Series Recap →</span>
+                  </button>
                   <span className="text-[11px] text-emerald-700 font-bold uppercase tracking-wider flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping inline-block"></span>
                     <span>Live Auto-Sync (15s)</span>
@@ -1657,7 +1683,7 @@ export default function IcePackApp() {
                     {/* Mobile Matchup Cards (< md) */}
                     <div className="md:hidden flex flex-col gap-3">
                       {filteredGames.map((game) => {
-                        const isNextGame = game.id === 17; // Thu Nov 12 vs Cincinnati
+                        const isNextGame = game.id === 19; // Fri Nov 20 at George Mason
                         const isHome = game.ha === "H";
                         return (
                           <div
@@ -1877,7 +1903,7 @@ export default function IcePackApp() {
                           </thead>
                           <tbody className="divide-y divide-[#e5e5e5] font-questrial">
                             {filteredGames.map((game) => {
-                              const isNextGame = game.id === 18; // Fri Nov 13 vs Cincinnati
+                              const isNextGame = game.id === 19; // Fri Nov 20 at George Mason
                               return (
                                 <tr
                                   key={game.id}
