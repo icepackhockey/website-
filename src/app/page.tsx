@@ -755,22 +755,10 @@ export default function IcePackApp() {
                 </span>
                 <span className="font-bold text-base text-red-400 font-mono ml-1">L 4–5 (OT)</span>
               </div>
-              <div className="flex items-center gap-1.5 shrink-0">
-                <button
-                  onClick={() => {
-                    const article = newsData.find((a) => a.id === 56);
-                    if (article) setSelectedArticle(article);
-                    setActiveTab("news");
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className="text-xs px-2.5 py-1 rounded font-bold uppercase transition bg-[#e10600] hover:bg-[#c40500] text-white shadow cursor-pointer flex items-center gap-1"
-                  title="Read Cincinnati Series Recap"
-                >
-                  <span>Recap →</span>
-                </button>
+              <div className="flex flex-col gap-1 shrink-0">
                 <button
                   onClick={() => setGameCenterOpen(!gameCenterOpen)}
-                  className={`text-xs px-2 py-1 rounded font-bold uppercase transition flex items-center gap-1 cursor-pointer ${
+                  className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase transition flex items-center justify-center gap-1 cursor-pointer leading-tight ${
                     gameCenterOpen
                       ? "bg-[#e10600] text-white shadow"
                       : "bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600]"
@@ -778,6 +766,18 @@ export default function IcePackApp() {
                   title="View Friday GameCenter Box Score"
                 >
                   <span>{gameCenterOpen ? "Box Score ▲" : "Box Score ▾"}</span>
+                </button>
+                <button
+                  onClick={() => {
+                    const article = newsData.find((a) => a.id === 56);
+                    if (article) setSelectedArticle(article);
+                    setActiveTab("news");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="text-[10px] px-2 py-0.5 rounded font-bold uppercase transition bg-[#e10600] hover:bg-[#c40500] text-white shadow cursor-pointer flex items-center justify-center gap-0.5 leading-tight"
+                  title="Read Cincinnati Series Recap"
+                >
+                  <span>Recap →</span>
                 </button>
               </div>
             </div>
