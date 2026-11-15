@@ -414,7 +414,7 @@
     "broadcast": "",
     "map_url": "https://www.google.com/maps/search/?api=1&query=McMullen%20Arena%2C%20Annapolis%2C%20MD",
     "opponent_logo": "/teams/navy.png",
-    "opponent_url": "https://navyhockey.com/",
+    "opponent_url": "https://usnahockey.com/",
     "game_id": 32255,
     "boxscore_url": "https://www.achahockey.org/stats/game-center/32255"
   },
@@ -532,7 +532,7 @@
     "broadcast": "ESPN+",
     "map_url": "https://www.google.com/maps/search/?api=1&query=Lenovo%20Center%2C%20Raleigh%2C%20NC",
     "opponent_logo": "/teams/unc-chapel-hill.png",
-    "opponent_url": "https://carolinahockey.org/"
+    "opponent_url": null
   },
   {
     "id": 27,
@@ -550,7 +550,7 @@
     "broadcast": "ESPN+",
     "map_url": "https://www.google.com/maps/search/?api=1&query=Lane%20Arena%20%20Wake%20Competition%20Center%2C%20Morrisville%2C%20NC",
     "opponent_logo": "/teams/unc-wilmington.png",
-    "opponent_url": "https://uncwsports.com/",
+    "opponent_url": "https://uncwclubhockey.com/",
     "game_id": 33030,
     "boxscore_url": "https://www.achahockey.org/stats/game-center/33030"
   },
@@ -588,7 +588,7 @@
     "broadcast": "",
     "map_url": "https://www.google.com/maps/search/?api=1&query=Fred%20Rust%20Ice%20Arena%2C%20Newark%2C%20DE",
     "opponent_logo": "/teams/delaware.png",
-    "opponent_url": "https://bluehens.com/",
+    "opponent_url": "https://udelhockey.com/",
     "game_id": 32519,
     "boxscore_url": "https://www.achahockey.org/stats/game-center/32519"
   },
@@ -608,7 +608,7 @@
     "broadcast": "",
     "map_url": "https://www.google.com/maps/search/?api=1&query=Fred%20Rust%20Ice%20Arena%2C%20Newark%2C%20DE",
     "opponent_logo": "/teams/delaware.png",
-    "opponent_url": "https://bluehens.com/",
+    "opponent_url": "https://udelhockey.com/",
     "game_id": 32520,
     "boxscore_url": "https://www.achahockey.org/stats/game-center/32520"
   },
