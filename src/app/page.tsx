@@ -1630,62 +1630,6 @@ export default function IcePackApp() {
                 </div>
               </div>
             </section>
-
-            {/* Support / Givebutter Callout */}
-            <section className="bg-[#f8f9fa] border-y border-[#e5e5e5] px-4 sm:px-8 py-14">
-              <div className="max-w-[1280px] mx-auto">
-                <div className="flex flex-col gap-2 mb-8 text-center sm:text-left">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#e10600]">
-                    SUPPORT THE ICEPACK · ANNUAL FUND & ENDOWMENT
-                  </span>
-                  <h2 className="font-heading text-4xl text-[#222222]">
-                    STUDENT-RUN. DONOR-FUNDED. INDEPENDENT 501(c)(3).
-                  </h2>
-                  <p className="font-questrial text-sm text-[#555555] max-w-2xl">
-                    The IcePack is not funded by the university athletic department. Player travel, ice
-                    time, equipment, and medical trainers are 100% made possible by alumni, parents, and fans.
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div
-                    onClick={() => setActiveTab("support")}
-                    className="bg-[#e10600] text-white p-6 rounded-lg cursor-pointer hover:bg-[#c40500] transition flex flex-col justify-between min-h-[160px]"
-                  >
-                    <span className="font-heading text-2xl">ANNUAL FUND (GIVEBUTTER)</span>
-                    <span className="text-xs text-white/90 font-questrial">
-                      Tax-deductible gifts via Venmo, Apple Pay, card or bank transfer.
-                    </span>
-                  </div>
-                  <div
-                    onClick={() => setActiveTab("sponsors")}
-                    className="bg-[#222222] text-white p-6 rounded-lg cursor-pointer hover:bg-[#111111] transition flex flex-col justify-between min-h-[160px]"
-                  >
-                    <span className="font-heading text-2xl">CORPORATE SPONSORSHIPS</span>
-                    <span className="text-xs text-white/90 font-questrial">
-                      Game nights, rink boards, and broadcast spots for local companies.
-                    </span>
-                  </div>
-                  <div
-                    onClick={() => setActiveTab("support")}
-                    className="bg-[#b00400] text-white p-6 rounded-lg cursor-pointer hover:bg-[#900300] transition flex flex-col justify-between min-h-[160px]"
-                  >
-                    <span className="font-heading text-2xl">ENDOWMENT FUND</span>
-                    <span className="text-xs text-white/90 font-questrial">
-                      Permanent capital campaign securing the next 50 years of IcePack hockey.
-                    </span>
-                  </div>
-                  <div
-                    onClick={() => setActiveTab("about")}
-                    className="bg-[#3a3a3a] text-white p-6 rounded-lg cursor-pointer hover:bg-[#2a2a2a] transition flex flex-col justify-between min-h-[160px]"
-                  >
-                    <span className="font-heading text-2xl">ALUMNI NETWORK</span>
-                    <span className="text-xs text-white/90 font-questrial">
-                      Connect with former teammates, register for alumni games and reunions.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </section>
           </div>
         )}
 
