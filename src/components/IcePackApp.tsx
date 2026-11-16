@@ -643,18 +643,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   >
                     Stephen Russell
                   </button>
-                  <button
-                    onClick={() => {
-                      setActiveTab("sponsors");
-                      setAboutDropdownOpen(false);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                    className={`w-full text-left px-4 py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#e10600] text-white transition ${
-                      activeTab === "sponsors" ? "bg-[#e10600]" : ""
-                    }`}
-                  >
-                    Corporate Sponsors
-                  </button>
                 </div>
               )}
             </div>
@@ -910,21 +898,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   }`}
                 >
                   <span>Stephen Russell Memorial</span>
-                  <span className="text-xs text-white/50">›</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setActiveTab("sponsors");
-                    setMobileMenuOpen(false);
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className={`text-left px-3 py-2 rounded text-xs font-bold uppercase tracking-wider transition flex items-center justify-between ${
-                    activeTab === "sponsors"
-                      ? "bg-[#222222] text-white"
-                      : "text-white hover:bg-white/15"
-                  }`}
-                >
-                  <span>Corporate Sponsors</span>
                   <span className="text-xs text-white/50">›</span>
                 </button>
               </div>
@@ -5756,9 +5729,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             </button>
             <button onClick={() => setActiveTab("history")} className="text-left text-white/80 hover:text-[#e10600] transition">
               History & Governance
-            </button>
-            <button onClick={() => setActiveTab("sponsors")} className="text-left text-white/80 hover:text-[#e10600] transition">
-              Corporate Sponsors
             </button>
             <button onClick={() => setActiveTab("support")} className="text-left text-white/80 hover:text-[#e10600] transition">
               Annual Fund
