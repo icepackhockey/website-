@@ -47,6 +47,8 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
   const [contactName, setContactName] = useState<string>("");
   const [contactEmail, setContactEmail] = useState<string>("");
   const [contactMsg, setContactMsg] = useState<string>("");
+  const [tshirtEmail, setTshirtEmail] = useState<string>("");
+  const [tshirtNotified, setTshirtNotified] = useState<boolean>(false);
 
   // In-browser real-time live gameday state
   const [liveGame, setLiveGame] = useState<any>(liveGameLatest);
@@ -4358,16 +4360,43 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           {item.action_label || "View Store Item ↗"}
                         </a>
                       ) : (
-                        <button
-                          onClick={() =>
-                            alert(
-                              `${item.title} is currently in production by our student creative staff! Check back soon or visit the merchandise table at our next home game at Lane Arena.`
-                            )
-                          }
-                          className="w-full py-3 bg-gray-100 hover:bg-gray-200 text-[#444444] font-heading text-lg text-center rounded transition border border-gray-300 flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
-                        >
-                          {item.action_label || "Coming Soon · Check At Gameday"}
-                        </button>
+                        <div>
+                          {tshirtNotified ? (
+                            <div className="w-full py-3 px-4 bg-emerald-50 border border-emerald-200 rounded-lg text-center text-xs text-emerald-800 font-bold">
+                              ✓ You&apos;re on the list! We&apos;ll email you the moment the 50th Season T-Shirt drops.
+                            </div>
+                          ) : (
+                            <form
+                              onSubmit={(e) => {
+                                e.preventDefault();
+                                if (tshirtEmail.trim()) {
+                                  setTshirtNotified(true);
+                                }
+                              }}
+                              className="space-y-2"
+                            >
+                              <div className="flex flex-col sm:flex-row gap-2">
+                                <input
+                                  type="email"
+                                  required
+                                  value={tshirtEmail}
+                                  onChange={(e) => setTshirtEmail(e.target.value)}
+                                  placeholder="Enter your email address..."
+                                  className="flex-1 px-3.5 py-2.5 text-xs border border-gray-300 rounded-lg text-neutral-800 placeholder-gray-400 focus:outline-none focus:border-[#e10600] font-questrial"
+                                />
+                                <button
+                                  type="submit"
+                                  className="px-5 py-2.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-base rounded-lg transition uppercase tracking-wider font-bold shadow cursor-pointer whitespace-nowrap"
+                                >
+                                  {item.action_label || "Notify Me When Live"}
+                                </button>
+                              </div>
+                              <span className="text-[10px] text-gray-500 font-questrial block text-center">
+                                Drop alert sent straight to your inbox before sizes sell out. No spam.
+                              </span>
+                            </form>
+                          )}
+                        </div>
                       )}
                     </div>
                   </div>
