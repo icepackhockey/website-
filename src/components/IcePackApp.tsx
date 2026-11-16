@@ -5798,8 +5798,14 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
           </div>
         </div>
 
-        <div className="max-w-[1280px] mx-auto pt-6 flex flex-wrap justify-between items-center text-xs text-white/60 font-questrial">
-          <span>© 2026 Ice Hockey Club at NC State, Inc. All rights reserved.</span>
+        <div className="max-w-[1280px] mx-auto pt-6 flex flex-wrap justify-between items-center text-xs text-white/60 font-questrial gap-2">
+          <div className="flex flex-wrap items-center gap-3">
+            <span>© 2026 Ice Hockey Club at NC State, Inc. All rights reserved.</span>
+            <span>·</span>
+            <a href="/privacy" className="hover:text-white underline underline-offset-2">Privacy Policy</a>
+            <span>·</span>
+            <a href="/terms" className="hover:text-white underline underline-offset-2">Terms & Conditions</a>
+          </div>
           <span>Home of the 2023 Frozen Finley Record (24,000+ Fans)</span>
         </div>
       </footer>
