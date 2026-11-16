@@ -12,7 +12,7 @@ import sponsorsDataRaw from "../../data/sponsors.json";
 // Passcode protection for intern desk (simple gate to prevent accidental public edits)
 const DESK_PASSCODE = "PACK2026";
 
-export default function AdminDashboard() {
+export default function InternDesk() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [passcodeInput, setPasscodeInput] = useState<string>("");
   const [authError, setAuthError] = useState<string>("");
@@ -90,7 +90,7 @@ export default function AdminDashboard() {
   // Check storage on mount
   useEffect(() => {
     try {
-      const savedAuth = sessionStorage.getItem("icepack_admin_auth");
+      const savedAuth = sessionStorage.getItem("icepack_intern_auth");
       if (savedAuth === "true") {
         setIsAuthenticated(true);
       }
@@ -127,7 +127,7 @@ export default function AdminDashboard() {
     e.preventDefault();
     if (passcodeInput.trim() === DESK_PASSCODE || passcodeInput.trim().toUpperCase() === "ICEPACK") {
       setIsAuthenticated(true);
-      sessionStorage.setItem("icepack_admin_auth", "true");
+      sessionStorage.setItem("icepack_intern_auth", "true");
       setAuthError("");
     } else {
       setAuthError("Incorrect desk passcode. Please contact Brent or Team Operations.");
@@ -239,7 +239,7 @@ export default function AdminDashboard() {
             </a>
             <button
               onClick={() => {
-                sessionStorage.removeItem("icepack_admin_auth");
+                sessionStorage.removeItem("icepack_intern_auth");
                 setIsAuthenticated(false);
               }}
               className="text-xs px-2.5 py-1.5 rounded bg-red-950/60 hover:bg-red-900 text-red-200 transition"
