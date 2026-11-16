@@ -819,7 +819,7 @@ export default function IcePackApp() {
                     CINCINNATI
                   </a>
                 </span>
-                <span className="font-bold text-base text-red-400 font-mono ml-1">L 4–5 (OT)</span>
+                <span className="font-bold text-base text-red-400 font-mono ml-1">L 5-4 (OT)</span>
               </div>
               <div className="flex flex-col gap-1 shrink-0">
                 <button
@@ -1370,7 +1370,7 @@ export default function IcePackApp() {
                   }}
                   className="text-xs font-bold text-[#e10600] hover:underline uppercase tracking-wider"
                 >
-                  View All 55 Articles in Newsroom →
+                  View All Stories & Articles →
                 </button>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -3581,7 +3581,7 @@ export default function IcePackApp() {
               </span>
               <h1 className="font-heading text-3xl sm:text-5xl text-[#222222] leading-none mt-1">ICEPACK NEWSROOM</h1>
               <p className="font-questrial text-sm text-[#555555] mt-2">
-                Full archive of all 55 game recaps, previews, and feature stories written by team journalists.
+                Full archive of all game recaps, previews, and feature stories written by team journalists.
               </p>
             </div>
 
