@@ -1256,7 +1256,7 @@ export default function IcePackApp() {
                       ENTER RAFFLE NOW →
                     </button>
                     <a
-                      href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
+                      href="https://store.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white font-heading text-sm tracking-wider uppercase rounded-xl transition border border-white/20 text-center"
@@ -4372,7 +4372,7 @@ export default function IcePackApp() {
 
               <div className="shrink-0 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
+                  href="https://store.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-3.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-xl rounded-xl shadow-lg transition inline-flex items-center justify-center gap-2 uppercase tracking-wider"
@@ -4467,7 +4467,7 @@ export default function IcePackApp() {
                         </div>
 
                         <a
-                          href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
+                          href="https://store.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
                           target="_blank"
                           rel="noopener noreferrer"
                           className={`mt-4 py-2 px-3 rounded-lg text-xs font-heading uppercase tracking-wider text-center transition font-bold block ${
@@ -4505,7 +4505,7 @@ export default function IcePackApp() {
                       <span className="text-[10px] text-stone-400">(Vimeo ↗)</span>
                     </a>
                     <a
-                      href="https://www.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
+                      href="https://store.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-stone-100 text-[#e10600] border border-[#e10600] text-xs font-bold uppercase tracking-wider rounded-lg transition"
