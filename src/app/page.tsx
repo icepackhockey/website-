@@ -1782,7 +1782,7 @@ export default function IcePackApp() {
                       <h3 className="font-heading text-xl text-[#222222] mt-0.5">STUDENT SPRING PASS</h3>
                     </div>
                     <div className="my-1.5">
-                      <span className="font-heading text-2xl sm:text-3xl text-[#e10600] block">$20</span>
+                      <span className="font-heading text-2xl sm:text-3xl text-[#e10600] block">$15</span>
                       <span className="text-[10px] text-neutral-500 font-questrial italic block mt-0.5">
                         * Governor&apos;s Cup ticket is not included
                       </span>
