@@ -117,11 +117,10 @@
     }
   ],
   "hockey_ops": [
-     {
+    {
       "name": "Jess Tart",
       "role": "Head Equipment Manager",
-      "image": "e7a7eb898dd90358190db08f55a61244.jpg",
-      /*"bio": "Head equipment manager since 2020. Former IcePack goalie (2016-2020) with NHL visiting-locker-room experience at Lenovo Center."*/
+      "image": "e7a7eb898dd90358190db08f55a61244.jpg"
     },
     {
       "name": "Bond Barone",
