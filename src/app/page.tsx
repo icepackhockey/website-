@@ -4786,7 +4786,7 @@ export default function IcePackApp() {
                       <td className="p-3 text-center font-bold text-green-700 bg-green-50 font-mono">$170</td>
                     </tr>
                     <tr className="hover:bg-stone-50">
-                      <td className="p-3 font-bold font-heading text-sm text-[#222222]">First Line</td>
+                      <td className="p-3 font-bold font-heading text-sm text-[#222222]">First Liner</td>
                       <td className="p-3 text-center font-bold text-[#e10600] font-mono">$500</td>
                       <td className="p-3 text-center text-stone-300">—</td>
                       <td className="p-3 text-center font-bold">2 ($30)</td>
