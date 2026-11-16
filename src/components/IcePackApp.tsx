@@ -1393,7 +1393,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         WIN 2 TICKETS: NC STATE VS. UNC FOOTBALL
                       </h3>
                       <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
-                        Enter to win <strong>2 Lower Bowl seats (Sec 315)</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>Rams Head Deck parking pass</strong>. Drawing Fri Nov 27 @ 8 PM.
+                        Enter to win <strong>2 Tickets: Level 1, Section 202, Row O (Seats 13 & 14)</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>parking pass @ Jackson Deck (239 Jackson Circle)</strong>. Drawing Fri Nov 27 @ 8 PM.
                       </p>
                     </div>
                   </div>
@@ -4547,7 +4547,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   UNC / NCSU FOOTBALL TICKET RAFFLE
                 </h1>
                 <p className="font-questrial text-sm sm:text-base text-[#444444] mt-2 max-w-3xl leading-relaxed">
-                  Enter for your chance to win <strong>Two (2) Lower Bowl Tickets</strong> to the NC State Wolfpack vs. UNC Chapel Hill football rivalry game at Kenan Memorial Stadium on <strong>Saturday, November 28, 2026</strong>, plus an official <strong>Rams Head Deck parking pass</strong>!
+                  Enter for your chance to win <strong>Two (2) Tickets (Level 1, Section 202, Row O, Seats 13 & 14)</strong> to the NC State Wolfpack vs. UNC Chapel Hill football rivalry game at Kenan Memorial Stadium on <strong>Saturday, November 28, 2026</strong>, plus an official <strong>parking pass @ Jackson Deck (239 Jackson Circle)</strong>!
                 </p>
               </div>
 
@@ -4594,12 +4594,12 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
                       <span className="text-2xl block mb-1">🎟️</span>
                       <span className="font-heading text-xl text-[#222222] block">2 GAME TICKETS</span>
-                      <span className="text-xs text-stone-600 block mt-0.5">Section 315 Bowl Seats</span>
+                      <span className="text-xs text-stone-600 block mt-0.5">Level 1 · Sec 202 · Row O · Seats 13–14</span>
                     </div>
                     <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
                       <span className="text-2xl block mb-1">🅿️</span>
                       <span className="font-heading text-xl text-[#222222] block">PARKING PASS</span>
-                      <span className="text-xs text-stone-600 block mt-0.5">Rams Head Parking Deck</span>
+                      <span className="text-xs text-stone-600 block mt-0.5">Jackson Deck (239 Jackson Cir)</span>
                     </div>
                     <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
                       <span className="text-2xl block mb-1">📍</span>
