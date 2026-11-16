@@ -2785,10 +2785,10 @@ export default function IcePackApp() {
               {/* Roster Navigation Tabs */}
               <div className="flex flex-wrap gap-2">
                 {[
-                  { id: "players", label: "Players (26)" },
-                  { id: "coaches", label: "Coaching Staff (6)" },
-                  { id: "media", label: "Off-Ice Staff & Media (20)" },
-                  { id: "board", label: "Advisory Board (2)" },
+                  { id: "players", label: "Players" },
+                  { id: "coaches", label: "Coaching Staff" },
+                  { id: "media", label: "Off-Ice Staff & Media" },
+                  { id: "board", label: "Advisory Board" },
                   { id: "facilities", label: "Facilities & Arena" },
                 ].map((t) => (
                   <button
@@ -2920,7 +2920,7 @@ export default function IcePackApp() {
                   <div className="mb-4">
                     <h2 className="font-heading text-2xl text-[#222222]">STUDENT FRONT OFFICE & MEDIA STAFF</h2>
                     <p className="font-questrial text-xs text-[#555555]">
-                      The 15 dedicated student journalists, videographers, photographers, and marketing interns who power IcePack game coverage.
+                      The dedicated student journalists, videographers, photographers, and marketing interns who power IcePack game coverage.
                     </p>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
