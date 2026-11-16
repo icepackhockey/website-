@@ -1235,19 +1235,13 @@ export default function IcePackApp() {
                       </span>
                     </div>
 
-                    <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber-400 text-stone-900 rounded-xl flex flex-col items-center justify-center font-heading shrink-0 shadow-md">
-                        <span className="text-2xl leading-none">🎟️</span>
-                        <span className="text-[9px] font-extrabold uppercase mt-0.5">$8–$50</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
-                          WIN 2 TICKETS: NC STATE VS. UNC FOOTBALL
-                        </h3>
-                        <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
-                          Enter to win <strong>2 Lower Bowl seats (Sec 315)</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>Rams Head Deck parking pass</strong>. Drawing Fri Nov 27 @ 8 PM.
-                        </p>
-                      </div>
+                    <div>
+                      <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
+                        WIN 2 TICKETS: NC STATE VS. UNC FOOTBALL
+                      </h3>
+                      <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
+                        Enter to win <strong>2 Lower Bowl seats (Sec 315)</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>Rams Head Deck parking pass</strong>. Drawing Fri Nov 27 @ 8 PM.
+                      </p>
                     </div>
                   </div>
 
@@ -1281,7 +1275,7 @@ export default function IcePackApp() {
                       <div className="flex items-center gap-2">
                         <span className="text-xl">🐺</span>
                         <span className="text-[11px] font-bold tracking-widest uppercase text-red-400">
-                          ANNUAL FUND & ENDOWMENT
+                          ANNUAL FUND
                         </span>
                       </div>
                       <span className="bg-white/15 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
@@ -1289,19 +1283,13 @@ export default function IcePackApp() {
                       </span>
                     </div>
 
-                    <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#e10600] text-white rounded-xl flex flex-col items-center justify-center font-heading shrink-0 shadow-md">
-                        <span className="text-2xl leading-none">🏒</span>
-                        <span className="text-[9px] font-extrabold uppercase mt-0.5">EST. 1976</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
-                          50TH ANNIVERSARY ANNUAL FUND
-                        </h3>
-                        <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
-                          <strong>Self funded from day one.</strong> Direct tax-deductible gifts fuel player travel, ice time, and equipment. Giving tiers from <strong>$25 to $1,976</strong> include in-arena ticket credits!
-                        </p>
-                      </div>
+                    <div>
+                      <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
+                        50TH ANNIVERSARY ANNUAL FUND
+                      </h3>
+                      <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
+                        <strong>Self funded from day one.</strong> Direct tax-deductible gifts fuel player travel, ice time, and equipment. Giving tiers from <strong>$25 to $1,976</strong> include in-arena ticket credits!
+                      </p>
                     </div>
                   </div>
 
