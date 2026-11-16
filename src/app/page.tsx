@@ -1436,7 +1436,7 @@ export default function IcePackApp() {
                   <div>
                     <div className="flex items-center justify-between gap-2 border-b border-white/20 pb-2 mb-4">
                       <span className="text-[11px] font-bold tracking-widest uppercase text-white/90">
-                        NEXT GAME · PRESENTED BY CHARTER WM
+                        NEXT GAME · ROAD MATCHUP
                       </span>
                       <span className="text-[10px] font-bold uppercase bg-white/20 px-2 py-0.5 rounded">
                         ACHA D1
@@ -2998,7 +2998,7 @@ export default function IcePackApp() {
                       </h2>
                       <p className="font-questrial text-sm sm:text-lg text-white/90 mt-2 flex items-center gap-2">
                         <span>📍</span>
-                        <span>111-100 Competition Ctr Dr, Morrisville, NC 27560</span>
+                        <span>111 Competition Center Dr, Morrisville, NC 27560</span>
                       </p>
                       <div className="mt-4 flex flex-wrap gap-3">
                         <a
@@ -5728,7 +5728,7 @@ export default function IcePackApp() {
             </span>
             <span className="font-bold text-white">Lane Arena</span>
             <span>Wake Competition Center</span>
-            <span>1001 Competition Center Dr</span>
+            <span>111 Competition Center Dr</span>
             <span>Morrisville, NC 27560</span>
             <a
               href="https://icepackhockey.ticketsauce.com/"
