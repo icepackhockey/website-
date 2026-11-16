@@ -677,7 +677,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               <span>🏈</span>
               <span>Football Raffle</span>
               <span className="text-[9px] bg-red-600 text-white font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-tighter">
-                ~10 Days
+                Ends Nov 22
               </span>
             </button>
           </nav>
@@ -938,7 +938,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <span>UNC / NCSU Football Raffle</span>
               </span>
               <span className="text-[10px] bg-red-600 text-white font-extrabold px-2 py-0.5 rounded-full uppercase tracking-tight">
-                ~10 Days Left
+                Ends Nov 22
               </span>
             </button>
           </div>
@@ -1384,7 +1384,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         </span>
                       </div>
                       <span className="bg-red-600 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse">
-                        ⏳ Ends in ~10 Days
+                        ⏳ Sales End Sun Nov 22 @ 9 PM
                       </span>
                     </div>
 
@@ -1393,7 +1393,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         WIN 2 TICKETS: NC STATE VS. UNC FOOTBALL
                       </h3>
                       <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
-                        Enter to win <strong>2 Tickets: Level 1, Section 202, Row O (Seats 13 & 14)</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>parking pass @ Jackson Deck (239 Jackson Circle)</strong>. Drawing Fri Nov 27 @ 8 PM.
+                        Enter to win <strong>2 Tickets: Level 1, Section 202, Row O (Seats 13 & 14)</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>parking pass @ Jackson Deck (239 Jackson Circle)</strong>. Sales end Sun Nov 22 @ 9 PM · Drawing no later than Tue Nov 24 @ 8 PM.
                       </p>
                     </div>
                   </div>
@@ -4537,10 +4537,10 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     🏈 Rivalry Ticket Raffle
                   </span>
                   <span className="text-xs font-bold tracking-wider uppercase bg-red-600 text-white px-3 py-1 rounded-full animate-pulse shadow-xs">
-                    ⏳ Limited Time · Ends in ~10 Days
+                    ⏳ Sales End Sun Nov 22 @ 9 PM
                   </span>
                   <span className="text-xs text-stone-500 font-mono">
-                    Drawing: Fri Nov 27 @ 8:00 PM
+                    Drawing: No later than Tue Nov 24 @ 8:00 PM
                   </span>
                 </div>
                 <h1 className="font-heading text-4xl sm:text-6xl text-[#222222] leading-none mt-1">
@@ -4699,20 +4699,20 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 {/* Drawing & Claim Rules */}
                 <div className="bg-stone-50 border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-3">
                   <h4 className="font-heading text-lg text-[#222222] tracking-wide">
-                    📜 DRAWING TIMELINE & CLAIM RULES
+                    📜 DRAWING TIMELINE & RULES
                   </h4>
                   <ul className="text-xs text-stone-600 font-questrial space-y-2 list-disc list-inside leading-relaxed">
                     <li>
-                      <strong>Drawing Time:</strong> The winner will be drawn after <strong>8:00 PM on Friday, November 27, 2026</strong> (the night before kickoff).
+                      <strong>Ticket Sales Deadline:</strong> Raffle ticket sales close promptly at <strong>9:00 PM on Sunday, November 22, 2026</strong>.
                     </li>
                     <li>
-                      <strong>Notification:</strong> The lucky winner will be notified by <strong>10:00 PM</strong> on drawing night via email/phone provided at checkout.
+                      <strong>Official Drawing:</strong> The winning ticket will be drawn no later than <strong>8:00 PM on Tuesday, November 24, 2026</strong>.
                     </li>
                     <li>
-                      <strong>Claim Window:</strong> The winner will have until <strong>9:00 AM the next morning (Saturday, Nov 28)</strong> to claim the tickets.
+                      <strong>Winner Notification:</strong> The lucky winner will be notified immediately following the drawing via email and phone number provided at checkout.
                     </li>
                     <li>
-                      <strong>Redraw Policy:</strong> If the tickets are not claimed by 9:00 AM, a new winner will be drawn immediately until claimed.
+                      <strong>Ticket & Parking Delivery:</strong> Both game tickets (Section 202, Row O) and the Jackson Deck parking pass will be transferred electronically directly to the winner.
                     </li>
                     <li>
                       <strong>Tax Exemption:</strong> All ticket contributions support the Ice Hockey Club at NC State, an exempt 501(c)(3) nonprofit (EIN: 46-4129861).
@@ -5741,7 +5741,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               className="text-left text-amber-400 font-bold hover:text-amber-300 transition flex items-center justify-between"
             >
               <span>🏈 Football Ticket Raffle</span>
-              <span className="text-[9px] bg-red-600 text-white px-1.5 py-0.5 rounded font-mono">~10 Days</span>
+              <span className="text-[9px] bg-red-600 text-white px-1.5 py-0.5 rounded font-mono">Ends Nov 22</span>
             </button>
             <a
               href="https://ncstatewhockey.org/"
