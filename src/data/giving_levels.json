@@ -12,7 +12,7 @@
       { "item": "2 Louisville Game Tickets (Feb 19 or 20, 2027)", "val": "$30" },
       { "item": "1 Official IcePack T-Shirt", "val": "$15" }
     ],
-    "donate_url": "https://givebutter.com/"
+    "donate_url": "https://givebutter.com/icepack50"
   },
   {
     "id": "blue-liner",
@@ -28,7 +28,7 @@
       { "item": "1 Official IcePack T-Shirt", "val": "$15" },
       { "item": "1 Governors Cup Rivalry Ticket", "val": "$30" }
     ],
-    "donate_url": "https://givebutter.com/"
+    "donate_url": "https://givebutter.com/icepack50"
   },
   {
     "id": "power-player",
@@ -44,7 +44,7 @@
       { "item": "2 Governors Cup Rivalry Tickets", "val": "$60" },
       { "item": "2 Spring Game Passes", "val": "$80" }
     ],
-    "donate_url": "https://givebutter.com/"
+    "donate_url": "https://givebutter.com/icepack50"
   },
   {
     "id": "first-line",
@@ -61,7 +61,7 @@
       { "item": "2 Spring Game Passes", "val": "$80" },
       { "item": "2 Season Tickets for 2027–2028 Season", "val": "$300" }
     ],
-    "donate_url": "https://givebutter.com/"
+    "donate_url": "https://givebutter.com/icepack50"
   },
   {
     "id": "captain",
@@ -79,7 +79,7 @@
       { "item": "4 Season Tickets for 2027–2028 Season", "val": "$600" },
       { "item": "$250 In-Arena Credit ($25 per game at all 10 Lane Arena home games; usable at Red & White Shop or Cafe by Tribeca Tavern)", "val": "$250" }
     ],
-    "donate_url": "https://givebutter.com/"
+    "donate_url": "https://givebutter.com/icepack50"
   },
   {
     "id": "1976-club",
@@ -98,6 +98,6 @@
       { "item": "4 Season Tickets for 2027–2028 Season", "val": "$600" },
       { "item": "$250 In-Arena Credit ($25 per game at all 10 Lane Arena home games; usable at Red & White Shop or Cafe by Tribeca Tavern)", "val": "$250" }
     ],
-    "donate_url": "https://givebutter.com/"
+    "donate_url": "https://givebutter.com/icepack50"
   }
 ]

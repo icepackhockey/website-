@@ -1316,7 +1316,7 @@ export default function IcePackApp() {
                       SUPPORT THE ANNUAL FUND →
                     </button>
                     <a
-                      href="https://givebutter.com/"
+                      href="https://givebutter.com/icepack50"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white font-heading text-sm tracking-wider uppercase rounded-xl transition border border-white/20 text-center"
@@ -4630,7 +4630,7 @@ export default function IcePackApp() {
 
               <div className="shrink-0">
                 <a
-                  href="https://givebutter.com/"
+                  href="https://givebutter.com/icepack50"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-3.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-xl rounded-xl shadow-lg transition inline-flex items-center gap-2 uppercase tracking-wider"
@@ -4732,7 +4732,7 @@ export default function IcePackApp() {
                       {/* CTA Button */}
                       <div className="pt-2">
                         <a
-                          href={tier.donate_url || "https://givebutter.com/"}
+                          href={tier.donate_url || "https://givebutter.com/icepack50"}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={`w-full py-2.5 rounded font-heading text-base tracking-wider uppercase text-center block transition shadow-sm ${
