@@ -2189,6 +2189,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           <tbody className="divide-y divide-[#e5e5e5] font-questrial">
                             {filteredGames.map((game) => {
                               const isNextGame = game.id === 19; // Fri Nov 20 at George Mason
+                              const isHome = game.ha === "H";
                               return (
                                 <tr
                                   key={game.id}
@@ -2243,7 +2244,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                         </div>
                                         {isNextGame && (
                                           <span className="bg-[#e10600] text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
-                                            NEXT HOME GAME
+                                            {isHome ? "NEXT HOME GAME" : "NEXT GAME"}
                                           </span>
                                         )}
                                         {game.broadcast && (
