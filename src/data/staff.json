@@ -29,12 +29,6 @@
       "role": "Goaltending Coach",
       "image": "1d38f30e1193258f97a2143d18b14c9c.jpg",
       "bio": "Goaltending coach since 2016. Directs the 919 Goaltending program developing collegiate and junior netminders."
-    },
-    {
-      "name": "Jess Tart",
-      "role": "Head Equipment Manager",
-      "image": "e7a7eb898dd90358190db08f55a61244.jpg",
-      "bio": "Head equipment manager since 2020. Former IcePack goalie (2016-2020) with NHL visiting-locker-room experience at Lenovo Center."
     }
   ],
   "board": [
@@ -123,6 +117,12 @@
     }
   ],
   "hockey_ops": [
+     {
+      "name": "Jess Tart",
+      "role": "Head Equipment Manager",
+      "image": "e7a7eb898dd90358190db08f55a61244.jpg",
+      /*"bio": "Head equipment manager since 2020. Former IcePack goalie (2016-2020) with NHL visiting-locker-room experience at Lenovo Center."*/
+    },
     {
       "name": "Bond Barone",
       "role": "Assistant Equipment Manager",
@@ -142,11 +142,6 @@
       "name": "Daniel Foley",
       "role": "EBUG (Emergency Backup Goalie)",
       "image": "e0c6fa7e067613fba6b4e5f13a2cbf27.jpg"
-    },
-    {
-      "name": "Nate Garofalo",
-      "role": "Video Coordinator & Analyst",
-      "image": "2f4e954e6f38bdacf5267666d0c1ee30.jpg"
     }
   ]
 }
