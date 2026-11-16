@@ -3541,7 +3541,7 @@ export default function IcePackApp() {
                     title: "Governor's Cup Victory Celebration",
                     image: "/photo-govcup.jpg",
                     category: "Championships",
-                    photographer: "Luke Miller",
+                    photographer: "Lilly McCabe",
                   },
                   {
                     title: "Frozen Finley Outdoor Showcase",
@@ -3553,7 +3553,7 @@ export default function IcePackApp() {
                     title: "Rivalry Clash vs. UNC at Lenovo Center",
                     image: "/photo-unc.jpg",
                     category: "Rivalry Action",
-                    photographer: "Joshua Ortiz",
+                    photographer: "Julia Ortiz",
                   },
                 ].map((p, idx) => (
                   <div
