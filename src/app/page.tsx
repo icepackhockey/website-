@@ -50,6 +50,14 @@ export default function IcePackApp() {
   useEffect(() => {
     let isMounted = true;
 
+    // Only activate real-time polling during an active in-progress game!
+    const isLiveActive = scheduleData.some((g: any) => g.is_live === true);
+    if (!isLiveActive) {
+      return () => {
+        isMounted = false;
+      };
+    }
+
     // 1. Fetch detailed boxscore (goals/penalties) from local live.json
     const fetchDetailedBoxScore = async () => {
       try {
@@ -1002,10 +1010,16 @@ export default function IcePackApp() {
                   >
                     <span>Read Series Recap →</span>
                   </button>
-                  <span className="text-[11px] text-emerald-700 font-bold uppercase tracking-wider flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping inline-block"></span>
-                    <span>Live Auto-Sync (15s)</span>
-                  </span>
+                  {scheduleData.some((g: any) => g.is_live === true) ? (
+                    <span className="text-[11px] text-emerald-700 font-bold uppercase tracking-wider flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping inline-block"></span>
+                      <span>Live Auto-Sync (15s)</span>
+                    </span>
+                  ) : (
+                    <span className="text-[11px] text-stone-600 font-bold uppercase tracking-wider flex items-center gap-1.5 bg-stone-100 border border-stone-200 px-2.5 py-1 rounded-full">
+                      <span>✓ Official Final Box Score</span>
+                    </span>
+                  )}
                   <button
                     onClick={() => setGameCenterOpen(false)}
                     className="text-xs text-stone-600 hover:text-black font-bold uppercase transition px-3 py-1.5 rounded bg-stone-100 hover:bg-stone-200 border border-stone-200 cursor-pointer"
