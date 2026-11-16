@@ -187,6 +187,22 @@ export default function IcePackApp() {
   const totalNewsPages = Math.ceil(filteredNews.length / newsPerPage);
   const paginatedNews = filteredNews.slice((newsPage - 1) * newsPerPage, newsPage * newsPerPage);
 
+  // Dynamic NC State standings reference for top scoreboard strip & highlights
+  const ncStateTeam = standingsData.teams.find((t) => t.team === "NC State" || t.is_home) || {
+    rank: 3,
+    points: 21,
+    record: "9–6–3–0",
+  };
+  const ncStateCleanRecord = ncStateTeam.record.split("–").slice(0, 3).join("–");
+  const ncStateRankOrdinal =
+    ncStateTeam.rank === 1
+      ? "1st"
+      : ncStateTeam.rank === 2
+      ? "2nd"
+      : ncStateTeam.rank === 3
+      ? "3rd"
+      : `${ncStateTeam.rank}th`;
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#222222]">
       {/* MAIN HEADER (Brand Red: #e10600) */}
@@ -869,8 +885,10 @@ export default function IcePackApp() {
               2026–27 OVERALL RECORD
             </span>
             <div className="flex items-baseline gap-2 mt-1">
-              <span className="font-heading text-2xl text-white">9–6–3</span>
-              <span className="text-xs text-[#e10600] font-bold">2nd in SECHL (21 pts)</span>
+              <span className="font-heading text-2xl text-white">{ncStateCleanRecord}</span>
+              <span className="text-xs text-[#e10600] font-bold">
+                {ncStateRankOrdinal} in SECHL ({ncStateTeam.points} pts)
+              </span>
             </div>
             <span className="text-xs text-white/60">ACHA Division I</span>
           </div>
@@ -1486,7 +1504,7 @@ export default function IcePackApp() {
                     </button>
                   </div>
                   <p className="text-[10px] text-white/75 font-questrial italic text-center mt-2">
-                    Pack earns 1 point in overtime vs Cincinnati, moving to 21 points (2nd in SECHL).
+                    Pack earns 1 point in overtime vs Cincinnati, moving to {ncStateTeam.points} points ({ncStateRankOrdinal} in SECHL).
                   </p>
                 </div>
 
