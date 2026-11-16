@@ -1393,7 +1393,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         WIN 2 TICKETS: NC STATE VS. UNC FOOTBALL
                       </h3>
                       <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
-                        Enter to win <strong>2 Tickets: Level 1, Section 202, Row O (Seats 13 & 14)</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>parking pass @ Jackson Deck (239 Jackson Circle)</strong>. Sales end Sun Nov 22 @ 9 PM · Drawing no later than Tue Nov 24 @ 8 PM.
+                        Enter to win <strong>2 Tickets: Section 202, Row O, Seats 13 & 14</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>parking pass @ Jackson Deck (239 Jackson Circle)</strong>. Sales end Sun Nov 22 @ 9 PM · Drawing no later than Tue Nov 24 @ 8 PM.
                       </p>
                     </div>
                   </div>
@@ -4547,7 +4547,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   UNC / NCSU FOOTBALL TICKET RAFFLE
                 </h1>
                 <p className="font-questrial text-sm sm:text-base text-[#444444] mt-2 max-w-3xl leading-relaxed">
-                  Enter for your chance to win <strong>Two (2) Tickets (Level 1, Section 202, Row O, Seats 13 & 14)</strong> to the NC State Wolfpack vs. UNC Chapel Hill football rivalry game at Kenan Memorial Stadium on <strong>Saturday, November 28, 2026</strong>, plus an official <strong>parking pass @ Jackson Deck (239 Jackson Circle)</strong>!
+                  Enter for your chance to win <strong>Two (2) Tickets (Section 202, Row O, Seats 13 & 14)</strong> to the NC State Wolfpack vs. UNC Chapel Hill football rivalry game at Kenan Memorial Stadium on <strong>Saturday, November 28, 2026</strong>, plus an official <strong>parking pass @ Jackson Deck (239 Jackson Circle)</strong>!
                 </p>
               </div>
 
@@ -4594,7 +4594,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
                       <span className="text-2xl block mb-1">🎟️</span>
                       <span className="font-heading text-xl text-[#222222] block">2 GAME TICKETS</span>
-                      <span className="text-xs text-stone-600 block mt-0.5">Level 1 · Sec 202 · Row O · Seats 13–14</span>
+                      <span className="text-xs text-stone-600 block mt-0.5">Section 202 · Row O · Seats 13–14</span>
                     </div>
                     <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
                       <span className="text-2xl block mb-1">🅿️</span>
@@ -4712,7 +4712,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       <strong>Winner Notification:</strong> The lucky winner will be notified immediately following the drawing via email and phone number provided at checkout.
                     </li>
                     <li>
-                      <strong>Ticket & Parking Delivery:</strong> Both game tickets (Section 202, Row O) and the Jackson Deck parking pass will be transferred electronically directly to the winner.
+                      <strong>Ticket & Parking Delivery:</strong> Both game tickets (Section 202, Row O, Seats 13 & 14) and the Jackson Deck parking pass will be transferred electronically directly to the winner.
                     </li>
                     <li>
                       <strong>Tax Exemption:</strong> All ticket contributions support the Ice Hockey Club at NC State, an exempt 501(c)(3) nonprofit (EIN: 46-4129861).
