@@ -4624,7 +4624,7 @@ export default function IcePackApp() {
                   50TH YEAR ANNIVERSARY ANNUAL FUND
                 </h1>
                 <p className="font-questrial text-sm sm:text-base text-[#444444] mt-3 max-w-3xl leading-relaxed">
-                  <strong>Fifty years on the ice. Self funded from day one.</strong> The Icepack receives no direct operational funding from NC State Athletics. As an independent 501(c)(3) organization run by student-athletes and alumni, our program relies entirely on player dues, alumni gifts, and community partnerships to cover ice time, team travel, equipment, and certified officiating. Your support directly fuels the team&apos;s pursuit of an ACHA National Championship.
+                  <strong>Fifty years on the ice. Self funded from day one.</strong> As an independent 501(c)(3) organization run by student-athletes and alumni, our program relies entirely on player dues, alumni gifts, and community partnerships to cover ice time, team travel, equipment, and certified officiating. Your support directly fuels the team&apos;s pursuit of an ACHA National Championship.
                 </p>
               </div>
 
@@ -4747,114 +4747,6 @@ export default function IcePackApp() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* FULL PERKS COMPARISON MATRIX (TABLE) */}
-            <div className="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden space-y-4">
-              <div className="p-6 bg-stone-50 border-b border-stone-200">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#e10600] font-heading block">
-                  SIDE-BY-SIDE BREAKDOWN
-                </span>
-                <h3 className="font-heading text-2xl sm:text-3xl text-[#222222] mt-0.5">
-                  GIVING LEVEL PERKS COMPARISON MATRIX
-                </h3>
-                <p className="font-questrial text-xs sm:text-sm text-[#666666] mt-1">
-                  Compare benefits, ticket quantities, apparel perks, and fair market values across each level.
-                </p>
-              </div>
-
-              <div className="overflow-x-auto p-4 sm:p-6">
-                <table className="w-full text-left text-xs">
-                  <thead className="bg-[#222222] text-white font-heading uppercase text-xs tracking-wider">
-                    <tr>
-                      <th className="p-3 rounded-l-lg">Giving Tier</th>
-                      <th className="p-3 text-center">Annual Gift</th>
-                      <th className="p-3 text-center">Louisville Tickets (Feb 19 or 20)</th>
-                      <th className="p-3 text-center">IcePack Shirts</th>
-                      <th className="p-3 text-center">Governors Cup</th>
-                      <th className="p-3 text-center">Spring Passes</th>
-                      <th className="p-3 text-center">2027–28 Season Tix</th>
-                      <th className="p-3 text-center">Jerseys</th>
-                      <th className="p-3 text-center">In-Arena Credit</th>
-                      <th className="p-3 text-center rounded-r-lg">Total Value</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-stone-100 font-questrial">
-                    <tr className="hover:bg-stone-50">
-                      <td className="p-3 font-bold font-heading text-sm text-[#222222]">Light the Lamp</td>
-                      <td className="p-3 text-center font-bold text-[#e10600] font-mono">$25</td>
-                      <td className="p-3 text-center font-bold">2 ($30)</td>
-                      <td className="p-3 text-center font-bold">1 ($15)</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center font-bold text-green-700 bg-green-50 font-mono">$45</td>
-                    </tr>
-                    <tr className="hover:bg-stone-50">
-                      <td className="p-3 font-bold font-heading text-sm text-[#222222]">Blue Liner</td>
-                      <td className="p-3 text-center font-bold text-[#e10600] font-mono">$60</td>
-                      <td className="p-3 text-center font-bold">2 ($30)</td>
-                      <td className="p-3 text-center font-bold">1 ($15)</td>
-                      <td className="p-3 text-center font-bold">1 ($30)</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center font-bold text-green-700 bg-green-50 font-mono">$75</td>
-                    </tr>
-                    <tr className="bg-red-50/40 hover:bg-red-50/70 font-semibold">
-                      <td className="p-3 font-bold font-heading text-sm text-[#e10600]">Power Player ★</td>
-                      <td className="p-3 text-center font-bold text-[#e10600] font-mono">$150</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center font-bold">2 ($30)</td>
-                      <td className="p-3 text-center font-bold">2 ($60)</td>
-                      <td className="p-3 text-center font-bold">2 ($80)</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center font-bold text-green-700 bg-green-50 font-mono">$170</td>
-                    </tr>
-                    <tr className="hover:bg-stone-50">
-                      <td className="p-3 font-bold font-heading text-sm text-[#222222]">First Liner</td>
-                      <td className="p-3 text-center font-bold text-[#e10600] font-mono">$500</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center font-bold">2 ($30)</td>
-                      <td className="p-3 text-center font-bold">2 ($60)</td>
-                      <td className="p-3 text-center font-bold">2 ($80)</td>
-                      <td className="p-3 text-center font-bold text-[#e10600]">2 ($300)</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center font-bold text-green-700 bg-green-50 font-mono">$470</td>
-                    </tr>
-                    <tr className="hover:bg-stone-50">
-                      <td className="p-3 font-bold font-heading text-sm text-[#222222]">Captain</td>
-                      <td className="p-3 text-center font-bold text-[#e10600] font-mono">$1,200</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center font-bold">4 ($60)</td>
-                      <td className="p-3 text-center font-bold">4 ($120)</td>
-                      <td className="p-3 text-center font-bold">4 ($160)</td>
-                      <td className="p-3 text-center font-bold text-[#e10600]">4 ($600)</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center font-bold text-neutral-800">$250 Credit</td>
-                      <td className="p-3 text-center font-bold text-green-700 bg-green-50 font-mono">$1,190</td>
-                    </tr>
-                    <tr className="bg-stone-100 hover:bg-stone-200/70 font-semibold">
-                      <td className="p-3 font-bold font-heading text-sm text-[#222222]">1976 Club ★</td>
-                      <td className="p-3 text-center font-bold text-[#e10600] font-mono">$1,976</td>
-                      <td className="p-3 text-center text-stone-300">—</td>
-                      <td className="p-3 text-center font-bold">4 ($60)</td>
-                      <td className="p-3 text-center font-bold">4 ($120)</td>
-                      <td className="p-3 text-center font-bold">4 ($160)</td>
-                      <td className="p-3 text-center font-bold text-[#e10600]">4 ($600)</td>
-                      <td className="p-3 text-center font-bold text-red-700">4 ($700)</td>
-                      <td className="p-3 text-center font-bold text-neutral-800">$250 Credit</td>
-                      <td className="p-3 text-center font-bold text-green-700 bg-green-50 font-mono">$1,890</td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </div>
 
