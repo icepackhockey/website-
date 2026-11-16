@@ -4765,36 +4765,64 @@ export default function IcePackApp() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-stone-50 border border-stone-200 rounded-xl p-5">
-                  <span className="text-3xl block mb-2">🏒</span>
-                  <h4 className="font-heading text-xl text-[#222222]">ICE TIME</h4>
-                  <p className="font-questrial text-xs text-[#555555] mt-1 leading-relaxed">
-                    Practice sheets, morning skate sessions, and gameday ice rental at Lane Arena @ Wake Competition Center.
-                  </p>
+                <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-3xl">🏒</span>
+                      <span className="text-[11px] font-bold font-mono text-[#e10600] bg-white px-2.5 py-0.5 rounded border border-stone-200 shadow-xs shrink-0">
+                        $3,000 per game
+                      </span>
+                    </div>
+                    <h4 className="font-heading text-xl text-[#222222]">ICE TIME</h4>
+                    <p className="font-questrial text-xs text-[#555555] mt-1 leading-relaxed">
+                      Practice sheets, morning skate sessions, and gameday ice rental at Lane Arena @ Wake Competition Center.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-stone-50 border border-stone-200 rounded-xl p-5">
-                  <span className="text-3xl block mb-2">🚌</span>
-                  <h4 className="font-heading text-xl text-[#222222]">TEAM TRAVEL</h4>
-                  <p className="font-questrial text-xs text-[#555555] mt-1 leading-relaxed">
-                    Charter buses, team flights, and lodging for national road trips (Utah, Alabama, Liberty, West Virginia).
-                  </p>
+                <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-3xl">🚌</span>
+                      <span className="text-[11px] font-bold font-mono text-[#e10600] bg-white px-2.5 py-0.5 rounded border border-stone-200 shadow-xs shrink-0">
+                        Approx. $15,000 per trip
+                      </span>
+                    </div>
+                    <h4 className="font-heading text-xl text-[#222222]">TEAM TRAVEL</h4>
+                    <p className="font-questrial text-xs text-[#555555] mt-1 leading-relaxed">
+                      Charter buses, team flights, and lodging for national road trips (Utah, Alabama, Liberty, West Virginia).
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-stone-50 border border-stone-200 rounded-xl p-5">
-                  <span className="text-3xl block mb-2">🛡️</span>
-                  <h4 className="font-heading text-xl text-[#222222]">SAFETY & GEAR</h4>
-                  <p className="font-questrial text-xs text-[#555555] mt-1 leading-relaxed">
-                    Certified helmets, protective padding, team sticks, game socks, and authentic custom sweaters.
-                  </p>
+                <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-3xl">🛡️</span>
+                      <span className="text-[11px] font-bold font-mono text-[#e10600] bg-white px-2.5 py-0.5 rounded border border-stone-200 shadow-xs shrink-0">
+                        $10,000 per year
+                      </span>
+                    </div>
+                    <h4 className="font-heading text-xl text-[#222222]">EQUIPMENT</h4>
+                    <p className="font-questrial text-xs text-[#555555] mt-1 leading-relaxed">
+                      Certified helmets, protective padding, team sticks, game socks, and authentic custom sweaters.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-stone-50 border border-stone-200 rounded-xl p-5">
-                  <span className="text-3xl block mb-2">⚖️</span>
-                  <h4 className="font-heading text-xl text-[#222222]">LEAGUE & OFFICIALS</h4>
-                  <p className="font-questrial text-xs text-[#555555] mt-1 leading-relaxed">
-                    ACHA Division I annual dues, SECHL conference marks, and certified on-ice referees and medical staff.
-                  </p>
+                <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-3xl">⚖️</span>
+                      <span className="text-[11px] font-bold font-mono text-[#e10600] bg-white px-2.5 py-0.5 rounded border border-stone-200 shadow-xs shrink-0">
+                        $15,000 per year
+                      </span>
+                    </div>
+                    <h4 className="font-heading text-xl text-[#222222]">LEAGUE & OFFICIALS</h4>
+                    <p className="font-questrial text-xs text-[#555555] mt-1 leading-relaxed">
+                      ACHA Division I annual dues, SECHL conference marks, and certified on-ice referees and medical staff.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
