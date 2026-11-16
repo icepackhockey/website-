@@ -1868,7 +1868,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       </span>
                     </div>
                     <a
-                      href="https://icepackhockey.ticketsauce.com/"
+                      href="https://store.icepackhockey.com/store/p89/spring-stm-26.html"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-2 bg-[#222222] hover:bg-[#111111] text-white font-heading text-sm sm:text-base text-center rounded transition"
@@ -1889,7 +1889,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       </span>
                     </div>
                     <a
-                      href="https://icepackhockey.ticketsauce.com/"
+                      href="https://store.icepackhockey.com/store/p90/spring-26-student.html"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-2 bg-[#222222] hover:bg-[#111111] text-white font-heading text-sm sm:text-base text-center rounded transition"
