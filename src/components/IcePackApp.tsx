@@ -3055,7 +3055,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
 
                 <div>
                   <div className="mb-4">
-                    <h2 className="font-heading text-2xl text-[#222222]">STUDENT FRONT OFFICE & MEDIA STAFF</h2>
+                    <h2 className="font-heading text-2xl text-[#222222]">FRONT OFFICE & MEDIA STAFF</h2>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {staffData.media_staff.map((m, idx) => (
