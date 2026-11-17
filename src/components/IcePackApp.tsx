@@ -1823,29 +1823,66 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       📅 SUBSCRIBE ▼
                     </button>
                     {calDropdownOpen && (
-                      <div className="absolute right-0 mt-2 w-64 bg-white border border-[#e5e5e5] rounded shadow-xl py-2 z-50">
+                      <div className="absolute right-0 mt-2 w-72 bg-white border border-[#e5e5e5] rounded-xl shadow-2xl py-2 z-50 text-stone-800">
+                        <div className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-stone-500 border-b border-stone-100">
+                          Add Team Schedule to Calendar
+                        </div>
                         <a
-                          href="https://calendar.google.com/calendar/render?cid=webcal://www.icepackhockey.com/cal/icepack-2026-27-season.ics"
+                          href="webcal://icepackhockey.com/cal/icepack-2026-27-season.ics"
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold hover:bg-stone-50 text-[#222222] transition"
+                        >
+                          <span className="text-base">📲</span>
+                          <div>
+                            <span className="block font-bold">Apple Calendar / Outlook App</span>
+                            <span className="text-[10px] text-stone-500 font-normal">One-click subscribe on Mac, PC, &amp; iPhone</span>
+                          </div>
+                        </a>
+                        <a
+                          href="https://calendar.google.com/calendar/render?cid=webcal://icepackhockey.com/cal/icepack-2026-27-season.ics"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-2 text-xs font-semibold hover:bg-gray-100 text-[#222222]"
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold hover:bg-stone-50 text-[#222222] transition"
                         >
-                          Google Calendar
+                          <span className="text-base">📅</span>
+                          <div>
+                            <span className="block font-bold">Google Calendar</span>
+                            <span className="text-[10px] text-stone-500 font-normal">Add to Google account web calendar</span>
+                          </div>
                         </a>
                         <a
-                          href="webcal://www.icepackhockey.com/cal/icepack-2026-27-season.ics"
-                          className="block px-4 py-2 text-xs font-semibold hover:bg-gray-100 text-[#222222]"
-                        >
-                          Apple Calendar (iCal)
-                        </a>
-                        <a
-                          href="https://outlook.live.com/calendar/0/addfromweb?url=https://www.icepackhockey.com/cal/icepack-2026-27-season.ics"
+                          href="https://outlook.office.com/calendar/0/addfromweb?url=https://icepackhockey.com/cal/icepack-2026-27-season.ics&name=NC%20State%20Icepack%20Hockey"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-2 text-xs font-semibold hover:bg-gray-100 text-[#222222]"
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold hover:bg-stone-50 text-[#222222] transition"
                         >
-                          Outlook.com
+                          <span className="text-base">💼</span>
+                          <div>
+                            <span className="block font-bold">Outlook (Microsoft 365 / Work)</span>
+                            <span className="text-[10px] text-stone-500 font-normal">Subscribe on work / corporate calendar</span>
+                          </div>
                         </a>
+                        <a
+                          href="https://outlook.live.com/calendar/0/addfromweb?url=https://icepackhockey.com/cal/icepack-2026-27-season.ics&name=NC%20State%20Icepack%20Hockey"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold hover:bg-stone-50 text-[#222222] transition"
+                        >
+                          <span className="text-base">✉️</span>
+                          <div>
+                            <span className="block font-bold">Outlook.com (Personal)</span>
+                            <span className="text-[10px] text-stone-500 font-normal">Subscribe on personal Microsoft account</span>
+                          </div>
+                        </a>
+                        <div className="border-t border-stone-100 mt-1 pt-1">
+                          <a
+                            href="/cal/icepack-2026-27-season.ics"
+                            download="icepack-2026-27-season.ics"
+                            className="flex items-center gap-2.5 px-4 py-2 text-xs font-semibold hover:bg-stone-50 text-stone-600 transition"
+                          >
+                            <span className="text-base">⬇️</span>
+                            <span>Download .ICS file directly</span>
+                          </a>
+                        </div>
                       </div>
                     )}
                   </div>
