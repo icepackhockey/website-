@@ -1513,7 +1513,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               <div className="flex items-center justify-between border-b-2 border-[#e10600] pb-2 mb-6">
                 <div>
                   <h2 className="font-heading text-3xl text-[#222222]">LATEST TEAM STORIES & RECAPS</h2>
-                  <span className="text-xs text-[#626262]">Written and photographed by the IcePack student media staff</span>
                 </div>
                 <button
                   onClick={() => {
@@ -3030,9 +3029,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   <div>
                     <div className="mb-4">
                       <h2 className="font-heading text-2xl text-[#222222]">HOCKEY OPERATIONS</h2>
-                      <p className="font-questrial text-xs text-[#555555]">
-                        Equipment management, scouting, analytics, and team operations.
-                      </p>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                       {staffData.hockey_ops.map((m, idx) => (
@@ -3060,9 +3056,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <div>
                   <div className="mb-4">
                     <h2 className="font-heading text-2xl text-[#222222]">STUDENT FRONT OFFICE & MEDIA STAFF</h2>
-                    <p className="font-questrial text-xs text-[#555555]">
-                      The dedicated student journalists, videographers, photographers, and marketing interns who power IcePack game coverage.
-                    </p>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {staffData.media_staff.map((m, idx) => (
@@ -3396,15 +3389,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             {/* Header Banner */}
             <div className="border-b-4 border-[#e10600] pb-6">
               <span className="text-xs font-bold tracking-widest uppercase text-[#e10600]">
-                ICEPACK COMMUNICATIONS · MULTIMEDIA NETWORK
+                MULTIMEDIA
               </span>
               <h1 className="font-heading text-4xl sm:text-6xl text-[#222222] leading-none mt-1">
-                THE ICEPACK MEDIA HUB
+                MULTIMEDIA
               </h1>
-              <p className="font-questrial text-sm sm:text-base text-[#444444] mt-3 max-w-3xl leading-relaxed">
-                The central home for NC State Icepack hockey coverage. Follow the Pack through in-depth game recaps, PackTV live broadcasts, high-speed highlight reels, and on-ice photography captured by our student journalists and multimedia team.
-              </p>
-
               {/* Quick Jump Bar */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
                 <button
@@ -3417,14 +3406,14 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 >
                   <div>
                     <span className="text-[10px] font-bold text-[#e10600] uppercase tracking-wider block font-heading">
-                      CHANNEL 01
+                      Articles, Game Recaps, Press Releases
                     </span>
                     <span className="font-heading text-lg text-[#222222] group-hover:text-[#e10600] transition">
-                      News & Game Recaps
+                      LATEST NEWS
                     </span>
-                    <span className="text-xs text-[#666666] block mt-0.5">
-                      {newsData.length}+ Articles & Stories
-                    </span>
+                    {/*<span className="text-xs text-[#666666] block mt-0.5">
+                      {newsData.length}+ Articles & Recaps
+                    </span>*/}
                   </div>
                   <span className="text-stone-400 group-hover:text-[#e10600] text-lg font-bold">→</span>
                 </button>
@@ -3438,14 +3427,14 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 >
                   <div>
                     <span className="text-[10px] font-bold text-[#e10600] uppercase tracking-wider block font-heading">
-                      CHANNEL 02
+                      Broadcast, Highlights, Videos
                     </span>
                     <span className="font-heading text-lg text-[#222222] group-hover:text-[#e10600] transition">
-                      Videos & PackTV
+                       VIDEO
                     </span>
-                    <span className="text-xs text-[#666666] block mt-0.5">
+                     {/*<span className="text-xs text-[#666666] block mt-0.5">
                       Broadcasts & Goal Highlights
-                    </span>
+                    </span>*/}
                   </div>
                   <span className="text-stone-400 group-hover:text-[#e10600] text-lg font-bold">→</span>
                 </button>
@@ -3459,14 +3448,14 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 >
                   <div>
                     <span className="text-[10px] font-bold text-[#e10600] uppercase tracking-wider block font-heading">
-                      CHANNEL 03
+                      Community, Game Action, Tournaments
                     </span>
                     <span className="font-heading text-lg text-[#222222] group-hover:text-[#e10600] transition">
-                      Photo Gallery
+                      PHOTO GALLERIES
                     </span>
-                    <span className="text-xs text-[#666666] block mt-0.5">
+                    {/*<span className="text-xs text-[#666666] block mt-0.5">
                       On-Ice Action & Trophy Honors
-                    </span>
+                    </span>*/}
                   </div>
                   <span className="text-stone-400 group-hover:text-[#e10600] text-lg font-bold">→</span>
                 </button>
