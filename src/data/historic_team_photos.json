@@ -46,21 +46,21 @@
   },
   {
     "id": 6,
-    "year": "2006–2007",
-    "era": "Mid 2000s",
-    "title": "2006–07 Holiday Toy Drive Squad",
-    "image": "/team-photos/2006-07-toy-drive-team.jpg",
-    "caption": "Team gathers with donated gifts for kids during the annual holiday community drive.",
-    "venue": "Raleigh, NC"
-  },
-  {
-    "id": 7,
     "year": "2007–2008",
     "era": "Late 2000s",
     "title": "2007–2008 NC State Hockey",
     "image": "/team-photos/2007-08-reczone-team.jpg",
     "caption": "Official 2007–2008 team portrait taken on the ice at the Rec Zone.",
     "venue": "Rec Zone, Raleigh"
+  },
+  {
+    "id": 7,
+    "year": "2009",
+    "era": "Late 2000s",
+    "title": "2009 Toys for Tots Squad",
+    "image": "/team-photos/2006-07-toy-drive-team.jpg",
+    "caption": "Team gathers with donated gifts for kids during the annual Toys for Tots holiday community drive.",
+    "venue": "Raleigh, NC"
   },
   {
     "id": 8,
