@@ -4726,7 +4726,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       {/* Chronological Sequence & Year Badge */}
                       <div className="absolute top-3 left-3 flex items-center gap-1.5">
                         <span className="bg-[#e10600] text-white font-heading text-sm px-2.5 py-0.5 rounded shadow">
-                          #{index + 1} · {tp.year}
+                          {tp.year}
                         </span>
                         <span className="bg-black/75 backdrop-blur-sm text-stone-200 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
                           {tp.era}
@@ -4753,8 +4753,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         </p>
                       </div>
 
-                      <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-[#e10600]">
-                        <span className="font-mono text-[11px] text-stone-400">Photo {index + 1} of 9</span>
+                      <div className="pt-3 border-t border-stone-100 flex items-center justify-end text-xs font-semibold text-[#e10600]">
                         <span className="group-hover:translate-x-1 transition-transform">Inspect Photo →</span>
                       </div>
                     </div>
