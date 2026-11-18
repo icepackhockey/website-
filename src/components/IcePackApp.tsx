@@ -49,6 +49,23 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
   const [contactMsg, setContactMsg] = useState<string>("");
   const [tshirtEmail, setTshirtEmail] = useState<string>("");
   const [tshirtNotified, setTshirtNotified] = useState<boolean>(false);
+  const [alumniSubmitted, setAlumniSubmitted] = useState<boolean>(false);
+  const [alumniFormData, setAlumniFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    cityState: "",
+    yearsPlayed: "",
+    jerseyNumber: "",
+    position: "Forward",
+    honors: "",
+    industry: "Information Technology",
+    company: "",
+    mentoringInterest: "Open to it",
+    alumniGameInterest: "Yes, count me in to skate",
+    memories: "",
+    hasArchivalPhotos: false,
+  });
 
   // In-browser real-time live gameday state
   const [liveGame, setLiveGame] = useState<any>(liveGameLatest);
@@ -57,7 +74,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
   const getPathForTab = (tab: string, sub?: string, article?: any) => {
     if (tab === "schedule") return "/schedule";
     if (tab === "standings") return "/standings";
-    if (tab === "team") return sub === "facilities" ? "/facilities" : "/team";
+    if (tab === "team") return sub === "facilities" ? "/facilities" : sub === "alumni" ? "/alumni" : "/team";
     if (tab === "news") return article ? `/news?article=${article.id}` : "/news";
     if (tab === "media") return "/media";
     if (tab === "videos") return "/videos";
@@ -103,7 +120,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
   const setRosterTab = (sub: string) => {
     _setRosterTab(sub);
     if (typeof window !== "undefined" && activeTab === "team") {
-      const target = sub === "facilities" ? "/facilities" : "/team";
+      const target = sub === "facilities" ? "/facilities" : sub === "alumni" ? "/alumni" : "/team";
       if (window.location.pathname !== target) {
         window.history.pushState({ tab: "team", subTab: sub }, "", target);
       }
@@ -148,6 +165,10 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
       } else if (path === "/facilities") {
         _setActiveTab("team");
         _setRosterTab("facilities");
+        _setSelectedArticle(null);
+      } else if (path === "/alumni") {
+        _setActiveTab("team");
+        _setRosterTab("alumni");
         _setSelectedArticle(null);
       } else if (path === "/news") {
         _setActiveTab("news");
@@ -504,6 +525,19 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   >
                     Facilities & Arena
                   </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab("team");
+                      setRosterTab("alumni");
+                      setTeamDropdownOpen(false);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className={`w-full text-left px-4 py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#e10600] text-white transition border-t border-white/10 ${
+                      activeTab === "team" && rosterTab === "alumni" ? "bg-[#e10600]" : ""
+                    }`}
+                  >
+                    🐺 Alumni Reconnect
+                  </button>
                 </div>
               )}
             </div>
@@ -769,7 +803,20 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     activeTab === "team" && rosterTab === "facilities" ? "bg-[#222222] text-white" : "text-white hover:bg-white/15"
                   }`}
                 >
-                  🏟️ Facilities & Lane Arena
+                  🏟️ Facilities &amp; Lane Arena
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveTab("team");
+                    setRosterTab("alumni");
+                    setMobileMenuOpen(false);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className={`col-span-2 text-center py-2 px-1 rounded text-xs font-bold uppercase tracking-wider transition border-t border-white/15 pt-2 ${
+                    activeTab === "team" && rosterTab === "alumni" ? "bg-[#222222] text-white" : "text-amber-400 hover:bg-white/15 font-bold"
+                  }`}
+                >
+                  🐺 Alumni Reconnect Form
                 </button>
               </div>
             </div>
@@ -2930,6 +2977,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   { id: "media", label: "Off-Ice Staff & Media" },
                   { id: "board", label: "Advisory Board" },
                   { id: "facilities", label: "Facilities & Arena" },
+                  { id: "alumni", label: "Alumni Reconnect" },
                 ].map((t) => (
                   <button
                     key={t.id}
@@ -3378,6 +3426,388 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     </div>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* Alumni Reconnect View */}
+            {rosterTab === "alumni" && (
+              <div className="space-y-8">
+                {/* Hero / Welcome Banner */}
+                <div className="bg-gradient-to-br from-stone-900 via-[#1f1717] to-stone-900 border-2 border-[#e10600] rounded-2xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-[#e10600]/15 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16"></div>
+                  <div className="relative z-10 space-y-3">
+                    <div className="inline-flex items-center gap-2 bg-[#e10600] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-xs">
+                      <span>🏒</span>
+                      <span>50 YEARS OF PACK HOCKEY · 1976–2026</span>
+                    </div>
+                    <h2 className="font-heading text-3xl sm:text-5xl text-white leading-none">
+                      WELCOME HOME, PACK ALUMNI
+                    </h2>
+                    <p className="font-questrial text-sm sm:text-base text-stone-300 max-w-3xl leading-relaxed">
+                      Over 500 student-athletes have worn the red and white sweater since 1976. Whether you played during the founding club era, skated in the ACC Tournament, or competed in ACHA Nationals, your legacy built this program. Fill out the questionnaire below to reconnect with teammates, receive annual Alumni Game invites, and stay engaged with the Pack.
+                    </p>
+
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
+                      <div className="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <span className="font-heading text-2xl sm:text-3xl text-amber-400 block">500+</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-stone-300">Sweaters Worn</span>
+                      </div>
+                      <div className="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <span className="font-heading text-2xl sm:text-3xl text-amber-400 block">50th</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-stone-300">Anniversary Season</span>
+                      </div>
+                      <div className="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <span className="font-heading text-2xl sm:text-3xl text-amber-400 block">6</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-stone-300">League Titles</span>
+                      </div>
+                      <div className="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <span className="font-heading text-2xl sm:text-3xl text-amber-400 block">1</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-stone-300">Pack Family</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {!alumniSubmitted ? (
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      setAlumniSubmitted(true);
+                      try {
+                        const existing = JSON.parse(localStorage.getItem("icepack_alumni_submissions") || "[]");
+                        existing.push({ ...alumniFormData, timestamp: new Date().toISOString() });
+                        localStorage.setItem("icepack_alumni_submissions", JSON.stringify(existing));
+                      } catch (err) {}
+                    }}
+                    className="bg-white border border-stone-200 rounded-2xl p-6 sm:p-10 shadow-sm space-y-8"
+                  >
+                    {/* Step 1: Contact Information */}
+                    <div className="space-y-4">
+                      <div className="border-b-2 border-stone-100 pb-2 flex items-center justify-between">
+                        <div>
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#e10600]">
+                            STEP 1 OF 4
+                          </span>
+                          <h3 className="font-heading text-2xl text-[#222222]">
+                            YOUR CONTACT INFORMATION
+                          </h3>
+                        </div>
+                        <span className="text-xs text-stone-400 font-questrial">* Required</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Full Name *
+                          </label>
+                          <input
+                            type="text"
+                            required
+                            value={alumniFormData.fullName}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, fullName: e.target.value })}
+                            placeholder="e.g. John Smith"
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Primary Email Address *
+                          </label>
+                          <input
+                            type="email"
+                            required
+                            value={alumniFormData.email}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, email: e.target.value })}
+                            placeholder="you@alumni.ncsu.edu"
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Mobile Phone Number
+                          </label>
+                          <input
+                            type="tel"
+                            value={alumniFormData.phone}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, phone: e.target.value })}
+                            placeholder="(919) 555-0123"
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm"
+                          />
+                          <span className="text-[11px] text-stone-500 font-questrial block mt-0.5">
+                            For gameday alumni event alerts and text updates.
+                          </span>
+                        </div>
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Current Location (City, State)
+                          </label>
+                          <input
+                            type="text"
+                            value={alumniFormData.cityState}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, cityState: e.target.value })}
+                            placeholder="e.g. Raleigh, NC or New York, NY"
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Step 2: Icepack Playing Career */}
+                    <div className="space-y-4">
+                      <div className="border-b-2 border-stone-100 pb-2">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#e10600]">
+                          STEP 2 OF 4
+                        </span>
+                        <h3 className="font-heading text-2xl text-[#222222]">
+                          YOUR ICEPACK HOCKEY CAREER
+                        </h3>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Years Played *
+                          </label>
+                          <input
+                            type="text"
+                            required
+                            value={alumniFormData.yearsPlayed}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, yearsPlayed: e.target.value })}
+                            placeholder="e.g. 2012–2016"
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Jersey Number(s)
+                          </label>
+                          <input
+                            type="text"
+                            value={alumniFormData.jerseyNumber}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, jerseyNumber: e.target.value })}
+                            placeholder="e.g. #19"
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Position *
+                          </label>
+                          <select
+                            value={alumniFormData.position}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, position: e.target.value })}
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm bg-white"
+                          >
+                            <option value="Forward">Forward</option>
+                            <option value="Defenseman">Defenseman</option>
+                            <option value="Goaltender">Goaltender</option>
+                            <option value="Team Staff / Coach">Team Staff / Coach</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                          Captaincy, Championships, or Highlights (Optional)
+                        </label>
+                        <input
+                          type="text"
+                          value={alumniFormData.honors}
+                          onChange={(e) => setAlumniFormData({ ...alumniFormData, honors: e.target.value })}
+                          placeholder="e.g. Team Captain 2015, ACC All-Tournament, Admiral's Cup Champion"
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Step 3: Professional Life & Involvement */}
+                    <div className="space-y-4">
+                      <div className="border-b-2 border-stone-100 pb-2">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#e10600]">
+                          STEP 3 OF 4
+                        </span>
+                        <h3 className="font-heading text-2xl text-[#222222]">
+                          CAREER &amp; ALUMNI INVOLVEMENT
+                        </h3>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Professional Industry
+                          </label>
+                          <select
+                            value={alumniFormData.industry}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, industry: e.target.value })}
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm bg-white"
+                          >
+                            <option value="Finance and Banking">Finance and Banking</option>
+                            <option value="Healthcare and Medicine">Healthcare and Medicine</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Law and Public Safety">Law and Public Safety</option>
+                            <option value="Manufacturing and Engineering">Manufacturing and Engineering</option>
+                            <option value="Sales and Marketing">Sales and Marketing</option>
+                            <option value="Sports Management and Athletics">Sports Management and Athletics</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Current Company / Role (Optional)
+                          </label>
+                          <input
+                            type="text"
+                            value={alumniFormData.company}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, company: e.target.value })}
+                            placeholder="e.g. Director of Operations @ Company"
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Annual Alumni Game Interest
+                          </label>
+                          <select
+                            value={alumniFormData.alumniGameInterest}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, alumniGameInterest: e.target.value })}
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm bg-white"
+                          >
+                            <option value="Yes, count me in to skate">Yes, count me in to skate</option>
+                            <option value="Interested in attending as spectator">Interested in attending as spectator</option>
+                            <option value="Maybe, depends on date">Maybe, depends on date</option>
+                            <option value="Not right now">Not right now</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                            Mentoring Current Student-Athletes
+                          </label>
+                          <select
+                            value={alumniFormData.mentoringInterest}
+                            onChange={(e) => setAlumniFormData({ ...alumniFormData, mentoringInterest: e.target.value })}
+                            className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm bg-white"
+                          >
+                            <option value="Yes, would love to mentor">Yes, would love to mentor</option>
+                            <option value="Open to networking with juniors/seniors">Open to networking with juniors/seniors</option>
+                            <option value="Not at this time">Not at this time</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Step 4: Memories & Archives */}
+                    <div className="space-y-4">
+                      <div className="border-b-2 border-stone-100 pb-2">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#e10600]">
+                          STEP 4 OF 4
+                        </span>
+                        <h3 className="font-heading text-2xl text-[#222222]">
+                          MEMORIES &amp; ARCHIVAL CONTRIBUTIONS
+                        </h3>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                          Favorite Icepack Memories or Life Updates
+                        </label>
+                        <textarea
+                          rows={4}
+                          value={alumniFormData.memories}
+                          onChange={(e) => setAlumniFormData({ ...alumniFormData, memories: e.target.value })}
+                          placeholder="Share a favorite locker room story, a big road win, what you've been up to since graduation, or a note to the coaching staff..."
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:border-[#e10600] text-sm font-questrial"
+                        />
+                      </div>
+
+                      <div className="p-4 bg-stone-50 rounded-xl border border-stone-200 flex items-start gap-3">
+                        <input
+                          type="checkbox"
+                          id="hasArchivalPhotos"
+                          checked={alumniFormData.hasArchivalPhotos}
+                          onChange={(e) => setAlumniFormData({ ...alumniFormData, hasArchivalPhotos: e.target.checked })}
+                          className="mt-1 h-4 w-4 text-[#e10600] border-stone-300 rounded focus:ring-[#e10600]"
+                        />
+                        <label htmlFor="hasArchivalPhotos" className="text-xs text-stone-700 font-questrial leading-relaxed cursor-pointer">
+                          <strong className="text-stone-900 block font-bold">I have vintage team photos, jersey pictures, or game programs from my era.</strong>
+                          Check this box and our media intern staff will reach out to help digitize and add them to the official 50th Anniversary online archives!
+                        </label>
+                      </div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <div className="pt-4 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                      <span className="text-xs text-stone-500 font-questrial text-center sm:text-left">
+                        Your information is used exclusively by the Icepack Hockey Club for alumni communication and will never be shared with third parties.
+                      </span>
+                      <button
+                        type="submit"
+                        className="w-full sm:w-auto px-8 py-3.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-lg rounded-xl shadow-lg transition uppercase tracking-wider shrink-0 cursor-pointer"
+                      >
+                        Submit Alumni Form →
+                      </button>
+                    </div>
+                  </form>
+                ) : (
+                  /* Confirmation Success Screen */
+                  <div className="bg-white border-2 border-[#e10600] rounded-2xl p-8 sm:p-12 shadow-xl text-center space-y-6">
+                    <div className="w-20 h-20 bg-red-50 text-[#e10600] rounded-full flex items-center justify-center text-4xl mx-auto border-2 border-red-200">
+                      🐺
+                    </div>
+
+                    <div className="space-y-2 max-w-xl mx-auto">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#e10600]">
+                        SUBMISSION CONFIRMED
+                      </span>
+                      <h2 className="font-heading text-4xl sm:text-5xl text-[#222222] leading-none">
+                        WELCOME BACK TO THE PACK, {alumniFormData.fullName.toUpperCase()}!
+                      </h2>
+                      <p className="font-questrial text-sm sm:text-base text-stone-600 leading-relaxed pt-2">
+                        Your information has been logged in our official alumni database. You are now subscribed to receive invitations for the upcoming Alumni Game at Lenovo Center, gameday events, and special 50th season announcements.
+                      </p>
+                    </div>
+
+                    <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 max-w-md mx-auto text-left text-xs font-questrial space-y-2">
+                      <div className="font-bold text-[#222222] border-b border-stone-200 pb-1 uppercase tracking-wider text-[11px]">
+                        Recorded Submission Summary:
+                      </div>
+                      <div><strong>Alum:</strong> {alumniFormData.fullName} ({alumniFormData.yearsPlayed}, #{alumniFormData.jerseyNumber || "N/A"})</div>
+                      <div><strong>Position:</strong> {alumniFormData.position}</div>
+                      <div><strong>Email:</strong> {alumniFormData.email}</div>
+                      <div><strong>Alumni Game:</strong> {alumniFormData.alumniGameInterest}</div>
+                    </div>
+
+                    <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
+                      <button
+                        onClick={() => {
+                          setActiveTab("schedule");
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                        className="px-6 py-3 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-sm uppercase tracking-wider rounded-xl shadow transition cursor-pointer"
+                      >
+                        View 2026–27 Schedule →
+                      </button>
+                      <button
+                        onClick={() => {
+                          setActiveTab("support");
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                        className="px-6 py-3 bg-[#222222] hover:bg-black text-white font-heading text-sm uppercase tracking-wider rounded-xl shadow transition cursor-pointer"
+                      >
+                        50th Annual Fund ↗
+                      </button>
+                      <button
+                        onClick={() => setAlumniSubmitted(false)}
+                        className="px-5 py-3 text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-stone-900 transition cursor-pointer"
+                      >
+                        Edit Form
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -5083,7 +5513,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             </div>
 
             {/* Introductory Notice Banner */}
-            <div className="bg-red-50/70 border border-red-200 rounded-lg p-5 mb-8 text-xs font-questrial text-[#333333] leading-relaxed">
+            <div className="bg-red-50/70 border border-red-200 rounded-lg p-5 mb-6 text-xs font-questrial text-[#333333] leading-relaxed">
               <span className="font-bold text-[#e10600] uppercase tracking-wide block mb-1">
                 COMMEMORATING OUR GOLDEN ANNIVERSARY
               </span>
@@ -5092,6 +5522,31 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               <a href="mailto:Admin@icepackhockey.com" className="text-[#e10600] font-bold hover:underline">
                 Admin@icepackhockey.com
               </a>.
+            </div>
+
+            {/* ALUMNI RECONNECT CALLOUT BANNER */}
+            <div className="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 border-2 border-[#e10600] rounded-xl p-5 sm:p-6 mb-8 text-white shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400 block">
+                  🏒 ARE YOU AN ICEPACK ALUM?
+                </span>
+                <h3 className="font-heading text-2xl text-white">
+                  RECONNECT WITH THE PACK ALUMNI NETWORK
+                </h3>
+                <p className="font-questrial text-xs sm:text-sm text-stone-300 max-w-2xl leading-relaxed">
+                  Over 500 players have worn the sweater since 1976. Connect with former teammates, receive annual Alumni Game invitations at Lenovo Center, and share vintage photos to help preserve team history.
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  setActiveTab("team");
+                  setRosterTab("alumni");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="px-5 py-2.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-sm uppercase tracking-wider rounded-lg shadow transition whitespace-nowrap self-start sm:self-auto cursor-pointer"
+              >
+                Alumni Reconnect Form →
+              </button>
             </div>
 
             {/* FAST FACTS GRID (From the Live Site!) */}
@@ -5234,6 +5689,31 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   )}
                 </div>
               ))}
+            </div>
+
+            {/* Bottom Alumni Reconnect Card */}
+            <div className="p-6 bg-stone-900 border-2 border-[#e10600] rounded-xl text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-md mb-8">
+              <div className="space-y-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block">
+                  DID YOU SKATE FOR NC STATE?
+                </span>
+                <h3 className="font-heading text-2xl text-white">
+                  JOIN THE OFFICIAL ALUMNI REGISTRY
+                </h3>
+                <p className="font-questrial text-xs text-stone-300 max-w-xl leading-relaxed">
+                  Reconnect with teammates from your era, get invited to the annual Alumni Game, and help us preserve fifty years of Wolfpack hockey.
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  setActiveTab("team");
+                  setRosterTab("alumni");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="px-5 py-2.5 bg-[#e10600] hover:bg-[#c40500] text-white text-xs font-heading uppercase tracking-wider rounded transition whitespace-nowrap shadow cursor-pointer self-start sm:self-auto"
+              >
+                Alumni Reconnect Form →
+              </button>
             </div>
           </div>
         )}
