@@ -12,6 +12,7 @@ import historyEras from "../data/history_eras.json";
 import stephenRussellData from "../data/stephen_russell.json";
 import mediaVideosData from "../data/media_videos.json";
 import mediaPhotosData from "../data/media_photos.json";
+import historicTeamPhotos from "../data/historic_team_photos.json";
 import merchData from "../data/merch.json";
 import givingLevelsData from "../data/giving_levels.json";
 import liveGameLatest from "../data/live_game_latest.json";
@@ -37,6 +38,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
   const [mediaDropdownOpen, setMediaDropdownOpen] = useState<boolean>(false);
   const [teamDropdownOpen, setTeamDropdownOpen] = useState<boolean>(false);
   const [photoFilter, setPhotoFilter] = useState<string>("all");
+  const [selectedTeamPhoto, setSelectedTeamPhoto] = useState<any>(null);
   const [gameCenterOpen, setGameCenterOpen] = useState<boolean>(false);
   const [gameCenterTab, setGameCenterTab] = useState<string>("scoring"); // "scoring" | "penalties" | "alerts"
   const [alertSubmitted, setAlertSubmitted] = useState<boolean>(false);
@@ -4667,87 +4669,270 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
 
         {/* ===================== PHOTOS VIEW ===================== */}
         {activeTab === "photos" && (
-          <div className="px-4 sm:px-8 py-10 max-w-[1280px] mx-auto w-full">
+          <div className="px-4 sm:px-8 py-10 max-w-[1280px] mx-auto w-full space-y-12">
             {/* Header */}
-            <div className="border-b-2 border-[#e10600] pb-4 mb-8">
+            <div className="border-b-2 border-[#e10600] pb-4">
               <span className="text-xs font-bold tracking-widest uppercase text-[#e10600]">
-                ICEPACK MEDIA ARCHIVES · ON-ICE PHOTOGRAPHY
+                ICEPACK MEDIA ARCHIVES · ON-ICE PHOTOGRAPHY &amp; HISTORIC TEAM PORTRAITS
               </span>
               <h1 className="font-heading text-3xl sm:text-5xl text-[#222222] leading-none mt-1">
-                PHOTO GALLERY
+                PHOTO GALLERY &amp; TEAM ARCHIVES
               </h1>
-              <p className="font-questrial text-sm text-[#555555] mt-2 max-w-2xl leading-relaxed">
-                Archival action shots, gameday emotion, trophy ceremonies, and team traditions captured by our student media photographers.
+              <p className="font-questrial text-sm text-[#555555] mt-2 max-w-3xl leading-relaxed">
+                Official team portraits across the decades, gameday action, rivalry battles, and championship ceremonies captured by our student media photographers and alumni archives.
               </p>
             </div>
 
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap gap-2 mb-8">
-              {["all", "Gameday", "Rivalry", "Historic", "Championship", "Tradition", "Training"].map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setPhotoFilter(cat)}
-                  className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition ${
-                    photoFilter.toLowerCase() === cat.toLowerCase()
-                      ? "bg-[#e10600] text-white shadow-sm"
-                      : "bg-gray-100 text-[#555555] hover:bg-gray-200"
-                  }`}
-                >
-                  {cat === "all" ? "All Photos" : cat}
-                </button>
-              ))}
-            </div>
+            {/* SECTION 1: HISTORIC TEAM PHOTOS IN CHRONOLOGICAL ORDER */}
+            <section className="space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-stone-200 pb-3 gap-2">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="bg-[#e10600] text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase tracking-wider font-heading">
+                      ARCHIVAL COLLECTION
+                    </span>
+                    <span className="text-xs font-mono text-stone-500 font-bold">
+                      9 Historic Seasons (1988–2010)
+                    </span>
+                  </div>
+                  <h2 className="font-heading text-2xl sm:text-4xl text-[#222222] mt-1">
+                    HISTORIC TEAM PHOTOS
+                  </h2>
+                  <p className="font-questrial text-xs sm:text-sm text-[#666666] mt-0.5 max-w-2xl">
+                    Official team portraits across three decades of NC State hockey history, arranged in chronological order. Click any photo to view in high resolution.
+                  </p>
+                </div>
+                <div className="text-xs text-stone-500 font-questrial flex items-center gap-1.5 self-start sm:self-auto shrink-0 bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">
+                  <span>🔍</span>
+                  <span>Click photo to enlarge</span>
+                </div>
+              </div>
 
-            {/* Photos Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {mediaPhotosData
-                .filter((p: any) => photoFilter === "all" || p.category.toLowerCase() === photoFilter.toLowerCase())
-                .map((p: any) => (
+              {/* 9 Historic Team Photos Grid in Exact Chronological Order */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {historicTeamPhotos.map((tp: any, index: number) => (
                   <div
-                    key={p.id}
-                    className="bg-white border border-[#e5e5e5] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition flex flex-col group"
+                    key={tp.id}
+                    onClick={() => setSelectedTeamPhoto(tp)}
+                    className="bg-white border-2 border-stone-200 hover:border-[#e10600] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group cursor-pointer"
                   >
-                    <div className="relative overflow-hidden aspect-[4/3] bg-stone-100">
+                    {/* Photo Container */}
+                    <div className="relative overflow-hidden aspect-[16/10] bg-stone-900 flex items-center justify-center">
                       <img
-                        src={p.image}
-                        alt={p.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                        src={tp.image}
+                        alt={tp.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                       />
-                      <span className="absolute top-3 left-3 bg-[#222222]/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
-                        {p.category}
-                      </span>
+                      {/* Chronological Sequence & Year Badge */}
+                      <div className="absolute top-3 left-3 flex items-center gap-1.5">
+                        <span className="bg-[#e10600] text-white font-heading text-sm px-2.5 py-0.5 rounded shadow">
+                          #{index + 1} · {tp.year}
+                        </span>
+                        <span className="bg-black/75 backdrop-blur-sm text-stone-200 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+                          {tp.era}
+                        </span>
+                      </div>
+                      {/* Zoom Indicator on Hover */}
+                      <div className="absolute bottom-3 right-3 bg-black/70 text-white text-[11px] font-questrial px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shadow-sm">
+                        <span>🔎</span>
+                        <span>View Full Size</span>
+                      </div>
                     </div>
-                    <div className="p-4 flex-1 flex flex-col justify-between">
+
+                    {/* Card Content */}
+                    <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                       <div>
-                        <h3 className="font-heading text-xl text-[#222222] leading-tight">
-                          {p.title}
+                        <div className="flex items-center justify-between gap-2 text-[11px] font-mono text-stone-500 mb-1">
+                          <span>📍 {tp.venue}</span>
+                        </div>
+                        <h3 className="font-heading text-xl sm:text-2xl text-[#222222] group-hover:text-[#e10600] transition leading-snug">
+                          {tp.title}
                         </h3>
-                        <p className="font-questrial text-xs text-[#555555] mt-1.5 leading-relaxed">
-                          {p.caption}
+                        <p className="font-questrial text-xs text-[#555555] mt-2 leading-relaxed">
+                          {tp.caption}
                         </p>
                       </div>
-                      <div className="mt-4 pt-3 border-t border-gray-100 text-[10px] font-questrial text-[#888888]">
-                        📸 {p.photographer}
+
+                      <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-[#e10600]">
+                        <span className="font-mono text-[11px] text-stone-400">Photo {index + 1} of 9</span>
+                        <span className="group-hover:translate-x-1 transition-transform">Inspect Photo →</span>
                       </div>
                     </div>
                   </div>
                 ))}
-            </div>
+              </div>
+            </section>
+
+            {/* LIGHTBOX MODAL FOR HIGH-RES VIEWING */}
+            {selectedTeamPhoto && (
+              <div
+                className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 sm:p-8 animate-fadeIn"
+                onClick={() => setSelectedTeamPhoto(null)}
+              >
+                <div
+                  className="bg-stone-900 border-2 border-stone-700 rounded-2xl max-w-5xl w-full max-h-[92vh] overflow-y-auto overflow-x-hidden text-white shadow-2xl flex flex-col"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Modal Header */}
+                  <div className="p-4 sm:p-5 border-b border-stone-800 flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <span className="bg-[#e10600] text-white font-heading text-lg px-3 py-1 rounded">
+                        {selectedTeamPhoto.year}
+                      </span>
+                      <div>
+                        <h3 className="font-heading text-xl sm:text-2xl text-white">
+                          {selectedTeamPhoto.title}
+                        </h3>
+                        <span className="text-xs text-stone-400 font-questrial block">
+                          📍 {selectedTeamPhoto.venue} · {selectedTeamPhoto.era}
+                        </span>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => setSelectedTeamPhoto(null)}
+                      className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#e10600] text-white flex items-center justify-center text-lg font-bold transition cursor-pointer shrink-0"
+                      title="Close viewer (or click outside)"
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  {/* Full Size Image */}
+                  <div className="p-3 sm:p-6 bg-black flex items-center justify-center min-h-[300px]">
+                    <img
+                      src={selectedTeamPhoto.image}
+                      alt={selectedTeamPhoto.title}
+                      className="max-h-[65vh] w-auto object-contain rounded shadow-lg"
+                    />
+                  </div>
+
+                  {/* Modal Footer / Detailed Caption */}
+                  <div className="p-4 sm:p-6 bg-stone-900 border-t border-stone-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div className="space-y-1 max-w-3xl">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400 font-heading block">
+                        HISTORIC ARCHIVAL RECORD
+                      </span>
+                      <p className="font-questrial text-xs sm:text-sm text-stone-200 leading-relaxed">
+                        {selectedTeamPhoto.caption}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
+                      <a
+                        href={selectedTeamPhoto.image}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 sm:flex-initial px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-heading text-xs uppercase tracking-wider rounded-lg border border-white/20 text-center transition"
+                      >
+                        Open Original File ↗
+                      </a>
+                      <button
+                        onClick={() => setSelectedTeamPhoto(null)}
+                        className="flex-1 sm:flex-initial px-5 py-2 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-xs uppercase tracking-wider rounded-lg transition text-center cursor-pointer"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* SECTION 2: GAMEDAY ACTION GALLERY */}
+            <section className="space-y-6 pt-6 border-t-2 border-stone-200">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-stone-200 pb-3 gap-2">
+                <div>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-[#e10600] font-heading">
+                    ON-ICE ACTION
+                  </span>
+                  <h2 className="font-heading text-2xl sm:text-4xl text-[#222222]">
+                    GAMEDAY &amp; MOMENTS GALLERY
+                  </h2>
+                  <p className="font-questrial text-xs sm:text-sm text-[#666666] mt-0.5">
+                    Live game action, rivalry goal celebrations, and tournament milestones from the 2026–27 season.
+                  </p>
+                </div>
+              </div>
+
+              {/* Category Filter Pills */}
+              <div className="flex flex-wrap gap-2">
+                {["all", "Gameday", "Rivalry", "Historic", "Championship", "Tradition", "Training"].map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setPhotoFilter(cat)}
+                    className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition cursor-pointer ${
+                      photoFilter.toLowerCase() === cat.toLowerCase()
+                        ? "bg-[#e10600] text-white shadow-sm"
+                        : "bg-gray-100 text-[#555555] hover:bg-gray-200"
+                    }`}
+                  >
+                    {cat === "all" ? "All Gameday Photos" : cat}
+                  </button>
+                ))}
+              </div>
+
+              {/* Photos Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {mediaPhotosData
+                  .filter((p: any) => photoFilter === "all" || p.category.toLowerCase() === photoFilter.toLowerCase())
+                  .map((p: any) => (
+                    <div
+                      key={p.id}
+                      className="bg-white border border-[#e5e5e5] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition flex flex-col group"
+                    >
+                      <div className="relative overflow-hidden aspect-[4/3] bg-stone-100">
+                        <img
+                          src={p.image}
+                          alt={p.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                        />
+                        <span className="absolute top-3 left-3 bg-[#222222]/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                          {p.category}
+                        </span>
+                      </div>
+                      <div className="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                          <h3 className="font-heading text-xl text-[#222222] leading-tight">
+                            {p.title}
+                          </h3>
+                          <p className="font-questrial text-xs text-[#555555] mt-1.5 leading-relaxed">
+                            {p.caption}
+                          </p>
+                        </div>
+                        <div className="mt-4 pt-3 border-t border-gray-100 text-[10px] font-questrial text-[#888888]">
+                          📸 {p.photographer}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </section>
 
             {/* Photo Contribution Notice */}
-            <div className="p-6 bg-stone-50 border border-[#e5e5e5] rounded-lg flex flex-wrap items-center justify-between gap-4 text-xs font-questrial">
-              <div>
-                <strong className="text-[#222222] block font-heading text-lg">HAVE HISTORIC TEAM PHOTOS?</strong>
-                <span className="text-[#666666]">
-                  If you have vintage photos from past seasons or tournament games, help us preserve the program&apos;s history.
+            <div className="p-6 bg-stone-50 border border-[#e5e5e5] rounded-xl flex flex-wrap items-center justify-between gap-4 text-xs font-questrial">
+              <div className="space-y-1">
+                <strong className="text-[#222222] block font-heading text-xl">HAVE VINTAGE TEAM PHOTOS FROM YOUR ERA?</strong>
+                <span className="text-[#666666] block max-w-2xl">
+                  If you have historic team rosters, championship photos, or newspaper clippings from past seasons, help us complete the 50-year archive.
                 </span>
               </div>
-              <a
-                href="mailto:Admin@icepackhockey.com?subject=Icepack%20Photo%20Contribution"
-                className="px-4 py-2 bg-[#222222] hover:bg-black text-white font-bold uppercase tracking-wider rounded transition"
-              >
-                Send Us Photos →
-              </a>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => {
+                    setActiveTab("team");
+                    setRosterTab("alumni");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="px-4 py-2.5 bg-[#e10600] hover:bg-[#c40500] text-white font-bold uppercase tracking-wider rounded-lg transition text-xs shadow-sm cursor-pointer"
+                >
+                  Submit via Alumni Form →
+                </button>
+                <a
+                  href="mailto:Admin@icepackhockey.com?subject=Icepack%20Historic%20Photo%20Contribution"
+                  className="px-4 py-2.5 bg-[#222222] hover:bg-black text-white font-bold uppercase tracking-wider rounded-lg transition text-xs"
+                >
+                  Email Photos ↗
+                </a>
+              </div>
             </div>
           </div>
         )}

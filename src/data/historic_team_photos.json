@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "year": "1988–1989",
+    "era": "Late 1980s",
+    "title": "Late 1980s Wolfpack Squad",
+    "image": "/team-photos/1988-89-vintage-team.jpg",
+    "caption": "Early NC State club hockey team portrait featuring traditional crossed-sticks sweaters and vintage leather pads.",
+    "venue": "Greensboro / Raleigh"
+  },
+  {
+    "id": 2,
+    "year": "1990–1991",
+    "era": "Early 1990s",
+    "title": "1990–91 Team with Canadian Flag",
+    "image": "/team-photos/1990-91-canadian-flag-team.jpg",
+    "caption": "Wolfpack skaters gathered on the ice in classic crossed-sticks sweaters following tournament competition.",
+    "venue": "Regional Competition"
+  },
+  {
+    "id": 3,
+    "year": "2002–2003",
+    "era": "Early 2000s",
+    "title": "2002–03 Team at Entertainment & Sports Arena",
+    "image": "/team-photos/2002-03-rbc-center-team.jpg",
+    "caption": "Official team portrait taken on the ice at the newly opened ESA (later RBC Center), home of the Carolina Hurricanes.",
+    "venue": "Entertainment & Sports Arena, Raleigh"
+  },
+  {
+    "id": 4,
+    "year": "2004–2005",
+    "era": "Mid 2000s",
+    "title": "2004–05 Triple Trophy Champions",
+    "image": "/team-photos/2004-05-trophy-champions-team.jpg",
+    "caption": "Wolfpack team gathers on RBC Center ice displaying three championship trophies won during a banner season.",
+    "venue": "RBC Center, Raleigh"
+  },
+  {
+    "id": 5,
+    "year": "2005–2006",
+    "era": "Mid 2000s",
+    "title": "2005–2006 NC State Wolfpack",
+    "image": "/team-photos/2005-06-wolfpack-team.png",
+    "caption": "Official 2005–2006 team portrait in black sweaters taken at center ice at the RBC Center.",
+    "venue": "RBC Center, Raleigh"
+  },
+  {
+    "id": 6,
+    "year": "2006–2007",
+    "era": "Mid 2000s",
+    "title": "2006–07 Holiday Toy Drive Squad",
+    "image": "/team-photos/2006-07-toy-drive-team.jpg",
+    "caption": "Team gathers with donated gifts for kids during the annual holiday community drive.",
+    "venue": "Raleigh, NC"
+  },
+  {
+    "id": 7,
+    "year": "2007–2008",
+    "era": "Late 2000s",
+    "title": "2007–2008 NC State Hockey",
+    "image": "/team-photos/2007-08-reczone-team.jpg",
+    "caption": "Official 2007–2008 team portrait taken on the ice at the Rec Zone.",
+    "venue": "Rec Zone, Raleigh"
+  },
+  {
+    "id": 8,
+    "year": "2008–2009",
+    "era": "Late 2000s",
+    "title": "2008–09 NC State Women's Team",
+    "image": "/team-photos/2008-09-womens-team.jpg",
+    "caption": "NC State Women's Ice Hockey team on-ice team photo with coaching staff.",
+    "venue": "Raleigh, NC"
+  },
+  {
+    "id": 9,
+    "year": "2009–2010",
+    "era": "Late 2000s",
+    "title": "2009–2010 Men's Ice Hockey Team",
+    "image": "/team-photos/2009-10-stephen-russell-season-team.jpg",
+    "caption": "Team portrait taken on the ice honoring beloved goaltender Stephen Russell (#20 banner in background).",
+    "venue": "Raleigh, NC"
+  }
+]
