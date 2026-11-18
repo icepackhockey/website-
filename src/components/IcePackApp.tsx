@@ -1428,11 +1428,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-3 mb-4">
                       <div className="flex items-center gap-2">
                         <span className="text-xl">🏈</span>
-                        <span className="text-[11px] font-bold tracking-widest uppercase text-amber-400">
+                        <span className="text-[11px] font-bold tracking-widest uppercase text-amber-400 font-opensans">
                           LIMITED-TIME RAFFLE
                         </span>
                       </div>
-                      <span className="bg-red-600 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse">
+                      <span className="bg-red-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse font-opensans">
                         ⏳ Sales End Sun Nov 22 @ 9 PM
                       </span>
                     </div>
@@ -1441,8 +1441,8 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
                         WIN 2 TICKETS: NC STATE VS. UNC FOOTBALL
                       </h3>
-                      <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
-                        Enter to win <strong>2 Tickets: Section 202, Row O, Seats 13 & 14</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong>parking pass @ Jackson Deck (239 Jackson Circle)</strong>. Sales end Sun Nov 22 @ 9 PM · Drawing no later than Tue Nov 24 @ 8 PM.
+                      <p className="font-opensans text-xs sm:text-sm text-stone-300 mt-2 leading-relaxed">
+                        Enter to win <strong className="text-white font-semibold">2 Tickets: Section 202, Row O, Seats 13 & 14</strong> at Kenan Stadium on Saturday, Nov 28 plus a <strong className="text-white font-semibold">parking pass @ Jackson Deck (239 Jackson Circle)</strong>. Sales end Sun Nov 22 @ 9 PM · Drawing no later than Tue Nov 24 @ 8 PM.
                       </p>
                     </div>
                   </div>
@@ -1476,11 +1476,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-3 mb-4">
                       <div className="flex items-center gap-2">
                         <span className="text-xl">🐺</span>
-                        <span className="text-[11px] font-bold tracking-widest uppercase text-red-400">
+                        <span className="text-[11px] font-bold tracking-widest uppercase text-red-400 font-opensans">
                           ANNUAL FUND
                         </span>
                       </div>
-                      <span className="bg-white/15 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      <span className="bg-white/15 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider font-opensans">
                         501(c)(3) Tax-Deductible
                       </span>
                     </div>
@@ -1489,8 +1489,8 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
                         50TH ANNIVERSARY ANNUAL FUND
                       </h3>
-                      <p className="font-questrial text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">
-                        <strong>Self funded from day one.</strong> Direct tax-deductible gifts fuel player travel, ice time, and equipment. Giving tiers from <strong>$25 to $1,976</strong> include in-arena ticket credits!
+                      <p className="font-opensans text-xs sm:text-sm text-stone-300 mt-2 leading-relaxed">
+                        <strong className="text-white font-semibold">Self funded from day one.</strong> Direct tax-deductible gifts fuel player travel, ice time, and equipment. Giving tiers from <strong className="text-white font-semibold">$25 to $1,976</strong> include in-arena ticket credits!
                       </p>
                     </div>
                   </div>
