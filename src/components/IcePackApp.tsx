@@ -3470,14 +3470,54 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
 
                 {!alumniSubmitted ? (
                   <form
-                    onSubmit={(e) => {
+                    onSubmit={async (e) => {
                       e.preventDefault();
-                      setAlumniSubmitted(true);
+
+                      // Submit directly to the official Google Form in the background
+                      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdB8nc0TrPd0_KZfrO7QbiXQqHYd9JcWYoB-y-poBZJvV0q5w/formResponse";
+                      const params = new URLSearchParams();
+                      params.append("entry.1651466859", alumniFormData.fullName);
+                      params.append("entry.930852734", alumniFormData.email);
+                      params.append("entry.377607816", alumniFormData.phone || "");
+                      params.append("entry.1577020040", alumniFormData.jerseyNumber || "");
+                      params.append("entry.1388921542", alumniFormData.yearsPlayed);
+                      params.append("entry.1334343577", alumniFormData.position);
+                      params.append("entry.502877664", alumniFormData.industry);
+
+                      const extraNotes = [
+                        alumniFormData.memories,
+                        alumniFormData.cityState ? `Current Location: ${alumniFormData.cityState}` : "",
+                        alumniFormData.company ? `Company/Role: ${alumniFormData.company}` : "",
+                        alumniFormData.honors ? `Honors/Highlights: ${alumniFormData.honors}` : "",
+                        `Alumni Game Interest: ${alumniFormData.alumniGameInterest}`,
+                        `Mentoring Interest: ${alumniFormData.mentoringInterest}`,
+                        alumniFormData.hasArchivalPhotos ? "Has vintage photos/clippings: YES" : "",
+                      ].filter(Boolean);
+
+                      params.append("entry.759457115", extraNotes.join("\n\n"));
+
+                      try {
+                        await fetch(formUrl, {
+                          method: "POST",
+                          mode: "no-cors",
+                          headers: {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                          },
+                          body: params.toString(),
+                        });
+                      } catch (err) {
+                        console.error("Google form submission error:", err);
+                      }
+
+                      // Save locally in browser storage for backup
                       try {
                         const existing = JSON.parse(localStorage.getItem("icepack_alumni_submissions") || "[]");
                         existing.push({ ...alumniFormData, timestamp: new Date().toISOString() });
                         localStorage.setItem("icepack_alumni_submissions", JSON.stringify(existing));
                       } catch (err) {}
+
+                      setAlumniSubmitted(true);
+                      window.scrollTo({ top: 300, behavior: "smooth" });
                     }}
                     className="bg-white border border-stone-200 rounded-2xl p-6 sm:p-10 shadow-sm space-y-8"
                   >
