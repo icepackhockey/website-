@@ -252,12 +252,12 @@ export default function InternDesk() {
         {/* Tab Navigation */}
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 flex overflow-x-auto border-t border-neutral-800 scrollbar-none">
           {[
-            { id: "scores", label: "🏒 Gameday & Scores" },
-            { id: "news", label: "📰 News & Recaps" },
-            { id: "standings", label: "🏆 ACHA Poll & Standings" },
-            { id: "merch", label: "👕 Merchandise & Store" },
-            { id: "roster", label: "👥 Roster & Bios" },
-            { id: "sponsors", label: "🤝 Sponsors" },
+            { id: "scores", label: "Gameday & Scores" },
+            { id: "news", label: "News & Recaps" },
+            { id: "standings", label: "ACHA Poll & Standings" },
+            { id: "merch", label: "Merchandise & Store" },
+            { id: "roster", label: "Roster & Bios" },
+            { id: "sponsors", label: "Sponsors" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -518,16 +518,13 @@ export default function InternDesk() {
               {/* Word Document (.docx) / Text File Upload Box */}
               {!editingArticleId && (
                 <div className="bg-blue-50/70 border border-blue-200 rounded-xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xl">📄</span>
-                    <div>
-                      <p className="text-xs font-bold text-blue-950">
-                        Writing your story in Microsoft Word or Google Docs?
-                      </p>
-                      <p className="text-[11px] text-blue-800">
-                        Upload your <strong>.docx</strong> file to automatically parse headline, byline, and body paragraphs.
-                      </p>
-                    </div>
+                  <div>
+                    <p className="text-xs font-bold text-blue-950">
+                      Writing your story in Microsoft Word or Google Docs?
+                    </p>
+                    <p className="text-[11px] text-blue-800">
+                      Upload your <strong>.docx</strong> file to automatically parse headline, byline, and body paragraphs.
+                    </p>
                   </div>
                   <label className="bg-blue-600 hover:bg-blue-700 text-white font-heading text-xs px-3.5 py-2 rounded uppercase tracking-wider cursor-pointer transition shrink-0 text-center shadow-sm">
                     <span>Import from .docx</span>
@@ -1095,7 +1092,7 @@ export default function InternDesk() {
                     }}
                     className="bg-[#002855] hover:bg-[#001f42] text-white font-heading text-xs px-3.5 py-1.5 rounded uppercase tracking-wider shadow flex items-center gap-1.5 transition"
                   >
-                    <span>⚡ Auto-Sync from ACHA API</span>
+                    <span>Auto-Sync from ACHA API</span>
                   </button>
 
                   <button
@@ -1229,7 +1226,7 @@ export default function InternDesk() {
                     : "border-transparent text-neutral-500 hover:text-neutral-800"
                 }`}
               >
-                ⭐ Team Exclusives & Custom Drops ({merch.team_exclusive?.length || 0})
+                Team Exclusives & Custom Drops ({merch.team_exclusive?.length || 0})
               </button>
               <button
                 onClick={() => setMerchSubTab("retail")}
@@ -1239,7 +1236,7 @@ export default function InternDesk() {
                     : "border-transparent text-neutral-500 hover:text-neutral-800"
                 }`}
               >
-                🛍️ Red & White Shop Retail Partner ({merch.retail_partner?.items?.length || 0})
+                Red & White Shop Retail Partner ({merch.retail_partner?.items?.length || 0})
               </button>
             </div>
 

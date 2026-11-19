@@ -531,7 +531,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       activeTab === "team" && rosterTab === "alumni" ? "bg-[#e10600]" : ""
                     }`}
                   >
-                    🐺 Alumni Reconnect
+                    Alumni Reconnect
                   </button>
                 </div>
               )}
@@ -703,7 +703,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               }`}
               title="UNC vs. NC State Football Ticket Raffle"
             >
-              <span>🏈</span>
               <span>Football Raffle</span>
               <span className="text-[9px] bg-red-600 text-white font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-tighter">
                 Ends Nov 22
@@ -798,7 +797,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     activeTab === "team" && rosterTab === "facilities" ? "bg-[#222222] text-white" : "text-white hover:bg-white/15"
                   }`}
                 >
-                  🏟️ Facilities &amp; Lane Arena
+                  Facilities &amp; Lane Arena
                 </button>
                 <button
                   onClick={() => {
@@ -811,7 +810,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     activeTab === "team" && rosterTab === "alumni" ? "bg-[#222222] text-white" : "text-amber-400 hover:bg-white/15 font-bold"
                   }`}
                 >
-                  🐺 Alumni Reconnect Form
+                  Alumni Reconnect Form
                 </button>
               </div>
             </div>
@@ -976,7 +975,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               }`}
             >
               <span className="flex items-center gap-2">
-                <span>🏈</span>
                 <span>UNC / NCSU Football Raffle</span>
               </span>
               <span className="text-[10px] bg-red-600 text-white font-extrabold px-2 py-0.5 rounded-full uppercase tracking-tight">
@@ -1186,7 +1184,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         : "bg-stone-100 text-stone-700 hover:bg-stone-200"
                     }`}
                   >
-                    🚨 Scoring Summary ({liveGame.goals.length})
+                    Scoring Summary ({liveGame.goals.length})
                   </button>
                   <button
                     onClick={() => setGameCenterTab("penalties")}
@@ -1196,7 +1194,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         : "bg-stone-100 text-stone-700 hover:bg-stone-200"
                     }`}
                   >
-                    ⏱️ Penalties ({liveGame.penalties.length})
+                    Penalties ({liveGame.penalties.length})
                   </button>
                   <button
                     onClick={() => setGameCenterTab("alerts")}
@@ -1206,7 +1204,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         : "bg-stone-100 text-stone-700 hover:bg-stone-200"
                     }`}
                   >
-                    🔔 Gameday Alerts
+                    Gameday Alerts
                   </button>
                 </div>
 
@@ -1280,7 +1278,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                             )}
                           </div>
                         </div>
-                        <span className="text-2xl shrink-0">🚨</span>
                       </div>
                     ))}
                   </div>
@@ -1341,7 +1338,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               {/* Tab 3: Live Fan Alerts Signup (Phone or Email for HubSpot) */}
               {gameCenterTab === "alerts" && (
                 <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto text-center space-y-4 shadow-sm">
-                  <span className="text-3xl block">📲</span>
                   <h4 className="font-heading text-2xl sm:text-3xl text-[#222222]">
                     NEVER MISS A GOAL · GAMEDAY SCORE ALERTS
                   </h4>
@@ -1859,7 +1855,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       onClick={() => setCalDropdownOpen(!calDropdownOpen)}
                       className="px-4 py-2 bg-[#222222] hover:bg-[#333333] text-white rounded font-heading text-base tracking-wider uppercase flex items-center gap-2 transition"
                     >
-                      📅 SUBSCRIBE ▼
+                      SUBSCRIBE ▼
                     </button>
                     {calDropdownOpen && (
                       <div className="absolute right-0 mt-2 w-72 bg-white border border-[#e5e5e5] rounded-xl shadow-2xl py-2 z-50 text-stone-800">
@@ -1870,7 +1866,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           href="webcal://icepackhockey.com/cal/icepack-2026-27-season.ics"
                           className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold hover:bg-stone-50 text-[#222222] transition"
                         >
-                          <span className="text-base">📲</span>
                           <div>
                             <span className="block font-bold">Apple Calendar / Outlook App</span>
                             <span className="text-[10px] text-stone-500 font-normal">One-click subscribe on Mac, PC, &amp; iPhone</span>
@@ -1882,7 +1877,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           rel="noopener noreferrer"
                           className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold hover:bg-stone-50 text-[#222222] transition"
                         >
-                          <span className="text-base">📅</span>
                           <div>
                             <span className="block font-bold">Google Calendar</span>
                             <span className="text-[10px] text-stone-500 font-normal">Add to Google account web calendar</span>
@@ -1894,7 +1888,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           rel="noopener noreferrer"
                           className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold hover:bg-stone-50 text-[#222222] transition"
                         >
-                          <span className="text-base">💼</span>
                           <div>
                             <span className="block font-bold">Outlook (Microsoft 365 / Work)</span>
                             <span className="text-[10px] text-stone-500 font-normal">Subscribe on work / corporate calendar</span>
@@ -1906,7 +1899,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           rel="noopener noreferrer"
                           className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold hover:bg-stone-50 text-[#222222] transition"
                         >
-                          <span className="text-base">✉️</span>
                           <div>
                             <span className="block font-bold">Outlook.com (Personal)</span>
                             <span className="text-[10px] text-stone-500 font-normal">Subscribe on personal Microsoft account</span>
@@ -2025,7 +2017,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           : "bg-gray-100 text-[#444444] hover:bg-gray-200"
                       }`}
                     >
-                      📋 Table View
+                      Table View
                     </button>
                     <button
                       onClick={() => setScheduleMode("calendar")}
@@ -2035,7 +2027,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           : "bg-gray-100 text-[#444444] hover:bg-gray-200"
                       }`}
                     >
-                      📅 Calendar View
+                      Calendar View
                     </button>
                   </div>
                 </div>
@@ -2129,7 +2121,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                   rel="noopener noreferrer"
                                   className="text-xs text-[#555555] hover:text-[#e10600] inline-flex items-center gap-1.5 transition"
                                 >
-                                  <span className="text-[#e10600]">📍</span>
                                   <span className="underline underline-offset-2">{game.location}</span>
                                   <span className="text-[10px] text-gray-400">↗</span>
                                 </a>
@@ -2138,7 +2129,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                               {/* Special Game Note */}
                               {game.note && (
                                 <div className="mt-1.5 text-xs text-[#e10600] font-semibold flex items-center gap-1">
-                                  <span>★</span>
                                   <span>{game.note}</span>
                                 </div>
                               )}
@@ -2151,7 +2141,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                   <div className="flex items-center gap-1.5">
                                     <span className="w-2 h-2 rounded-full bg-red-600 animate-ping inline-block"></span>
                                     <span className="px-2.5 py-1 rounded text-xs font-bold tracking-wide bg-red-600 text-white animate-pulse">
-                                      🔴 {game.result || "LIVE 0–1"}
+                                      {game.result || "LIVE 0–1"}
                                     </span>
                                   </div>
                                   <div className="flex items-center gap-2">
@@ -2348,7 +2338,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                       className="text-[#444444] hover:text-[#e10600] inline-flex items-start gap-1.5 group transition leading-snug"
                                       title="Get Directions in Google / Apple Maps"
                                     >
-                                      <span className="text-[#e10600] text-sm shrink-0 mt-0.5">📍</span>
                                       <span className="group-hover:underline">{game.location}</span>
                                     </a>
                                   </td>
@@ -2358,7 +2347,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                     {(game as any).is_live || (game.result && game.result.toLowerCase().includes("live")) ? (
                                       <span className="px-2.5 py-1 rounded text-xs font-bold bg-red-600 text-white animate-pulse flex items-center gap-1.5 w-fit">
                                         <span className="w-2 h-2 rounded-full bg-white animate-ping inline-block"></span>
-                                        <span>🔴 {game.result || "LIVE 0–1"}</span>
+                                        <span>{game.result || "LIVE 0–1"}</span>
                                       </span>
                                     ) : game.result ? (
                                       <span
@@ -2605,7 +2594,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                       className="text-[10px] text-[#444444] hover:text-[#e10600] truncate flex items-center gap-0.5 underline"
                                       title={g.location}
                                     >
-                                      📍 {g.location.split("@")[0].trim()} ↗
+                                      {g.location.split("@")[0].trim()} ↗
                                     </a>
 
                                     {/* Result or Ticket Button */}
@@ -2858,7 +2847,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           rel="noopener noreferrer"
                           className="w-full py-2.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-sm text-center rounded transition shadow flex items-center justify-center gap-2"
                         >
-                          📄 VIEW OFFICIAL ACHA POLL (PDF) ↗
+                          VIEW OFFICIAL ACHA POLL (PDF) ↗
                         </a>
                         {standingsData.national_ranking.pdf_nov_1 && (
                           <a
@@ -2867,7 +2856,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                             rel="noopener noreferrer"
                             className="w-full py-2 bg-[#2a2a2a] hover:bg-[#333333] text-white font-heading text-xs text-center rounded transition border border-[#555555] flex items-center justify-center gap-2"
                           >
-                            📄 ARCHIVED PRIOR POLL (PDF) ↗
+                            ARCHIVED PRIOR POLL (PDF) ↗
                           </a>
                         )}
                       </div>
@@ -3170,7 +3159,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         WELCOME TO LANE ARENA
                       </h2>
                       <p className="font-questrial text-sm sm:text-lg text-white/90 mt-2 flex items-center gap-2">
-                        <span>📍</span>
                         <span>111 Competition Center Dr, Morrisville, NC 27560</span>
                       </p>
                       <div className="mt-4 flex flex-wrap gap-3">
@@ -3352,7 +3340,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           Morrisville, NC 27560
                         </p>
                         <p className="text-xs font-bold text-[#222222] mt-1">
-                          📞 +1 (919) 443-8049
+                          +1 (919) 443-8049
                         </p>
                         <p className="font-questrial text-xs text-[#666666] mt-3 leading-relaxed">
                           Located less than two miles from Lane Arena and renowned in the NHL community for precision steel and repair work. PSB regularly handles NHL steel in preparation for professional seasons.
@@ -3384,7 +3372,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           Morrisville, NC 27560
                         </p>
                         <p className="text-xs font-bold text-[#222222] mt-1">
-                          📞 +1 (919) 481-4475
+                          +1 (919) 481-4475
                         </p>
                         <p className="font-questrial text-xs text-[#666666] mt-3 leading-relaxed">
                           A premier nationwide retailer of hockey equipment located roughly three miles away from Wake Competition Center, carrying full gear lines, protective padding, and sticks.
@@ -3416,7 +3404,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           Raleigh, NC 27603
                         </p>
                         <p className="text-xs font-bold text-[#222222] mt-1">
-                          📞 +1 (919) 322-9893
+                          +1 (919) 322-9893
                         </p>
                         <p className="font-questrial text-xs text-[#666666] mt-3 leading-relaxed">
                           Locally-based supplier of high-performance hockey tape, laces, apparel, and team accessories located roughly 14 miles from Lane Arena.
@@ -3446,7 +3434,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   <div className="absolute top-0 right-0 w-80 h-80 bg-[#e10600]/15 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16"></div>
                   <div className="relative z-10 space-y-3">
                     <div className="inline-flex items-center gap-2 bg-[#e10600] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-xs">
-                      <span>🏒</span>
                       <span>50 YEARS OF PACK HOCKEY · 1976–2026</span>
                     </div>
                     <h2 className="font-heading text-3xl sm:text-5xl text-white leading-none">
@@ -3803,10 +3790,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 ) : (
                   /* Confirmation Success Screen */
                   <div className="bg-white border-2 border-[#e10600] rounded-2xl p-8 sm:p-12 shadow-xl text-center space-y-6">
-                    <div className="w-20 h-20 bg-red-50 text-[#e10600] rounded-full flex items-center justify-center text-4xl mx-auto border-2 border-red-200">
-                      🐺
-                    </div>
-
                     <div className="space-y-2 max-w-xl mx-auto">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#e10600]">
                         SUBMISSION CONFIRMED
@@ -4188,7 +4171,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         {p.title}
                       </h4>
                       <div className="flex items-center justify-between text-[10px] text-[#888888] font-questrial mt-2 pt-2 border-t border-stone-100">
-                        <span>📸 {p.photographer}</span>
+                        <span>Photo: {p.photographer}</span>
                         <span className="font-bold text-[#e10600]">View In Gallery →</span>
                       </div>
                     </div>
@@ -4710,7 +4693,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   </p>
                 </div>
                 <div className="text-xs text-stone-500 font-questrial flex items-center gap-1.5 self-start sm:self-auto shrink-0 bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">
-                  <span>🔍</span>
                   <span>Click photo to enlarge</span>
                 </div>
               </div>
@@ -4741,7 +4723,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       </div>
                       {/* Zoom Indicator on Hover */}
                       <div className="absolute bottom-3 right-3 bg-black/70 text-white text-[11px] font-questrial px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shadow-sm">
-                        <span>🔎</span>
                         <span>View Full Size</span>
                       </div>
                     </div>
@@ -4750,7 +4731,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                       <div>
                         <div className="flex items-center justify-between gap-2 text-[11px] font-mono text-stone-500 mb-1">
-                          <span>📍 {tp.venue}</span>
+                          <span>{tp.venue}</span>
                         </div>
                         <h3 className="font-heading text-xl sm:text-2xl text-[#222222] group-hover:text-[#e10600] transition leading-snug">
                           {tp.title}
@@ -4790,7 +4771,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           {selectedTeamPhoto.title}
                         </h3>
                         <span className="text-xs text-stone-400 font-questrial block">
-                          📍 {selectedTeamPhoto.venue} · {selectedTeamPhoto.era}
+                          {selectedTeamPhoto.venue} · {selectedTeamPhoto.era}
                         </span>
                       </div>
                     </div>
@@ -4905,7 +4886,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           </p>
                         </div>
                         <div className="mt-4 pt-3 border-t border-gray-100 text-[10px] font-questrial text-[#888888]">
-                          📸 {p.photographer}
+                          Photo: {p.photographer}
                         </div>
                       </div>
                     </div>
@@ -5221,10 +5202,10 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
                   <span className="text-xs font-bold tracking-widest uppercase bg-amber-400 text-stone-900 px-3 py-1 rounded-full shadow-xs">
-                    🏈 Rivalry Ticket Raffle
+                    Rivalry Ticket Raffle
                   </span>
                   <span className="text-xs font-bold tracking-wider uppercase bg-red-600 text-white px-3 py-1 rounded-full animate-pulse shadow-xs">
-                    ⏳ Sales End Sun Nov 22 @ 9 PM
+                    Sales End Sun Nov 22 @ 9 PM
                   </span>
                   <span className="text-xs text-stone-500 font-mono">
                     Drawing: No later than Tue Nov 24 @ 8:00 PM
@@ -5275,21 +5256,18 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 {/* Prize Breakdown Card */}
                 <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 sm:p-7 shadow-sm space-y-4">
                   <h3 className="font-heading text-2xl sm:text-3xl text-[#222222] border-b border-stone-200 pb-2">
-                    🏆 THE GRAND PRIZE PACKAGE
+                    THE GRAND PRIZE PACKAGE
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
-                      <span className="text-2xl block mb-1">🎟️</span>
                       <span className="font-heading text-xl text-[#222222] block">2 GAME TICKETS</span>
                       <span className="text-xs text-stone-600 block mt-0.5">Section 202 · Row O · Seats 13–14</span>
                     </div>
                     <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
-                      <span className="text-2xl block mb-1">🅿️</span>
                       <span className="font-heading text-xl text-[#222222] block">PARKING PASS</span>
                       <span className="text-xs text-stone-600 block mt-0.5">Jackson Deck (239 Jackson Cir)</span>
                     </div>
                     <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-xs">
-                      <span className="text-2xl block mb-1">📍</span>
                       <span className="font-heading text-xl text-[#222222] block">KENAN STADIUM</span>
                       <span className="text-xs text-stone-600 block mt-0.5">Saturday, Nov 28 · Chapel Hill</span>
                     </div>
@@ -5303,7 +5281,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <h3 className="font-heading text-2xl text-[#222222]">
-                      🎟️ SELECT RAFFLE ENTRY TIER
+                      SELECT RAFFLE ENTRY TIER
                     </h3>
                     <span className="text-xs text-stone-500 font-mono">Multiple entries allowed</span>
                   </div>
@@ -5355,7 +5333,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 {/* Drawing & Claim Rules */}
                 <div className="bg-stone-50 border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-3">
                   <h4 className="font-heading text-lg text-[#222222] tracking-wide">
-                    📜 DRAWING TIMELINE & RULES
+                    DRAWING TIMELINE & RULES
                   </h4>
                   <ul className="text-xs text-stone-600 font-questrial space-y-2 list-disc list-inside leading-relaxed">
                     <li>
@@ -5708,23 +5686,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               </p>
             </div>
 
-            {/* Introductory Notice Banner */}
-            <div className="bg-red-50/70 border border-red-200 rounded-lg p-5 mb-6 text-xs font-questrial text-[#333333] leading-relaxed">
-              <span className="font-bold text-[#e10600] uppercase tracking-wide block mb-1">
-                COMMEMORATING OUR GOLDEN ANNIVERSARY
-              </span>
-              To better appreciate how far the program has come, the complete chronological history of the program has been recorded below by our team historians and student staff.
-              Some records are still incomplete: if you have historical photos, newspaper clippings, or game records that can help us fill in the blanks, please reach out to us at{" "}
-              <a href="mailto:Admin@icepackhockey.com" className="text-[#e10600] font-bold hover:underline">
-                Admin@icepackhockey.com
-              </a>.
-            </div>
-
             {/* ALUMNI RECONNECT CALLOUT BANNER */}
             <div className="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 border-2 border-[#e10600] rounded-xl p-5 sm:p-6 mb-8 text-white shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="space-y-1">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400 block">
-                  🏒 ARE YOU AN ICEPACK ALUM?
+                  ARE YOU AN ICEPACK ALUM?
                 </span>
                 <h3 className="font-heading text-2xl text-white">
                   RECONNECT WITH THE PACK ALUMNI NETWORK
@@ -5765,16 +5731,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     <span className="text-[10px] text-white/60 mt-0.5">{f.sub}</span>
                   </div>
                 ))}
-              </div>
-
-              {/* Individual Honors Strip */}
-              <div className="mt-4 p-4 bg-gray-50 border border-[#e5e5e5] rounded-lg text-xs font-questrial text-[#555555] flex flex-wrap gap-x-6 gap-y-2 justify-center">
-                <span>🏆 <strong>11</strong> Hall of Fame Inductees</span>
-                <span>⭐ <strong>10</strong> Season MVP Recipients</span>
-                <span>🥇 <strong>6</strong> Tournament MVP Recipients</span>
-                <span>🎓 <strong>2</strong> Scholar-Athlete Award Winners</span>
-                <span>🌟 <strong>3</strong> Player of the Year Honorees</span>
-                <span>👔 <strong>3</strong> Coach of the Year Awards</span>
               </div>
             </div>
 
@@ -5851,7 +5807,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           />
                           {era.image_caption && (
                             <div className="p-3 bg-[#1a1a1a] text-white/90 text-xs font-questrial flex flex-wrap items-center justify-between gap-2">
-                              <span>📸 {era.image_caption}</span>
+                              <span>Photo: {era.image_caption}</span>
                               <span className="text-[10px] text-white/60">
                                 {era.image_credit ? era.image_credit : "Photo by Kaydee Gawlik / Icepack Media"}
                               </span>
@@ -6259,7 +6215,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   </h2>
                 </div>
                 <div className="bg-red-50 text-[#e10600] border border-red-200 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">
-                  🏆 8x NC State Tournament Titles
+                  8x NC State Tournament Titles
                 </div>
               </div>
 
@@ -6412,7 +6368,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               }}
               className="text-left text-amber-400 font-bold hover:text-amber-300 transition flex items-center justify-between"
             >
-              <span>🏈 Football Ticket Raffle</span>
+              <span>Football Ticket Raffle</span>
               <span className="text-[9px] bg-red-600 text-white px-1.5 py-0.5 rounded font-mono">Ends Nov 22</span>
             </button>
             <a
