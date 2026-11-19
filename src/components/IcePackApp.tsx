@@ -384,21 +384,28 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
       {/* MAIN HEADER (Brand Red: #e10600) */}
       <header className="bg-[#e10600] text-white px-3 sm:px-8 py-2.5 sm:py-3.5 border-b-4 border-[#b00400] shadow-md sticky top-0 z-40 transition-all">
         <div className="max-w-[1280px] mx-auto flex items-center justify-between gap-3">
-          {/* Brand Logo (Full Lockup: Wolf + NC State Hockey) */}
+          {/* Logo & Team Identity */}
           <button
             onClick={() => {
               setActiveTab("home");
               setMobileMenuOpen(false);
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="flex items-center text-left group cursor-pointer"
-            aria-label="NC State Icepack Hockey Home"
+            className="flex items-center gap-2 sm:gap-3 text-left group"
           >
             <img
-              src="/brand/nc-state-hockey-header-logo.png"
-              alt="NC State Hockey Logo"
-              className="h-10 sm:h-14 w-auto object-contain drop-shadow shrink-0"
+              src="/07cdeb598c1716ddf52f5438f9484da2.png"
+              alt="NC State Icepack Logo"
+              className="w-10 h-10 sm:w-14 sm:h-14 object-contain drop-shadow shrink-0"
             />
+            <div className="flex flex-col">
+              <span className="font-heading text-2xl sm:text-4xl leading-none tracking-wider text-white">
+                ICEPACK HOCKEY
+              </span>
+              <span className="text-[9px] sm:text-[11px] font-bold tracking-[0.12em] sm:tracking-[0.16em] uppercase text-white/90">
+                NC STATE · ACHA DIVISION I
+              </span>
+            </div>
           </button>
 
           {/* Mobile Menu Toggle Button */}
@@ -6422,12 +6429,12 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-[#444444] text-sm">
           {/* Col 1: Identity */}
           <div className="flex flex-col gap-3">
-            <div className="flex items-center">
-              <img
-                src="/brand/nc-state-hockey-header-logo.png"
-                alt="NC State Hockey"
-                className="h-12 w-auto object-contain"
-              />
+            <div className="flex items-center gap-3">
+              <img src="/07cdeb598c1716ddf52f5438f9484da2.png" alt="Icepack Logo" className="w-12 h-12 object-contain" />
+              <div className="flex flex-col">
+                <span className="font-heading text-2xl leading-none">ICEPACK HOCKEY</span>
+                <span className="text-[10px] font-bold text-white/70 tracking-widest">EST. 1976 · ACHA D1</span>
+              </div>
             </div>
             <p className="font-questrial text-xs text-white/70 leading-relaxed">
               The Ice Hockey Club at NC State is a student-run 501(c)(3) nonprofit operating independently
