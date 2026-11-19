@@ -704,7 +704,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               title="UNC vs. NC State Football Ticket Raffle"
             >
               <span>Football Raffle</span>
-              <span className="text-[9px] bg-red-600 text-white font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-tighter">
+              <span className="text-[9px] bg-[#e10600] text-white font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-tighter">
                 Ends Nov 22
               </span>
             </button>
@@ -977,7 +977,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               <span className="flex items-center gap-2">
                 <span>UNC / NCSU Football Raffle</span>
               </span>
-              <span className="text-[10px] bg-red-600 text-white font-extrabold px-2 py-0.5 rounded-full uppercase tracking-tight">
+              <span className="text-[10px] bg-[#e10600] text-white font-extrabold px-2 py-0.5 rounded-full uppercase tracking-tight">
                 Ends Nov 22
               </span>
             </button>
@@ -1012,7 +1012,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     CINCINNATI
                   </a>
                 </span>
-                <span className="font-bold text-base text-red-400 font-mono ml-1">L 5-4 (OT)</span>
+                <span className="font-bold text-base text-[#e10600] font-mono ml-1">L 5-4 (OT)</span>
               </div>
               <div className="flex flex-col gap-1 shrink-0">
                 <button
@@ -1420,7 +1420,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           LIMITED-TIME RAFFLE
                         </span>
                       </div>
-                      <span className="bg-red-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse font-opensans">
+                      <span className="bg-[#e10600] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse font-opensans">
                         Sales End Sun Nov 22 @ 9 PM
                       </span>
                     </div>
@@ -1463,7 +1463,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   <div className="z-10">
                     <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-3 mb-4">
                       <div>
-                        <span className="text-[11px] font-bold tracking-widest uppercase text-red-400 font-opensans">
+                        <span className="text-[11px] font-bold tracking-widest uppercase text-[#e10600] font-opensans">
                           ANNUAL FUND
                         </span>
                       </div>
@@ -2139,8 +2139,8 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                               {(game as any).is_live || (game.result && game.result.toLowerCase().includes("live")) ? (
                                 <div className="flex items-center justify-between w-full">
                                   <div className="flex items-center gap-1.5">
-                                    <span className="w-2 h-2 rounded-full bg-red-600 animate-ping inline-block"></span>
-                                    <span className="px-2.5 py-1 rounded text-xs font-bold tracking-wide bg-red-600 text-white animate-pulse">
+                                    <span className="w-2 h-2 rounded-full bg-[#e10600] animate-ping inline-block"></span>
+                                    <span className="px-2.5 py-1 rounded text-xs font-bold tracking-wide bg-[#e10600] text-white animate-pulse">
                                       {game.result || "LIVE 0–1"}
                                     </span>
                                   </div>
@@ -2177,7 +2177,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                         game.result.startsWith("W")
                                           ? "bg-emerald-100 text-emerald-800"
                                           : game.result.startsWith("L")
-                                          ? "bg-red-100 text-red-800"
+                                          ? "bg-red-50 text-[#e10600] border border-red-200"
                                           : "bg-gray-100 text-gray-800"
                                       }`}
                                     >
@@ -2345,7 +2345,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                   {/* Result or Status */}
                                   <td className="py-3.5 px-4 whitespace-nowrap">
                                     {(game as any).is_live || (game.result && game.result.toLowerCase().includes("live")) ? (
-                                      <span className="px-2.5 py-1 rounded text-xs font-bold bg-red-600 text-white animate-pulse flex items-center gap-1.5 w-fit">
+                                      <span className="px-2.5 py-1 rounded text-xs font-bold bg-[#e10600] text-white animate-pulse flex items-center gap-1.5 w-fit">
                                         <span className="w-2 h-2 rounded-full bg-white animate-ping inline-block"></span>
                                         <span>{game.result || "LIVE 0–1"}</span>
                                       </span>
@@ -2355,7 +2355,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                           game.result.startsWith("W")
                                             ? "bg-emerald-100 text-emerald-800"
                                             : game.result.startsWith("L")
-                                            ? "bg-red-100 text-red-800"
+                                            ? "bg-red-50 text-[#e10600] border border-red-200"
                                             : "bg-gray-100 text-gray-800"
                                         }`}
                                       >
@@ -2618,7 +2618,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                           g.result.startsWith("W")
                                             ? "bg-emerald-600 text-white"
                                             : g.result.startsWith("L")
-                                            ? "bg-red-600 text-white"
+                                            ? "bg-[#e10600] text-white"
                                             : "bg-gray-600 text-white"
                                         }`}
                                         title={(g as any).recap_article_id ? "View Game Recap" : g.result}
@@ -4484,7 +4484,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                             <div className="mt-4">
                               <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
                                 <div className="flex items-center gap-2">
-                                  <span className="text-xs font-bold uppercase tracking-widest text-[#e10600] bg-red-950/60 border border-red-800/60 px-2.5 py-0.5 rounded">
+                                  <span className="text-xs font-bold uppercase tracking-widest text-[#e10600] bg-red-950/60 border border-[#e10600]/40 px-2.5 py-0.5 rounded">
                                     {currentEp.ep}
                                   </span>
                                   <span className="text-xs font-questrial text-white/70">
@@ -5204,7 +5204,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   <span className="text-xs font-bold tracking-widest uppercase bg-amber-400 text-stone-900 px-3 py-1 rounded-full shadow-xs">
                     Rivalry Ticket Raffle
                   </span>
-                  <span className="text-xs font-bold tracking-wider uppercase bg-red-600 text-white px-3 py-1 rounded-full animate-pulse shadow-xs">
+                  <span className="text-xs font-bold tracking-wider uppercase bg-[#e10600] text-white px-3 py-1 rounded-full animate-pulse shadow-xs">
                     Sales End Sun Nov 22 @ 9 PM
                   </span>
                   <span className="text-xs text-stone-500 font-mono">
@@ -6015,7 +6015,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               </div>
 
               {/* 3. CONTACT US FORM (From Hostinger) */}
-              <div className="lg:col-span-5 bg-[#cc0000] text-white rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-sm">
+              <div className="lg:col-span-5 bg-[#e10600] text-white rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-sm">
                 <div>
                   <span className="text-xs font-bold tracking-widest uppercase text-white/80 block">
                     DIRECT COMMUNICATION
@@ -6369,7 +6369,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               className="text-left text-amber-400 font-bold hover:text-amber-300 transition flex items-center justify-between"
             >
               <span>Football Ticket Raffle</span>
-              <span className="text-[9px] bg-red-600 text-white px-1.5 py-0.5 rounded font-mono">Ends Nov 22</span>
+              <span className="text-[9px] bg-[#e10600] text-white px-1.5 py-0.5 rounded font-mono">Ends Nov 22</span>
             </button>
             <a
               href="https://ncstatewhockey.org/"

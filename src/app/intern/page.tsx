@@ -331,7 +331,7 @@ export default function InternDesk() {
                       <div className="text-right">
                         <span className={`text-xs font-bold font-mono px-2 py-0.5 rounded ${
                           game.result?.startsWith("W") ? "bg-green-100 text-green-800" :
-                          game.result?.startsWith("L") ? "bg-red-100 text-red-800" : "bg-neutral-100 text-neutral-600"
+                          game.result?.startsWith("L") ? "bg-red-50 text-[#e10600] border border-red-200" : "bg-neutral-100 text-neutral-600"
                         }`}>
                           {game.result || "Scheduled"}
                         </span>
