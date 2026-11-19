@@ -424,13 +424,13 @@ END:VEVENT
 BEGIN:VEVENT
 UID:icepack-game-28-202627@icepackhockey.com
 DTSTAMP:20261117T190646Z
-DTSTART;TZID=America/New_York:20270205T193000
-DTEND;TZID=America/New_York:20270205T220000
-SUMMARY:NC State Icepack vs. Opponent TBA
-DESCRIPTION:NC State Icepack vs. Opponent TBA
+DTSTART;TZID=America/New_York:20270205T194500
+DTEND;TZID=America/New_York:20270205T221500
+SUMMARY:NC State Icepack vs. UNC Chapel Hill
+DESCRIPTION:NC State Icepack vs. UNC Chapel Hill
 Venue: Lane Arena @ Wake Competition Center\, Morrisville\, NC
 Broadcast: ESPN+
-Note: Non-Conference Weekend
+Note: Rivalry Matchup
 Live scores & schedule: https://icepackhockey.com/schedule
 Tickets: https://icepackhockey.ticketsauce.com/e/0205-ul-at-ihc-2/tickets
 LOCATION:Lane Arena @ Wake Competition Center\, Morrisville\, NC
