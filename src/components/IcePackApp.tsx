@@ -3238,7 +3238,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         From Downtown Raleigh
                       </span>
                       <span className="text-[11px] text-[#666666] font-questrial block mt-0.5">
-                        State Capitol & Lenovo Center
+                        State Capitol
                       </span>
                     </div>
                   </div>
@@ -6419,7 +6419,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               href="https://ncstatewhockey.org/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-left text-white/80 hover:text-[#e10600] transition flex items-center gap-1 normal-case tracking-normal text-xs pt-1 border-t border-[#444444] mt-1"
+              className="text-left text-white/80 hover:text-[#e10600] transition flex items-center gap-1 normal-case tracking-normal text-xs"
             >
               <span>NC State Women&apos;s Hockey Team</span>
               <span>↗</span>
