@@ -394,7 +394,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             className="flex items-center gap-2 sm:gap-3 text-left group"
           >
             <img
-              src="/brand/logo.png"
+              src="/07cdeb598c1716ddf52f5438f9484da2.png"
               alt="NC State Icepack Logo"
               className="w-10 h-10 sm:w-14 sm:h-14 object-contain drop-shadow shrink-0"
             />
@@ -1300,7 +1300,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {liveGame.penalties.map((pen: any, idx: number) => {
                       const isHome = pen.team_is_home ?? (pen.team_name?.toLowerCase().includes("state") || pen.team_name?.toLowerCase().includes("icepack"));
-                      const teamLogo = isHome ? "/brand/logo.png" : "/teams/cincinnati.png";
+                      const teamLogo = isHome ? "/07cdeb598c1716ddf52f5438f9484da2.png" : "/teams/cincinnati.png";
                       const teamLabel = isHome ? "NC State" : (pen.team_name || "Cincinnati");
 
                       return (
@@ -3024,7 +3024,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         alt={player.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                         onError={(e: any) => {
-                          e.target.src = "/brand/logo.png";
+                          e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
                         }}
                       />
                       <div className="absolute top-2 left-2 bg-[#e10600] text-white font-heading text-xl px-2.5 py-0.5 rounded shadow">
@@ -3068,11 +3068,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   <div key={idx} className="bg-white border border-[#e5e5e5] rounded-lg p-6 shadow-sm flex flex-col sm:flex-row gap-6">
                     <div className="w-32 h-36 bg-gray-100 rounded overflow-hidden flex-shrink-0">
                       <img
-                        src={c.image ? `/${c.image}` : "/brand/logo.png"}
+                        src={c.image ? `/${c.image}` : "/07cdeb598c1716ddf52f5438f9484da2.png"}
                         alt={c.name}
                         className="w-full h-full object-cover"
                         onError={(e: any) => {
-                          e.target.src = "/brand/logo.png";
+                          e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
                         }}
                       />
                     </div>
@@ -3099,11 +3099,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         <div key={idx} className="bg-white border border-[#e5e5e5] rounded-lg p-4 shadow-sm flex items-center gap-4">
                           <div className="w-16 h-16 rounded-full bg-gray-100 overflow-hidden flex-shrink-0 border border-[#e5e5e5]">
                             <img
-                              src={m.image ? `/${m.image}` : "/brand/logo.png"}
+                              src={m.image ? `/${m.image}` : "/07cdeb598c1716ddf52f5438f9484da2.png"}
                               alt={m.name}
                               className="w-full h-full object-cover"
                               onError={(e: any) => {
-                                e.target.src = "/brand/logo.png";
+                                e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
                               }}
                             />
                           </div>
@@ -3126,11 +3126,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       <div key={idx} className="bg-white border border-[#e5e5e5] rounded-lg p-4 shadow-sm flex items-center gap-4">
                         <div className="w-16 h-16 rounded-full bg-gray-100 overflow-hidden flex-shrink-0 border border-[#e5e5e5]">
                           <img
-                            src={m.image ? `/${m.image}` : "/brand/logo.png"}
+                            src={m.image ? `/${m.image}` : "/07cdeb598c1716ddf52f5438f9484da2.png"}
                             alt={m.name}
                             className="w-full h-full object-cover"
                             onError={(e: any) => {
-                              e.target.src = "/brand/logo.png";
+                              e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
                             }}
                           />
                         </div>
@@ -5011,7 +5011,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           alt={item.title}
                           className="h-full object-contain hover:scale-105 transition duration-500 drop-shadow-lg"
                           onError={(e: any) => {
-                            e.target.src = "/brand/logo.png";
+                            e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
                           }}
                         />
                       </div>
@@ -6430,7 +6430,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
           {/* Col 1: Identity */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <img src="/brand/logo.png" alt="Icepack Logo" className="w-12 h-12 object-contain" />
+              <img src="/07cdeb598c1716ddf52f5438f9484da2.png" alt="Icepack Logo" className="w-12 h-12 object-contain" />
               <div className="flex flex-col">
                 <span className="font-heading text-2xl leading-none">ICEPACK HOCKEY</span>
                 <span className="text-[10px] font-bold text-white/70 tracking-widest">EST. 1976 · ACHA D1</span>
