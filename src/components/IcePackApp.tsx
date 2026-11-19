@@ -2263,12 +2263,12 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                         <table className="w-full text-left text-sm">
                           <thead className="bg-[#222222] text-white text-xs font-heading tracking-wider">
                             <tr>
-                              <th className="py-3 px-4">DATE</th>
-                              <th className="py-3 px-4">TIME</th>
-                              <th className="py-3 px-4">OPPONENT</th>
-                              <th className="py-3 px-4 hidden md:table-cell">LOCATION</th>
-                              <th className="py-3 px-4">RESULT / STATUS</th>
-                              <th className="py-3 px-4 text-right">ACTION</th>
+                              <th className="py-3 px-4 w-[110px] whitespace-nowrap">DATE</th>
+                              <th className="py-3 px-4 w-[90px] whitespace-nowrap">TIME</th>
+                              <th className="py-3 px-4 max-w-[260px] lg:max-w-[300px]">OPPONENT</th>
+                              <th className="py-3 px-4 hidden md:table-cell min-w-[220px]">LOCATION</th>
+                              <th className="py-3 px-4 w-[130px] whitespace-nowrap">RESULT / STATUS</th>
+                              <th className="py-3 px-4 text-right w-[120px] whitespace-nowrap">ACTION</th>
                             </tr>
                           </thead>
                           <tbody className="divide-y divide-[#e5e5e5] font-questrial">
@@ -2297,7 +2297,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                   </td>
 
                                   {/* Opponent & Broadcast Badge */}
-                                  <td className="py-3.5 px-4 font-medium text-[#222222]">
+                                  <td className="py-3.5 px-4 font-medium text-[#222222] max-w-[260px] lg:max-w-[300px]">
                                     <div className="flex flex-col gap-1">
                                       <div className="flex flex-wrap items-center gap-2">
                                         <div className="flex items-center gap-2">
@@ -2346,17 +2346,17 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                     </div>
                                   </td>
 
-                                  {/* Location (Compact & Clean) */}
-                                  <td className="py-3.5 px-3 text-xs hidden md:table-cell max-w-[210px] truncate">
+                                  {/* Location (Full text, wrapped & further left) */}
+                                  <td className="py-3.5 px-4 text-xs hidden md:table-cell min-w-[200px]">
                                     <a
                                       href={game.map_url}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="text-[#444444] hover:text-[#e10600] inline-flex items-center gap-1 group transition truncate"
+                                      className="text-[#444444] hover:text-[#e10600] inline-flex items-start gap-1.5 group transition leading-snug"
                                       title="Get Directions in Google / Apple Maps"
                                     >
-                                      <span className="text-[#e10600] text-sm shrink-0">📍</span>
-                                      <span className="group-hover:underline truncate">{game.location}</span>
+                                      <span className="text-[#e10600] text-sm shrink-0 mt-0.5">📍</span>
+                                      <span className="group-hover:underline">{game.location}</span>
                                     </a>
                                   </td>
 
