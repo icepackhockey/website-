@@ -2673,20 +2673,30 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             {/* HISTORICAL SEASON ARCHIVES VIEW */}
             {scheduleView === "archive" && (
               <div>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {historySeasons.map((season, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setSelectedArchiveSeason(idx)}
-                      className={`px-4 py-2 rounded font-heading text-base tracking-wider uppercase transition ${
-                        selectedArchiveSeason === idx
-                          ? "bg-[#e10600] text-white"
-                          : "bg-gray-100 text-[#444444] hover:bg-gray-200"
-                      }`}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 bg-stone-50 border border-stone-200 rounded-xl p-4 sm:p-5">
+                  <div>
+                    <label htmlFor="season-archive-select" className="text-xs font-bold tracking-widest uppercase text-[#e10600] font-heading block mb-1">
+                      SELECT ARCHIVE SEASON
+                    </label>
+                    <span className="text-xs text-stone-600 font-questrial">
+                      View full game schedules, box scores, and records from past seasons
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold uppercase tracking-wider text-stone-500 font-heading hidden sm:inline">Season:</span>
+                    <select
+                      id="season-archive-select"
+                      value={selectedArchiveSeason}
+                      onChange={(e) => setSelectedArchiveSeason(Number(e.target.value))}
+                      className="w-full sm:w-auto min-w-[280px] px-4 py-2.5 bg-white border-2 border-stone-300 hover:border-[#e10600] focus:border-[#e10600] focus:ring-2 focus:ring-[#e10600]/20 rounded-lg font-heading text-base tracking-wider uppercase text-[#222222] shadow-xs cursor-pointer transition font-bold outline-none"
                     >
-                      {season.season_title.split("(")[0].trim()}
-                    </button>
-                  ))}
+                      {historySeasons.map((season, idx) => (
+                        <option key={idx} value={idx}>
+                          {season.season_title.replace("SCHEDULE", "Schedule")}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
                 <div className="bg-white border border-[#e5e5e5] rounded-lg overflow-hidden shadow-sm">
