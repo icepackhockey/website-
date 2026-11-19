@@ -1426,14 +1426,13 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
 
                   <div className="z-10">
                     <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-3 mb-4">
-                      <div className="flex items-center gap-2">
-                        <span className="text-xl">🏈</span>
+                      <div>
                         <span className="text-[11px] font-bold tracking-widest uppercase text-amber-400 font-opensans">
                           LIMITED-TIME RAFFLE
                         </span>
                       </div>
                       <span className="bg-red-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse font-opensans">
-                        ⏳ Sales End Sun Nov 22 @ 9 PM
+                        Sales End Sun Nov 22 @ 9 PM
                       </span>
                     </div>
 
@@ -1474,8 +1473,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
 
                   <div className="z-10">
                     <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-3 mb-4">
-                      <div className="flex items-center gap-2">
-                        <span className="text-xl">🐺</span>
+                      <div>
                         <span className="text-[11px] font-bold tracking-widest uppercase text-red-400 font-opensans">
                           ANNUAL FUND
                         </span>
@@ -5561,7 +5559,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 flex flex-col justify-between">
                   <div>
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <span className="text-3xl">🏒</span>
                       <span className="text-[11px] font-bold font-mono text-[#e10600] bg-white px-2.5 py-0.5 rounded border border-stone-200 shadow-xs shrink-0">
                         $3,000 per game
                       </span>
@@ -5576,7 +5573,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 flex flex-col justify-between">
                   <div>
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <span className="text-3xl">🚌</span>
                       <span className="text-[11px] font-bold font-mono text-[#e10600] bg-white px-2.5 py-0.5 rounded border border-stone-200 shadow-xs shrink-0">
                         Approx. $15,000 per trip
                       </span>
@@ -5591,7 +5587,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 flex flex-col justify-between">
                   <div>
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <span className="text-3xl">🛡️</span>
                       <span className="text-[11px] font-bold font-mono text-[#e10600] bg-white px-2.5 py-0.5 rounded border border-stone-200 shadow-xs shrink-0">
                         $10,000 per year
                       </span>
@@ -5606,7 +5601,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 flex flex-col justify-between">
                   <div>
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <span className="text-3xl">⚖️</span>
                       <span className="text-[11px] font-bold font-mono text-[#e10600] bg-white px-2.5 py-0.5 rounded border border-stone-200 shadow-xs shrink-0">
                         $15,000 per year
                       </span>
@@ -6536,7 +6530,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             <span>·</span>
             <a href="/terms" className="hover:text-white underline underline-offset-2">Terms & Conditions</a>
           </div>
-          <span>Home of the 2023 Frozen Finley Record (24,000+ Fans)</span>
         </div>
       </footer>
     </div>
