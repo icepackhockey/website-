@@ -5,7 +5,7 @@
     "category": "Gameday",
     "image": "/photo-govcup.jpg",
     "caption": "Team gathers on the ice following a hard-fought rivalry victory.",
-    "photographer": "Lilly McCabe / IcePack Media"
+    "photographer": "Lilly McCabe / Icepack Media"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "category": "Rivalry",
     "image": "/photo-unc.jpg",
     "caption": "Goal celebration in front of Wolfpack faithful at Lenovo Center.",
-    "photographer": "Julia Ortiz / IcePack Media"
+    "photographer": "Julia Ortiz / Icepack Media"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "category": "Historic",
     "image": "/frozen-finley.jpg",
     "caption": "Historic 7–3 victory over UNC in front of 24,000+ fans at Carter-Finley Stadium.",
-    "photographer": "Kaydee Gawlik / IcePack Media"
+    "photographer": "Kaydee Gawlik / Icepack Media"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "category": "Championship",
     "image": "/photo-trophy.jpg",
     "caption": "Captain lifts the championship hardware with the team.",
-    "photographer": "Kaydee Gawlik / IcePack Media"
+    "photographer": "Kaydee Gawlik / Icepack Media"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "category": "Tradition",
     "image": "/photo-alumni.jpg",
     "caption": "Icepack alumni return to Lane Arena for the annual alumni exhibition.",
-    "photographer": "Lilly McCabe / IcePack Media"
+    "photographer": "Lilly McCabe / Icepack Media"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "category": "Conference",
     "image": "/photo-vt.jpg",
     "caption": "Puck battle against Virginia Tech at Lane Arena.",
-    "photographer": "Alex Manuel / IcePack Media"
+    "photographer": "Alex Manuel / Icepack Media"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "category": "Gameday",
     "image": "/photo-navy.jpg",
     "caption": "Opening period battle against Navy at Wake Competition Center.",
-    "photographer": "Julia Ortiz / IcePack Media"
+    "photographer": "Julia Ortiz / Icepack Media"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "category": "Gameday",
     "image": "/photo-mercyhurst.jpg",
     "caption": "Icepack forwards crash the net against Mercyhurst.",
-    "photographer": "Alex Manuel / IcePack Media"
+    "photographer": "Alex Manuel / Icepack Media"
   },
   {
     "id": 9,
@@ -69,6 +69,6 @@
     "category": "Training",
     "image": "/photo-practice.jpg",
     "caption": "Intense line drills at Lane Arena preparing for gameday.",
-    "photographer": "Lilly McCabe / IcePack Media"
+    "photographer": "Lilly McCabe / Icepack Media"
   }
 ]

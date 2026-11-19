@@ -2,8 +2,8 @@ import IcePackApp from "@/components/IcePackApp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Media & Highlights — IcePack Hockey",
-  description: "Official game highlights, broadcast archives, and photo galleries for NC State IcePack.",
+  title: "Media & Highlights — Icepack Hockey",
+  description: "Official game highlights, broadcast archives, and photo galleries for NC State Icepack.",
 };
 
 export default function MediaPage() {

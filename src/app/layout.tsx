@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IcePack Hockey — NC State · ACHA Division I",
+  title: "Icepack Hockey — NC State · ACHA Division I",
   description: "Official website for the Ice Hockey Club at NC State (501(c)(3) Nonprofit). ACHA Division I & ACCHL Conference.",
 };
 

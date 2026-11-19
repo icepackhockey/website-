@@ -395,7 +395,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
           >
             <img
               src="/07cdeb598c1716ddf52f5438f9484da2.png"
-              alt="NC State IcePack Logo"
+              alt="NC State Icepack Logo"
               className="w-10 h-10 sm:w-14 sm:h-14 object-contain drop-shadow shrink-0"
             />
             <div className="flex flex-col">
@@ -1523,7 +1523,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <div className="lg:col-span-7 h-[360px] sm:h-[460px] overflow-hidden bg-gray-100">
                   <img
                     src={newsData[0].image_url || "/f24c1491d6dab19fe6b3b4e7ec20b6cc.jpg"}
-                    alt="NC State IcePack in Action"
+                    alt="NC State Icepack in Action"
                     className="w-full h-full object-cover hover:scale-105 transition duration-700"
                     onError={(e: any) => {
                       e.target.src = "/f24c1491d6dab19fe6b3b4e7ec20b6cc.jpg";
@@ -4458,7 +4458,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-xs font-questrial text-[#777777]">
-                    Spearheaded by Kyle Lewis & IcePack Media
+                    Spearheaded by Kyle Lewis & Icepack Media
                   </span>
                   <span className="bg-red-50 text-[#e10600] border border-red-200 px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider">
                     All 9 Episodes
@@ -5104,7 +5104,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     </h2>
                     <p className="font-questrial text-xs text-[#555555] max-w-xl mt-1 leading-relaxed">
                       3514 Hillsborough St, Raleigh, NC 27607 (Across from NC State Campus).
-                      The Red and White Shop is the primary retail outlet for authentic IcePack jerseys, hoodies, tees, Richardson caps, and gameday scarves.
+                      The Red and White Shop is the primary retail outlet for authentic Icepack jerseys, hoodies, tees, Richardson caps, and gameday scarves.
                     </p>
                   </div>
                 </div>
@@ -5708,7 +5708,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     </ul>
                   </div>
                   <a
-                    href="mailto:brent@charterwm.com?subject=IcePack%20Sponsorship%20Inquiry"
+                    href="mailto:brent@charterwm.com?subject=Icepack%20Sponsorship%20Inquiry"
                     className="mt-6 w-full py-2.5 bg-[#222222] hover:bg-[#e10600] text-white font-heading text-base text-center rounded transition"
                   >
                     INQUIRE NOW
@@ -5881,7 +5881,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                             <div className="p-3 bg-[#1a1a1a] text-white/90 text-xs font-questrial flex flex-wrap items-center justify-between gap-2">
                               <span>📸 {era.image_caption}</span>
                               <span className="text-[10px] text-white/60">
-                                {era.image_credit ? era.image_credit : "Photo by Kaydee Gawlik / IcePack Media"}
+                                {era.image_credit ? era.image_credit : "Photo by Kaydee Gawlik / Icepack Media"}
                               </span>
                             </div>
                           )}
@@ -6100,7 +6100,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      const subject = encodeURIComponent("IcePack Website Inquiry from " + contactName);
+                      const subject = encodeURIComponent("Icepack Website Inquiry from " + contactName);
                       const body = encodeURIComponent(`Name: ${contactName}\nEmail: ${contactEmail}\n\nMessage:\n${contactMsg}`);
                       window.location.href = `mailto:Admin@icepackhockey.com?subject=${subject}&body=${body}`;
                     }}
@@ -6420,7 +6420,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
           {/* Col 1: Identity */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <img src="/07cdeb598c1716ddf52f5438f9484da2.png" alt="IcePack Logo" className="w-12 h-12 object-contain" />
+              <img src="/07cdeb598c1716ddf52f5438f9484da2.png" alt="Icepack Logo" className="w-12 h-12 object-contain" />
               <div className="flex flex-col">
                 <span className="font-heading text-2xl leading-none">ICEPACK HOCKEY</span>
                 <span className="text-[10px] font-bold text-white/70 tracking-widest">EST. 1976 · ACHA D1</span>

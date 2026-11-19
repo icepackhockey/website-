@@ -2,7 +2,7 @@ import IcePackApp from "@/components/IcePackApp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Stephen Russell Memorial Tournament — IcePack Hockey",
+  title: "Stephen Russell Memorial Tournament — Icepack Hockey",
   description: "Honoring the memory of Stephen Russell through collegiate hockey.",
 };
 
