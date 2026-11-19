@@ -2673,22 +2673,28 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             {/* HISTORICAL SEASON ARCHIVES VIEW */}
             {scheduleView === "archive" && (
               <div>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 bg-stone-50 border border-stone-200 rounded-xl p-4 sm:p-5">
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-stone-200 pb-4 mb-6 gap-4">
                   <div>
-                    <label htmlFor="season-archive-select" className="text-xs font-bold tracking-widest uppercase text-[#e10600] font-heading block mb-1">
-                      SELECT ARCHIVE SEASON
-                    </label>
-                    <span className="text-xs text-stone-600 font-questrial">
-                      View full game schedules, box scores, and records from past seasons
+                    <span className="text-xs font-bold tracking-widest uppercase text-[#e10600]">
+                      HISTORICAL ARCHIVES · 2019–2026 SEASONS
                     </span>
+                    <h2 className="font-heading text-2xl sm:text-4xl text-[#222222] mt-1">
+                      SELECT ARCHIVE SEASON
+                    </h2>
+                    <p className="font-questrial text-sm text-[#555555] mt-1">
+                      View full game schedules, box scores, and records from past seasons.
+                    </p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-stone-500 font-heading hidden sm:inline">Season:</span>
+
+                  <div className="flex items-center gap-3">
+                    <label htmlFor="season-archive-select" className="font-heading text-lg uppercase text-[#222222] shrink-0 font-bold">
+                      Season:
+                    </label>
                     <select
                       id="season-archive-select"
                       value={selectedArchiveSeason}
                       onChange={(e) => setSelectedArchiveSeason(Number(e.target.value))}
-                      className="w-full sm:w-auto min-w-[280px] px-4 py-2.5 bg-white border-2 border-stone-300 hover:border-[#e10600] focus:border-[#e10600] focus:ring-2 focus:ring-[#e10600]/20 rounded-lg font-heading text-base tracking-wider uppercase text-[#222222] shadow-xs cursor-pointer transition font-bold outline-none"
+                      className="min-w-[280px] sm:min-w-[340px] px-4 py-2.5 bg-white border-2 border-stone-300 hover:border-[#e10600] focus:border-[#e10600] focus:ring-2 focus:ring-[#e10600]/20 rounded-xl font-heading text-lg sm:text-xl tracking-wider uppercase text-[#222222] shadow-sm cursor-pointer transition font-bold outline-none"
                     >
                       {historySeasons.map((season, idx) => (
                         <option key={idx} value={idx}>
@@ -2701,10 +2707,10 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
 
                 <div className="bg-white border border-[#e5e5e5] rounded-lg overflow-hidden shadow-sm">
                   <div className="bg-[#222222] text-white px-6 py-4 flex justify-between items-center">
-                    <h3 className="font-heading text-2xl text-white">
+                    <h3 className="font-heading text-2xl sm:text-3xl text-white">
                       {historySeasons[selectedArchiveSeason].season_title}
                     </h3>
-                    <span className="text-xs text-white/70">
+                    <span className="text-sm font-semibold text-white/80">
                       {historySeasons[selectedArchiveSeason].games_count} Total Games
                     </span>
                   </div>
