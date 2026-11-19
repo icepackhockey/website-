@@ -27,6 +27,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
   const [scheduleFilter, setScheduleFilter] = useState<string>("all");
   const [scheduleView, setScheduleView] = useState<string>("current"); // "current" | "archive"
   const [scheduleMode, setScheduleMode] = useState<string>("table"); // "table" | "calendar"
+  const [showPastGames, setShowPastGames] = useState<boolean>(false);
   const [calMonthIdx, setCalMonthIdx] = useState<number>(2); // 0=Sep, 1=Oct, 2=Nov (default current), 3=Jan, 4=Feb, 5=Mar
   const [selectedArchiveSeason, setSelectedArchiveSeason] = useState<number>(0);
   const [rosterTab, _setRosterTab] = useState<string>(initialSubTab);
@@ -352,6 +353,15 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
     if (scheduleFilter === "away") return g.ha === "A" || g.ha === "N";
     return true;
   });
+
+  const isPastGame = (g: any) => Boolean(g.result && !g.is_live && !g.result.toLowerCase().includes("live"));
+  const pastGamesCount = filteredGames.filter(isPastGame).length;
+  const gamesToRender = showPastGames
+    ? filteredGames
+    : (() => {
+        const upcoming = filteredGames.filter((g) => !isPastGame(g));
+        return upcoming.length > 0 ? upcoming : filteredGames;
+      })();
 
   // Filtered news
   const filteredNews = newsData.filter((art) => {
@@ -2030,14 +2040,48 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       Calendar View
                     </button>
                   </div>
+
+                  {/* Top Right: Toggle Past Games Button */}
+                  {scheduleMode === "table" && pastGamesCount > 0 && (
+                    <button
+                      onClick={() => setShowPastGames(!showPastGames)}
+                      className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition border shadow-xs cursor-pointer ${
+                        showPastGames
+                          ? "bg-[#222222] text-white border-[#222222] hover:bg-black"
+                          : "bg-white text-[#222222] border-stone-300 hover:border-[#e10600] hover:text-[#e10600]"
+                      }`}
+                    >
+                      {showPastGames
+                        ? `Hide Past Games (${pastGamesCount})`
+                        : `Show Past Games (${pastGamesCount})`}
+                    </button>
+                  )}
                 </div>
+
+                {/* Collapsed Past Games Notice Banner */}
+                {scheduleMode === "table" && !showPastGames && pastGamesCount > 0 && (
+                  <div className="mb-4 p-3.5 bg-stone-50 border border-stone-200 rounded-xl flex flex-wrap items-center justify-between gap-3 text-xs font-questrial text-[#555555]">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#e10600] inline-block"></span>
+                      <span>
+                        Starting with <strong>Next Game</strong> · <strong>{pastGamesCount}</strong> past games collapsed
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => setShowPastGames(true)}
+                      className="text-[#e10600] hover:underline font-bold uppercase tracking-wider text-xs whitespace-nowrap cursor-pointer"
+                    >
+                      Show Past Games ({pastGamesCount}) →
+                    </button>
+                  </div>
+                )}
 
                 {/* Schedule Table / Card View */}
                 {scheduleMode === "table" && (
                   <div>
                     {/* Mobile Matchup Cards (< md) */}
                     <div className="md:hidden flex flex-col gap-3">
-                      {filteredGames.map((game) => {
+                      {gamesToRender.map((game) => {
                         const isNextGame = game.id === 19; // Fri Nov 20 at George Mason
                         const isHome = game.ha === "H";
                         return (
@@ -2255,7 +2299,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                             </tr>
                           </thead>
                           <tbody className="divide-y divide-[#e5e5e5] font-questrial">
-                            {filteredGames.map((game) => {
+                            {gamesToRender.map((game) => {
                               const isNextGame = game.id === 19; // Fri Nov 20 at George Mason
                               const isHome = game.ha === "H";
                               return (
