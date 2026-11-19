@@ -21,14 +21,14 @@
     {
       "id": "50th-tshirt",
       "title": "Official 50th Season Gameday T-Shirt",
-      "price": "Coming Soon",
-      "status": "In Production",
-      "badge": "Coming Soon",
-      "image": "/solojersey.jpg",
-      "description": "The official 2026–27 50th season gameday t-shirt collection designed by the Icepack student creative staff. Launching soon ahead of upcoming home matchups at Lane Arena.",
+      "price": "$16.00",
+      "status": "Available Now",
+      "badge": "While Supplies Last",
+      "image": "public/DSC_1716web.jpg",
+      "description": "The official 2026–27 50th season gameday t-shirt. Now on sale during home gamedays at Lane Arena, while supplies last.",
       "features": [],
       "url": "#",
-      "action_label": "Notify Me When Live"
+      "action_label": "Notify Me on Gameday"
     }
   ],
   "retail_partner": {
