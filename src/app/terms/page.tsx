@@ -12,20 +12,12 @@ export default function TermsPage() {
       {/* Top Header */}
       <header className="bg-[#e10600] text-white px-4 sm:px-8 py-3.5 border-b-4 border-[#b00400] shadow-md">
         <div className="max-w-[1100px] mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center">
             <img
-              src="/07cdeb598c1716ddf52f5438f9484da2.png"
+              src="/brand/ihc-webthumbnail3-2x.png"
               alt="NC State Icepack Logo"
-              className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+              className="h-10 sm:h-12 w-auto object-contain"
             />
-            <div>
-              <span className="font-heading text-2xl sm:text-3xl leading-none text-white block">
-                ICEPACK HOCKEY
-              </span>
-              <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-white/90">
-                NC STATE · ACHA DIVISION I
-              </span>
-            </div>
           </Link>
           <Link
             href="/"
