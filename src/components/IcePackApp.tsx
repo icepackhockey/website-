@@ -5351,37 +5351,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   </div>
                 </div>
 
-                {/* Important Instructions & Video Help */}
-                <div className="bg-red-50/60 border border-red-200 rounded-2xl p-5 sm:p-6 space-y-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl">⚠️</span>
-                    <h4 className="font-heading text-lg text-[#222222] tracking-wide">
-                      IMPORTANT PURCHASE INSTRUCTIONS
-                    </h4>
-                  </div>
-                  <p className="text-xs text-stone-700 font-questrial leading-relaxed">
-                    You must make a selection for the raffle ticket tier you want and cost during checkout.
-                  </p>
-                  <div className="flex flex-wrap items-center gap-3 pt-1">
-                    <a
-                      href="https://vimeo.com/1184147681/41160384ea"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider rounded-lg transition shadow-xs"
-                    >
-                      <span>▶ Watch Video Instructions</span>
-                      <span className="text-[10px] text-stone-400">(Vimeo ↗)</span>
-                    </a>
-                    <a
-                      href="https://store.icepackhockey.com/store/p87/UNC%2FNCSU_Football_Ticket_Raffle.html"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-stone-100 text-[#e10600] border border-[#e10600] text-xs font-bold uppercase tracking-wider rounded-lg transition"
-                    >
-                      <span>Open Checkout Portal ↗</span>
-                    </a>
-                  </div>
-                </div>
 
                 {/* Drawing & Claim Rules */}
                 <div className="bg-stone-50 border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-3">
@@ -6252,7 +6221,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 </div>
               </div>
 
-              {/* Right Column: Photo & Video Embed */}
+              {/* Right Column: Photo */}
               <div className="lg:col-span-5 space-y-6">
                 {/* Photo Card */}
                 <div className="bg-white border border-[#e5e5e5] rounded-lg p-5 shadow-sm flex flex-col items-center">
@@ -6273,36 +6242,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     <span className="text-[11px] font-questrial text-[#777777] mt-0.5 block">
                       Member 2006–2009 · Jersey Retired Nov 2009
                     </span>
-                  </div>
-                </div>
-
-                {/* Video Embed Card */}
-                <div className="bg-[#222222] text-white border border-[#444444] rounded-lg p-4 shadow-sm">
-                  <span className="text-[11px] font-bold text-[#e10600] uppercase tracking-widest block mb-2">
-                    FEATURED TRIBUTE VIDEO
-                  </span>
-                  <div className="w-full aspect-video rounded overflow-hidden bg-black">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/k5sLfCfCX0o?si=jeU-ZO1QuRXf5lg3"
-                      title="Stephen's Ripple Tribute"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    />
-                  </div>
-                  <div className="mt-2 text-[11px] font-questrial text-white/70 flex items-center justify-between">
-                    <span>Stephen&apos;s Ripple (Official Video)</span>
-                    <a
-                      href="https://youtu.be/En1WERVBKEs?si=TAdRgApTTCx02y_2"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#e10600] hover:underline"
-                    >
-                      Open in YouTube ↗
-                    </a>
                   </div>
                 </div>
               </div>
