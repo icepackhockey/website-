@@ -19,6 +19,7 @@ export default function InternDesk() {
 
   const [activeTab, setActiveTab] = useState<"scores" | "news" | "standings" | "merch" | "roster" | "sponsors">("scores");
   const [statusMessage, setStatusMessage] = useState<string>("");
+  const [isPublishing, setIsPublishing] = useState<boolean>(false);
 
   // Working data states
   const [schedule, setSchedule] = useState(scheduleDataRaw);
@@ -745,65 +746,83 @@ export default function InternDesk() {
               <div className="flex justify-end pt-3">
                 <button
                   type="button"
-                  onClick={() => {
+                  disabled={isPublishing}
+                  onClick={async () => {
                     if (!newArticle.title.trim()) {
                       alert("Please provide an article headline.");
                       return;
                     }
-                    const paras = newArticle.paragraphsText
-                      .split("\n\n")
-                      .map((p) => p.trim())
-                      .filter((p) => p.length > 0);
+                    setIsPublishing(true);
+                    setStatusMessage("⏳ Publishing article to website and triggering live build...");
 
-                    if (editingArticleId) {
-                      // Update existing article
-                      setNews(
-                        news.map((a: any) =>
-                          a.id === editingArticleId
-                            ? {
-                                ...a,
-                                title: newArticle.title,
-                                date: newArticle.date,
-                                category: newArticle.category,
-                                author: newArticle.author,
-                                summary: newArticle.summary || (paras[0] ? paras[0].slice(0, 160) + "..." : ""),
-                                paragraphs: paras.length > 0 ? paras : [newArticle.summary],
-                                image_url: newArticle.image_url || a.image_url,
-                              }
-                            : a
-                        )
-                      );
-                      setEditingArticleId(null);
-                      showToast("✓ Successfully updated article!");
-                    } else {
-                      // Create new article
-                      const created = {
-                        id: Date.now(),
-                        title: newArticle.title,
-                        date: newArticle.date,
-                        category: newArticle.category,
-                        author: newArticle.author,
-                        summary: newArticle.summary || (paras[0] ? paras[0].slice(0, 160) + "..." : ""),
-                        paragraphs: paras.length > 0 ? paras : [newArticle.summary],
-                        image_url: newArticle.image_url || "/frozen-finley.jpg",
-                      };
-                      setNews([created, ...news]);
-                      showToast("✓ Article published to news feed!");
+                    try {
+                      const paras = newArticle.paragraphsText
+                        .split("\n\n")
+                        .map((p) => p.trim())
+                        .filter((p) => p.length > 0);
+
+                      const res = await fetch("/api/intern/publish-article", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          passcode: passcodeInput || DESK_PASSCODE,
+                          article: {
+                            id: editingArticleId || undefined,
+                            title: newArticle.title,
+                            date: newArticle.date,
+                            category: newArticle.category,
+                            author: newArticle.author,
+                            summary: newArticle.summary,
+                            paragraphs: paras,
+                            image_url: newArticle.image_url,
+                          },
+                        }),
+                      });
+
+                      const data = await res.json();
+                      if (!res.ok || data.error) {
+                        throw new Error(data.error || "Failed to publish article.");
+                      }
+
+                      if (editingArticleId) {
+                        setNews(news.map((a: any) => (a.id === editingArticleId ? data.article : a)));
+                        setEditingArticleId(null);
+                        showToast("✓ Successfully updated article! Live on site in ~35 seconds.");
+                      } else {
+                        setNews([data.article, ...news]);
+                        showToast("✓ Article published live to website! Deployed in ~35 seconds.");
+                      }
+
+                      setNewArticle({
+                        title: "",
+                        date: new Date().toLocaleDateString("en-US"),
+                        category: "Recap",
+                        author: "Icepack Staff",
+                        summary: "",
+                        paragraphsText: "",
+                        image_url: "",
+                      });
+                    } catch (err: any) {
+                      console.error("Publish error:", err);
+                      alert("Error publishing article: " + (err.message || "Network error. Please try again."));
+                      setStatusMessage("❌ Error publishing article: " + (err.message || "Failed"));
+                    } finally {
+                      setIsPublishing(false);
                     }
-
-                    setNewArticle({
-                      title: "",
-                      date: new Date().toLocaleDateString("en-US"),
-                      category: "Recap",
-                      author: "Icepack Staff",
-                      summary: "",
-                      paragraphsText: "",
-                      image_url: "",
-                    });
                   }}
-                  className="bg-[#e10600] hover:bg-[#b00400] text-white font-heading text-base px-6 py-2.5 rounded uppercase tracking-wider shadow transition"
+                  className="bg-[#e10600] hover:bg-[#b00400] disabled:opacity-50 text-white font-heading text-base px-6 py-2.5 rounded uppercase tracking-wider shadow transition cursor-pointer flex items-center gap-2"
                 >
-                  {editingArticleId ? "Save Changes to Article" : "Publish Article to Feed"}
+                  {isPublishing && (
+                    <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24" fill="none">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                    </svg>
+                  )}
+                  {isPublishing
+                    ? "Publishing to Website..."
+                    : editingArticleId
+                    ? "Save Changes & Update Live Site"
+                    : "Publish Article to Website"}
                 </button>
               </div>
             </div>
