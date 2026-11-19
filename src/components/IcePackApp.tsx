@@ -5247,11 +5247,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               {/* Left Column: Official Poster Graphic */}
               <div className="lg:col-span-5 bg-stone-100 rounded-2xl overflow-hidden border border-stone-200 shadow-md">
                 <img
-                  src="/raffle/unc-ncsu-football-raffle.webp"
+                  src="/raffle/unc-ncsu-football-raffle-v2.webp"
                   alt="UNC vs NCSU Football Ticket Raffle Official Poster"
                   className="w-full h-auto object-cover hover:scale-[1.01] transition duration-300"
                   onError={(e: any) => {
-                    e.target.src = "/raffle/unc-ncsu-football-raffle.jpg";
+                    e.target.src = "/raffle/unc-ncsu-football-raffle-v2.jpg";
                   }}
                 />
                 <div className="p-4 bg-stone-900 text-white text-center">
