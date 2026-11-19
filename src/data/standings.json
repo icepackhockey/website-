@@ -1,16 +1,18 @@
 {
   "conference": "SECHL (ACHA Division I)",
   "season": "2026\u201327",
-  "last_updated": "November 8, 2026",
+  "last_updated": "November 18, 2026",
   "national_ranking": {
-    "current_rank": 38,
-    "previous_rank": 40,
-    "movement": "+2",
-    "computer_average": "39.0",
+    "current_rank": 37,
+    "previous_rank": 38,
+    "movement": "+1",
+    "computer_average": "38.0",
     "total_teams": 81,
-    "poll_date": "November 8, 2026",
-    "pdf_nov_8": "/polls/2627computer-average-2026-11-08.pdf",
-    "pdf_nov_1": "/polls/2627computer-average-2026-11-01.pdf"
+    "poll_date": "November 18, 2026",
+    "pdf_current": "/polls/2627computer-average-2026-11-15.pdf",
+    "pdf_previous": "/polls/2627computer-average-2026-11-08.pdf",
+    "pdf_nov_8": "/polls/2627computer-average-2026-11-15.pdf",
+    "pdf_nov_1": "/polls/2627computer-average-2026-11-08.pdf"
   },
   "teams": [
     {

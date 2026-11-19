@@ -2886,16 +2886,16 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       {/* Official PDF Download Links */}
                       <div className="flex flex-col gap-2 pt-2">
                         <a
-                          href={standingsData.national_ranking.pdf_nov_8}
+                          href={standingsData.national_ranking.pdf_current || standingsData.national_ranking.pdf_nov_8}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full py-2.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-sm text-center rounded transition shadow flex items-center justify-center gap-2"
                         >
                           VIEW OFFICIAL ACHA POLL (PDF) ↗
                         </a>
-                        {standingsData.national_ranking.pdf_nov_1 && (
+                        {(standingsData.national_ranking.pdf_previous || standingsData.national_ranking.pdf_nov_1) && (
                           <a
-                            href={standingsData.national_ranking.pdf_nov_1}
+                            href={standingsData.national_ranking.pdf_previous || standingsData.national_ranking.pdf_nov_1}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full py-2 bg-[#2a2a2a] hover:bg-[#333333] text-white font-heading text-xs text-center rounded transition border border-[#555555] flex items-center justify-center gap-2"
