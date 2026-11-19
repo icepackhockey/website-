@@ -14,7 +14,7 @@ export default function PrivacyPage() {
         <div className="max-w-[1100px] mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <img
-              src="/07cdeb598c1716ddf52f5438f9484da2.png"
+              src="/brand/logo.png"
               alt="NC State Icepack Logo"
               className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
             />

@@ -159,7 +159,7 @@ export default function InternDesk() {
         <div className="w-full max-w-md bg-[#1a1a1a] border border-[#333] rounded-xl p-8 shadow-2xl text-white">
           <div className="flex items-center gap-3 mb-6">
             <img
-              src="/07cdeb598c1716ddf52f5438f9484da2.png"
+              src="/brand/logo.png"
               alt="NC State Icepack Logo"
               className="w-12 h-12 object-contain"
             />
@@ -210,7 +210,7 @@ export default function InternDesk() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img
-              src="/07cdeb598c1716ddf52f5438f9484da2.png"
+              src="/brand/logo.png"
               alt="NC State Icepack Logo"
               className="w-10 h-10 object-contain"
             />
@@ -1565,7 +1565,7 @@ export default function InternDesk() {
                             alt={item.title}
                             className="max-h-full max-w-full object-contain"
                             onError={(e: any) => {
-                              e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
+                              e.target.src = "/brand/logo.png";
                             }}
                           />
                           <span className="absolute top-2 left-2 text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-red-100 text-[#e10600] shadow-sm">
@@ -1936,7 +1936,7 @@ export default function InternDesk() {
                               alt={item.title}
                               className="max-h-full max-w-full object-contain"
                               onError={(e: any) => {
-                                e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
+                                e.target.src = "/brand/logo.png";
                               }}
                             />
                           </div>
@@ -2221,7 +2221,7 @@ export default function InternDesk() {
                           alt="Player preview"
                           className="w-14 h-14 object-cover rounded-full border-2 border-neutral-300 shrink-0 shadow-sm"
                           onError={(e: any) => {
-                            e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
+                            e.target.src = "/brand/logo.png";
                           }}
                         />
                         <div className="flex-1 min-w-0">
@@ -2295,7 +2295,7 @@ export default function InternDesk() {
                         class: playerForm.class,
                         major: playerForm.major,
                         hometown: playerForm.hometown,
-                        image: playerForm.image || "07cdeb598c1716ddf52f5438f9484da2.png",
+                        image: playerForm.image || "brand/logo.png",
                         position: playerForm.position,
                         acha_url: playerForm.acha_url || `https://www.achahockey.org/stats/player/`,
                       };
@@ -2409,7 +2409,7 @@ export default function InternDesk() {
                                 alt={p.name}
                                 className="w-9 h-9 rounded-full object-cover border border-neutral-300"
                                 onError={(e: any) => {
-                                  e.target.src = "/07cdeb598c1716ddf52f5438f9484da2.png";
+                                  e.target.src = "/brand/logo.png";
                                 }}
                               />
                             </td>
