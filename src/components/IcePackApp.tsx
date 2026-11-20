@@ -228,12 +228,15 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
     let isMounted = true;
 
     // Only activate real-time polling during an active in-progress game!
-    const isLiveActive = scheduleData.some((g: any) => g.is_live === true);
+    const activeGame = scheduleData.find((g: any) => g.is_live === true);
+    const isLiveActive = Boolean(activeGame);
     if (!isLiveActive) {
       return () => {
         isMounted = false;
       };
     }
+
+    const targetGameId = activeGame?.game_id || (liveGame as any)?.game_id || 35688;
 
     // 1. Fetch detailed boxscore (goals/penalties) from local live.json
     const fetchDetailedBoxScore = async () => {
@@ -259,7 +262,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
       try {
         const cbName = "acha_clock_" + Date.now();
         const script = document.createElement("script");
-        script.src = `https://lscluster.hockeytech.com/feed/index.php?feed=gc&key=e6867b36742a0c9d&client_code=acha&game_id=33025&lang=en&tab=clock&callback=${cbName}`;
+        script.src = `https://lscluster.hockeytech.com/feed/index.php?feed=gc&key=e6867b36742a0c9d&client_code=acha&game_id=${targetGameId}&lang=en&tab=clock&callback=${cbName}`;
 
         (window as any)[cbName] = (data: any) => {
           try {
