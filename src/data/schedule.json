@@ -396,7 +396,8 @@
     "opponent_logo": "/teams/george-mason.png",
     "opponent_url": "https://gmuhockey.com/",
     "game_id": 35688,
-    "boxscore_url": "https://www.achahockey.org/stats/game-center/35688"
+    "boxscore_url": "https://www.achahockey.org/stats/game-center/35688",
+    "preview_article_id": 1795127558761
   },
   {
     "id": 20,
@@ -416,7 +417,8 @@
     "opponent_logo": "/teams/navy.png",
     "opponent_url": "https://usnahockey.com/",
     "game_id": 32255,
-    "boxscore_url": "https://www.achahockey.org/stats/game-center/32255"
+    "boxscore_url": "https://www.achahockey.org/stats/game-center/32255",
+    "preview_article_id": 1795127558761
   },
   {
     "id": 21,

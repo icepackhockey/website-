@@ -1073,14 +1073,18 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   AT GEORGE MASON
                 </span>
               </div>
-              <a
-                href="https://gmuhockey.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs bg-white/10 hover:bg-[#e10600] text-white px-2 py-0.5 rounded font-bold uppercase transition border border-white/20 hover:border-[#e10600]"
+              <button
+                onClick={() => {
+                  const art = newsData.find((a: any) => a.id === 1795127558761) || newsData[0];
+                  if (art) setSelectedArticle(art);
+                  setActiveTab("news");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="text-xs bg-white/10 hover:bg-[#e10600] text-white px-2.5 py-0.5 rounded font-bold uppercase transition border border-white/20 hover:border-[#e10600] cursor-pointer"
+                title="Read Series Preview: George Mason & Navy"
               >
-                Matchup ↗
-              </a>
+                Preview →
+              </button>
             </div>
             <span className="text-xs text-white/60 truncate">Prince William Ice Center · Dale City, VA</span>
           </div>
@@ -2277,7 +2281,25 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                 </div>
                               ) : (
                                 <div className="flex items-center justify-between w-full text-xs text-gray-500">
-                                  <span>Away Game</span>
+                                  {(game as any).preview_article_id ? (
+                                    <button
+                                      onClick={() => {
+                                        const article = newsData.find(
+                                          (a) => a.id === (game as any).preview_article_id
+                                        );
+                                        if (article) {
+                                          setSelectedArticle(article);
+                                        }
+                                        setActiveTab("news");
+                                        window.scrollTo({ top: 0, behavior: "smooth" });
+                                      }}
+                                      className="text-xs font-bold text-[#e10600] hover:underline cursor-pointer"
+                                    >
+                                      Game Preview →
+                                    </button>
+                                  ) : (
+                                    <span>Away Game</span>
+                                  )}
                                   <span className="font-semibold text-gray-600">Scheduled</span>
                                 </div>
                               )}
@@ -2469,6 +2491,36 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                           >
                                             Recap →
                                           </button>
+                                        )}
+                                      </div>
+                                    ) : (game as any).preview_article_id ? (
+                                      <div className="flex items-center justify-end gap-2">
+                                        <button
+                                          onClick={() => {
+                                            const article = newsData.find(
+                                              (a) => a.id === (game as any).preview_article_id
+                                            );
+                                            if (article) {
+                                              setSelectedArticle(article);
+                                            }
+                                            setActiveTab("news");
+                                            window.scrollTo({ top: 0, behavior: "smooth" });
+                                          }}
+                                          className="text-xs font-bold text-[#e10600] hover:underline cursor-pointer"
+                                        >
+                                          Preview →
+                                        </button>
+                                        {game.ha === "H" ? (
+                                          <a
+                                            href={game.ticket_url || "https://icepackhockey.ticketsauce.com/"}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-3.5 py-1.5 bg-[#e10600] hover:bg-[#c40500] text-white text-xs font-heading rounded tracking-wider transition shadow-sm inline-block"
+                                          >
+                                            TICKETS
+                                          </a>
+                                        ) : (
+                                          <span className="text-xs text-gray-400 font-mono">Away</span>
                                         )}
                                       </div>
                                     ) : game.ha === "H" ? (
