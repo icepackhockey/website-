@@ -6405,6 +6405,13 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             <button onClick={() => setActiveTab("support")} className="text-left text-white/80 hover:text-[#e10600] transition">
               Annual Fund
             </button>
+            <a
+              href="/alerts"
+              className="text-left text-emerald-400 font-bold hover:text-emerald-300 transition flex items-center justify-between"
+            >
+              <span>Gameday Score SMS Alerts</span>
+              <span className="text-[9px] bg-emerald-600 text-white px-1.5 py-0.5 rounded font-mono">Free</span>
+            </a>
             <button
               onClick={() => {
                 setActiveTab("raffle");
@@ -6445,28 +6452,23 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             </a>
           </div>
 
-          {/* Col 4: Newsletter */}
+          {/* Col 4: Newsletter & SMS Alerts */}
           <div className="flex flex-col gap-2">
             <span className="font-heading text-base text-white border-b border-[#e10600] pb-1 mb-2 uppercase">
               STAY CONNECTED
             </span>
             <p className="font-questrial text-xs text-white/70">
-              Get game recaps, outdoor game ticket drops, and alumni announcements.
+              Get live gameday goal alerts, period score updates, and team announcements.
             </p>
-            <form onSubmit={(e) => { e.preventDefault(); alert("Thank you for signing up!"); }} className="mt-2 flex">
-              <input
-                type="email"
-                placeholder="you@ncsu.edu"
-                required
-                className="px-3 py-2 text-xs bg-[#333333] border border-[#555555] rounded-l text-white focus:outline-none flex-1"
-              />
-              <button
-                type="submit"
-                className="bg-[#e10600] hover:bg-[#c40500] text-white px-4 py-2 text-xs font-heading tracking-wider rounded-r transition"
-              >
-                JOIN
-              </button>
-            </form>
+            <a
+              href="/alerts"
+              className="mt-1 block text-center bg-[#e10600] hover:bg-[#c40500] text-white py-2 px-3 rounded text-xs font-heading uppercase tracking-wider transition shadow-sm"
+            >
+              Subscribe to Gameday SMS Alerts →
+            </a>
+            <span className="text-[10px] text-white/50 font-questrial">
+              Existing donors are automatically enrolled. Reply STOP to cancel at any time.
+            </span>
           </div>
         </div>
 
