@@ -226,17 +226,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
   // Real-time direct ACHA Clock & Live Box Score Hook
   useEffect(() => {
     let isMounted = true;
-
-    // Only activate real-time polling during an active in-progress game!
-    const activeGame = scheduleData.find((g: any) => g.is_live === true);
-    const isLiveActive = Boolean(activeGame);
-    if (!isLiveActive) {
-      return () => {
-        isMounted = false;
-      };
-    }
-
-    const targetGameId = activeGame?.game_id || (liveGame as any)?.game_id || 35688;
+    const targetGameId = (liveGame as any)?.game_id || 32255;
 
     // 1. Fetch detailed boxscore (goals/penalties) from local live.json
     const fetchDetailedBoxScore = async () => {
@@ -1056,11 +1046,18 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
             <span className="text-xs text-white/60">Non-Conference Matchup · Friday Road Win</span>
           </div>
 
-          {/* Next Game */}
+          {/* Next / Active Game */}
           <div className="py-2 md:py-0 md:px-4 flex flex-col justify-center">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-400">
-              NEXT GAME · SAT NOV 21 · 5:30 PM
-            </span>
+            <div className="flex items-center gap-1.5">
+              {Boolean(liveGame && !liveGame.status?.includes("Final") && !liveGame.status?.startsWith("Scheduled")) && (
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              )}
+              <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-400">
+                {liveGame && !liveGame.status?.includes("Final") && !liveGame.status?.startsWith("Scheduled")
+                  ? `LIVE NOW · ${liveGame.status}`
+                  : "NEXT GAME · SAT NOV 21 · 5:30 PM"}
+              </span>
+            </div>
             <div className="flex items-center justify-between mt-1 gap-2">
               <div className="flex items-center gap-2">
                 <img
@@ -1072,19 +1069,34 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <span className="font-heading text-xl text-white">
                   AT NAVY
                 </span>
+                {Boolean(liveGame && (liveGame.game_id === 32255) && !liveGame.status?.startsWith("Scheduled")) && (
+                  <span className="font-bold text-base text-emerald-400 font-mono ml-1">
+                    {liveGame.visitor?.score ?? 0}–{liveGame.home?.score ?? 0}
+                  </span>
+                )}
               </div>
-              <button
-                onClick={() => {
-                  const art = newsData.find((a: any) => a.id === 1795127558761) || newsData[0];
-                  if (art) setSelectedArticle(art);
-                  setActiveTab("news");
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-                className="text-xs bg-white/10 hover:bg-[#e10600] text-white px-2.5 py-0.5 rounded font-bold uppercase transition border border-white/20 hover:border-[#e10600] cursor-pointer"
-                title="Read Series Preview: George Mason & Navy"
-              >
-                Preview →
-              </button>
+              <div className="flex items-center gap-1 shrink-0">
+                <button
+                  onClick={() => setGameCenterOpen(!gameCenterOpen)}
+                  className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase transition flex items-center justify-center gap-1 cursor-pointer leading-tight ${
+                    gameCenterOpen
+                      ? "bg-[#e10600] text-white shadow"
+                      : "bg-[#e10600] hover:bg-[#c40500] text-white shadow animate-pulse"
+                  }`}
+                  title="View Live Box Score & GameCenter"
+                >
+                  <span>{gameCenterOpen ? "Box Score ▲" : "Box Score ▾"}</span>
+                </button>
+                <a
+                  href="https://www.youtube.com/watch?v=NM7Ce2AFMC8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] px-2 py-0.5 rounded font-bold uppercase transition bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600] cursor-pointer"
+                  title="Watch Live on YouTube"
+                >
+                  Watch ↗
+                </a>
+              </div>
             </div>
             <span className="text-xs text-white/60 truncate">McMullen Hockey Arena · Annapolis, MD</span>
           </div>
