@@ -9,15 +9,15 @@
     "name": "MD1 United States Naval Academy",
     "short_name": "United States Naval Academy",
     "logo": "/teams/navy.png",
-    "score": 3,
-    "shots": 10,
+    "score": 4,
+    "shots": 11,
     "period_goals": {
       "1": 1,
-      "2": 2
+      "2": 3
     },
     "period_shots": {
       "1": 8,
-      "2": 2
+      "2": 3
     }
   },
   "visitor": {
@@ -73,6 +73,16 @@
       "team_is_home": true,
       "scorer": "#11 Butler Chessen",
       "assist1": null,
+      "assist2": null,
+      "special": ""
+    },
+    {
+      "period": "2",
+      "time": "16:56",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "scorer": "#17 Caleb Pider",
+      "assist1": "#11 Chessen",
       "assist2": null,
       "special": ""
     }
