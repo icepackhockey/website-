@@ -1,21 +1,23 @@
 {
   "game_id": 32255,
   "date": "Saturday, November 21, 2026",
-  "status": "1st Period \u00b7 2:04",
-  "clock": "2:04",
-  "period": "1st",
+  "status": "2nd Period \u00b7 2:11",
+  "clock": "2:11",
+  "period": "2nd",
   "venue": "Brigade Sports Complex (MD)",
   "home": {
     "name": "MD1 United States Naval Academy",
     "short_name": "United States Naval Academy",
     "logo": "/teams/navy.png",
-    "score": 1,
-    "shots": 1,
+    "score": 3,
+    "shots": 10,
     "period_goals": {
-      "1": 1
+      "1": 1,
+      "2": 2
     },
     "period_shots": {
-      "1": 1
+      "1": 8,
+      "2": 2
     }
   },
   "visitor": {
@@ -23,12 +25,14 @@
     "short_name": "NC State",
     "logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
     "score": 1,
-    "shots": 1,
+    "shots": 11,
     "period_goals": {
-      "1": 1
+      "1": 1,
+      "2": 0
     },
     "period_shots": {
-      "1": 1
+      "1": 11,
+      "2": 0
     }
   },
   "goals": [
@@ -49,6 +53,26 @@
       "team_is_home": true,
       "scorer": "#10 Jason Fisher",
       "assist1": "#17 Pider",
+      "assist2": null,
+      "special": ""
+    },
+    {
+      "period": "2",
+      "time": "4:46",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "scorer": "#18 Benny Waud",
+      "assist1": "#10 Fisher",
+      "assist2": "#11 Chessen",
+      "special": "GWG"
+    },
+    {
+      "period": "2",
+      "time": "15:05",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "scorer": "#11 Butler Chessen",
+      "assist1": null,
       "assist2": null,
       "special": ""
     }
@@ -72,6 +96,86 @@
       "team_logo": "/teams/navy.png",
       "player": "#29 Evan Mager",
       "infraction": "Unsportsmanlike Conduct/Player to Player MINOR",
+      "minutes": 2
+    },
+    {
+      "period": "1",
+      "time": "18:41",
+      "team_name": "NC State",
+      "team_is_home": false,
+      "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
+      "player": "#3 Kyler Sun",
+      "infraction": "Hooking",
+      "minutes": 2
+    },
+    {
+      "period": "2",
+      "time": "2:19",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "team_logo": "/teams/navy.png",
+      "player": "#18 Benny Waud",
+      "infraction": "Roughing",
+      "minutes": 2
+    },
+    {
+      "period": "2",
+      "time": "7:55",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "team_logo": "/teams/navy.png",
+      "player": "#29 Evan Mager",
+      "infraction": "Unsportsmanlike Conduct/Player to Player MINOR",
+      "minutes": 2
+    },
+    {
+      "period": "2",
+      "time": "8:16",
+      "team_name": "NC State",
+      "team_is_home": false,
+      "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
+      "player": "#7 Anthony Scarafoni",
+      "infraction": "Interference",
+      "minutes": 2
+    },
+    {
+      "period": "2",
+      "time": "8:16",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "team_logo": "/teams/navy.png",
+      "player": "#6 Gavin Nethercott",
+      "infraction": "Unsportsmanlike Conduct/Player to Player MINOR",
+      "minutes": 2
+    },
+    {
+      "period": "2",
+      "time": "9:07",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "team_logo": "/teams/navy.png",
+      "player": "#10 Jason Fisher",
+      "infraction": "Cross Checking",
+      "minutes": 2
+    },
+    {
+      "period": "2",
+      "time": "11:49",
+      "team_name": "NC State",
+      "team_is_home": false,
+      "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
+      "player": "#21 Ethan Walters",
+      "infraction": "Elbowing",
+      "minutes": 2
+    },
+    {
+      "period": "2",
+      "time": "17:49",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "team_logo": "/teams/navy.png",
+      "player": "#24 Ian Cady",
+      "infraction": "Cross Checking",
       "minutes": 2
     }
   ]
