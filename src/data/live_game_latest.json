@@ -1,20 +1,18 @@
 {
-  "game_id": 35688,
-  "date": "Friday, November 20, 2026",
-  "status": "Final",
-  "clock": "Final",
-  "period": "3rd",
-  "venue": "Prince William Ice Center, Dale City, VA",
+  "game_id": 32255,
+  "date": "Saturday, November 21, 2026",
+  "status": "1st Period \u00b7 13:23",
+  "clock": "13:23",
+  "period": "1st",
+  "venue": "Brigade Sports Complex (MD)",
   "home": {
-    "name": "MD2 George Mason University",
-    "short_name": "George Mason",
-    "logo": "/teams/george-mason.png",
-    "score": 1,
+    "name": "MD1 United States Naval Academy",
+    "short_name": "United States Naval Academy",
+    "logo": "/teams/navy.png",
+    "score": 0,
     "shots": 0,
     "period_goals": {
-      "1": 0,
-      "2": 0,
-      "3": 1
+      "1": 0
     },
     "period_shots": {
       "1": 0
@@ -24,17 +22,26 @@
     "name": "MD1 North Carolina State University",
     "short_name": "NC State",
     "logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
-    "score": 6,
+    "score": 0,
     "shots": 0,
     "period_goals": {
-      "1": 2,
-      "2": 2,
-      "3": 2
+      "1": 0
     },
     "period_shots": {
       "1": 0
     }
   },
   "goals": [],
-  "penalties": []
+  "penalties": [
+    {
+      "period": "1",
+      "time": "6:37",
+      "team_name": "NC State",
+      "team_is_home": false,
+      "team_logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
+      "player": "#10 Ethan Hoover",
+      "infraction": "Interference",
+      "minutes": 2
+    }
+  ]
 }
