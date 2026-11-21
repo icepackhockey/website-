@@ -1004,28 +1004,28 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
           {/* Last Result */}
           <div className="py-2 md:py-0 md:pr-4 flex flex-col justify-center">
             <span className="text-[10px] font-bold tracking-widest uppercase text-white/70">
-              LAST RESULT · FRI NOV 13
+              LAST RESULT · FRI NOV 20
             </span>
             <div className="flex items-center justify-between mt-1 gap-2">
               <div className="flex items-center gap-2">
                 <img
-                  src="/teams/cincinnati.png"
-                  alt="Cincinnati Bearcats"
+                  src="/teams/george-mason.png"
+                  alt="George Mason Patriots"
                   className="w-5 h-5 object-contain bg-white rounded-full p-0.5"
                 />
                 <span className="font-heading text-xl text-white">
-                  VS{" "}
+                  AT{" "}
                   <a
-                    href="https://www.bearcathockey.com/"
+                    href="https://gmuhockey.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#e10600] transition underline underline-offset-2 decoration-white/40 hover:decoration-[#e10600]"
-                    title="Visit Cincinnati Bearcats Hockey Club Website"
+                    title="Visit George Mason Hockey Club Website"
                   >
-                    CINCINNATI
+                    GEORGE MASON
                   </a>
                 </span>
-                <span className="font-bold text-base text-[#e10600] font-mono ml-1">L 5-4 (OT)</span>
+                <span className="font-bold text-base text-emerald-400 font-mono ml-1">W 6-1</span>
               </div>
               <div className="flex flex-col gap-1 shrink-0">
                 <button
@@ -1041,36 +1041,36 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 </button>
                 <button
                   onClick={() => {
-                    const article = newsData.find((a) => a.id === 56);
+                    const article = newsData.find((a: any) => a.id === 1795127558761) || newsData[0];
                     if (article) setSelectedArticle(article);
                     setActiveTab("news");
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                   className="text-[10px] px-2 py-0.5 rounded font-bold uppercase transition bg-[#e10600] hover:bg-[#c40500] text-white shadow cursor-pointer flex items-center justify-center gap-0.5 leading-tight"
-                  title="Read Cincinnati Series Recap"
+                  title="Read Series Preview: George Mason & Navy"
                 >
-                  <span>Recap →</span>
+                  <span>Series →</span>
                 </button>
               </div>
             </div>
-            <span className="text-xs text-white/60">SECHL Matchup · Overtime (1 Pt Earned)</span>
+            <span className="text-xs text-white/60">Non-Conference Matchup · Friday Road Win</span>
           </div>
 
           {/* Next Game */}
           <div className="py-2 md:py-0 md:px-4 flex flex-col justify-center">
             <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-400">
-              NEXT GAME · FRI NOV 20 · 8:00 PM
+              NEXT GAME · SAT NOV 21 · 5:30 PM
             </span>
             <div className="flex items-center justify-between mt-1 gap-2">
               <div className="flex items-center gap-2">
                 <img
-                  src="/teams/george-mason.png"
-                  alt="George Mason Patriots"
+                  src="/teams/navy.png"
+                  alt="Navy Midshipmen"
                   className="w-5 h-5 object-contain bg-white rounded-full p-0.5"
                   onError={(e: any) => { e.target.style.display = 'none'; }}
                 />
                 <span className="font-heading text-xl text-white">
-                  AT GEORGE MASON
+                  AT NAVY
                 </span>
               </div>
               <button
@@ -1086,7 +1086,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 Preview →
               </button>
             </div>
-            <span className="text-xs text-white/60 truncate">Prince William Ice Center · Dale City, VA</span>
+            <span className="text-xs text-white/60 truncate">McMullen Hockey Arena · Annapolis, MD</span>
           </div>
 
           {/* Overall Record */}
@@ -1095,7 +1095,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               2026–27 OVERALL RECORD
             </span>
             <div className="flex items-baseline gap-2 mt-1">
-              <span className="font-heading text-2xl text-white">{ncStateCleanRecord}</span>
+              <span className="font-heading text-2xl text-white">10–9–0</span>
               <span className="text-xs text-[#e10600] font-bold">
                 {ncStateRankOrdinal} in SECHL ({ncStateTeam.points} pts)
               </span>
@@ -1640,15 +1640,15 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       {/* Compact Date Badge */}
                       <div className="bg-white text-[#e10600] rounded-lg p-3 w-20 h-20 flex flex-col items-center justify-center text-center shadow flex-shrink-0">
                         <span className="font-heading text-base tracking-wider leading-none">NOV</span>
-                        <span className="font-heading text-4xl leading-none font-bold my-0.5">20</span>
-                        <span className="text-[9px] font-bold text-[#222222] tracking-wider uppercase leading-none">FRI · 8 PM</span>
+                        <span className="font-heading text-4xl leading-none font-bold my-0.5">21</span>
+                        <span className="text-[9px] font-bold text-[#222222] tracking-wider uppercase leading-none">SAT · 5:30 PM</span>
                       </div>
 
                       {/* Opponent Logo & Matchup Details */}
                       <div className="flex items-center gap-3">
                         <img
-                          src="/teams/george-mason.png"
-                          alt="George Mason Patriots"
+                          src="/teams/navy.png"
+                          alt="Navy Midshipmen"
                           className="w-12 h-12 sm:w-14 sm:h-14 object-contain bg-white rounded-full p-1 shadow-sm shrink-0"
                           onError={(e: any) => { e.target.style.display = 'none'; }}
                         />
@@ -1656,20 +1656,20 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
                             ICEPACK AT{" "}
                             <a
-                              href="https://gmuhockey.com/"
+                              href="https://usnahockey.com/"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="hover:text-red-100 transition underline underline-offset-4 decoration-white/40 hover:decoration-white"
-                              title="Visit George Mason Hockey Club Website"
+                              title="Visit Navy Hockey Club Website"
                             >
-                              GEORGE MASON
+                              NAVY
                             </a>
                           </h3>
                           <p className="font-questrial text-xs text-white/90 mt-1">
-                            Prince William Ice Center · Dale City, VA
+                            McMullen Hockey Arena · Annapolis, MD
                           </p>
                           <span className="text-[11px] text-white/80 font-questrial block mt-0.5">
-                            Friday Night Road Matchup · ACHA Division I
+                            Saturday Road Matchup · ACHA Division I
                           </span>
                         </div>
                       </div>
@@ -1693,11 +1693,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       }}
                       className="py-2.5 px-4 border border-white text-white hover:bg-white/10 font-heading text-base tracking-wider uppercase text-center rounded transition cursor-pointer"
                     >
-                      LAST BOX SCORE (OT) ▾
+                      LAST BOX SCORE (W 6-1) ▾
                     </button>
                   </div>
                   <p className="text-[10px] text-white/75 font-questrial italic text-center mt-2">
-                    Pack earns 1 point in overtime vs Cincinnati, moving to {ncStateTeam.points} points ({ncStateRankOrdinal} in SECHL).
+                    Pack rolls to a 6–1 road victory over George Mason on Friday, improving to 10–9–0 overall.
                   </p>
                 </div>
 
@@ -2089,7 +2089,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     {/* Mobile Matchup Cards (< md) */}
                     <div className="md:hidden flex flex-col gap-3">
                       {gamesToRender.map((game) => {
-                        const isNextGame = game.id === 19; // Fri Nov 20 at George Mason
+                        const isNextGame = game.id === 20 || game.note === "Upcoming Next Game";
                         const isHome = game.ha === "H";
                         return (
                           <div
@@ -2325,7 +2325,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           </thead>
                           <tbody className="divide-y divide-[#e5e5e5] font-questrial">
                             {gamesToRender.map((game) => {
-                              const isNextGame = game.id === 19; // Fri Nov 20 at George Mason
+                              const isNextGame = game.id === 20 || game.note === "Upcoming Next Game";
                               const isHome = game.ha === "H";
                               return (
                                 <tr
