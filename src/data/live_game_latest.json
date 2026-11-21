@@ -1,21 +1,21 @@
 {
   "game_id": 32255,
   "date": "Saturday, November 21, 2026",
-  "status": "1st Period \u00b7 7:53",
-  "clock": "7:53",
+  "status": "1st Period \u00b7 2:04",
+  "clock": "2:04",
   "period": "1st",
   "venue": "Brigade Sports Complex (MD)",
   "home": {
     "name": "MD1 United States Naval Academy",
     "short_name": "United States Naval Academy",
     "logo": "/teams/navy.png",
-    "score": 0,
-    "shots": 0,
+    "score": 1,
+    "shots": 1,
     "period_goals": {
-      "1": 0
+      "1": 1
     },
     "period_shots": {
-      "1": 0
+      "1": 1
     }
   },
   "visitor": {
@@ -40,7 +40,17 @@
       "scorer": "#7 Anthony Scarafoni",
       "assist1": "#22 Burns",
       "assist2": "#16 Fitzsimons",
-      "special": "GWG"
+      "special": ""
+    },
+    {
+      "period": "1",
+      "time": "17:56",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "scorer": "#10 Jason Fisher",
+      "assist1": "#17 Pider",
+      "assist2": null,
+      "special": ""
     }
   ],
   "penalties": [
