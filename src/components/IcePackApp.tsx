@@ -1041,15 +1041,15 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 </button>
                 <button
                   onClick={() => {
-                    const article = newsData.find((a: any) => a.id === 1795127558761) || newsData[0];
+                    const article = newsData.find((a: any) => a.id === 1795261348802) || newsData[0];
                     if (article) setSelectedArticle(article);
                     setActiveTab("news");
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                   className="text-[10px] px-2 py-0.5 rounded font-bold uppercase transition bg-[#e10600] hover:bg-[#c40500] text-white shadow cursor-pointer flex items-center justify-center gap-0.5 leading-tight"
-                  title="Read Series Preview: George Mason & Navy"
+                  title="Read George Mason Game Recap"
                 >
-                  <span>Series →</span>
+                  <span>Recap →</span>
                 </button>
               </div>
             </div>
