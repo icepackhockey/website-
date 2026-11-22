@@ -1547,7 +1547,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   <img
                     src={newsData[0].image_url || "/f24c1491d6dab19fe6b3b4e7ec20b6cc.jpg"}
                     alt="NC State Icepack in Action"
-                    className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                    className="w-full h-full object-cover object-top hover:scale-105 transition duration-700"
                     onError={(e: any) => {
                       e.target.src = "/f24c1491d6dab19fe6b3b4e7ec20b6cc.jpg";
                     }}
@@ -1608,11 +1608,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     }}
                     className="group cursor-pointer flex flex-col bg-white border border-[#e5e5e5] rounded-lg overflow-hidden hover:shadow-md transition"
                   >
-                    <div className="h-48 overflow-hidden bg-gray-100">
+                    <div className="aspect-[16/10] overflow-hidden bg-gray-100">
                       <img
                         src={story.image_url || "/ef1291f3d2f58d44ad9f2230c36f233a.jpg"}
                         alt={story.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
                         onError={(e: any) => {
                           e.target.src = "/ef1291f3d2f58d44ad9f2230c36f233a.jpg";
                         }}
@@ -4082,7 +4082,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     <img
                       src={newsData[0].image_url || "/f24c1491d6dab19fe6b3b4e7ec20b6cc.jpg"}
                       alt={newsData[0].title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
                     />
                     <span className="absolute top-3 left-3 bg-[#e10600] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow">
                       {newsData[0].category} · {newsData[0].date}
@@ -4116,11 +4116,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       }}
                       className="bg-white border border-[#e5e5e5] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer flex flex-col group flex-1"
                     >
-                      <div className="h-36 overflow-hidden bg-stone-100 relative">
+                      <div className="aspect-[16/10] overflow-hidden bg-stone-100 relative">
                         <img
                           src={art.image_url}
                           alt={art.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
                         />
                         <span className="absolute top-2 left-2 bg-[#222222]/85 text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
                           {art.category}
@@ -4353,8 +4353,8 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   ← Back to All Articles ({newsData.length})
                 </button>
                 {selectedArticle.image_url && (
-                  <div className="h-80 overflow-hidden rounded-lg mb-6 bg-gray-100">
-                    <img src={selectedArticle.image_url} alt={selectedArticle.title} className="w-full h-full object-cover" />
+                  <div className="aspect-[16/9] max-h-[480px] overflow-hidden rounded-lg mb-6 bg-gray-100">
+                    <img src={selectedArticle.image_url} alt={selectedArticle.title} className="w-full h-full object-cover object-top" />
                   </div>
                 )}
                 <span className="text-xs font-bold text-[#e10600] uppercase tracking-wider">
@@ -4412,11 +4412,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       className="bg-white border border-[#e5e5e5] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between"
                     >
                       <div>
-                        <div className="h-48 overflow-hidden bg-gray-100">
+                        <div className="aspect-[16/10] overflow-hidden bg-gray-100">
                           <img
                             src={article.image_url || "/f24c1491d6dab19fe6b3b4e7ec20b6cc.jpg"}
                             alt={article.title}
-                            className="w-full h-full object-cover hover:scale-105 transition duration-500"
+                            className="w-full h-full object-cover object-top hover:scale-105 transition duration-500"
                             onError={(e: any) => {
                               e.target.src = "/f24c1491d6dab19fe6b3b4e7ec20b6cc.jpg";
                             }}
