@@ -1016,7 +1016,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     NAVY
                   </a>
                 </span>
-                <span className="font-bold text-base text-stone-300 font-mono ml-1">L 1–4</span>
+                <span className="font-bold text-base text-red-500 font-mono ml-1">L 1–4</span>
               </div>
               <div className="flex flex-col gap-1 shrink-0">
                 <button
@@ -1127,7 +1127,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     className="w-14 h-14 object-contain bg-stone-50 rounded-full p-1 border border-stone-200 shadow-sm shrink-0"
                   />
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-stone-500 font-heading block">VISITOR</span>
+                    <span className={`text-xs uppercase tracking-wider font-heading block ${
+                      liveGame.visitor?.name?.toLowerCase().includes("state") || liveGame.visitor?.short_name?.toLowerCase().includes("state")
+                        ? "text-[#e10600]"
+                        : "text-stone-500"
+                    }`}>VISITOR</span>
                     <h3 className="font-heading text-2xl sm:text-3xl text-[#222222] leading-none">
                       {liveGame.visitor.name}
                     </h3>
@@ -1144,11 +1148,19 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 {/* Big Score & Game Status */}
                 <div className="text-center px-8 py-3 bg-stone-50 border border-stone-200 rounded-2xl shadow-sm">
                   <div className="flex items-center justify-center gap-4">
-                    <span className="font-heading text-5xl sm:text-6xl text-stone-800">
+                    <span className={`font-heading text-5xl sm:text-6xl ${
+                      liveGame.visitor?.name?.toLowerCase().includes("state") || liveGame.visitor?.short_name?.toLowerCase().includes("state")
+                        ? "text-[#e10600]"
+                        : "text-stone-800"
+                    }`}>
                       {liveGame.visitor.score}
                     </span>
                     <span className="font-heading text-3xl text-stone-300">–</span>
-                    <span className="font-heading text-5xl sm:text-6xl text-[#e10600]">
+                    <span className={`font-heading text-5xl sm:text-6xl ${
+                      liveGame.home?.name?.toLowerCase().includes("state") || liveGame.home?.short_name?.toLowerCase().includes("state")
+                        ? "text-[#e10600]"
+                        : "text-stone-800"
+                    }`}>
                       {liveGame.home.score}
                     </span>
                   </div>
@@ -1179,7 +1191,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     className="w-14 h-14 object-contain bg-stone-50 rounded-full p-1 border border-stone-200 shadow-sm shrink-0"
                   />
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-[#e10600] font-heading block">HOME</span>
+                    <span className={`text-xs uppercase tracking-wider font-heading block ${
+                      liveGame.home?.name?.toLowerCase().includes("state") || liveGame.home?.short_name?.toLowerCase().includes("state")
+                        ? "text-[#e10600]"
+                        : "text-stone-500"
+                    }`}>HOME</span>
                     <h3 className="font-heading text-2xl sm:text-3xl text-[#222222] leading-none">
                       {liveGame.home.name}
                     </h3>
@@ -2107,7 +2123,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     {/* Mobile Matchup Cards (< md) */}
                     <div className="md:hidden flex flex-col gap-3">
                       {gamesToRender.map((game) => {
-                        const isNextGame = game.id === 20 || game.note === "Upcoming Next Game";
+                        const isNextGame = !game.result && (game.note === "Upcoming Next Game" || game.id === 21);
                         const isHome = game.ha === "H";
                         return (
                           <div
@@ -2343,7 +2359,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                           </thead>
                           <tbody className="divide-y divide-[#e5e5e5] font-questrial">
                             {gamesToRender.map((game) => {
-                              const isNextGame = game.id === 20 || game.note === "Upcoming Next Game";
+                              const isNextGame = !game.result && (game.note === "Upcoming Next Game" || game.id === 21);
                               const isHome = game.ha === "H";
                               return (
                                 <tr
