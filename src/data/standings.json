@@ -20,40 +20,40 @@
       "team": "Kentucky",
       "gp": 18,
       "record": "14\u20134\u20130\u20130",
-      "gf": 82,
-      "ga": 53,
+      "gf": 87,
+      "ga": 54,
       "points": 28,
       "is_home": false
     },
     {
       "rank": 2,
       "team": "Louisville",
-      "gp": 23,
-      "record": "11\u201312\u20130\u20130",
-      "gf": 102,
-      "ga": 90,
-      "points": 22,
+      "gp": 24,
+      "record": "12\u201312\u20130\u20130",
+      "gf": 106,
+      "ga": 91,
+      "points": 24,
       "is_home": false
     },
     {
       "rank": 3,
-      "team": "NC State",
-      "gp": 18,
-      "record": "9\u20136\u20133\u20130",
-      "gf": 78,
-      "ga": 75,
-      "points": 21,
-      "is_home": true
+      "team": "Alabama",
+      "gp": 17,
+      "record": "11\u20136\u20130\u20130",
+      "gf": 82,
+      "ga": 71,
+      "points": 22,
+      "is_home": false
     },
     {
       "rank": 4,
-      "team": "Alabama",
-      "gp": 16,
-      "record": "10\u20136\u20130\u20130",
-      "gf": 81,
-      "ga": 71,
-      "points": 20,
-      "is_home": false
+      "team": "NC State",
+      "gp": 19,
+      "record": "9\u20137\u20133\u20130",
+      "gf": 79,
+      "ga": 79,
+      "points": 21,
+      "is_home": true
     },
     {
       "rank": 5,
@@ -70,8 +70,8 @@
       "team": "Cincinnati",
       "gp": 17,
       "record": "4\u201312\u20130\u20131",
-      "gf": 50,
-      "ga": 98,
+      "gf": 56,
+      "ga": 103,
       "points": 9,
       "is_home": false
     }
