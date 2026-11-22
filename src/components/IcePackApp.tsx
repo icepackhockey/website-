@@ -1265,42 +1265,55 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               {gameCenterTab === "scoring" && (
                 <div className="space-y-3">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {liveGame.goals.map((goal: any, idx: number) => (
-                      <div
-                        key={idx}
-                        className={`p-3.5 rounded-xl border flex items-center justify-between gap-3 shadow-sm ${
-                          goal.team_is_home
-                            ? "bg-red-50/60 border-red-200"
-                            : "bg-stone-50 border-stone-200"
-                        }`}
-                      >
-                        <div className="flex items-center gap-3 min-w-0">
-                          <span className="text-xs font-mono font-bold px-2 py-1 rounded bg-white text-stone-800 border border-stone-200 shadow-xs shrink-0">
-                            P{goal.period} · {goal.time}
-                          </span>
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-1.5">
-                              <span className={`font-bold text-xs ${goal.team_is_home ? "text-[#e10600]" : "text-stone-800"}`}>
-                                {goal.team_name}
+                    {liveGame.goals.map((goal: any, idx: number) => {
+                      const isHomeGoal = Boolean(goal.team_is_home);
+                      const isIcepack = goal.team_name?.toLowerCase().includes("state") || goal.team_name?.toLowerCase().includes("icepack") || (liveGame.home?.name?.toLowerCase().includes("state") ? isHomeGoal : !isHomeGoal);
+                      const teamLogo = isHomeGoal ? (liveGame.home?.logo || "/07cdeb598c1716ddf52f5438f9484da2.png") : (liveGame.visitor?.logo || "/07cdeb598c1716ddf52f5438f9484da2.png");
+                      const teamLabel = goal.team_name || (isHomeGoal ? (liveGame.home?.short_name || liveGame.home?.name) : (liveGame.visitor?.short_name || liveGame.visitor?.name));
+
+                      return (
+                        <div
+                          key={idx}
+                          className={`p-3.5 rounded-xl border flex items-center justify-between gap-3 shadow-sm ${
+                            isIcepack
+                              ? "bg-red-50/60 border-red-200"
+                              : "bg-stone-50 border-stone-200"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3 min-w-0">
+                            <span className="text-xs font-mono font-bold px-2 py-1 rounded bg-white text-stone-800 border border-stone-200 shadow-xs shrink-0">
+                              P{goal.period} · {goal.time}
+                            </span>
+                            <img
+                              src={teamLogo}
+                              alt={teamLabel}
+                              className="w-6 h-6 object-contain bg-white rounded-full p-0.5 border border-stone-200 shrink-0"
+                              onError={(e: any) => { e.target.style.display = 'none'; }}
+                            />
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-1.5">
+                                <span className={`font-bold text-xs uppercase tracking-wide ${isIcepack ? "text-[#e10600]" : "text-stone-800"}`}>
+                                  {teamLabel}
+                                </span>
+                                {goal.special && (
+                                  <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-300 font-mono">
+                                    {goal.special}
+                                  </span>
+                                )}
+                              </div>
+                              <span className="font-heading text-base text-[#222222] block truncate">
+                                {goal.scorer}
                               </span>
-                              {goal.special && (
-                                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-300 font-mono">
-                                  {goal.special}
+                              {(goal.assist1 || goal.assist2) && (
+                                <span className="text-[11px] text-stone-500 font-questrial block truncate">
+                                  Assists: {[goal.assist1, goal.assist2].filter(Boolean).join(", ")}
                                 </span>
                               )}
                             </div>
-                            <span className="font-heading text-base text-[#222222] block truncate">
-                              {goal.scorer}
-                            </span>
-                            {(goal.assist1 || goal.assist2) && (
-                              <span className="text-[11px] text-stone-500 font-questrial block truncate">
-                                Assists: {[goal.assist1, goal.assist2].filter(Boolean).join(", ")}
-                              </span>
-                            )}
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -1310,15 +1323,16 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 <div className="space-y-3">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {liveGame.penalties.map((pen: any, idx: number) => {
-                      const isHome = pen.team_is_home ?? (pen.team_name?.toLowerCase().includes("state") || pen.team_name?.toLowerCase().includes("icepack"));
-                      const teamLogo = isHome ? "/07cdeb598c1716ddf52f5438f9484da2.png" : "/teams/cincinnati.png";
-                      const teamLabel = isHome ? "NC State" : (pen.team_name || "Cincinnati");
+                      const isHomePen = Boolean(pen.team_is_home);
+                      const isIcepack = pen.team_name?.toLowerCase().includes("state") || pen.team_name?.toLowerCase().includes("icepack") || (liveGame.home?.name?.toLowerCase().includes("state") ? isHomePen : !isHomePen);
+                      const teamLogo = pen.team_logo || (isHomePen ? liveGame.home?.logo : liveGame.visitor?.logo) || (isIcepack ? "/07cdeb598c1716ddf52f5438f9484da2.png" : (liveGame.home?.logo || liveGame.visitor?.logo));
+                      const teamLabel = pen.team_name || (isHomePen ? (liveGame.home?.short_name || liveGame.home?.name) : (liveGame.visitor?.short_name || liveGame.visitor?.name));
 
                       return (
                         <div
                           key={idx}
                           className={`p-3.5 rounded-xl border flex items-center justify-between gap-3 shadow-sm ${
-                            isHome
+                            isIcepack
                               ? "bg-red-50/60 border-red-200"
                               : "bg-stone-50 border-stone-200"
                           }`}
@@ -1331,10 +1345,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                               src={teamLogo}
                               alt={teamLabel}
                               className="w-6 h-6 object-contain bg-white rounded-full p-0.5 border border-stone-200 shrink-0"
+                              onError={(e: any) => { e.target.style.display = 'none'; }}
                             />
                             <div className="min-w-0">
                               <div className="flex items-center gap-1.5">
-                                <span className={`font-bold text-xs uppercase tracking-wide ${isHome ? "text-[#e10600]" : "text-stone-800"}`}>
+                                <span className={`font-bold text-xs uppercase tracking-wide ${isIcepack ? "text-[#e10600]" : "text-stone-800"}`}>
                                   {teamLabel}
                                 </span>
                                 <span className="text-[11px] text-stone-500 font-questrial">
