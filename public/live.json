@@ -1,23 +1,25 @@
 {
   "game_id": 32255,
   "date": "Saturday, November 21, 2026",
-  "status": "2nd Period \u00b7 2:11",
-  "clock": "2:11",
-  "period": "2nd",
+  "status": "Final",
+  "clock": "0:00",
+  "period": "3rd",
   "venue": "Brigade Sports Complex (MD)",
   "home": {
     "name": "MD1 United States Naval Academy",
     "short_name": "United States Naval Academy",
     "logo": "/teams/navy.png",
     "score": 4,
-    "shots": 11,
+    "shots": 24,
     "period_goals": {
       "1": 1,
-      "2": 3
+      "2": 3,
+      "3": 0
     },
     "period_shots": {
       "1": 8,
-      "2": 3
+      "2": 11,
+      "3": 5
     }
   },
   "visitor": {
@@ -25,14 +27,16 @@
     "short_name": "NC State",
     "logo": "/07cdeb598c1716ddf52f5438f9484da2.png",
     "score": 1,
-    "shots": 11,
+    "shots": 46,
     "period_goals": {
       "1": 1,
-      "2": 0
+      "2": 0,
+      "3": 0
     },
     "period_shots": {
       "1": 11,
-      "2": 0
+      "2": 18,
+      "3": 17
     }
   },
   "goals": [
@@ -185,6 +189,16 @@
       "team_is_home": true,
       "team_logo": "/teams/navy.png",
       "player": "#24 Ian Cady",
+      "infraction": "Cross Checking",
+      "minutes": 2
+    },
+    {
+      "period": "3",
+      "time": "14:13",
+      "team_name": "MD1 United States Naval Academy",
+      "team_is_home": true,
+      "team_logo": "/teams/navy.png",
+      "player": "#17 Caleb Pider",
       "infraction": "Cross Checking",
       "minutes": 2
     }

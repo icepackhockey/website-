@@ -405,10 +405,10 @@
     "date": "Sat Nov 21",
     "time": "5:30 PM",
     "opponent": "Navy",
-    "note": "Game In Progress · 2nd Period · 2:11",
+    "note": "Final",
     "ha": "A",
     "location": "McMullen Arena, Annapolis, MD",
-    "result": "Live 1–4",
+    "result": "L 1–4",
     "record": "",
     "ticket_url": "https://icepackhockey.ticketsauce.com/",
     "isoDate": "2026-11-21",
@@ -420,7 +420,7 @@
     "game_id": 32255,
     "boxscore_url": "https://www.achahockey.org/stats/game-center/32255",
     "preview_article_id": 1795127558761,
-    "is_live": true
+    "is_live": false
   },
   {
     "id": 21,
