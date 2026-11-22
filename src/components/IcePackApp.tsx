@@ -994,70 +994,8 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
           {/* Last Result */}
           <div className="py-2 md:py-0 md:pr-4 flex flex-col justify-center">
             <span className="text-[10px] font-bold tracking-widest uppercase text-white/70">
-              LAST RESULT · FRI NOV 20
+              LAST RESULT · SAT NOV 21
             </span>
-            <div className="flex items-center justify-between mt-1 gap-2">
-              <div className="flex items-center gap-2">
-                <img
-                  src="/teams/george-mason.png"
-                  alt="George Mason Patriots"
-                  className="w-5 h-5 object-contain bg-white rounded-full p-0.5"
-                />
-                <span className="font-heading text-xl text-white">
-                  AT{" "}
-                  <a
-                    href="https://gmuhockey.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[#e10600] transition underline underline-offset-2 decoration-white/40 hover:decoration-[#e10600]"
-                    title="Visit George Mason Hockey Club Website"
-                  >
-                    GEORGE MASON
-                  </a>
-                </span>
-                <span className="font-bold text-base text-emerald-400 font-mono ml-1">W 6-1</span>
-              </div>
-              <div className="flex flex-col gap-1 shrink-0">
-                <button
-                  onClick={() => setGameCenterOpen(!gameCenterOpen)}
-                  className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase transition flex items-center justify-center gap-1 cursor-pointer leading-tight ${
-                    gameCenterOpen
-                      ? "bg-[#e10600] text-white shadow"
-                      : "bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600]"
-                  }`}
-                  title="View Friday GameCenter Box Score"
-                >
-                  <span>{gameCenterOpen ? "Box Score ▲" : "Box Score ▾"}</span>
-                </button>
-                <button
-                  onClick={() => {
-                    const article = newsData.find((a: any) => a.id === 1795261348802) || newsData[0];
-                    if (article) setSelectedArticle(article);
-                    setActiveTab("news");
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className="text-[10px] px-2 py-0.5 rounded font-bold uppercase transition bg-[#e10600] hover:bg-[#c40500] text-white shadow cursor-pointer flex items-center justify-center gap-0.5 leading-tight"
-                  title="Read George Mason Game Recap"
-                >
-                  <span>Recap →</span>
-                </button>
-              </div>
-            </div>
-            <span className="text-xs text-white/60">Non-Conference Matchup · Friday Road Win</span>
-          </div>
-
-          {/* Next / Active Game */}
-          <div className="py-2 md:py-0 md:px-4 flex flex-col justify-center">
-            <div className="flex items-center gap-1.5">
-              {Boolean(liveGame && !liveGame.status?.includes("Final") && !liveGame.status?.startsWith("Scheduled")) && (
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              )}
-              <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-400">
-                {liveGame && !liveGame.status?.includes("Final") && !liveGame.status?.startsWith("Scheduled")
-                  ? `LIVE NOW · ${liveGame.status}`
-                  : "NEXT GAME · SAT NOV 21 · 5:30 PM"}
-              </span>
-            </div>
             <div className="flex items-center justify-between mt-1 gap-2">
               <div className="flex items-center gap-2">
                 <img
@@ -1067,38 +1005,84 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   onError={(e: any) => { e.target.style.display = 'none'; }}
                 />
                 <span className="font-heading text-xl text-white">
-                  AT NAVY
+                  AT{" "}
+                  <a
+                    href="https://usnahockey.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#e10600] transition underline underline-offset-2 decoration-white/40 hover:decoration-[#e10600]"
+                    title="Visit Navy Hockey Club Website"
+                  >
+                    NAVY
+                  </a>
                 </span>
-                {Boolean(liveGame && (liveGame.game_id === 32255) && !liveGame.status?.startsWith("Scheduled")) && (
-                  <span className="font-bold text-base text-emerald-400 font-mono ml-1">
-                    {liveGame.visitor?.score ?? 0}–{liveGame.home?.score ?? 0}
-                  </span>
-                )}
+                <span className="font-bold text-base text-stone-300 font-mono ml-1">L 1–4</span>
               </div>
-              <div className="flex items-center gap-1 shrink-0">
+              <div className="flex flex-col gap-1 shrink-0">
                 <button
                   onClick={() => setGameCenterOpen(!gameCenterOpen)}
                   className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase transition flex items-center justify-center gap-1 cursor-pointer leading-tight ${
                     gameCenterOpen
                       ? "bg-[#e10600] text-white shadow"
-                      : "bg-[#e10600] hover:bg-[#c40500] text-white shadow animate-pulse"
+                      : "bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600]"
                   }`}
-                  title="View Live Box Score & GameCenter"
+                  title="View Saturday Navy GameCenter Box Score"
                 >
                   <span>{gameCenterOpen ? "Box Score ▲" : "Box Score ▾"}</span>
                 </button>
                 <a
-                  href="https://www.youtube.com/watch?v=NM7Ce2AFMC8"
+                  href="https://www.achahockey.org/stats/game-center/32255"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[10px] px-2 py-0.5 rounded font-bold uppercase transition bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600] cursor-pointer"
-                  title="Watch Live on YouTube"
+                  className="text-[10px] px-2 py-0.5 rounded font-bold uppercase transition bg-white/10 hover:bg-[#e10600] text-white border border-white/20 hover:border-[#e10600] cursor-pointer flex items-center justify-center gap-0.5 leading-tight"
+                  title="View Official ACHA Game Report"
                 >
-                  Watch ↗
+                  <span>ACHA ↗</span>
                 </a>
               </div>
             </div>
-            <span className="text-xs text-white/60 truncate">McMullen Hockey Arena · Annapolis, MD</span>
+            <span className="text-xs text-white/60">Non-Conference Matchup · Annapolis, MD</span>
+          </div>
+
+          {/* Next / Active Game */}
+          <div className="py-2 md:py-0 md:px-4 flex flex-col justify-center">
+            <span className="text-[10px] font-bold tracking-widest uppercase text-white/70">
+              NEXT GAME · SAT JAN 9 · 7:30 PM
+            </span>
+            <div className="flex items-center justify-between mt-1 gap-2">
+              <div className="flex items-center gap-2">
+                <img
+                  src="/teams/liberty.png"
+                  alt="#7 Liberty Flames"
+                  className="w-5 h-5 object-contain bg-white rounded-full p-0.5"
+                  onError={(e: any) => { e.target.style.display = 'none'; }}
+                />
+                <span className="font-heading text-xl text-white">
+                  VS{" "}
+                  <a
+                    href="https://libertyclubsports.com/sports/mens-d1-hockey"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#e10600] transition underline underline-offset-2 decoration-white/40 hover:decoration-[#e10600]"
+                    title="Visit Liberty Flames Hockey Website"
+                  >
+                    #7 LIBERTY
+                  </a>
+                </span>
+              </div>
+              <div className="flex items-center gap-1 shrink-0">
+                <a
+                  href="https://icepackhockey.ticketsauce.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] px-2.5 py-1 rounded font-bold uppercase transition bg-[#e10600] hover:bg-[#c40500] text-white shadow cursor-pointer leading-tight"
+                  title="Tickets for Truist Field Outdoor Classic"
+                >
+                  Tickets ↗
+                </a>
+              </div>
+            </div>
+            <span className="text-xs text-white/60 truncate">Truist Field Outdoor Rink · Charlotte, NC</span>
           </div>
 
           {/* Overall Record */}
@@ -1107,7 +1091,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
               2026–27 OVERALL RECORD
             </span>
             <div className="flex items-baseline gap-2 mt-1">
-              <span className="font-heading text-2xl text-white">10–9–0</span>
+              <span className="font-heading text-2xl text-white">10–10–0</span>
               <span className="text-xs text-[#e10600] font-bold">
                 {ncStateRankOrdinal} in SECHL ({ncStateTeam.points} pts)
               </span>
@@ -1169,8 +1153,16 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     </span>
                   </div>
                   <div className="flex items-center justify-center gap-2 mt-1">
-                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
-                    <span className="font-heading text-xs tracking-widest text-emerald-700 uppercase font-bold">
+                    {!liveGame.status?.includes("Final") && (
+                      <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+                    )}
+                    <span
+                      className={`font-heading text-xs tracking-widest uppercase font-bold ${
+                        liveGame.status?.includes("Final")
+                          ? "bg-stone-100 text-stone-700 px-2.5 py-0.5 rounded border border-stone-200"
+                          : "text-emerald-700"
+                      }`}
+                    >
                       {liveGame.status}
                     </span>
                   </div>
@@ -1641,7 +1633,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   <div>
                     <div className="flex items-center justify-between gap-2 border-b border-white/20 pb-2 mb-4">
                       <span className="text-[11px] font-bold tracking-widest uppercase text-white/90">
-                        NEXT GAME · ROAD MATCHUP
+                        NEXT GAME · QUEEN CITY OUTDOOR CLASSIC
                       </span>
                       <span className="text-[10px] font-bold uppercase bg-white/20 px-2 py-0.5 rounded">
                         ACHA D1
@@ -1651,37 +1643,37 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                     <div className="flex items-center gap-4 sm:gap-6 mb-4">
                       {/* Compact Date Badge */}
                       <div className="bg-white text-[#e10600] rounded-lg p-3 w-20 h-20 flex flex-col items-center justify-center text-center shadow flex-shrink-0">
-                        <span className="font-heading text-base tracking-wider leading-none">NOV</span>
-                        <span className="font-heading text-4xl leading-none font-bold my-0.5">21</span>
-                        <span className="text-[9px] font-bold text-[#222222] tracking-wider uppercase leading-none">SAT · 5:30 PM</span>
+                        <span className="font-heading text-base tracking-wider leading-none">JAN</span>
+                        <span className="font-heading text-4xl leading-none font-bold my-0.5">9</span>
+                        <span className="text-[9px] font-bold text-[#222222] tracking-wider uppercase leading-none">SAT · 7:30 PM</span>
                       </div>
 
                       {/* Opponent Logo & Matchup Details */}
                       <div className="flex items-center gap-3">
                         <img
-                          src="/teams/navy.png"
-                          alt="Navy Midshipmen"
+                          src="/teams/liberty.png"
+                          alt="#7 Liberty Flames"
                           className="w-12 h-12 sm:w-14 sm:h-14 object-contain bg-white rounded-full p-1 shadow-sm shrink-0"
                           onError={(e: any) => { e.target.style.display = 'none'; }}
                         />
                         <div>
                           <h3 className="font-heading text-2xl sm:text-3xl text-white leading-tight">
-                            ICEPACK AT{" "}
+                            ICEPACK VS{" "}
                             <a
-                              href="https://usnahockey.com/"
+                              href="https://libertyclubsports.com/sports/mens-d1-hockey"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="hover:text-red-100 transition underline underline-offset-4 decoration-white/40 hover:decoration-white"
-                              title="Visit Navy Hockey Club Website"
+                              title="Visit Liberty Flames Hockey Club Website"
                             >
-                              NAVY
+                              #7 LIBERTY
                             </a>
                           </h3>
                           <p className="font-questrial text-xs text-white/90 mt-1">
-                            McMullen Hockey Arena · Annapolis, MD
+                            Truist Field Outdoor Rink · Charlotte, NC
                           </p>
                           <span className="text-[11px] text-white/80 font-questrial block mt-0.5">
-                            Saturday Road Matchup · ACHA Division I
+                            Queen City Outdoor Classic · ACHA Division I
                           </span>
                         </div>
                       </div>
@@ -1689,15 +1681,14 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-white/20">
-                    <button
-                      onClick={() => {
-                        setActiveTab("schedule");
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      }}
-                      className="py-2.5 px-4 bg-white text-[#e10600] hover:bg-[#222222] hover:text-white font-heading text-base tracking-wider uppercase text-center rounded shadow transition cursor-pointer"
+                    <a
+                      href="https://icepackhockey.ticketsauce.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-2.5 px-4 bg-white text-[#e10600] hover:bg-[#222222] hover:text-white font-heading text-base tracking-wider uppercase text-center rounded shadow transition cursor-pointer flex items-center justify-center gap-2"
                     >
-                      FULL SCHEDULE →
-                    </button>
+                      TICKETS & INFO →
+                    </a>
                     <button
                       onClick={() => {
                         setGameCenterOpen(true);
@@ -1705,11 +1696,11 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       }}
                       className="py-2.5 px-4 border border-white text-white hover:bg-white/10 font-heading text-base tracking-wider uppercase text-center rounded transition cursor-pointer"
                     >
-                      LAST BOX SCORE (W 6-1) ▾
+                      LAST BOX SCORE (L 1–4) ▾
                     </button>
                   </div>
                   <p className="text-[10px] text-white/75 font-questrial italic text-center mt-2">
-                    Pack rolls to a 6–1 road victory over George Mason on Friday, improving to 10–9–0 overall.
+                    Icepack wraps up the fall road trip at 10–10–0 overall before heading to Charlotte on January 9 for the Outdoor Classic.
                   </p>
                 </div>
 
