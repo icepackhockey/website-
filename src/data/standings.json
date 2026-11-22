@@ -18,11 +18,11 @@
     {
       "rank": 1,
       "team": "Kentucky",
-      "gp": 18,
-      "record": "14\u20134\u20130\u20130",
+      "gp": 19,
+      "record": "15\u20134\u20130\u20130",
       "gf": 87,
       "ga": 54,
-      "points": 28,
+      "points": 30,
       "is_home": false
     },
     {
@@ -68,11 +68,11 @@
     {
       "rank": 6,
       "team": "Cincinnati",
-      "gp": 17,
-      "record": "4\u201312\u20130\u20131",
+      "gp": 18,
+      "record": "5\u201312\u20130\u20131",
       "gf": 56,
       "ga": 103,
-      "points": 9,
+      "points": 11,
       "is_home": false
     }
   ],
