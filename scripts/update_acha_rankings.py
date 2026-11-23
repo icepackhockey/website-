@@ -158,13 +158,9 @@ def main():
         print(f"Build failed after standings update: {build_err}", file=sys.stderr)
         return
 
-    # Git commit and push
+    # Git commit and push (automatically triggers Vercel production deployment)
     commit_msg = f"Auto-update ACHA national ranking to #{latest['rank_num']} (NC State #{ncsu_info['current_rank']}, {ncsu_info['movement']})"
     run_cmd(f'git add public/polls/{latest["pdf_filename"]} src/data/standings.json && git commit -m "{commit_msg}" && git push origin main')
-
-    # Deploy to Vercel production
-    deploy_cmd = 'source ~/.zshrc && npx vercel --prod --yes --token "$VERCEL_TOKEN"'
-    run_cmd(deploy_cmd)
 
     # User-facing summary for Telegram alert
     print(
