@@ -1,6 +1,15 @@
 [
   {
     "id": 1,
+    "year": "1977–1978",
+    "era": "Late 1970s",
+    "title": "1977–1978 NC State Ice Hockey Team",
+    "image": "/team-photos/1977-78-vintage-team.jpg",
+    "caption": "Founding era NC State ice hockey team portrait on the ice in classic red and white sweaters with 'N.C. STATE' lettering, featuring goaltenders in vintage leather leg pads.",
+    "venue": "Greensboro / Raleigh, NC"
+  },
+  {
+    "id": 2,
     "year": "1988–1989",
     "era": "Late 1980s",
     "title": "Late 1980s Wolfpack Squad",
@@ -9,7 +18,7 @@
     "venue": "Greensboro / Raleigh"
   },
   {
-    "id": 2,
+    "id": 3,
     "year": "1990–1991",
     "era": "Early 1990s",
     "title": "1990–1991 NC State Wolfpack",
@@ -18,7 +27,7 @@
     "venue": "Regional Competition"
   },
   {
-    "id": 3,
+    "id": 4,
     "year": "2002–2003",
     "era": "Early 2000s",
     "title": "2002–03 Team at Entertainment & Sports Arena",
@@ -27,7 +36,7 @@
     "venue": "Entertainment & Sports Arena, Raleigh"
   },
   {
-    "id": 4,
+    "id": 5,
     "year": "2004–2005",
     "era": "Mid 2000s",
     "title": "2004–05 Triple Trophy Champions",
@@ -36,7 +45,7 @@
     "venue": "RBC Center, Raleigh"
   },
   {
-    "id": 5,
+    "id": 6,
     "year": "2005–2006",
     "era": "Mid 2000s",
     "title": "2005–2006 NC State Wolfpack",
@@ -45,7 +54,7 @@
     "venue": "RBC Center, Raleigh"
   },
   {
-    "id": 6,
+    "id": 7,
     "year": "2007–2008",
     "era": "Late 2000s",
     "title": "2007–2008 NC State Hockey",
@@ -54,7 +63,7 @@
     "venue": "Rec Zone, Raleigh"
   },
   {
-    "id": 7,
+    "id": 8,
     "year": "2009",
     "era": "Late 2000s",
     "title": "2009 Toys for Tots Squad",
@@ -63,7 +72,7 @@
     "venue": "Raleigh, NC"
   },
   {
-    "id": 8,
+    "id": 9,
     "year": "2009–2010",
     "era": "Late 2000s",
     "title": "2009–2010 NC State Women's Team",
@@ -72,7 +81,7 @@
     "venue": "Raleigh, NC"
   },
   {
-    "id": 9,
+    "id": 10,
     "year": "2009–2010",
     "era": "Late 2000s",
     "title": "2009–2010 Men's Ice Hockey Team",

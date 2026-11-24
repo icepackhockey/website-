@@ -12,7 +12,13 @@
     "image_credit": "Special Collections Research Center at NC State University Libraries",
     "image_contain": true,
     "citation": "Technician (Raleigh, N.C.) (LH1 .N6 T4), Special Collections Research Center at NC State University Libraries",
-    "image_side": true
+    "image_side": true,
+    "team_photo": {
+      "image": "/team-photos/1977-78-vintage-team.jpg",
+      "year": "1977\u20131978",
+      "title": "1977\u20131978 NC State Ice Hockey Team",
+      "caption": "One of the earliest known team portraits following the program's 1976 founding, featuring players in classic red sweaters with white 'N.C. STATE' lettering and vintage leather pads."
+    }
   },
   {
     "era": "1995\u20132004: THE ACC ORIGINAL 8",

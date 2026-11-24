@@ -4702,14 +4702,14 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       ARCHIVAL COLLECTION
                     </span>
                     <span className="text-xs font-mono text-stone-500 font-bold">
-                      9 Historic Seasons (1988–2010)
+                      {historicTeamPhotos.length} Historic Seasons (1977–2010)
                     </span>
                   </div>
                   <h2 className="font-heading text-2xl sm:text-4xl text-[#222222] mt-1">
                     HISTORIC TEAM PHOTOS
                   </h2>
                   <p className="font-questrial text-xs sm:text-sm text-[#666666] mt-0.5 max-w-2xl">
-                    Official team portraits across three decades of NC State hockey history, arranged in chronological order. Click any photo to view in high resolution.
+                    Official team portraits spanning five decades of NC State hockey history, arranged in chronological order starting with the founding era 1977–78 squad. Click any photo to view in high resolution.
                   </p>
                 </div>
                 <div className="text-xs text-stone-500 font-questrial flex items-center gap-1.5 self-start sm:self-auto shrink-0 bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">
@@ -4769,80 +4769,6 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 ))}
               </div>
             </section>
-
-            {/* LIGHTBOX MODAL FOR HIGH-RES VIEWING */}
-            {selectedTeamPhoto && (
-              <div
-                className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 sm:p-8 animate-fadeIn"
-                onClick={() => setSelectedTeamPhoto(null)}
-              >
-                <div
-                  className="bg-stone-900 border-2 border-stone-700 rounded-2xl max-w-5xl w-full max-h-[92vh] overflow-y-auto overflow-x-hidden text-white shadow-2xl flex flex-col"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {/* Modal Header */}
-                  <div className="p-4 sm:p-5 border-b border-stone-800 flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <span className="bg-[#e10600] text-white font-heading text-lg px-3 py-1 rounded">
-                        {selectedTeamPhoto.year}
-                      </span>
-                      <div>
-                        <h3 className="font-heading text-xl sm:text-2xl text-white">
-                          {selectedTeamPhoto.title}
-                        </h3>
-                        <span className="text-xs text-stone-400 font-questrial block">
-                          {selectedTeamPhoto.venue} · {selectedTeamPhoto.era}
-                        </span>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => setSelectedTeamPhoto(null)}
-                      className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#e10600] text-white flex items-center justify-center text-lg font-bold transition cursor-pointer shrink-0"
-                      title="Close viewer (or click outside)"
-                    >
-                      ✕
-                    </button>
-                  </div>
-
-                  {/* Full Size Image */}
-                  <div className="p-3 sm:p-6 bg-black flex items-center justify-center min-h-[300px]">
-                    <img
-                      src={selectedTeamPhoto.image}
-                      alt={selectedTeamPhoto.title}
-                      className="max-h-[65vh] w-auto object-contain rounded shadow-lg"
-                    />
-                  </div>
-
-                  {/* Modal Footer / Detailed Caption */}
-                  <div className="p-4 sm:p-6 bg-stone-900 border-t border-stone-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div className="space-y-1 max-w-3xl">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400 font-heading block">
-                        HISTORIC ARCHIVAL RECORD
-                      </span>
-                      <p className="font-questrial text-xs sm:text-sm text-stone-200 leading-relaxed">
-                        {selectedTeamPhoto.caption}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
-                      <a
-                        href={selectedTeamPhoto.image}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 sm:flex-initial px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-heading text-xs uppercase tracking-wider rounded-lg border border-white/20 text-center transition"
-                      >
-                        Open Original File ↗
-                      </a>
-                      <button
-                        onClick={() => setSelectedTeamPhoto(null)}
-                        className="flex-1 sm:flex-initial px-5 py-2 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-xs uppercase tracking-wider rounded-lg transition text-center cursor-pointer"
-                      >
-                        Close
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
 
             {/* SECTION 2: GAMEDAY ACTION GALLERY */}
             <section className="space-y-6 pt-6 border-t-2 border-stone-200">
@@ -5624,28 +5550,73 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
 
                   {/* Render content: side-by-side if era.image_side (Era 1 Technician clip like live site) */}
                   {era.image_side ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center my-2">
-                      <div className="space-y-3 font-questrial text-sm text-[#444444] leading-relaxed">
-                        {era.paragraphs.map((para: string, pIdx: number) => (
-                          <p key={pIdx}>{para}</p>
-                        ))}
+                    <>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center my-2">
+                        <div className="space-y-3 font-questrial text-sm text-[#444444] leading-relaxed">
+                          {era.paragraphs.map((para: string, pIdx: number) => (
+                            <p key={pIdx}>{para}</p>
+                          ))}
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                          <div className="border-2 border-black rounded p-1 bg-white shadow-sm max-w-md w-full">
+                            <img
+                              src={era.image}
+                              alt={era.image_caption || era.era}
+                              className="w-full h-auto object-contain rounded-sm"
+                            />
+                          </div>
+                          {era.citation && (
+                            <span className="text-[11px] font-questrial text-[#777777] italic text-center mt-2 max-w-md block">
+                              &gt;&gt; {era.citation} &lt;&lt;
+                            </span>
+                          )}
+                        </div>
                       </div>
 
-                      <div className="flex flex-col items-center">
-                        <div className="border-2 border-black rounded p-1 bg-white shadow-sm max-w-md w-full">
-                          <img
-                            src={era.image}
-                            alt={era.image_caption || era.era}
-                            className="w-full h-auto object-contain rounded-sm"
-                          />
+                      {/* Era 1 Founding Team Photo Feature */}
+                      {era.team_photo && (
+                        <div className="mt-6 border-2 border-stone-200 hover:border-[#e10600] rounded-xl overflow-hidden bg-stone-900 shadow-sm transition">
+                          <div
+                            className="relative aspect-[16/10] sm:aspect-[21/9] overflow-hidden bg-black flex items-center justify-center group cursor-pointer"
+                            onClick={() => setSelectedTeamPhoto(historicTeamPhotos.find((p: any) => p.year === era.team_photo.year) || era.team_photo)}
+                          >
+                            <img
+                              src={era.team_photo.image}
+                              alt={era.team_photo.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            />
+                            <div className="absolute top-3 left-3 flex items-center gap-2">
+                              <span className="bg-[#e10600] text-white font-heading text-sm px-2.5 py-0.5 rounded shadow">
+                                {era.team_photo.year}
+                              </span>
+                              <span className="bg-black/75 backdrop-blur-sm text-amber-400 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-heading">
+                                Founding Era Team Portrait
+                              </span>
+                            </div>
+                            <div className="absolute bottom-3 right-3 bg-black/70 text-white text-[11px] font-questrial px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shadow-sm">
+                              <span>Click to View Full Size</span>
+                            </div>
+                          </div>
+                          <div className="p-4 bg-stone-900 border-t border-stone-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-white">
+                            <div>
+                              <h4 className="font-heading text-lg sm:text-xl text-white">
+                                {era.team_photo.title}
+                              </h4>
+                              <p className="font-questrial text-xs text-stone-300 mt-1 max-w-2xl">
+                                {era.team_photo.caption}
+                              </p>
+                            </div>
+                            <button
+                              onClick={() => setSelectedTeamPhoto(historicTeamPhotos.find((p: any) => p.year === era.team_photo.year) || era.team_photo)}
+                              className="px-3.5 py-1.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-xs uppercase tracking-wider rounded transition shrink-0 cursor-pointer"
+                            >
+                              Enlarge Photo →
+                            </button>
+                          </div>
                         </div>
-                        {era.citation && (
-                          <span className="text-[11px] font-questrial text-[#777777] italic text-center mt-2 max-w-md block">
-                            &gt;&gt; {era.citation} &lt;&lt;
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                      )}
+                    </>
                   ) : (
                     <>
                       <div className="space-y-3 font-questrial text-sm text-[#444444] leading-relaxed">
@@ -5698,6 +5669,77 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 </div>
               ))}
             </div>
+
+            {/* HISTORIC TEAM PORTRAITS & UNIFORM ARCHIVE */}
+            <section className="space-y-6 mb-12">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-stone-200 pb-3 gap-2">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="bg-[#e10600] text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase tracking-wider font-heading">
+                      ARCHIVAL COLLECTION
+                    </span>
+                    <span className="text-xs font-mono text-stone-500 font-bold">
+                      {historicTeamPhotos.length} Historic Seasons (1977–2010)
+                    </span>
+                  </div>
+                  <h2 className="font-heading text-2xl sm:text-4xl text-[#222222] mt-1">
+                    HISTORIC TEAM PORTRAITS &amp; UNIFORMS
+                  </h2>
+                  <p className="font-questrial text-xs sm:text-sm text-[#666666] mt-0.5 max-w-2xl">
+                    Official team portraits across five decades of NC State hockey history, arranged in chronological order starting with the founding era 1977–78 squad. Click any photo to view in high resolution.
+                  </p>
+                </div>
+                <div className="text-xs text-stone-500 font-questrial flex items-center gap-1.5 self-start sm:self-auto shrink-0 bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">
+                  <span>Click photo to enlarge</span>
+                </div>
+              </div>
+
+              {/* Historic Team Photos Grid in Exact Chronological Order */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {historicTeamPhotos.map((tp: any) => (
+                  <div
+                    key={tp.id}
+                    onClick={() => setSelectedTeamPhoto(tp)}
+                    className="bg-white border-2 border-stone-200 hover:border-[#e10600] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group cursor-pointer"
+                  >
+                    <div className="relative overflow-hidden aspect-[16/10] bg-stone-900 flex items-center justify-center">
+                      <img
+                        src={tp.image}
+                        alt={tp.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                      />
+                      <div className="absolute top-3 left-3 flex items-center gap-1.5">
+                        <span className="bg-[#e10600] text-white font-heading text-sm px-2.5 py-0.5 rounded shadow">
+                          {tp.year}
+                        </span>
+                        <span className="bg-black/75 backdrop-blur-sm text-stone-200 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+                          {tp.era}
+                        </span>
+                      </div>
+                      <div className="absolute bottom-3 right-3 bg-black/70 text-white text-[11px] font-questrial px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shadow-sm">
+                        <span>View Full Size</span>
+                      </div>
+                    </div>
+                    <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                      <div>
+                        <div className="flex items-center justify-between gap-2 text-[11px] font-mono text-stone-500 mb-1">
+                          <span>{tp.venue}</span>
+                        </div>
+                        <h3 className="font-heading text-xl sm:text-2xl text-[#222222] group-hover:text-[#e10600] transition leading-snug">
+                          {tp.title}
+                        </h3>
+                        <p className="font-questrial text-xs text-[#555555] mt-2 leading-relaxed">
+                          {tp.caption}
+                        </p>
+                      </div>
+                      <div className="pt-3 border-t border-stone-100 flex items-center justify-end text-xs font-semibold text-[#e10600]">
+                        <span className="group-hover:translate-x-1 transition-transform">Inspect Photo →</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
 
             {/* Bottom Alumni Reconnect Card */}
             <div className="p-6 bg-stone-900 border-2 border-[#e10600] rounded-xl text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-md mb-8">
@@ -6162,6 +6204,80 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                 >
                   Governance →
                 </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* LIGHTBOX MODAL FOR HIGH-RES VIEWING */}
+        {selectedTeamPhoto && (
+          <div
+            className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 sm:p-8 animate-fadeIn"
+            onClick={() => setSelectedTeamPhoto(null)}
+          >
+            <div
+              className="bg-stone-900 border-2 border-stone-700 rounded-2xl max-w-5xl w-full max-h-[92vh] overflow-y-auto overflow-x-hidden text-white shadow-2xl flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="p-4 sm:p-5 border-b border-stone-800 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="bg-[#e10600] text-white font-heading text-lg px-3 py-1 rounded">
+                    {selectedTeamPhoto.year}
+                  </span>
+                  <div>
+                    <h3 className="font-heading text-xl sm:text-2xl text-white">
+                      {selectedTeamPhoto.title}
+                    </h3>
+                    <span className="text-xs text-stone-400 font-questrial block">
+                      {selectedTeamPhoto.venue} · {selectedTeamPhoto.era}
+                    </span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setSelectedTeamPhoto(null)}
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#e10600] text-white flex items-center justify-center text-lg font-bold transition cursor-pointer shrink-0"
+                  title="Close viewer (or click outside)"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* Full Size Image */}
+              <div className="p-3 sm:p-6 bg-black flex items-center justify-center min-h-[300px]">
+                <img
+                  src={selectedTeamPhoto.image}
+                  alt={selectedTeamPhoto.title}
+                  className="max-h-[65vh] w-auto object-contain rounded shadow-lg"
+                />
+              </div>
+
+              {/* Modal Footer / Detailed Caption */}
+              <div className="p-4 sm:p-6 bg-stone-900 border-t border-stone-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="space-y-1 max-w-3xl">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400 font-heading block">
+                    HISTORIC ARCHIVAL RECORD
+                  </span>
+                  <p className="font-questrial text-xs sm:text-sm text-stone-200 leading-relaxed">
+                    {selectedTeamPhoto.caption}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
+                  <a
+                    href={selectedTeamPhoto.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 sm:flex-initial px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-heading text-xs uppercase tracking-wider rounded-lg border border-white/20 text-center transition"
+                  >
+                    Open Original File ↗
+                  </a>
+                  <button
+                    onClick={() => setSelectedTeamPhoto(null)}
+                    className="flex-1 sm:flex-initial px-5 py-2 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-xs uppercase tracking-wider rounded-lg transition text-center cursor-pointer"
+                  >
+                    Close
+                  </button>
+                </div>
               </div>
             </div>
           </div>
