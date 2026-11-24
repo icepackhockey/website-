@@ -4730,7 +4730,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       <img
                         src={tp.image}
                         alt={tp.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
                       />
                       {/* Chronological Sequence & Year Badge */}
                       <div className="absolute top-3 left-3 flex items-center gap-1.5">
@@ -5578,28 +5578,28 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       {era.team_photo && (
                         <div className="mt-6 border-2 border-stone-200 hover:border-[#e10600] rounded-xl overflow-hidden bg-stone-900 shadow-sm transition">
                           <div
-                            className="relative aspect-[16/10] sm:aspect-[21/9] overflow-hidden bg-black flex items-center justify-center group cursor-pointer"
+                            className="relative aspect-[16/10] overflow-hidden bg-black flex items-center justify-center group cursor-pointer"
                             onClick={() => setSelectedTeamPhoto(historicTeamPhotos.find((p: any) => p.year === era.team_photo.year) || era.team_photo)}
                           >
                             <img
                               src={era.team_photo.image}
                               alt={era.team_photo.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                              className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
                             />
-                            <div className="absolute top-3 left-3 flex items-center gap-2">
-                              <span className="bg-[#e10600] text-white font-heading text-sm px-2.5 py-0.5 rounded shadow">
-                                {era.team_photo.year}
-                              </span>
-                              <span className="bg-black/75 backdrop-blur-sm text-amber-400 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-heading">
-                                Founding Era Team Portrait
-                              </span>
-                            </div>
                             <div className="absolute bottom-3 right-3 bg-black/70 text-white text-[11px] font-questrial px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shadow-sm">
                               <span>Click to View Full Size</span>
                             </div>
                           </div>
                           <div className="p-4 bg-stone-900 border-t border-stone-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-white">
                             <div>
+                              <div className="flex items-center gap-2 mb-1.5">
+                                <span className="bg-[#e10600] text-white font-heading text-xs px-2.5 py-0.5 rounded shadow">
+                                  {era.team_photo.year}
+                                </span>
+                                <span className="text-amber-400 text-[10px] font-bold uppercase tracking-wider font-heading">
+                                  Founding Era Team Portrait
+                                </span>
+                              </div>
                               <h4 className="font-heading text-lg sm:text-xl text-white">
                                 {era.team_photo.title}
                               </h4>
@@ -5609,7 +5609,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                             </div>
                             <button
                               onClick={() => setSelectedTeamPhoto(historicTeamPhotos.find((p: any) => p.year === era.team_photo.year) || era.team_photo)}
-                              className="px-3.5 py-1.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-xs uppercase tracking-wider rounded transition shrink-0 cursor-pointer"
+                              className="px-3.5 py-1.5 bg-[#e10600] hover:bg-[#c40500] text-white font-heading text-xs uppercase tracking-wider rounded transition shrink-0 cursor-pointer self-start sm:self-auto"
                             >
                               Enlarge Photo →
                             </button>
@@ -5706,7 +5706,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                       <img
                         src={tp.image}
                         alt={tp.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
                       />
                       <div className="absolute top-3 left-3 flex items-center gap-1.5">
                         <span className="bg-[#e10600] text-white font-heading text-sm px-2.5 py-0.5 rounded shadow">
