@@ -1,11 +1,5 @@
-import IcePackApp from "@/components/IcePackApp";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "UNC vs. NC State Football Ticket Raffle — Icepack Hockey",
-  description: "Win 2 tickets (Section 202, Row O, Seats 13 & 14) to NC State vs. UNC Football plus parking pass @ Jackson Deck (239 Jackson Circle).",
-};
+import { redirect } from "next/navigation";
 
 export default function RafflePage() {
-  return <IcePackApp initialTab="raffle" />;
+  redirect("/annual-fund");
 }
