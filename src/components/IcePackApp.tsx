@@ -2061,7 +2061,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                     />
                                   )}
                                   <h3 className="font-heading text-2xl text-[#222222] tracking-wide leading-tight truncate">
-                                    {game.ha === "A" ? "AT " : "VS "}
+                                    {game.opponent.toLowerCase().startsWith("governor") ? "" : game.ha === "A" ? "AT " : "VS "}
                                     {(game as any).opponent_url ? (
                                       <a
                                         href={(game as any).opponent_url}
@@ -2283,7 +2283,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                             />
                                           )}
                                           <span className="font-bold text-base font-heading tracking-wide">
-                                            {game.ha === "A" ? "at " : "vs "}
+                                            {game.opponent.toLowerCase().startsWith("governor") ? "" : game.ha === "A" ? "at " : "vs "}
                                             {(game as any).opponent_url ? (
                                               <a
                                                 href={(game as any).opponent_url}
@@ -2583,7 +2583,7 @@ export default function IcePackApp({ initialTab = "home", initialSubTab = "playe
                                         />
                                       )}
                                       <span className="truncate">
-                                        {g.ha === "H" ? "vs " : "at "}
+                                        {g.opponent.toLowerCase().startsWith("governor") ? "" : g.ha === "H" ? "vs " : "at "}
                                         {(g as any).opponent_url ? (
                                           <a
                                             href={(g as any).opponent_url}
